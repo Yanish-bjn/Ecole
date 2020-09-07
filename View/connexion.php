@@ -34,20 +34,20 @@
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(../connexion/images/bg-01.jpg);">
 					<span class="login100-form-title-1">
-						Sign In
+						Connexion
 					</span>
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST" action="../Manager/Connexion.php">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Enter username">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="email" placeholder="Entre l'email">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
+						<span class="label-input100">Mot de passe</span>
+						<input class="input100" type="mdp" name="mot de passe" placeholder="Entrer le mot de passe">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -55,22 +55,24 @@
 						<div class="contact100-form-checkbox">
 							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 							<label class="label-checkbox100" for="ckb1">
-								Remember me
+								Se souvenir
 							</label>
 						</div>
 
 						<div>
-							<a href="#" class="txt1">
-								Forgot Password?
+							<a href="View/mot_de_passe.php" class="txt1">
+								Mot de passe oublié
 							</a>
 						</div>
 					</div>
-
-					<div class="container-login100-form-btn">
+					<div class="form-group">
 						<button class="login100-form-btn">
-							Login
-						</button>
+							Connexion
+							</button>
 					</div>
+					<a class="login100-form-btn" href="inscription.php">Inscription</a>
+					</button>
+
 				</form>
 			</div>
 		</div>

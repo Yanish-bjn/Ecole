@@ -1,10 +1,5 @@
 <?php
-
-require('../manager/manager.php');
-require('../model/class_connexion.php');
-
-$user = new Connexion($_POST['nom'], $_POST['mdp']);
-$manager = new Manager();
-$manager->connexion($user);
-
+$connexion = new connexion($_POST["email"],$_POST["mdp"],$_POST['role']); //enregistrement des données //
+$co = new Manager(); // nouvelles classe  //
+$co->connexion($connexion);
 ?>

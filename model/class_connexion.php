@@ -1,24 +1,47 @@
 <?php
+class connexion { // classe connexion reprenant les information du manager, formulaire, model//
+  private $_email;
+  private $_mdp;
+  private $_role;
 
-class Connexion {
-	private $nom;
-	private $mdp;
+  public function __construct($email, $mdp, $role){
 
-public function __construct($nom, $mdp) {
-	$this->setNom($nom);
-	$this->setMdp($mdp);
+      $this->setemail($email);
+      $this->setmdp($mdp);
+      $this->setrole($role);
 }
 
-public function getNom(){return $this->nom;}
-public function getMdp(){return $this->mdp;}
-
-
-public function setNom($nom){
-	$this->nom=$nom;
+public function setemail($email){
+  if(empty($email)){ // si la valeur saisie est vide afficher une erreur //
+    trigger_error('la variable doit etre un caractere');
+    return; // retourne le résultat //
+  }
+  $this->_email = $email;
+}
+public function setmdp($mdp){
+  if(empty($mdp)){ // si la valeur saisie est vide afficher une erreur //
+    trigger_error('la variable doit etre un caractere');
+    return; // retourne le résultat //
+  }
+  $this->_mdp = $mdp;
+}
+public function setrole($role){
+  if(empty($role)){ // si la valeur saisie est vide afficher une erreur //
+    trigger_error('la variable doit etre un caractere');
+    return; // retourne le résultat //
+  }
+  $this->_role = $role;
 }
 
-public function setMdp($mdp){
-	$this->mdp=$mdp;
+public function getemail(){
+  return $this->_email;
 }
+public function getmdp(){
+  return $this->_mdp;
 }
- ?>
+public function getrole(){
+  return $this->_role;
+}
+
+}
+?>
