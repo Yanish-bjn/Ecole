@@ -7,25 +7,29 @@ class Contact {
   private $sujet;
 	private $message;
 
-public function __construct($msg, $nom, $prenom) {
-	$this->setMsg($msg);
-  $this->setNom($nom);
-	$this->setPrenom($prenom);
+public function __construct($nom, $email, $sujet, $message){
+	$this->setNom($nom);
+  $this->setEmail($email);
+	$this->setSujet($sujet);
+	$this->setMessage($message);
 }
 
-public function getMsg(){return $this->msg;}
 public function getNom(){return $this->nom;}
-public function getPrenom(){return $this->prenom;}
+public function getEmail(){return $this->email;}
+public function getSujet(){return $this->sujet;}
+public function getMessage(){return $this->message;}
 
-
-public function setMsg($msg){
-  $this->msg=$msg;
-}
 public function setNom($nom){
-	$this->nom=$nom;
+  $this->nom = $nom;
 }
-public function setPrenom($prenom){
-	$this->prenom=$prenom;
+public function setEmail($email){
+	$this->email = $email;
+}
+public function setSujet($sujet){
+	$this->sujet=$sujet;
+}
+public function setMessage($message){
+	$this->message=$message;
 }
 
 

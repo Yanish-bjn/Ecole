@@ -22,6 +22,3 @@ public function setMdp($mdp){
 }
 }
  ?>
-
-
- ?>

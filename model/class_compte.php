@@ -40,5 +40,8 @@ class Compte{
     public function setMdp($mdp){
         $this->mdp = $mdp;
     }
+    public function setRole($role){
+        $this->role = $role;
+    }
 }
  ?>
