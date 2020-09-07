@@ -118,7 +118,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="View/connexion.php">Connexion</a>
+                  <a class="nav-link" href="View/connexion2.php">Connexion</a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link search" id="search">
