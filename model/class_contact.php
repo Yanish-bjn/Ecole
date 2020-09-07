@@ -1,10 +1,11 @@
 <?php
 
 class Contact {
-	private $msg;
-	private $nom;
-  private $prenom;
 
+	private $nom;
+	private $email;
+  private $sujet;
+	private $message;
 
 public function __construct($msg, $nom, $prenom) {
 	$this->setMsg($msg);
