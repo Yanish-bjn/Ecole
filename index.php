@@ -67,10 +67,10 @@
             >
               <ul class="nav navbar-nav menu_nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about-us.html">About</a>
+                  <a class="nav-link" href="View/contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
                   <a
@@ -118,7 +118,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
+                  <a class="nav-link" href="View/connexion.php">Connexion</a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link search" id="search">
