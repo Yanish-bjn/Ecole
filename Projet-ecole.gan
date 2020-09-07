@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Ecole" company="" webLink="http://" view-date="2020-09-26" view-index="0" gantt-divider-location="288" resource-divider-location="300" version="2.8.10" locale="fr_FR">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="160" order="0"/>
+        <field id="tpd4" name="Date de début" width="62" order="1"/>
+        <field id="tpd5" name="Date de fin" width="62" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="210" order="0"/>
+        <field id="1" name="Rôle par défaut" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="1" name="Projet 1" color="#8cb6ce" meeting="false" start="2020-09-07" duration="1" complete="0" thirdDate="2020-09-07" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Yanish : Mission 1, 2, 3
+Thomas : Mission : 4, 5]]></notes>
+        </task>
+        <task id="3" name="Projet 2 Développement" color="#8cb6ce" meeting="false" start="2020-09-08" duration="1" complete="0" thirdDate="2020-09-08" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Yanish : Missions 1, 2, 3
+Thomas : Missions 5, 6, 7]]></notes>
+        </task>
+        <task id="10" name="Projet 2 Développement" color="#8cb6ce" meeting="false" start="2020-09-09" duration="1" complete="0" thirdDate="2020-09-09" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Yanish : Missions 4, 8
+Thomas : Missions 9, 10]]></notes>
+        </task>
+        <task id="5" name="Projet 2 site" color="#8cb6ce" meeting="false" start="2020-09-14" duration="1" complete="0" thirdDate="2020-09-14" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Yanish : Missions 1, 3
+Thomas : Missions 2, 3]]></notes>
+        </task>
+        <task id="31" name="Projet 3 pannel" color="#8cb6ce" meeting="false" start="2020-09-15" duration="1" complete="0" thirdDate="2020-09-28" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Yanish : Missions 1, 2, 
+Thomas : Missions 3, 4,]]></notes>
+        </task>
+        <task id="33" name="Projet 3 pannel" color="#8cb6ce" meeting="false" start="2020-09-21" duration="1" complete="0" thirdDate="2020-09-29" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Yanish : Mission 5
+Thomas : Mission 6]]></notes>
+        </task>
+        <task id="38" name="Projet 4 server web" color="#8cb6ce" meeting="false" start="2020-09-22" duration="1" complete="0" thirdDate="2020-10-06" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Yanish, Thomas : Mission 1]]></notes>
+        </task>
+        <task id="40" name="Projet 4 server web" color="#8cb6ce" meeting="false" start="2020-09-28" duration="1" complete="0" thirdDate="2020-10-12" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Finalisation du projet]]></notes>
+        </task>
+        <task id="44" name="Projet 5 plus loin" color="#8cb6ce" meeting="false" start="2020-09-29" duration="1" complete="0" thirdDate="2020-10-26" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Projet ensemble
+]]></notes>
+        </task>
+        <task id="46" name="Projet 5 plus loin" color="#8cb6ce" meeting="false" start="2020-10-05" duration="1" complete="0" thirdDate="2020-10-27" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Pour aller plus loin P2]]></notes>
+        </task>
+        <task id="48" name="Projet 5 plus loin" color="#8cb6ce" meeting="false" start="2020-11-06" duration="1" complete="0" thirdDate="2020-11-02" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Finalisation pour aller plus loin ]]></notes>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
