@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 07 sep. 2020 à 13:04
+-- Généré le :  lun. 07 sep. 2020 à 13:16
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -67,9 +67,9 @@ CREATE TABLE IF NOT EXISTS `contact` (
 DROP TABLE IF EXISTS `evenement`;
 CREATE TABLE IF NOT EXISTS `evenement` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(250) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `date` varchar(250) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `heure` varchar(250) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `nom` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `date` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `heure` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 COMMIT;
