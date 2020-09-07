@@ -67,7 +67,7 @@
             >
               <ul class="nav navbar-nav menu_nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="about-us.html">About</a>
@@ -84,7 +84,7 @@
                   >
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="courses.html">Courses</a>
+                      <a class="nav-link" href="/courses.html">Courses</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="course-details.html"
