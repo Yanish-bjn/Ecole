@@ -12,6 +12,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="../inscription/css/style.css">
     <link rel="stylesheet" href="../inscription/css/style2.css">
+    <link rel="stylesheet" href="../inscription/css/style3.css">
 
 </head>
 <body>

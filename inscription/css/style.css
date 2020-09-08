@@ -245,14 +245,6 @@ h2 {
 .clear {
   clear: both; }
 
-body {
-  font-size: 13px;
-  line-height: 1.8;
-  color: #222;
-  font-weight: 400;
-  background: #282828;
-  padding: 90px 0; }
-
 .container {
   width: 1400px;
   position: relative;
@@ -476,7 +468,7 @@ select {
     -webkit-flex-direction: column;
     -o-flex-direction: column;
     -ms-flex-direction: column; }
-
+  
   .submit {
     width: 100%; }
 

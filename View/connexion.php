@@ -38,7 +38,7 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="../Manager/Connexion.php">
+				<form class="login100-form validate-form" method="POST" action="../Manager/connexion.php">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Email</span>
 						<input class="input100" type="text" name="email" placeholder="Entre l'email">
@@ -47,7 +47,7 @@
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Mot de passe</span>
-						<input class="input100" type="mdp" name="mot de passe" placeholder="Entrer le mot de passe">
+						<input class="input100" type="mdp" name="mdp" placeholder="Entrer le mot de passe">
 						<span class="focus-input100"></span>
 					</div>
 

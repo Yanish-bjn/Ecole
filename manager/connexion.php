@@ -1,7 +1,7 @@
 <?php
 session_start(); //Récupere les données de la session //
-require '../Model/model_connexion.php'; // récupére les données de la page //
-require '../Traitement/traitement_connexion.php'; //récupére les données de la page //
+require '../model/connexion.php'; // récupére les données de la page //
+require '../traitement/connexion.php'; //récupére les données de la page //
 class Manager{
 public function connexion($donnee){ //function connexion //
 
