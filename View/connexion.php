@@ -53,9 +53,9 @@
 
 					<div class="flex-sb-m w-full p-b-30">
 						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								Se souvenir
+							<a href="../index.php" class="txt1">
+									Revenir a la page d'accueil
+							</a>
 							</label>
 						</div>
 

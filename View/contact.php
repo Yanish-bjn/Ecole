@@ -76,7 +76,7 @@
                   <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about-us.html">About</a>
+                  <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
                   <a
@@ -124,7 +124,7 @@
                   </ul>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="contact.html">Contact</a>
+                  <a class="nav-link" href="connexion.php">Connexion</a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link search" id="search">
@@ -203,18 +203,18 @@
             <div class="contact_info">
               <div class="info_item">
                 <i class="ti-home"></i>
-                <h6>California, United States</h6>
-                <p>Santa monica bullevard</p>
+                <h6>Lycée Robert Schuman</h6>
+                <p>Dugny, Seine-Saint-Denis</p>
               </div>
               <div class="info_item">
                 <i class="ti-headphone"></i>
-                <h6><a href="#">00 (440) 9865 562</a></h6>
-                <p>Mon to Fri 9am to 6 pm</p>
+                <h6><a href="#"> 01 48 37 74 26</a></h6>
+                <p>Du lundi au vendredi 8h-20h</p>
               </div>
               <div class="info_item">
                 <i class="ti-email"></i>
-                <h6><a href="#">support@colorlib.com</a></h6>
-                <p>Send us your query anytime!</p>
+                <h6><a href="#">administration@schuman.com</a></h6>
+                <p>Poser nous vos questions !</p>
               </div>
             </div>
           </div>
