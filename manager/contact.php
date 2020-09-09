@@ -39,7 +39,7 @@ public function contact($donnee){
   $mail->Port       = 587;                                    // TCP port to connect to
 
   //Recipients
-  $mail->setFrom('yanishverif@gmail.com', 'Info');
+  $mail->setFrom('yanishverif@gmail.com', 'Nouvelle demande de contact');
   $mail->addAddress($donnee->getemail(), 'Contact');     // Add a recipient //Recipients
    $mail->Body    =   $donnee->getmessage();
   if(!$mail->Send()) {

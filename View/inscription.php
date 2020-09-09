@@ -49,7 +49,7 @@
                             <input type="text" name="mdp" id="pincode">
                         </div>
                         <div class="form-submit">
-                            <input type="submit" value="Submit Form" class="submit" name="submit" id="submit"/>
+                            <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>
                             <a class="submit" href="connexion.php"> Deja inscrit ?</a>
                           </div>
                         </form>
