@@ -13,7 +13,7 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="img/favicon.png" type="image/png" />
-    <title>Edustage Education</title>
+    <title>Lycée Robert Schuman</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/flaticon.css" />
@@ -66,7 +66,7 @@ session_start();
                 //Si il y a une session ouverte
                 if (isset($_SESSION['email'])){
                   //Si la personne est un client
-                  if ($_SESSION['role'] == "user") { ?>
+                  if ($_SESSION['role'] == "client") { ?>
                     <li class="nav-item active">
                       <a class="nav-link" href="index.php">Accueil</a>
                     </li>
@@ -161,11 +161,11 @@ session_start();
                   <a class="nav-link" href="View/contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                  <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                   </a>
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="courses.html">Courses</a>
+                      <a class="nav-link" href="View/evenement.php">Ecole</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="course-details.html">Course Details</a
