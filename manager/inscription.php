@@ -20,12 +20,16 @@ public function inscription($donnee){
     $req=$bdd->prepare('INSERT into compte (nom, prenom, email, tel, mdp, role) VALUES(:nom, :prenom, :email, :tel, :mdp, :role)');
     $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'role'=>'client'));
     $req->fetch();
+<<<<<<< HEAD
     if ($a == true){ // début du si //
       header("location: ../view/connexion.php"); // redirection vers ... //
     }// fin  du si //
     else{ //début du si non //
       header("location: ../View/inscription.php"); // redirection vers la page .... //
     }// fin du si non //
+=======
+
+>>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
 
           }
 

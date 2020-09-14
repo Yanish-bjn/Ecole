@@ -60,7 +60,11 @@
 						</div>
 
 						<div>
+<<<<<<< HEAD
 							<a href="mot_de_passe.php" class="txt1">
+=======
+							<a href="View/mot_de_passe.php" class="txt1">
+>>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
 								Mot de passe oublié
 							</a>
 						</div>
