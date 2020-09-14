@@ -74,6 +74,13 @@ session_start();
                       <a class="nav-link" href="View/contact.php">Contact</a>
                     </li>
                     <li class="nav-item submenu dropdown">
+<<<<<<< HEAD
+                      <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="evenement.php">Etudiant</a>
+=======
                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                       </a>
                       <ul class="dropdown-menu">
@@ -83,10 +90,18 @@ session_start();
                         <li class="nav-item">
                           <a class="nav-link" href="course-details.html">Course Details</a
                           >
+>>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
                         </li>
                       </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
+<<<<<<< HEAD
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Messagerie
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="View/messagerie.php">Messagerie</a>
+=======
                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
                       </a>
                       <ul class="dropdown-menu">
@@ -95,11 +110,16 @@ session_start();
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="single-blog.html">Blog Details</a>
+>>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
                         </li>
                       </ul>
                     </li>
                     <li class="nav-item">
+<<<<<<< HEAD
+                      <a class="nav-link" href="View/moncompte_client.php">Mondification mon compte</a>
+=======
                       <a class="nav-link" href="View/moncompte_client.php">Mon compte</a>
+>>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="traitement/deconnexion">Déconnexion</a>
