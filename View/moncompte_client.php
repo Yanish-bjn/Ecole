@@ -13,7 +13,18 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
-    <title>Contact</title>
+    <title>Mon compte client :</title>
+
+    <!-- Liens contenant le style du tableau -->
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/util.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/main.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
@@ -225,43 +236,52 @@ session_start();
     </section>
     <!--================End Home Banner Area =================-->
 
+    <?php
+  	try{
+  		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+  	}
+  	catch (Exception $e){
+  		die('Erreur:'.$e->getMessage());
+  	}
+  	?>
+
+
 <div class="container">
 
   <!-- Affichage du tableau contenant des informations -->
-  		<div class="container-table100">
-  			<div class="wrap-table100">
-          <div class="table100 ver3 m-b-110">
-  					<div class="table100-head">
+
+  <p>  <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 ver1 m-b-110">
+          <div class="table100-head">
   						<table>
   							<thead>
   								<tr class="row100 head">
   									<th class="cell100 column1">Nom</th>
-  									<th class="cell100 column2">Téléphone</th>
-  									<th class="cell100 column3">Salle</th>
-  									<th class="cell100 column4">Prix</th>
-  									<th class="cell100 column5">Personnes</th>
-  									<th class="cell100 column6">Date</th>
+  									<th class="cell100 column2">Prenom</th>
+  									<th class="cell100 column3">email</th>
+  									<th class="cell100 column4">tel</th>
+  									<th class="cell100 column5">mdp</th>
   								</tr>
   							</thead>
   						</table>
-  					</div>
+  					</div></p>
 
   					<div class="table100-body js-pscroll">
   						<table>
   							<tbody>
   								<!-- Selection de toute les réservations -->
   								<?php
-  								$req = $bdd->query('SELECT * FROM compte');
+  								$req = $bdd->query('SELECT * FROM compte ');
   								$donnees= $req->fetchall();
 
   								foreach ($donnees as $value) {
   									echo '<tr class="row100 body">
   												<td class="cell100 column1">'.$value["nom"].'</td>
-  												<td class="cell100 column2">'.$value["tel"].'</td>
-  												<td class="cell100 column3">'.$value["num_salle"].'</td>
-  												<td class="cell100 column4">'.$value["prix"].'</td>
-  												<td class="cell100 column5">'.$value["nb_pers"].'</td>
-  												<td class="cell100 column6">'.$value["date_prevue"].'</td>
+  												<td class="cell100 column2">'.$value["prenom"].'</td>
+  												<td class="cell100 column3">'.$value["email"].'</td>
+  												<td class="cell100 column4">'.$value["tel"].'</td>
+  												<td class="cell100 column5">'.$value["mdp"].'</td>
   												</tr>';
   								}
   								?>
@@ -271,14 +291,14 @@ session_start();
   						</table>
   					</div>
   				</div>
-  				<div class="row">
+  			<p>	<div class="row">
   				        <div class="col-md-6 register">
-  				           <center><button type="button" class="btn btn-outline-danger btn-lg" onclick="window.location.href='modifier_reservation.php'">Modifier</button></center>
+  				           <center><button type="button" class="btn btn primary" onclick="window.location.href='modifier_reservation.php'">Modifier</button></center>
   				        </div>
   				        <div class="col-md-6 register">
-  				           <center><button type="button" class="btn btn-outline-danger btn-lg" onclick="window.location.href='supprimer_reservation.php'">Supprimer</button></center>
+  				           <center><button type="button" class="btn btn primary" onclick="window.location.href='supprimer_reservation.php'">Supprimer</button></center>
   				        </div>
-  			</div>
+  			</div></p>
   		</div>
   	</div>
 
@@ -436,5 +456,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>
     <script src="../js/theme.js"></script>
+
+    <!-- Liens contenant le script du tableau -->
+	<script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../tableau/vendor/bootstrap/js/popper.js"></script>
+	<script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../tableau/vendor/select2/select2.min.js"></script>
+	<script src="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
   </body>
 </html>
