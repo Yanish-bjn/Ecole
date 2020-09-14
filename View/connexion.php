@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>Connexion</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -60,11 +60,7 @@
 						</div>
 
 						<div>
-<<<<<<< HEAD
 							<a href="mot_de_passe.php" class="txt1">
-=======
-							<a href="View/mot_de_passe.php" class="txt1">
->>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
 								Mot de passe oublié
 							</a>
 						</div>
