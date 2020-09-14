@@ -1,0 +1,8 @@
+body {
+  font-size: 13px;
+    line-height: 1.8;
+    color: $black-color;
+    font-weight: 400;
+    background: #ebeeef;
+    padding: 90px 0;
+}
