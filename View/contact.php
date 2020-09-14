@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+session_start();
+ ?>
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -17,6 +22,12 @@
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+<style>
+#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+            height:400px;
+        }
+        </style>
   </head>
 
   <body>
@@ -61,69 +72,140 @@
               <span class="icon-bar"></span>
             </button>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div
-              class="collapse navbar-collapse offset"
-              id="navbarSupportedContent"
-            >
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item">
+                <?php
+                //Si il y a une session ouverte
+                if (isset($_SESSION['email'])){
+                  //Si la personne est un client
+                  if ($_SESSION['role'] == "client") { ?>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.php">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="View/contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item submenu dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="courses.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="course-details.html">Course Details</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item submenu dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="single-blog.html">Blog Details</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="View/moncompte_client.php">Mon compte</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="traitement/deconnexion">Déconnexion</a>
+                    </li>
+                    <a href="#" class="nav-link search" id="search">
+                      <i class="ti-search"></i>
+                    </a>
+                  <?php  }
+                    //Sinon c'est donc un admin
+                   else { ?>
+                     <li class="nav-item active">
+                       <a class="nav-link" href="index.php">Accueil</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="View/contact.php">Contact</a>
+                     </li>
+                     <li class="nav-item submenu dropdown">
+                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                       </a>
+                       <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="courses.html">Courses</a>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link" href="course-details.html">Course Details</a
+                           >
+                         </li>
+                       </ul>
+                     </li>
+                     <li class="nav-item submenu dropdown">
+                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
+                       </a>
+                       <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="blog.html">Blog</a>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link" href="single-blog.html">Blog Details</a>
+                         </li>
+                       </ul>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="View/moncompte_admin.php">Mon compte</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
+                     </li>
+                     <a href="#" class="nav-link search" id="search">
+                       <i class="ti-search"></i>
+                     </a>
+                <?php }
+              }
+              //Sinon il n'y a pas de sessions ouverte
+              else{ ?>
+                <li class="nav-item active">
                   <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about-us.html">About</a>
+                  <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
-                  <a
-                    href="#"
-                    class="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    >Pages</a
-                  >
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                  </a>
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="courses.html">Courses</a>
+                      <a class="nav-link" href="evenement.php">Ecole</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="course-details.html"
-                        >Course Details</a
+                      <a class="nav-link" href="course-details.html">Course Details</a
                       >
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="elements.html">Elements</a>
                     </li>
                   </ul>
                 </li>
                 <li class="nav-item submenu dropdown">
-                  <a
-                    href="#"
-                    class="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    >Blog</a
-                  >
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
+                  </a>
                   <ul class="dropdown-menu">
                     <li class="nav-item">
                       <a class="nav-link" href="blog.html">Blog</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="single-blog.html"
-                        >Blog Details</a
-                      >
+                      <a class="nav-link" href="single-blog.html">Blog Details</a>
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="contact.html">Contact</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="connexion.php">Connexion</a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link search" id="search">
                     <i class="ti-search"></i>
                   </a>
+                <?php	}  ?>
+
                 </li>
               </ul>
             </div>
@@ -155,40 +237,65 @@
     <!--================End Home Banner Area =================-->
 
     <!--================Contact Area =================-->
+    <div class="container">
+    <p><div id="map">
+          <!-- Ici s'affichera la carte -->
+      </div></p>
+    </div>
+  <!-- Liens contenat le script de la carte  -->
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+  <script type="text/javascript">
+            // On initialise la latitude et la longitude de Paris (centre de la carte)
+            var lat = 48.9206;
+            var lon = 2.3476;
+            var macarte = null;
+            // Fonction d'initialisation de la carte
+            function initMap() {
+                // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+                macarte = L.map('map').setView([lat, lon], 11);
+                // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    // Il est toujours bien de laisser le lien vers la source des données
+                    attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                    minZoom: 1,
+                    maxZoom: 20
+                }).addTo(macarte);
+            }
+            window.onload = function(){
+    // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+
+    initMap();
+    var marker = L.marker([48.9493127, 2.4152982,21]).addTo(macarte);
+            };
+        </script>
+</div>
+
+<!-- Fin de la carte  -->
+
     <section class="contact_area section_gap">
       <div class="container">
-        <div
-          id="mapBox"
-          class="mapBox"
-          data-lat="40.701083"
-          data-lon="-74.1522848"
-          data-zoom="13"
-          data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-          data-mlat="40.701083"
-          data-mlon="-74.1522848"
-        ></div>
         <div class="row">
           <div class="col-lg-3">
             <div class="contact_info">
               <div class="info_item">
                 <i class="ti-home"></i>
-                <h6>California, United States</h6>
-                <p>Santa monica bullevard</p>
+                <h6>Lycée Robert Schuman</h6>
+                <p>Dugny, Seine-Saint-Denis</p>
               </div>
               <div class="info_item">
                 <i class="ti-headphone"></i>
-                <h6><a href="#">00 (440) 9865 562</a></h6>
-                <p>Mon to Fri 9am to 6 pm</p>
+                <h6><a href="#"> 01 48 37 74 26</a></h6>
+                <p>Du lundi au vendredi 8h-20h</p>
               </div>
               <div class="info_item">
                 <i class="ti-email"></i>
-                <h6><a href="#">support@colorlib.com</a></h6>
-                <p>Send us your query anytime!</p>
+                <h6><a href="#">administration@schuman.com</a></h6>
+                <p>Poser nous vos questions !</p>
               </div>
             </div>
           </div>
           <div class="col-lg-9">
-            <form
+            <form method="POST" action="../manager/contact.php"
               class="row contact_form"
               action="contact_process.php"
               method="post"
@@ -201,8 +308,8 @@
                     type="text"
                     class="form-control"
                     id="name"
-                    name="name"
-                    placeholder="Enter your name"
+                    name="nom"
+                    placeholder="Entrer votre nom"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Enter your name'"
                     required=""
@@ -214,7 +321,7 @@
                     class="form-control"
                     id="email"
                     name="email"
-                    placeholder="Enter email address"
+                    placeholder="Entrer votre email"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Enter email address'"
                     required=""
@@ -225,8 +332,8 @@
                     type="text"
                     class="form-control"
                     id="subject"
-                    name="subject"
-                    placeholder="Enter Subject"
+                    name="sujet"
+                    placeholder="Entrer un sujet"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Enter Subject'"
                     required=""
@@ -240,7 +347,7 @@
                     name="message"
                     id="message"
                     rows="1"
-                    placeholder="Enter Message"
+                    placeholder="Votre message"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Enter Message'"
                     required=""
@@ -249,7 +356,7 @@
               </div>
               <div class="col-md-12 text-right">
                 <button type="submit" value="submit" class="btn primary-btn">
-                  Send Message
+                  Envoyé votre message
                 </button>
               </div>
             </form>
