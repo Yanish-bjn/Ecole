@@ -18,9 +18,14 @@ public function inscription($donnee){
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //
       $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'root', '');
     $req=$bdd->prepare('INSERT into compte (nom, prenom, email, tel, mdp, role) VALUES(:nom, :prenom, :email, :tel, :mdp, :role)');
-    $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'role'=>'user'));
+    $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'role'=>'client'));
     $req->fetch();
-
+    if ($a == true){ // début du si //
+      header("location: ../view/connexion.php"); // redirection vers ... //
+    }// fin  du si //
+    else{ //début du si non //
+      header("location: ../View/inscription.php"); // redirection vers la page .... //
+    }// fin du si non //
 
           }
 

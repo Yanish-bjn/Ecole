@@ -34,20 +34,14 @@
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(../connexion/images/bg-01.jpg);">
 					<span class="login100-form-title-1">
-						Connexion
+						Mot de passe oublié
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="../Manager/connexion.php">
+				<form class="login100-form validate-form" method="POST" action="../Manager/mot_de_passe1.php">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Email</span>
 						<input class="input100" type="text" name="email" placeholder="Entre l'email">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-						<span class="label-input100">Mot de passe</span>
-						<input class="input100" type="mdp" name="mdp" placeholder="Entrer le mot de passe">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -60,17 +54,16 @@
 						</div>
 
 						<div>
-							<a href="mot_de_passe.php" class="txt1">
-								Mot de passe oublié
+							<a href="connexion.php" class="txt1">
+								Revenir a la page Connexion
 							</a>
 						</div>
 					</div>
 					<div class="form-group">
 						<button class="login100-form-btn">
-							Connexion
+							Valider
 							</button>
 					</div>
-					<a class="login100-form-btn" href="inscription.php">Inscription</a>
 					</button>
 
 				</form>

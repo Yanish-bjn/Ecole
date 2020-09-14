@@ -74,32 +74,25 @@ session_start();
                       <a class="nav-link" href="View/contact.php">Contact</a>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                      <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
-                          <a class="nav-link" href="courses.html">Courses</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="course-details.html">Course Details</a
-                          >
+                          <a class="nav-link" href="evenement.php">Etudiant</a>
                         </li>
                       </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Messagerie
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
-                          <a class="nav-link" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="single-blog.html">Blog Details</a>
+                          <a class="nav-link" href="View/messagerie.php">Messagerie</a>
                         </li>
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="View/moncompte_client.php">Mon compte</a>
+                      <a class="nav-link" href="View/moncompte_client.php">Mondification mon compte</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="traitement/deconnexion">Déconnexion</a>
