@@ -194,14 +194,7 @@ th, td {
 /*==================================================================
 [ Ver1 ]*/
 
-.table100.ver1 th {
-  font-family: Lato-Bold;
-  font-size: 18px;
-  color: #fff;
-  line-height: 1.4;
 
-  background-color: #6c7ae0;
-}
 
 .table100.ver1 td {
   font-family: Lato-Regular;

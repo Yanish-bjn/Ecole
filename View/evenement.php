@@ -78,7 +78,7 @@ session_start();
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
-                          <a class="nav-link" href="evenement.php">Etudiant</a>
+                          <a class="nav-link" href="evenement_etudiant.php">Etudiant</a>
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
@@ -103,7 +103,7 @@ session_start();
                     //Sinon c'est donc un admin
                    else { ?>
                      <li class="nav-item active">
-                       <a class="nav-link" href="index.php">Accueil</a>
+                       <a class="nav-link" href="../index.php">Accueil</a>
                      </li>
                      <li class="nav-item">
                        <a class="nav-link" href="View/contact.php">Contact</a>
@@ -113,23 +113,16 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="courses.html">Courses</a>
-                         </li>
-                         <li class="nav-item">
-                           <a class="nav-link" href="course-details.html">Course Details</a
-                           >
+                           <a class="nav-link" href="evenement_admin.php">Etudiant</a>
                          </li>
                        </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
-                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
+                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Messagerie
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="blog.html">Blog</a>
-                         </li>
-                         <li class="nav-item">
-                           <a class="nav-link" href="single-blog.html">Blog Details</a>
+                           <a class="nav-link" href="blog.html">Messagerie</a>
                          </li>
                        </ul>
                      </li>

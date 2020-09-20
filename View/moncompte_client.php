@@ -13,9 +13,10 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
-    <title>Mon compte client :</title>
+    <title>Mon compte client</title>
 
     <!-- Liens contenant le style du tableau -->
+
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../tableau/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/animate/animate.css">
@@ -24,6 +25,7 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../tableau/css/util.css">
 <link rel="stylesheet" type="text/css" href="../tableau/css/main.css">
 <link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
@@ -33,12 +35,7 @@ session_start();
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
-<style>
-#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-            height:400px;
-        }
-        </style>
+
   </head>
 
   <body>
@@ -102,7 +99,7 @@ session_start();
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
-                          <a class="nav-link" href="evenement.php">Etudiant</a>
+                          <a class="nav-link" href="evenement_etudiant.php">Etudiant</a>
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
@@ -223,11 +220,7 @@ session_start();
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Contact Us</h2>
-                <div class="page_link">
-                  <a href="index.html">Home</a>
-                  <a href="contact.html">Contact</a>
-                </div>
+                <h2>Mon compte </h2>
               </div>
             </div>
           </div>
@@ -272,7 +265,8 @@ session_start();
   							<tbody>
   								<!-- Selection de toute les réservations -->
   								<?php
-  								$req = $bdd->query('SELECT * FROM compte ');
+  								$req = $bdd->prepare('SELECT * FROM compte WHERE email=:email');
+                  $req->execute(array('email'=>$_SESSION['email']));
   								$donnees= $req->fetchall();
 
   								foreach ($donnees as $value) {
@@ -291,13 +285,9 @@ session_start();
   						</table>
   					</div>
   				</div>
-  			<p>	<div class="row">
-  				        <div class="col-md-6 register">
-  				           <center><button type="button" class="btn btn primary" onclick="window.location.href='modifier_reservation.php'">Modifier</button></center>
-  				        </div>
-  				        <div class="col-md-6 register">
-  				           <center><button type="button" class="btn btn primary" onclick="window.location.href='supprimer_reservation.php'">Supprimer</button></center>
-  				        </div>
+  			<p>
+  				           <center><button type="button" class="btn btn-warning" onclick="window.location.href='modifier_client.php'">Modifier</button></center>
+
   			</div></p>
   		</div>
   	</div>

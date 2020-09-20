@@ -18,3 +18,12 @@
 .column5 {
   width: 14%;
 }
+
+.table100.ver1 th {
+  font-family: Lato-Bold;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.4;
+
+  background-color: #ffc107;
+}

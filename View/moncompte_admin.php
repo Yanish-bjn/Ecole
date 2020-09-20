@@ -12,8 +12,21 @@ session_start();
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="icon" href="img/favicon.png" type="image/png" />
-    <title>Edustage Education</title>
+    <link rel="icon" href="../img/favicon.png" type="image/png" />
+    <title>Mon compte admin</title>
+
+    <!-- Liens contenant le style du tableau -->
+
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/util.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/main.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
@@ -22,13 +35,12 @@ session_start();
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/style2.css" />
 
   </head>
 
   <body>
     <!--================ Start Header Menu Area =================-->
-    <header class="header_area">
+    <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
           <div class="container">
@@ -52,9 +64,18 @@ session_start();
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt=""/></a>
+            <a class="navbar-brand" href="index.html">
+              <img class="logo-2" src="img/logo2.png" alt="" />
+            </a>
             <button
-              class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
               <span class="icon-bar"></span> <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
@@ -68,67 +89,33 @@ session_start();
                   //Si la personne est un client
                   if ($_SESSION['role'] == "client") { ?>
                     <li class="nav-item active">
-<<<<<<< HEAD
                       <a class="nav-link" href="../index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="../View/contact.php">Contact</a>
-=======
-                      <a class="nav-link" href="index.php">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="View/contact.php">Contact</a>
->>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
+                      <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                      <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
-<<<<<<< HEAD
-                          <a class="nav-link" href="courses.html">Etudiant</a>
-=======
-                          <a class="nav-link" href="courses.html">Courses</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="course-details.html">Course Details</a
-                          >
->>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
-                        </li>
-                      </ul>
+                          <a class="nav-link" href="evenement.php">Etudiant</a>
+                        </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
-<<<<<<< HEAD
-                      <a href="Messagerie.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Messagerie
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Messagerie
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
-                          <a class="nav-link" href="Messarie.php">Messagerie</a>
-=======
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a class="nav-link" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="single-blog.html">Blog Details</a>
->>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
+                          <a class="nav-link" href="messagerie.php">Messagerie</a>
                         </li>
                       </ul>
                     </li>
                     <li class="nav-item">
-<<<<<<< HEAD
-                      <a class="nav-link" href="../View/mondification_moncompte.php">modification mon compte</a>
+                      <a class="nav-link" href="moncompte_client.php">Mondification mon compte</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="../traitement/deconnexion.php">Déconnexion</a>
-=======
-                      <a class="nav-link" href="View/moncompte_client.php">Mon compte</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="traitement/deconnexion">Déconnexion</a>
->>>>>>> 0f896003c15ebef30d9fa04fa654c84e1b2f2268
+                      <a class="nav-link" href="../traitement/deconnexion">Déconnexion</a>
                     </li>
                     <a href="#" class="nav-link search" id="search">
                       <i class="ti-search"></i>
@@ -137,34 +124,31 @@ session_start();
                     //Sinon c'est donc un admin
                    else { ?>
                      <li class="nav-item active">
-                       <a class="nav-link" href="index.php">Accueil</a>
-                     </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="evenement.php">évènement</a>
+                       <a class="nav-link" href="../index.php">Accueil</a>
                      </li>
                      <li class="nav-item submenu dropdown">
-                       <a href="View/gestion_evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion des évènements
+                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="courses.html">Ajouter un évènement</a>
+                           <a class="nav-link" href="evenement_etudiant.php">Etudiant</a>
                          </li>
                        </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
-                       <a href="gestion_utilisateurs.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion des utilisateurs
+                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Messagerie
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="ajouter_admin.php">Ajouter un administrateur</a>
+                           <a class="nav-link" href="blog.html">Messagerie</a>
                          </li>
                        </ul>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="moncompte_admin.php">Mon compte</a>
+                       <a class="nav-link" href="View/moncompte_admin.php">Mon compte</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="../traitement/deconnexion.php">Déconnexion</a>
+                       <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
                      </li>
                      <a href="#" class="nav-link search" id="search">
                        <i class="ti-search"></i>
@@ -180,15 +164,11 @@ session_start();
                   <a class="nav-link" href="View/contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                  <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                   </a>
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="courses.html">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="course-details.html">Course Details</a
-                      >
+                      <a class="nav-link" href="View/evenement.php">Ecole</a>
                     </li>
                   </ul>
                 </li>
@@ -222,596 +202,98 @@ session_start();
     </header>
     <!--================ End Header Menu Area =================-->
 
-    <!--================ Start Home Banner Area =================-->
-    <section class="home_banner_area">
-      <div class="banner_inner">
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
         <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
               <div class="banner_content text-center">
-                <p class="text-uppercase">
-                  Best online education service In the world
-                </p>
-                <h2 class="text-uppercase mt-4 mb-5">
-                  One Step Ahead This Season
-                </h2>
-                <div>
-                  <a href="#" class="primary-btn2 mb-3 mb-sm-0">learn more</a>
-                  <a href="#" class="primary-btn ml-sm-3 ml-0">see course</a>
-                </div>
+                <h2>Mon compte </h2>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--================ End Home Banner Area =================-->
+    <!--================End Home Banner Area =================-->
 
-    <!--================ Start Feature Area =================-->
-    <section class="feature_area section_gap_top">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="main_title">
-              <h2 class="mb-3">Awesome Feature</h2>
-              <p>
-                Replenish man have thing gathering lights yielding shall you
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="icon"><span class="flaticon-student"></span></div>
-              <div class="desc">
-                <h4 class="mt-3 mb-2">Scholarship Facility</h4>
-                <p>
-                  One make creepeth, man bearing theira firmament won't great
-                  heaven
-                </p>
-              </div>
-            </div>
-          </div>
+    <?php
+  	try{
+  		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+  	}
+  	catch (Exception $e){
+  		die('Erreur:'.$e->getMessage());
+  	}
+  	?>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="icon"><span class="flaticon-book"></span></div>
-              <div class="desc">
-                <h4 class="mt-3 mb-2">Sell Online Course</h4>
-                <p>
-                  One make creepeth, man bearing theira firmament won't great
-                  heaven
-                </p>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="single_feature">
-              <div class="icon"><span class="flaticon-earth"></span></div>
-              <div class="desc">
-                <h4 class="mt-3 mb-2">Global Certification</h4>
-                <p>
-                  One make creepeth, man bearing theira firmament won't great
-                  heaven
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================ End Feature Area =================-->
+<div class="container">
 
-    <!--================ Start Popular Courses Area =================-->
-    <div class="popular_courses">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="main_title">
-              <h2 class="mb-3">Our Popular Courses</h2>
-              <p>
-                Replenish man have thing gathering lights yielding shall you
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <!-- single course -->
-          <div class="col-lg-12">
-            <div class="owl-carousel active_course">
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="img/courses/c1.jpg" alt="" />
-                </div>
-                <div class="course_content">
-                  <span class="price">$25</span>
-                  <span class="tag mb-4 d-inline-block">design</span>
-                  <h4 class="mb-3">
-                    <a href="course-details.html">Custom Product Design</a>
-                  </h4>
-                  <p>
-                    One make creepeth man bearing their one firmament won't fowl
-                    meat over sea
-                  </p>
-                  <div
-                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                  >
-                    <div class="authr_meta">
-                      <img src="img/courses/author1.png" alt="" />
-                      <span class="d-inline-block ml-2">Cameron</span>
-                    </div>
-                    <div class="mt-lg-0 mt-3">
-                      <span class="meta_info mr-4">
-                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                      </span>
-                      <span class="meta_info"
-                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <!-- Affichage du tableau contenant des informations -->
 
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="img/courses/c2.jpg" alt="" />
-                </div>
-                <div class="course_content">
-                  <span class="price">$25</span>
-                  <span class="tag mb-4 d-inline-block">design</span>
-                  <h4 class="mb-3">
-                    <a href="course-details.html">Social Media Network</a>
-                  </h4>
-                  <p>
-                    One make creepeth man bearing their one firmament won't fowl
-                    meat over sea
-                  </p>
-                  <div
-                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                  >
-                    <div class="authr_meta">
-                      <img src="img/courses/author2.png" alt="" />
-                      <span class="d-inline-block ml-2">Cameron</span>
-                    </div>
-                    <div class="mt-lg-0 mt-3">
-                      <span class="meta_info mr-4">
-                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                      </span>
-                      <span class="meta_info"
-                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <p>  <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 ver1 m-b-110">
+          <div class="table100-head">
+  						<table>
+  							<thead>
+  								<tr class="row100 head">
+  									<th class="cell100 column1">Nom</th>
+  									<th class="cell100 column2">Prenom</th>
+  									<th class="cell100 column3">email</th>
+  									<th class="cell100 column4">tel</th>
+  									<th class="cell100 column5">mdp</th>
+  								</tr>
+  							</thead>
+  						</table>
+  					</div></p>
 
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="img/courses/c3.jpg" alt="" />
-                </div>
-                <div class="course_content">
-                  <span class="price">$25</span>
-                  <span class="tag mb-4 d-inline-block">design</span>
-                  <h4 class="mb-3">
-                    <a href="course-details.html">Computer Engineering</a>
-                  </h4>
-                  <p>
-                    One make creepeth man bearing their one firmament won't fowl
-                    meat over sea
-                  </p>
-                  <div
-                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                  >
-                    <div class="authr_meta">
-                      <img src="img/courses/author3.png" alt="" />
-                      <span class="d-inline-block ml-2">Cameron</span>
-                    </div>
-                    <div class="mt-lg-0 mt-3">
-                      <span class="meta_info mr-4">
-                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                      </span>
-                      <span class="meta_info"
-                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================ End Popular Courses Area =================-->
+  					<div class="table100-body js-pscroll">
+  						<table>
+  							<tbody>
+  								<!-- Selection de toute les réservations -->
+  								<?php
+  								$req = $bdd->prepare('SELECT * FROM compte');
+                  $req->execute(array('email'=>$_SESSION['email']));
+  								$donnees= $req->fetchall();
 
-    <!--================ Start Registration Area =================-->
-    <div class="section_gap registration_area">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <div class="row clock_sec clockdiv" id="clockdiv">
-              <div class="col-lg-12">
-                <h1 class="mb-3">Register Now</h1>
-                <p>
-                  There is a moment in the life of any aspiring astronomer that
-                  it is time to buy that first telescope. It’s exciting to think
-                  about setting up your own viewing station.
-                </p>
-              </div>
-              <div class="col clockinner1 clockinner">
-                <h1 class="days">150</h1>
-                <span class="smalltext">Days</span>
-              </div>
-              <div class="col clockinner clockinner1">
-                <h1 class="hours">23</h1>
-                <span class="smalltext">Hours</span>
-              </div>
-              <div class="col clockinner clockinner1">
-                <h1 class="minutes">47</h1>
-                <span class="smalltext">Mins</span>
-              </div>
-              <div class="col clockinner clockinner1">
-                <h1 class="seconds">59</h1>
-                <span class="smalltext">Secs</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 offset-lg-1">
-            <div class="register_form">
-              <h3>Courses for Free</h3>
-              <p>It is high time for learning</p>
-              <form
-                class="form_area"
-                id="myForm"
-                action="mail.html"
-                method="post"
-              >
-                <div class="row">
-                  <div class="col-lg-12 form_group">
-                    <input
-                      name="name"
-                      placeholder="Your Name"
-                      required=""
-                      type="text"
-                    />
-                    <input
-                      name="name"
-                      placeholder="Your Phone Number"
-                      required=""
-                      type="tel"
-                    />
-                    <input
-                      name="email"
-                      placeholder="Your Email Address"
-                      pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-                      required=""
-                      type="email"
-                    />
-                  </div>
-                  <div class="col-lg-12 text-center">
-                    <button class="primary-btn">Submit</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================ End Registration Area =================-->
+  								foreach ($donnees as $value) {
+  									echo '<tr class="row100 body">
+  												<td class="cell100 column1">'.$value["nom"].'</td>
+  												<td class="cell100 column2">'.$value["prenom"].'</td>
+  												<td class="cell100 column3">'.$value["email"].'</td>
+  												<td class="cell100 column4">'.$value["tel"].'</td>
+  												<td class="cell100 column5">'.$value["mdp"].'</td>
+  												</tr>';
+  								}
+  								?>
 
-    <!--================ Start Trainers Area =================-->
-    <section class="trainer_area section_gap_top">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="main_title">
-              <h2 class="mb-3">Our Expert Trainers</h2>
-              <p>
-                Replenish man have thing gathering lights yielding shall you
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center d-flex align-items-center">
-          <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-            <div class="thumb d-flex justify-content-sm-center">
-              <img class="img-fluid" src="img/trainer/t1.jpg" alt="" />
-            </div>
-            <div class="meta-text text-sm-center">
-              <h4>Mated Nithan</h4>
-              <p class="designation">Sr. web designer</p>
-              <div class="mb-4">
-                <p>
-                  If you are looking at blank cassettes on the web, you may be
-                  very confused at the.
-                </p>
-              </div>
-              <div class="align-items-center justify-content-center d-flex">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"><i class="ti-twitter"></i></a>
-                <a href="#"><i class="ti-linkedin"></i></a>
-                <a href="#"><i class="ti-pinterest"></i></a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-            <div class="thumb d-flex justify-content-sm-center">
-              <img class="img-fluid" src="img/trainer/t2.jpg" alt="" />
-            </div>
-            <div class="meta-text text-sm-center">
-              <h4>David Cameron</h4>
-              <p class="designation">Sr. web designer</p>
-              <div class="mb-4">
-                <p>
-                  If you are looking at blank cassettes on the web, you may be
-                  very confused at the.
-                </p>
-              </div>
-              <div class="align-items-center justify-content-center d-flex">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"><i class="ti-twitter"></i></a>
-                <a href="#"><i class="ti-linkedin"></i></a>
-                <a href="#"><i class="ti-pinterest"></i></a>
-              </div>
-            </div>
-          </div>
+  							</tbody>
+  						</table>
+  					</div>
+  				</div>
 
-          <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-            <div class="thumb d-flex justify-content-sm-center">
-              <img class="img-fluid" src="img/trainer/t3.jpg" alt="" />
-            </div>
-            <div class="meta-text text-sm-center">
-              <h4>Jain Redmel</h4>
-              <p class="designation">Sr. Faculty Data Science</p>
-              <div class="mb-4">
-                <p>
-                  If you are looking at blank cassettes on the web, you may be
-                  very confused at the.
-                </p>
-              </div>
-              <div class="align-items-center justify-content-center d-flex">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"><i class="ti-twitter"></i></a>
-                <a href="#"><i class="ti-linkedin"></i></a>
-                <a href="#"><i class="ti-pinterest"></i></a>
-              </div>
-            </div>
-          </div>
+<div class="container">
 
-          <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-            <div class="thumb d-flex justify-content-sm-center">
-              <img class="img-fluid" src="img/trainer/t4.jpg" alt="" />
-            </div>
-            <div class="meta-text text-sm-center">
-              <h4>Nathan Macken</h4>
-              <p class="designation">Sr. web designer</p>
-              <div class="mb-4">
-                <p>
-                  If you are looking at blank cassettes on the web, you may be
-                  very confused at the.
-                </p>
-              </div>
-              <div class="align-items-center justify-content-center d-flex">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"><i class="ti-twitter"></i></a>
-                <a href="#"><i class="ti-linkedin"></i></a>
-                <a href="#"><i class="ti-pinterest"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================ End Trainers Area =================-->
+           <div class="pull-right">
+  				     <button type="button" class="btn btn-warning" onclick="window.location.href='modifier_client.php'">Supprimer</button>
+           </div>
 
-    <!--================ Start Events Area =================-->
-    <div class="events_area">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="main_title">
-              <h2 class="mb-3 text-white">Upcoming Events</h2>
-              <p>
-                Replenish man have thing gathering lights yielding shall you
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-6">
-            <div class="single_event position-relative">
-              <div class="event_thumb">
-                <img src="img/event/e1.jpg" alt="" />
-              </div>
-              <div class="event_details">
-                <div class="d-flex mb-4">
-                  <div class="date"><span>15</span> Jun</div>
+           <div class="pull left">
+         <p><button type="button" class="btn btn-warning" onclick="window.location.href='modifier_client.php'">Ajouter</button>
+           </div>
+       </div>
+       </div>
+  			</div>
+  		</div>
+  	</div>
 
-                  <div class="time-location">
-                    <p>
-                      <span class="ti-time mr-2"></span> 12:00 AM - 12:30 AM
-                    </p>
-                    <p>
-                      <span class="ti-location-pin mr-2"></span> Hilton Quebec
-                    </p>
-                  </div>
-                </div>
-                <p>
-                  One make creepeth man for so bearing their firmament won't
-                  fowl meat over seas great
-                </p>
-                <a href="#" class="primary-btn rounded-0 mt-3">View Details</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6">
-            <div class="single_event position-relative">
-              <div class="event_thumb">
-                <img src="img/event/e2.jpg" alt="" />
-              </div>
-              <div class="event_details">
-                <div class="d-flex mb-4">
-                  <div class="date"><span>15</span> Jun</div>
+</div>
 
-                  <div class="time-location">
-                    <p>
-                      <span class="ti-time mr-2"></span> 12:00 AM - 12:30 AM
-                    </p>
-                    <p>
-                      <span class="ti-location-pin mr-2"></span> Hilton Quebec
-                    </p>
-                  </div>
-                </div>
-                <p>
-                  One make creepeth man for so bearing their firmament won't
-                  fowl meat over seas great
-                </p>
-                <a href="#" class="primary-btn rounded-0 mt-3">View Details</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-12">
-            <div class="text-center pt-lg-5 pt-3">
-              <a href="#" class="event-link">
-                View All Event <img src="img/next.png" alt="" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================ End Events Area =================-->
-
-    <!--================ Start Testimonial Area =================-->
-    <div class="testimonial_area section_gap">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="main_title">
-              <h2 class="mb-3">Client say about me</h2>
-              <p>
-                Replenish man have thing gathering lights yielding shall you
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="testi_slider owl-carousel">
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t1.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Elite Martin</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t2.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Davil Saden</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t1.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Elite Martin</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t2.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Davil Saden</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t1.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Elite Martin</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t2.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Davil Saden</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================ End Testimonial Area =================-->
-
-    <!--================ Start footer Area  =================-->
+    <!--================ start footer Area  =================-->
     <footer class="footer-area section_gap">
       <div class="container">
         <div class="row">
@@ -866,7 +348,7 @@ session_start();
                   name="EMAIL"
                   placeholder="Your Email Address"
                   onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Your Email Address'"
+                  onblur="this.placeholder = 'Your Email Address '"
                   required=""
                   type="email"
                 />
@@ -904,19 +386,71 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </footer>
     <!--================ End footer Area  =================-->
 
+    <!--================Contact Success and Error message Area =================-->
+    <div id="success" class="modal modal-message fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ti-close"></i>
+            </button>
+            <h2>Thank you</h2>
+            <p>Your message is successfully sent...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modals error -->
+
+    <div id="error" class="modal modal-message fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ti-close"></i>
+            </button>
+            <h2>Sorry !</h2>
+            <p>Something went wrong</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================End Contact Success and Error message Area =================-->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/stellar.js"></script>
     <script src="../vendors/nice-select/js/jquery.nice-select.min.js"></script>
     <script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
     <script src="../js/owl-carousel-thumb.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/jquery.ajaxchimp.min.js"></script>
     <script src="../js/mail-script.js"></script>
     <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="../js/gmaps.min.js"></script>
+    <script src="../js/contact.js"></script>
     <script src="../js/theme.js"></script>
+
+    <!-- Liens contenant le script du tableau -->
+	<script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../tableau/vendor/bootstrap/js/popper.js"></script>
+	<script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../tableau/vendor/select2/select2.min.js"></script>
+	<script src="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
   </body>
 </html>

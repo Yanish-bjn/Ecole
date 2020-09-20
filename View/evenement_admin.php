@@ -13,7 +13,20 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
-    <title>Contact</title>
+    <title>Mon compte admin</title>
+
+    <!-- Liens contenant le style du tableau -->
+
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/util.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/main.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
@@ -22,12 +35,7 @@ session_start();
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
-<style>
-#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-            height:400px;
-        }
-        </style>
+
   </head>
 
   <body>
@@ -91,7 +99,7 @@ session_start();
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
-                          <a class="nav-link" href="evenement_etudiant.php">Etudiant</a>
+                          <a class="nav-link" href="evenement.php">Etudiant</a>
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
@@ -104,7 +112,7 @@ session_start();
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="moncompte_client.php">Mondification mon compte</a>
+                      <a class="nav-link" href="moncompte_client.php">Mon compte</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="../traitement/deconnexion">Déconnexion</a>
@@ -116,38 +124,28 @@ session_start();
                     //Sinon c'est donc un admin
                    else { ?>
                      <li class="nav-item active">
-                       <a class="nav-link" href="index.php">Accueil</a>
-                     </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="View/contact.php">Contact</a>
+                       <a class="nav-link" href="../index.php">Accueil</a>
                      </li>
                      <li class="nav-item submenu dropdown">
                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="courses.html">Courses</a>
-                         </li>
-                         <li class="nav-item">
-                           <a class="nav-link" href="course-details.html">Course Details</a
-                           >
+                           <a class="nav-link" href="evenement_etudiant.php">Etudiant</a>
                          </li>
                        </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
-                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
+                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Messagerie
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="blog.html">Blog</a>
-                         </li>
-                         <li class="nav-item">
-                           <a class="nav-link" href="single-blog.html">Blog Details</a>
+                           <a class="nav-link" href="blog.html">Messagerie</a>
                          </li>
                        </ul>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="View/moncompte_admin.php">Mon compte</a>
+                       <a class="nav-link" href="moncompte_admin.php">Mon compte</a>
                      </li>
                      <li class="nav-item">
                        <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
@@ -212,11 +210,7 @@ session_start();
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Contact Us</h2>
-                <div class="page_link">
-                  <a href="index.html">Home</a>
-                  <a href="contact.html">Contact</a>
-                </div>
+                <h2>Mon compte </h2>
               </div>
             </div>
           </div>
@@ -225,135 +219,79 @@ session_start();
     </section>
     <!--================End Home Banner Area =================-->
 
-    <!--================Contact Area =================-->
-    <div class="container">
-    <p><div id="map">
-          <!-- Ici s'affichera la carte -->
-      </div></p>
-    </div>
-  <!-- Liens contenat le script de la carte  -->
-  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
-  <script type="text/javascript">
-            // On initialise la latitude et la longitude de Paris (centre de la carte)
-            var lat = 48.9206;
-            var lon = 2.3476;
-            var macarte = null;
-            // Fonction d'initialisation de la carte
-            function initMap() {
-                // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-                macarte = L.map('map').setView([lat, lon], 11);
-                // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
-                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-                    // Il est toujours bien de laisser le lien vers la source des données
-                    attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
-                    minZoom: 1,
-                    maxZoom: 20
-                }).addTo(macarte);
-            }
-            window.onload = function(){
-    // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+    <?php
+  	try{
+  		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+  	}
+  	catch (Exception $e){
+  		die('Erreur:'.$e->getMessage());
+  	}
+  	?>
 
-    initMap();
-    var marker = L.marker([48.9493127, 2.4152982,21]).addTo(macarte);
-            };
-        </script>
+
+<div class="container">
+
+  <!-- Affichage du tableau contenant des informations -->
+
+  <p>  <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 ver1 m-b-110">
+          <div class="table100-head">
+  						<table>
+  							<thead>
+  								<tr class="row100 head">
+  									<th class="cell100 column1">Nom</th>
+  									<th class="cell100 column2">Prenom</th>
+  									<th class="cell100 column3">email</th>
+  									<th class="cell100 column4">tel</th>
+  									<th class="cell100 column5">mdp</th>
+  								</tr>
+  							</thead>
+  						</table>
+  					</div></p>
+
+  					<div class="table100-body js-pscroll">
+  						<table>
+  							<tbody>
+  								<!-- Selection de toute les réservations -->
+  								<?php
+  								$req = $bdd->prepare('SELECT * FROM compte');
+                  $req->execute(array('email'=>$_SESSION['email']));
+  								$donnees= $req->fetchall();
+
+  								foreach ($donnees as $value) {
+  									echo '<tr class="row100 body">
+  												<td class="cell100 column1">'.$value["nom"].'</td>
+  												<td class="cell100 column2">'.$value["prenom"].'</td>
+  												<td class="cell100 column3">'.$value["email"].'</td>
+  												<td class="cell100 column4">'.$value["tel"].'</td>
+  												<td class="cell100 column5">'.$value["mdp"].'</td>
+  												</tr>';
+  								}
+  								?>
+
+
+  							</tbody>
+  						</table>
+  					</div>
+  				</div>
+
+<div class="container">
+
+           <div class="pull-right">
+  				     <button type="button" class="btn btn-warning" onclick="window.location.href='modifier_client.php'">Supprimer</button>
+           </div>
+
+           <div class="pull left">
+         <p><button type="button" class="btn btn-warning" onclick="window.location.href='modifier_client.php'">Ajouter</button>
+           </div>
+       </div>
+       </div>
+  			</div>
+  		</div>
+  	</div>
+
 </div>
-
-<!-- Fin de la carte  -->
-
-    <section class="contact_area section_gap">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="contact_info">
-              <div class="info_item">
-                <i class="ti-home"></i>
-                <h6>Lycée Robert Schuman</h6>
-                <p>Dugny, Seine-Saint-Denis</p>
-              </div>
-              <div class="info_item">
-                <i class="ti-headphone"></i>
-                <h6><a href="#"> 01 48 37 74 26</a></h6>
-                <p>Du lundi au vendredi 8h-20h</p>
-              </div>
-              <div class="info_item">
-                <i class="ti-email"></i>
-                <h6><a href="#">administration@schuman.com</a></h6>
-                <p>Poser nous vos questions !</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-9">
-            <form method="POST" action="../manager/contact.php"
-              class="row contact_form"
-              action="contact_process.php"
-              method="post"
-              id="contactForm"
-              novalidate="novalidate"
-            >
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="nom"
-                    placeholder="Entrer votre nom"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter your name'"
-                    required=""
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="Entrer votre email"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter email address'"
-                    required=""
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="subject"
-                    name="sujet"
-                    placeholder="Entrer un sujet"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Subject'"
-                    required=""
-                  />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <textarea
-                    class="form-control"
-                    name="message"
-                    id="message"
-                    rows="1"
-                    placeholder="Votre message"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Message'"
-                    required=""
-                  ></textarea>
-                </div>
-              </div>
-              <div class="col-md-12 text-right">
-                <button type="submit" value="submit" class="btn primary-btn">
-                  Envoyé votre message
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================Contact Area =================-->
 
     <!--================ start footer Area  =================-->
     <footer class="footer-area section_gap">
@@ -507,5 +445,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>
     <script src="../js/theme.js"></script>
+
+    <!-- Liens contenant le script du tableau -->
+	<script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../tableau/vendor/bootstrap/js/popper.js"></script>
+	<script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../tableau/vendor/select2/select2.min.js"></script>
+	<script src="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
   </body>
 </html>
