@@ -168,34 +168,22 @@ session_start();
               //Sinon il n'y a pas de sessions ouverte
               else{ ?>
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.php">Accueil</a>
+                  <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="View/contact.php">Contact</a>
+                  <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
                   <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                   </a>
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="View/evenement.php">Ecole</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="single-blog.html">Blog Details</a>
+                      <a class="nav-link" href="evenement.php">Ecole</a>
                     </li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="View/connexion.php">Connexion</a>
+                  <a class="nav-link" href="connexion.php">Connexion</a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link search" id="search">
