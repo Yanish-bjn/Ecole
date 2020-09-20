@@ -198,7 +198,7 @@ session_start();
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Mon compte </h2>
+                <h2>Evenement </h2>
               </div>
             </div>
           </div>
@@ -243,7 +243,7 @@ session_start();
   							<tbody>
   								<!-- Selection de toute les réservations -->
   								<?php
-  								$req = $bdd->prepare('SELECT * FROM compte');
+  								$req = $bdd->prepare('SELECT * FROM evenement');
                   $req->execute(array('email'=>$_SESSION['email']));
   								$donnees= $req->fetchall();
 
@@ -267,11 +267,11 @@ session_start();
 <div class="container">
 
            <div class="pull-right">
-  				     <button type="button" class="btn btn-warning" onclick="window.location.href='modifier_client.php'">Supprimer</button>
+  				     <button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_evenement.php'">Ajouter</button>
            </div>
 
            <div class="pull left">
-         <p><button type="button" class="btn btn-warning" onclick="window.location.href='modifier_client.php'">Ajouter</button>
+         <p><button type="button" class="btn btn-warning" onclick="window.location.href='supprimer_evenement.php'">Supprimer</button>
            </div>
        </div>
        </div>

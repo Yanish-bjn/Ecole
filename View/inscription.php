@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
-                            <input type="text" name="tel" id="birth_date">
+                            <input type="tel" name="tel" id="birth_date">
                         </div>
                         <div class="form-group">
                             <label for="pincode">Mot de passe :</label>
