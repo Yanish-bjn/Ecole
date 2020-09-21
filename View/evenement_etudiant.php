@@ -140,7 +140,7 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="blog.html">Messagerie</a>
+                           <a class="nav-link" href="messagerie.php">Messagerie</a>
                          </li>
                        </ul>
                      </li>
@@ -148,7 +148,7 @@ session_start();
                        <a class="nav-link" href="moncompte_admin.php">Mon compte</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
+                       <a class="nav-link" href="../traitement/deconnexion.php">Déconnexion</a>
                      </li>
                      <a href="#" class="nav-link search" id="search">
                        <i class="ti-search"></i>
@@ -227,36 +227,34 @@ session_start();
           <div class="table100-head">
   						<table>
   							<thead>
-  								<tr class="row100 head">
-  									<th class="cell100 column1">Nom</th>
-  									<th class="cell100 column2">Prenom</th>
-  									<th class="cell100 column3">email</th>
-  									<th class="cell100 column4">tel</th>
-  									<th class="cell100 column5">mdp</th>
-  								</tr>
-  							</thead>
-  						</table>
-  					</div></p>
+                  <tr class="row100 head">
+                    <th class="cell100 column1">Nom de l'évènement</th>
+                    <th class="cell100 column2">Nom de la personne</th>
+                    <th class="cell100 column3">date</th>
+                    <th class="cell100 column4">description</th>
+                  </tr>
+                </thead>
+              </table>
+            </div></p>
 
-  					<div class="table100-body js-pscroll">
-  						<table>
-  							<tbody>
-  								<!-- Selection de toute les réservations -->
-  								<?php
-  								$req = $bdd->prepare('SELECT * FROM evenement');
+            <div class="table100-body js-pscroll">
+              <table>
+                <tbody>
+                  <!-- Selection de toute les réservations -->
+                  <?php
+                  $req = $bdd->prepare('SELECT * FROM evenement');
                   $req->execute(array('email'=>$_SESSION['email']));
-  								$donnees= $req->fetchall();
+                  $donnees= $req->fetchall();
 
-  								foreach ($donnees as $value) {
-  									echo '<tr class="row100 body">
-  												<td class="cell100 column1">'.$value["nom"].'</td>
-  												<td class="cell100 column2">'.$value["prenom"].'</td>
-  												<td class="cell100 column3">'.$value["email"].'</td>
-  												<td class="cell100 column4">'.$value["tel"].'</td>
-  												<td class="cell100 column5">'.$value["mdp"].'</td>
-  												</tr>';
-  								}
-  								?>
+                  foreach ($donnees as $value) {
+                    echo '<tr class="row100 body">
+                          <td class="cell100 column1">'.$value["nom_evenement"].'</td>
+                          <td class="cell100 column2">'.$value["nom_personne"].'</td>
+                          <td class="cell100 column3">'.$value["date"].'</td>
+                          <td class="cell100 column4">'.$value["description"].'</td>
+                          </tr>';
+                  }
+                  ?>
 
 
   							</tbody>

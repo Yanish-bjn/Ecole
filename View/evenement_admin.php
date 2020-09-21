@@ -148,7 +148,7 @@ session_start();
                        <a class="nav-link" href="moncompte_admin.php">Mon compte</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
+                       <a class="nav-link" href="../traitement/deconnexion.php">Déconnexion</a>
                      </li>
                      <a href="#" class="nav-link search" id="search">
                        <i class="ti-search"></i>
@@ -228,11 +228,11 @@ session_start();
   						<table>
   							<thead>
   								<tr class="row100 head">
-  									<th class="cell100 column1">Nom</th>
-  									<th class="cell100 column2">Prenom</th>
-  									<th class="cell100 column3">email</th>
-  									<th class="cell100 column4">tel</th>
-  									<th class="cell100 column5">mdp</th>
+                    <th class="cell100 column1">ID</th>
+  									<th class="cell100 column2">Nom de l'évènement</th>
+  									<th class="cell100 column3">Nom de la personne</th>
+  									<th class="cell100 column4">date</th>
+  									<th class="cell100 column5">description</th>
   								</tr>
   							</thead>
   						</table>
@@ -249,11 +249,11 @@ session_start();
 
   								foreach ($donnees as $value) {
   									echo '<tr class="row100 body">
-  												<td class="cell100 column1">'.$value["nom"].'</td>
-  												<td class="cell100 column2">'.$value["prenom"].'</td>
-  												<td class="cell100 column3">'.$value["email"].'</td>
-  												<td class="cell100 column4">'.$value["tel"].'</td>
-  												<td class="cell100 column5">'.$value["mdp"].'</td>
+                          <td class="cell100 column1">'.$value["id"].'</td>
+  												<td class="cell100 column2">'.$value["nom_evenement"].'</td>
+  												<td class="cell100 column3">'.$value["nom_personne"].'</td>
+  												<td class="cell100 column4">'.$value["date"].'</td>
+  												<td class="cell100 column5">'.$value["description"].'</td>
   												</tr>';
   								}
   								?>
