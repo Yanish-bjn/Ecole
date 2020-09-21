@@ -1,4 +1,5 @@
 <?php
+session_start();
 $email= $_POST['email'];
 //Utilisation de service //
 use PHPMailer\PHPMailer\PHPMailer;

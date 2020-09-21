@@ -1,5 +1,6 @@
 <?php
 //Récupération des données //
+session_start();
 $email= $_POST['email'];
 $mdp=md5($_POST['mdp']);
 // envoie les données vers les page suiavntes //

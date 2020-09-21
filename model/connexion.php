@@ -1,8 +1,8 @@
 <?php
 class connexion { // classe connexion reprenant les information du manager, formulaire, model//
-  private $_email;
-  private $_mdp;
-  private $_role;
+  private $email;
+  private $mdp;
+  private $role;
 
   public function __construct($email, $mdp, $role){
 

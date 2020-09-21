@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+    <title>Inscription</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="../inscription/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -42,11 +42,12 @@
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
-                            <input type="tel" name="tel" id="birth_date">
+                            <input type="tel" name="tel" maxlength="10" minlength="10" id="birth_date">
+
                         </div>
                         <div class="form-group">
                             <label for="pincode">Mot de passe :</label>
-                            <input type="text" name="mdp" id="pincode">
+                            <input type="password" name="mdp" id="pincode">
                         </div>
                         <div class="form-submit">
                             <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>

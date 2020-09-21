@@ -1,7 +1,7 @@
 <?php
 class  mot_de_passe_oublie{ // classe contact reprenant les informations du manager, formulaire, model//
-  private $_mdp;
-  private $_email;
+  private $mdp;
+  private $email;
 
   public function __construct($mdp, $email){
 
@@ -15,7 +15,7 @@ public function setmessage($mdp){
     trigger_error('Erreur le mot de passe ne peut pas être vide');
     return; // retourne le résultat //
   }
-  $this->_mdp = $mdp;
+  $this->mdp = $mdp;
 }
 
 public function setemail($email){
@@ -23,7 +23,7 @@ public function setemail($email){
     trigger_error('Erreur le mail ne peut pas être vide');
     return; // retourne le résultat //
   }
-  $this->_email = $email;
+  $this->email = $email;
 }
 
 public function getmdp(){

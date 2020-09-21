@@ -1,10 +1,10 @@
 <?php
 class modifier { // Casse inscription provenant du model et du manager //
-  private $_nom;
-  private $_prenom;
-  private $_email;
-  private $_tel;
-  private $_mdp;
+  private $nom;
+  private $prenom;
+  private $email;
+  private $tel;
+  private $mdp;
 
 
   public function __construct($nom, $prenom, $email, $tel, $mdp){

@@ -3,18 +3,22 @@
 
 <?php
 session_start();
-
 try{
   $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
 }
 catch (Exception $e){
   die('Erreur:'.$e->getMessage());
 }
-$req = $bdd->prepare('SELECT * FROM compte WHERE email=:email');
-$req->execute(array('email'=>$_SESSION['email']));
-$donnees= $req->fetch();
 
-?>
+//Sélection des id de la table compte en fonction du nom //
+$req = $bdd->prepare('SELECT id FROM compte WHERE nom=?');
+$id= $req->fetch();
+$_SESSION['id'] = $id[0];
+//Sélection de l'ensemble des informations de la table compte en fonction de l'id //
+$rec = $bdd->prepare('SELECT * FROM compte WHERE id=?');
+$rec->execute(array($id[0]));
+$donnees= $rec->fetch();
+ ?>
 
 <head>
     <meta charset="UTF-8">
@@ -58,11 +62,11 @@ $donnees= $req->fetch();
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
-                            <input type="text" name="tel" id="birth_date">
+                            <input type="text" name="tel" minlength="10" maxlength="10" id="birth_date">
                         </div>
                         <div class="form-group">
                             <label for="pincode">Mot de passe :</label>
-                            <input type="text" name="mdp" id="pincode">
+                            <input type="password" name="mdp" id="pincode">
                         </div>
                         <div class="form-submit">
                             <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>

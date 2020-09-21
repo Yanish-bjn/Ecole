@@ -1,9 +1,9 @@
 <?php
 class contact { // classe contact reprenant les informations du manager, formulaire, model//
-  private $_nom;
-  private $_email;
-	private $_sujet;
-  private $_message;
+  private $nom;
+  private $email;
+	private $sujet;
+  private $message;
 
   public function __construct($nom, $email, $sujet, $message){
 

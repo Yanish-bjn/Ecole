@@ -1,5 +1,6 @@
 <?php
 // utilisation de service //
+session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 //Recuperation de données des page suivantes //

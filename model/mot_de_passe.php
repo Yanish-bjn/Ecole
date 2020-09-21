@@ -1,6 +1,6 @@
 <?php
 class mot_de_passe { // classe contact reprenant les informations du manager, formulaire, model//
-  private $_email;
+  private $email;
 
   public function __construct($email){
 
@@ -11,10 +11,10 @@ public function setemail($email){
     trigger_error('la variable doit etre un caractere');
     return; // retourne le résultat //
   }
-  $this->_email = $email;
+  $this->email = $email;
 }
 public function getemail(){
-  return $this->_email;
+  return $this->email;
 }
 
 }
