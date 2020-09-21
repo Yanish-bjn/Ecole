@@ -78,7 +78,7 @@ session_start();
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
-                          <a class="nav-link" href="evenement.php">Etudiant</a>
+                          <a class="nav-link" href="View/evenement_etudiant.php">Etudiant</a>
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
@@ -91,7 +91,7 @@ session_start();
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="View/moncompte_client.php">Mondification mon compte</a>
+                      <a class="nav-link" href="View/moncompte_client.php">Mom compte</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="traitement/deconnexion">Déconnexion</a>
@@ -105,31 +105,21 @@ session_start();
                      <li class="nav-item active">
                        <a class="nav-link" href="index.php">Accueil</a>
                      </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="View/contact.php">Contact</a>
-                     </li>
                      <li class="nav-item submenu dropdown">
                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="courses.html">Courses</a>
-                         </li>
-                         <li class="nav-item">
-                           <a class="nav-link" href="course-details.html">Course Details</a
-                           >
+                           <a class="nav-link" href="View/evenement_admin.php">Etudiant</a>
                          </li>
                        </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
-                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
+                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Messagerie
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="blog.html">Blog</a>
-                         </li>
-                         <li class="nav-item">
-                           <a class="nav-link" href="single-blog.html">Blog Details</a>
+                           <a class="nav-link" href="messagerie.php">Messagerie</a>
                          </li>
                        </ul>
                      </li>
@@ -153,23 +143,11 @@ session_start();
                   <a class="nav-link" href="View/contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
-                  <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                  <a href="View/evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                   </a>
                   <ul class="dropdown-menu">
                     <li class="nav-item">
                       <a class="nav-link" href="View/evenement.php">Ecole</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blog
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="single-blog.html">Blog Details</a>
                     </li>
                   </ul>
                 </li>

@@ -13,6 +13,10 @@ public function connexion($donnee){ //function connexion //
   if ($a == true){ // début du si //
     $_SESSION['email'] = $donnee->getemail();
     $_SESSION['role'] = $a['role'];
+    $_SESSION['nom'] = $a['nom'];
+      $_SESSION['prenom'] = $a['prenom'];
+      $_SESSION['tel'] = $a['tel'];
+      $_SESSION['role'] = $a['role'];
     header("location: ../index.php"); // redirection vers ... //
   }// fin  du si //
   else{ //début du si non //

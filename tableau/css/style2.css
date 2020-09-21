@@ -1,0 +1,29 @@
+.column1 {
+  width: 18%;
+  padding-left: 20px;
+}
+
+.column2 {
+  width: 17%;
+}
+
+.column3 {
+  width: 15%;
+}
+
+.column4 {
+  width: 18%;
+}
+
+.column5 {
+  width: 14%;
+}
+
+.table100.ver1 th {
+  font-family: Lato-Bold;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.4;
+
+  background-color: #ffc107;
+}
