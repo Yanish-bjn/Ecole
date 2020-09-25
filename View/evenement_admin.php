@@ -267,17 +267,18 @@ session_start();
 <div class="container">
 
            <div class="pull-right">
-  				     <button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_evenement.php'">Ajouter</button>
+  				     <button type="button" class="btn btn-warning" onclick="window.location.href='supprimer_evenement.php'">Supprimer</button>
            </div>
 
            <div class="pull left">
-         <p><button type="button" class="btn btn-warning" onclick="window.location.href='supprimer_evenement.php'">Supprimer</button>
+         <p><button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_evenement.php'">Ajouter</button>
            </div>
        </div>
        </div>
   			</div>
   		</div>
   	</div>
+    <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='modifier_evenement.php'">Modifier</button></center></p>
 
 </div>
 

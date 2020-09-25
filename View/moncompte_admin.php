@@ -131,7 +131,7 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="evenement_etudiant.php">Etudiant</a>
+                           <a class="nav-link" href="evenement_admin.php">Etudiant</a>
                          </li>
                        </ul>
                      </li>
@@ -145,10 +145,10 @@ session_start();
                        </ul>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="View/moncompte_admin.php">Mon compte</a>
+                       <a class="nav-link" href="moncompte_admin.php">Mon compte</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
+                       <a class="nav-link" href="../traitement/deconnexion.php">Déconnexion</a>
                      </li>
                      <a href="#" class="nav-link search" id="search">
                        <i class="ti-search"></i>
@@ -264,22 +264,22 @@ session_start();
   					</div>
   				</div>
 
-<div class="container">
+
+
 
            <div class="pull-right">
-  				     <button type="button" class="btn btn-warning" onclick="window.location.href='modifier_client.php'">Supprimer</button>
+  				     <button type="button" class="btn btn-warning" onclick="window.location.href='modifier_admin.php'">Modifier</button>
            </div>
 
            <div class="pull left">
-         <p><button type="button" class="btn btn-warning" onclick="window.location.href='modifier_client.php'">Ajouter</button>
+         <p><button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_client.php'">Ajouter</button>
            </div>
        </div>
        </div>
   			</div>
   		</div>
   	</div>
-
-</div>
+    <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='supprimer_client.php'">Supprimer</button></center></p>
 
     <!--================ start footer Area  =================-->
     <footer class="footer-area section_gap">

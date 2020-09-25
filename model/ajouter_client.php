@@ -1,23 +1,21 @@
 <?php
-class modifier { // Casse inscription provenant du model et du manager //
+class ajouter_client { // Casse inscription provenant du model et du manager //
   private $nom;
   private $prenom;
   private $email;
   private $tel;
   private $mdp;
-  private $id;
+  private $role;
 
 
-  public function __construct($nom, $prenom, $email, $tel, $mdp, $id){
+  public function __construct($nom, $prenom, $email, $tel, $mdp, $role){
 
       $this->setNom($nom);
       $this->setprenom($prenom);
       $this->setemail($email);
       $this->settel($tel);
       $this->setmdp($mdp);
-      $this->setid($id);
-
-
+      $this->setrole($role);
 }
 
   public function setnom($nom){
@@ -58,12 +56,12 @@ class modifier { // Casse inscription provenant du model et du manager //
     }
     $this->_mdp = $mdp;
   }
-  public function setid($id){
-    if(empty($id)){ // si la valeur saisie est vide afficher une erreur //
+  public function setrole($role){
+    if(empty($role)){ // si la valeur saisie est vide afficher une erreur //
       trigger_error('la variable doit etre un caractere');
       return; // retourne le résultat //
     }
-    $this->_id = $id;
+    $this->_role = $role;
   }
 
   public function getnom(){
@@ -81,8 +79,8 @@ class modifier { // Casse inscription provenant du model et du manager //
   public function getmdp(){
     return $this->_mdp;
   }
-  public function getid(){
-    return $this->_id;
+  public function getrole(){
+    return $this->_role;
   }
 }
 ?>

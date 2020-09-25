@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../inscription/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../inscription/css/style.css">
     <link rel="stylesheet" href="../inscription/css/style2.css">
     <link rel="stylesheet" href="../inscription/css/style3.css">
@@ -51,7 +52,7 @@
                         </div>
                         <div class="form-submit">
                             <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>
-                            <a class="submit" href="connexion.php"> Deja inscrit ?</a>
+                            <button type="button" class="btn btn-warning" onclick="window.location.href='connexion.php'">Deja inscrit ?</button>
                           </div>
                         </form>
                     </div>

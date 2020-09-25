@@ -38,7 +38,7 @@ catch (Exception $e){
                     <img src="../inscription/images/signup-img.jpg" alt="">
                 </div>
                 <div class="signup-form">
-                    <form method="POST" action="../manager/modifier_client.php" class="register-form" id="register-form">
+                    <form method="POST" action="../manager/modifier_admin.php" class="register-form" id="register-form">
                         <h2>Modification compte :</h2>
                         <div class="form-row">
                             <div class="form-group">

@@ -115,7 +115,7 @@ session_start();
                       <a class="nav-link" href="moncompte_client.php">Mondification mon compte</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="../traitement/deconnexion">Déconnexion</a>
+                      <a class="nav-link" href="../traitement/deconnexion.php">Déconnexion</a>
                     </li>
                     <a href="#" class="nav-link search" id="search">
                       <i class="ti-search"></i>
@@ -158,7 +158,7 @@ session_start();
                        <a class="nav-link" href="View/moncompte_admin.php">Mon compte</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
+                       <a class="nav-link" href="../traitement/deconnexion.php">Déconnexion</a>
                      </li>
                      <a href="#" class="nav-link search" id="search">
                        <i class="ti-search"></i>
@@ -253,8 +253,8 @@ session_start();
   							<tbody>
   								<!-- Selection de toute les réservations -->
   								<?php
-  								$req = $bdd->prepare('SELECT * FROM compte WHERE email=:email');
-                  $req->execute(array('email'=>$_SESSION['email']));
+  								$req = $bdd->prepare('SELECT * FROM compte WHERE id=:id');
+                  $req->execute(array('id'=>$_SESSION['id']));
   								$donnees= $req->fetchall();
 
   								foreach ($donnees as $value) {

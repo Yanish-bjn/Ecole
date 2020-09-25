@@ -35,7 +35,7 @@ catch (Exception $e){
                         <h2 class="form-title">Évènement</h2>
                         <form method="POST" action="../manager/supprimer_evenement.php" class="register-form" id="register-form">
                             <div class="form-group">
-                            <h5>Choisissez le nom de l'événement à supprimer :</h4>  <select class="form-control" name="nom_evenement" placeholder="Choisissez l'id">
+                            <h4>Choisissez le nom de l'événement à supprimer :</h4>  <select class="form-control" name="nom_evenement" placeholder="Choisissez l'id">
 
 
                             <?php

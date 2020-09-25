@@ -10,17 +10,17 @@ public function modifier($donnee){
     $req=$bdd->prepare('UPDATE compte SET nom =:nom, prenom =:prenom, email =:email, tel =:tel, mdp =:mdp, role= :role WHERE id = :id');
 //var_dump($req);
 //    $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'id'=>7));
-    $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'role'=>'client', 'id' =>$donnee->getid()));
+    $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'role'=>'admin', 'id' =>$donnee->getid()));
 
       //var_dump($_SESSION);
     $req->fetchall();
     //var_dump($a);
     if ($req == true){
-      header("location: ../View/moncompte_client.php");
+      header("location: ../View/moncompte_admin.php");
     }   // Si la requete ne s'execute pas alors on redirige vers une autre page//
     else{
       echo '<body onLoad="alert(\'Erreur\')">';
-    echo '<meta http-equiv="refresh" content="0;URL=../View/modifier_client.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=../View/modifier_admin.php">';
     }
 
           }
