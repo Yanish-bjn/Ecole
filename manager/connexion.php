@@ -17,7 +17,6 @@ public function connexion($donnee){ //function connexion //
     $_SESSION['nom'] = $a['nom'];
       $_SESSION['prenom'] = $a['prenom'];
       $_SESSION['tel'] = $a['tel'];
-      $_SESSION['mdp'] = $a['mdp'];
     header("location: ../index.php"); // redirection vers ... //
   }// fin  du si //
   else{ //début du si non //
