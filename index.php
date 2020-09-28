@@ -364,29 +364,25 @@ session_start();
           <div class="col-lg-7">
             <div class="row clock_sec clockdiv" id="clockdiv">
               <div class="col-lg-12">
-                <h1 class="mb-3">Register Now</h1>
+                <h1 class="mb-3">Inscrivez-vous</h1>
                 <p>
-                  There is a moment in the life of any aspiring astronomer that
-                  it is time to buy that first telescope. It’s exciting to think
-                  about setting up your own viewing station.
+                  On est plus de 1500 étudiants à être passer par le lycée Robert Schuman.
+                  Plus d'une cinquentaines de professeurs
                 </p>
               </div>
               <div class="col clockinner1 clockinner">
-                <h1 class="days">150</h1>
-                <span class="smalltext">Days</span>
+                <h1 class="days">1500</h1>
+                <span class="smalltext">Etudiants</span>
               </div>
               <div class="col clockinner clockinner1">
-                <h1 class="hours">23</h1>
-                <span class="smalltext">Hours</span>
+                <h1 class="hours">56</h1>
+                <span class="smalltext">professeurs</span>
               </div>
               <div class="col clockinner clockinner1">
-                <h1 class="minutes">47</h1>
-                <span class="smalltext">Mins</span>
+                <h1 class="minutes">10</h1>
+                <span class="smalltext">Salle informatique</span>
               </div>
-              <div class="col clockinner clockinner1">
-                <h1 class="seconds">59</h1>
-                <span class="smalltext">Secs</span>
-              </div>
+              
             </div>
           </div>
           <div class="col-lg-4 offset-lg-1">
