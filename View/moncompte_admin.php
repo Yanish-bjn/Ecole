@@ -228,11 +228,12 @@ session_start();
   						<table>
   							<thead>
   								<tr class="row100 head">
-  									<th class="cell100 column1">Nom</th>
-  									<th class="cell100 column2">Prenom</th>
-  									<th class="cell100 column3">email</th>
-  									<th class="cell100 column4">tel</th>
-  									<th class="cell100 column5">mdp</th>
+                    <th class="cell100 column1">id</th>
+  									<th class="cell100 column2">Nom</th>
+  									<th class="cell100 column3">Prenom</th>
+  									<th class="cell100 column4">email</th>
+  									<th class="cell100 column5">tel</th>
+  									<th class="cell100 column6">mdp</th>
   								</tr>
   							</thead>
   						</table>
@@ -249,11 +250,12 @@ session_start();
 
   								foreach ($donnees as $value) {
   									echo '<tr class="row100 body">
-  												<td class="cell100 column1">'.$value["nom"].'</td>
-  												<td class="cell100 column2">'.$value["prenom"].'</td>
-  												<td class="cell100 column3">'.$value["email"].'</td>
-  												<td class="cell100 column4">'.$value["tel"].'</td>
-  												<td class="cell100 column5">'.$value["mdp"].'</td>
+                    <td class="cell100 column1">'.$value["id"].'</td>
+  												<td class="cell100 column2">'.$value["nom"].'</td>
+  												<td class="cell100 column3">'.$value["prenom"].'</td>
+  												<td class="cell100 column4">'.$value["email"].'</td>
+  												<td class="cell100 column5">'.$value["tel"].'</td>
+  												<td class="cell100 column6">'.$value["mdp"].'</td>
   												</tr>';
   								}
   								?>

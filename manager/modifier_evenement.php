@@ -15,7 +15,7 @@ public function modifier_evenement($donnee){
     $req->fetchall();
     //var_dump($a);
     if ($req == true){
-      header("location: ../View/moncompte_admin.php");
+      header("location: ../View/evenement_admin.php");
     }   // Si la requete ne s'execute pas alors on redirige vers une autre page//
     else{
       echo '<body onLoad="alert(\'Erreur\')">';
