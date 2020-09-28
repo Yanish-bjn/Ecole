@@ -27,11 +27,11 @@ public function setemail($email){
 }
 
 public function getmdp(){
-  return $this->_mdp;
+  return $this->mdp;
 }
 
 public function getemail(){
-  return $this->_email;
+  return $this->email;
 }
 }
 

@@ -25,6 +25,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../connexion/css/util.css">
 	<link rel="stylesheet" type="text/css" href="../connexion/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../connexion/css/style.css">
 <!--===============================================================================================-->
 </head>
 <body>
