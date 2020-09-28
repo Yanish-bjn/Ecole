@@ -283,49 +283,38 @@ session_start();
   	</div>
     <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='supprimer_client.php'">Supprimer</button></center></p>
 
-    <!--================ start footer Area  =================-->
+    <!--================ Start footer Area  =================-->
     <footer class="footer-area section_gap">
       <div class="container">
         <div class="row">
           <div class="col-lg-2 col-md-6 single-footer-widget">
-            <h4>Top Products</h4>
+            <h4>informations</h4>
             <ul>
-              <li><a href="#">Managed Website</a></li>
-              <li><a href="#">Manage Reputation</a></li>
-              <li><a href="#">Power Tools</a></li>
-              <li><a href="#">Marketing Service</a></li>
+              <li><a href="../index.php">Nous concernant</a></li>
+
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 single-footer-widget">
-            <h4>Quick Links</h4>
+            <h4>Prendre contact</h4>
             <ul>
-              <li><a href="#">Jobs</a></li>
-              <li><a href="#">Brand Assets</a></li>
-              <li><a href="#">Investor Relations</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a href="contact.php">Contact</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 single-footer-widget">
-            <h4>Features</h4>
+            <h4>Etudiant</h4>
             <ul>
-              <li><a href="#">Jobs</a></li>
-              <li><a href="#">Brand Assets</a></li>
-              <li><a href="#">Investor Relations</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a href="connexion.php">Connexion</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 single-footer-widget">
-            <h4>Resources</h4>
+            <h4>Vous inscrire</h4>
             <ul>
-              <li><a href="#">Guides</a></li>
-              <li><a href="#">Research</a></li>
-              <li><a href="#">Experts</a></li>
-              <li><a href="#">Agencies</a></li>
+              <li><a href="inscription.php">Inscription</a></li>
             </ul>
           </div>
           <div class="col-lg-4 col-md-6 single-footer-widget">
             <h4>Newsletter</h4>
-            <p>You can trust us. we only send promo offers,</p>
+            <p>Vous pouvez vous inscrire à la newsletter.</p>
             <div class="form-wrap" id="mc_embed_signup">
               <form
                 target="_blank"
@@ -338,7 +327,7 @@ session_start();
                   name="EMAIL"
                   placeholder="Your Email Address"
                   onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Your Email Address '"
+                  onblur="this.placeholder = 'Your Email Address'"
                   required=""
                   type="email"
                 />
@@ -362,14 +351,12 @@ session_start();
         <div class="row footer-bottom d-flex justify-content-between">
           <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.<i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
           <div class="col-lg-4 col-sm-12 footer-social">
-            <a href="#"><i class="ti-facebook"></i></a>
-            <a href="#"><i class="ti-twitter"></i></a>
-            <a href="#"><i class="ti-dribbble"></i></a>
-            <a href="#"><i class="ti-linkedin"></i></a>
+            <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
+            <a href="https://www.linkedin.com/authwall?trk=ripf&trkInfo=AQEox7flDVgK6wAAAXTU30Sg9G1wuydfYLa76GB2oassbBSdjOi9-W4ZjXPYF8_C316tFE1wSZJQcJXqWoZZ_TSYGc-KGAmfL2kQ0G2cJ_EJNiW2QL5Z-8o7AyjmF9l5fSLAA-I=&originalReferer=https://www.google.com/&sessionRedirect=https%3A%2F%2Ffr.linkedin.com%2Fschool%2Flyc%25C3%25A9erobertschuman%2F"><i class="ti-linkedin"></i></a>
           </div>
         </div>
       </div>
