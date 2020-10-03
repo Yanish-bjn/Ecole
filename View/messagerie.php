@@ -99,7 +99,7 @@ session_start();
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
-                          <a class="nav-link" href="evenement.php">Etudiant</a>
+                          <a class="nav-link" href="evenement_etudiant.php">Etudiant</a>
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
@@ -131,7 +131,7 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="evenement_etudiant.php">Etudiant</a>
+                           <a class="nav-link" href="evenement_admin.php">Etudiant</a>
                          </li>
                        </ul>
                      </li>
