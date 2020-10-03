@@ -10,7 +10,7 @@ public function modifier($donnee){
     $req=$bdd->prepare('UPDATE compte SET nom =:nom, prenom =:prenom, email =:email, tel =:tel, mdp =:mdp, role= :role WHERE id = :id');
 //var_dump($req);
 //    $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'id'=>7));
-    $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'role'=>'client', 'id' =>$donnee->getid()));
+    $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'role'=>'client', 'id'=>$_SESSION['id']));
 
       //var_dump($_SESSION);
     $req->fetchall();

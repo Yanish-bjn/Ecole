@@ -66,11 +66,6 @@ catch (Exception $e){
                             <label for="pincode">Mot de passe :</label>
                             <input type="password" name="mdp" id="pincode">
                         </div>
-                        <div class="form-group">
-                            <label for="address">Entrer votre id :</label>
-                            <?php  echo 'Voici votre ID : '; echo $_SESSION['id']; ?>
-                            <input type="tel" name="id" id="address" required/>
-                        </div>
 
                         <div class="form-submit">
                             <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>

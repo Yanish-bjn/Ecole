@@ -104,7 +104,7 @@ session_start();
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="moncompte_client.php">Mondification mon compte</a>
+                      <a class="nav-link" href="moncompte_client.php">Mon compte</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="../traitement/deconnexion">Déconnexion</a>

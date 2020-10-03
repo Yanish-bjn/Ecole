@@ -60,7 +60,7 @@ class modifier { // Casse inscription provenant du model et du manager //
   }
   public function setid($id){
     if(empty($id)){ // si la valeur saisie est vide afficher une erreur //
-      trigger_error('la variable doit etre un caractere');
+      trigger_error('la variable doit etre un entier');
       return; // retourne le résultat //
     }
     $this->_id = $id;
