@@ -119,7 +119,7 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="messagerie.php">Messagerie</a>
+                           <a class="nav-link" href="View/messagerie.php">Messagerie</a>
                          </li>
                        </ul>
                      </li>
@@ -382,7 +382,7 @@ session_start();
                 <h1 class="minutes">10</h1>
                 <span class="smalltext">Salle informatique</span>
               </div>
-              
+
             </div>
           </div>
           <div class="col-lg-4 offset-lg-1">
