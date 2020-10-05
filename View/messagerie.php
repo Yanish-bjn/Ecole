@@ -276,12 +276,16 @@ session_start();
         id="contactForm"
         novalidate="novalidate"
       >
-        <div class="col-md-6">
+        <div class="col-md-9">
           <div class="form-group">
-            <input type="datetime-local" class="form-control" id="datetime" name="date" />
+            <input  readonly="readonly" type="text" value=" <?php
+           date_default_timezone_set('Europe/Paris');
+           echo date('d | m | Y | h:i:s'). '';
+       ?>" class="form-control" id="datetime" name="date" />
+
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="form-group">
             <input class="form-control" type="text "name="message" id="message" placeholder="Votre message" ></textarea>
           </div>
