@@ -231,8 +231,8 @@ session_start();
                     <th class="cell100 column1">ID</th>
   									<th class="cell100 column2">Nom de l'évènement</th>
   									<th class="cell100 column3">Nom de la personne</th>
-  									<th class="cell100 column4">date</th>
-  									<th class="cell100 column5">description</th>
+  									<th class="cell100 column4">Date</th>
+  									<th class="cell100 column5">Description</th>
   								</tr>
   							</thead>
   						</table>
@@ -286,73 +286,38 @@ session_start();
   <div class="container">
     <div class="row">
       <div class="col-lg-2 col-md-6 single-footer-widget">
-        <h4>informations</h4>
+        <h4>Informations</h4>
         <ul>
-          <li><a href="../index.php">Nous concernant</a></li>
+          <li><a href="index.php">Accueil</a></li>
 
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Prendre contact</h4>
         <ul>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="View/contact.php">Contact</a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Etudiant</h4>
         <ul>
-          <li><a href="connexion.php">Connexion</a></li>
+          <li><a href="View/connexion.php">Connexion</a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Vous inscrire</h4>
         <ul>
-          <li><a href="inscription.php">Inscription</a></li>
+          <li><a href="View/inscription.php">Inscription</a></li>
         </ul>
-      </div>
-      <div class="col-lg-4 col-md-6 single-footer-widget">
-        <h4>Newsletter</h4>
-        <p>Vous pouvez vous inscrire à la newsletter.</p>
-        <div class="form-wrap" id="mc_embed_signup">
-          <form
-            target="_blank"
-            action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-            method="get"
-            class="form-inline"
-          >
-            <input
-              class="form-control"
-              name="EMAIL"
-              placeholder="Your Email Address"
-              onfocus="this.placeholder = ''"
-              onblur="this.placeholder = 'Your Email Address'"
-              required=""
-              type="email"
-            />
-            <button class="click-btn btn btn-default">
-              <span>subscribe</span>
-            </button>
-            <div style="position: absolute; left: -5000px;">
-              <input
-                name="b_36c4fd991d266f23781ded980_aefe40901a"
-                tabindex="-1"
-                value=""
-                type="text"
-              />
-            </div>
-
-            <div class="info"></div>
-          </form>
-        </div>
       </div>
     </div>
     <div class="row footer-bottom d-flex justify-content-between">
       <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.<i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
       </p>
-      <div class="col-lg-4 col-sm-12 footer-social">
+      <div class="col-lg- col-sm-12 footer-social">
         <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
         <a href="https://www.linkedin.com/authwall?trk=ripf&trkInfo=AQEox7flDVgK6wAAAXTU30Sg9G1wuydfYLa76GB2oassbBSdjOi9-W4ZjXPYF8_C316tFE1wSZJQcJXqWoZZ_TSYGc-KGAmfL2kQ0G2cJ_EJNiW2QL5Z-8o7AyjmF9l5fSLAA-I=&originalReferer=https://www.google.com/&sessionRedirect=https%3A%2F%2Ffr.linkedin.com%2Fschool%2Flyc%25C3%25A9erobertschuman%2F"><i class="ti-linkedin"></i></a>
       </div>
@@ -374,8 +339,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
             >
               <i class="ti-close"></i>
             </button>
-            <h2>Thank you</h2>
-            <p>Your message is successfully sent...</p>
+            <h2>Merci</h2>
+            <p>Votre message a été correctement envoyé</p>
           </div>
         </div>
       </div>
@@ -395,8 +360,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
             >
               <i class="ti-close"></i>
             </button>
-            <h2>Sorry !</h2>
-            <p>Something went wrong</p>
+            <h2>Désolé !</h2>
+            <p>Un problème est survenu</p>
           </div>
         </div>
       </div>
