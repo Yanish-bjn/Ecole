@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 03 oct. 2020 à 12:40
+-- Généré le :  lun. 05 oct. 2020 à 15:17
 -- Version du serveur :  5.7.26
--- Version de PHP :  7.3.5
+-- Version de PHP :  7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,27 +33,17 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(30) COLLATE utf8_bin NOT NULL,
   `prenom` varchar(30) COLLATE utf8_bin NOT NULL,
-  `date` datetime NOT NULL,
+  `date` varchar(20) COLLATE utf8_bin NOT NULL,
   `message` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `chat`
 --
 
 INSERT INTO `chat` (`id`, `nom`, `prenom`, `date`, `message`) VALUES
-(1, 'bb', 'bb', '2020-10-03 00:00:00', 'Test validé ?'),
-(2, 'bb', 'bb', '2020-10-03 14:06:00', 'Oui bien reçu ! '),
-(3, 'bb', 'bb', '2020-10-03 14:06:00', 'Oui bien reçu ! '),
-(4, 'bb', 'bb', '2020-10-03 14:11:00', 'Bonjour'),
-(5, 'bb', 'bb', '2020-10-03 14:11:00', 'Bonjour'),
-(6, 'bb', 'bb', '2020-10-03 14:12:00', 'Salut'),
-(7, 'bb', 'bb', '2020-10-03 14:12:00', 'Bonjour'),
-(8, 'bb', 'bb', '2020-10-03 14:12:00', 'Bonjour'),
-(9, 'bb', 'bb', '2020-10-03 14:12:00', 'Bonjour'),
-(10, 'bb', 'bb', '2020-10-03 14:14:00', 'ABC'),
-(11, 'bb', 'bb', '2020-10-03 14:31:00', 'Tout va bien ? merci Yanish');
+(1, 'Test2', 'Test2', ' 05 10 2020 05:17:12', 'Salut tout le monde !');
 
 -- --------------------------------------------------------
 
@@ -73,17 +63,16 @@ CREATE TABLE IF NOT EXISTS `compte` (
   PRIMARY KEY (`id`),
   KEY `nom` (`nom`),
   KEY `tel` (`tel`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `compte`
 --
 
 INSERT INTO `compte` (`id`, `nom`, `prenom`, `email`, `tel`, `mdp`, `role`) VALUES
-(3, 'BHUJUN', 'YANISH', 'yanish.bhujun@gmail.com', '0782685300', '164b6da6ab4209c16ff3841306dbec83', 'admin'),
+(3, 'bhujun', 'yanish', 'Yanish.bhujun@gmail.com', '0000000000', '164b6da6ab4209c16ff3841306dbec83', 'admin'),
 (9, 'Test', 'Test', 'Test@test.fr', '0000000000', '0cbc6611f5540bd0809a388dc95a615b', 'admin'),
-(14, 'ee', 'ee', 'ee@gmail.com', '0000000000', '08a4415e9d594ff960030b921d42b91e', 'client'),
-(15, 'cc', 'cc', 'cc@gmail.com', '0000000000', 'e0323a9039add2978bf5b49550572c7c', 'admin');
+(16, 'Test2', 'Test2', 'Test2@test.fr', '0000000000', 'c454552d52d55d3ef56408742887362b', 'client');
 
 -- --------------------------------------------------------
 
