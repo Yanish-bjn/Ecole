@@ -241,127 +241,11 @@ session_start();
     </section>
     <!--================ End Feature Area =================-->
 
-    <!--================ Start Popular Courses Area =================-->
-    <div class="popular_courses">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="main_title">
-              <h2 class="mb-3">Les cours</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <!-- single course -->
-          <div class="col-lg-12">
-            <div class="owl-carousel active_course">
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="img/courses/c1.jpg" alt="" />
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">Conception</span>
-                  <h4 class="mb-3">
-                    <a href="course-details.html">Custom Product Design</a>
-                  </h4>
-                  <p>
-                    One make creepeth man bearing their one firmament won't fowl
-                    meat over sea
-                  </p>
-                  <div
-                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                  >
-                    <div class="authr_meta">
-                      <img src="img/courses/author1.png" alt="" />
-                      <span class="d-inline-block ml-2">John</span>
-                    </div>
-                    <div class="mt-lg-0 mt-3">
-                      <span class="meta_info mr-4">
-                        <a href="#"> <i class="ti-user mr-2"></i>50 </a>
-                      </span>
-                      <span class="meta_info"
-                        ><a href="#"> <i class="ti-heart mr-2"></i>250 </a></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="img/courses/c2.jpg" alt="" />
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">Conception</span>
-                  <h4 class="mb-3">
-                    <a href="course-details.html">Les cours en ligne</a>
-                  </h4>
-                  <p>
-                    L'établissement a proposé de faire pour leurs étudiants des cours
-                    via divers applications (Discord, Slack)
-                  </p>
-                  <div
-                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                  >
-                    <div class="authr_meta">
-                      <img src="img/courses/author2.png" alt="" />
-                      <span class="d-inline-block ml-2">Laurent</span>
-                    </div>
-                    <div class="mt-lg-0 mt-3">
-                      <span class="meta_info mr-4">
-                        <a href="#"> <i class="ti-user mr-2"></i>40 </a>
-                      </span>
-                      <span class="meta_info"
-                        ><a href="#"> <i class="ti-heart mr-2"></i>230 </a></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single_course">
-                <div class="course_head">
-                  <img class="img-fluid" src="img/courses/c3.jpg" alt="" />
-                </div>
-                <div class="course_content">
-                  <span class="tag mb-4 d-inline-block">Conception</span>
-                  <h4 class="mb-3">
-                    <a href="course-details.html">Computer Engineering</a>
-                  </h4>
-                  <p>
-                    One make creepeth man bearing their one firmament won't fowl
-                    meat over sea
-                  </p>
-                  <div
-                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                  >
-                    <div class="authr_meta">
-                      <img src="img/courses/author3.png" alt="" />
-                      <span class="d-inline-block ml-2">Manon</span>
-                    </div>
-                    <div class="mt-lg-0 mt-3">
-                      <span class="meta_info mr-4">
-                        <a href="#"> <i class="ti-user mr-2"></i>35 </a>
-                      </span>
-                      <span class="meta_info"
-                        ><a href="#"> <i class="ti-heart mr-2"></i>260 </a></span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================ End Popular Courses Area =================-->
-
     <!--================ Start Registration Area =================-->
     <div class="section_gap registration_area">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-7">
+          <div class="col-lg-12">
             <div class="row clock_sec clockdiv" id="clockdiv">
               <div class="col-lg-12">
                 <h1 class="mb-3">Inscrivez-vous</h1>
@@ -383,45 +267,6 @@ session_start();
                 <span class="smalltext">Salle informatique</span>
               </div>
 
-            </div>
-          </div>
-          <div class="col-lg-4 offset-lg-1">
-            <div class="register_form">
-              <h3>Courses for Free</h3>
-              <p>It is high time for learning</p>
-              <form
-                class="form_area"
-                id="myForm"
-                action="mail.html"
-                method="post"
-              >
-                <div class="row">
-                  <div class="col-lg-12 form_group">
-                    <input
-                      name="name"
-                      placeholder="Your Name"
-                      required=""
-                      type="text"
-                    />
-                    <input
-                      name="name"
-                      placeholder="Your Phone Number"
-                      required=""
-                      type="tel"
-                    />
-                    <input
-                      name="email"
-                      placeholder="Your Email Address"
-                      pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-                      required=""
-                      type="email"
-                    />
-                  </div>
-                  <div class="col-lg-12 text-center">
-                    <button class="primary-btn">Submit</button>
-                  </div>
-                </div>
-              </form>
             </div>
           </div>
         </div>
@@ -508,7 +353,7 @@ session_start();
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="main_title">
-              <h2 class="mb-3 text-white">Evenements à venir</h2>
+              <h2 class="mb-3 text-white">Évenements à venir</h2>
               </div>
           </div>
         </div>
@@ -520,20 +365,19 @@ session_start();
               </div>
               <div class="event_details">
                 <div class="d-flex mb-4">
-                  <div class="date"><span>15</span> Jun</div>
+                  <div class="date"><span>23</span>Mai</div>
 
                   <div class="time-location">
                     <p>
-                      <span class="ti-time mr-2"></span> 12:00 AM - 12:30 AM
+                      <span class="ti-time mr-2"></span> 08:30 - 17:30
                     </p>
                     <p>
-                      <span class="ti-location-pin mr-2"></span> Hilton Quebec
+                      <span class="ti-location-pin mr-2"></span> Dugny, France
                     </p>
                   </div>
                 </div>
                 <p>
-                  One make creepeth man for so bearing their firmament won't
-                  fowl meat over seas great
+              Venez découvrir les différentes formations au sein du lycée Robert Schuman
                 </p>
               </div>
             </div>
@@ -545,31 +389,21 @@ session_start();
               </div>
               <div class="event_details">
                 <div class="d-flex mb-4">
-                  <div class="date"><span>15</span> Jun</div>
+                  <div class="date"><span>15</span>Mai</div>
 
                   <div class="time-location">
                     <p>
-                      <span class="ti-time mr-2"></span> 12:00 AM - 12:30 AM
+                      <span class="ti-time mr-2"></span> 08:30 - 17:30 AM
                     </p>
                     <p>
-                      <span class="ti-location-pin mr-2"></span> Hilton Quebec
+                      <span class="ti-location-pin mr-2"></span> Dugny, France
                     </p>
                   </div>
                 </div>
                 <p>
-                  One make creepeth man for so bearing their firmament won't
-                  fowl meat over seas great
+                  En plus du tournois de football, il y a aussi un tournoi de tennis de table avec un lot pour les gagnants
                 </p>
-                <a href="#" class="primary-btn rounded-0 mt-3">View Details</a>
               </div>
-            </div>
-          </div>
-
-          <div class="col-lg-12">
-            <div class="text-center pt-lg-5 pt-3">
-              <a href="evenement.php" class="event-link">
-                Voir tous les évenements <img src="img/next.png" alt="" />
-              </a>
             </div>
           </div>
         </div>
@@ -583,9 +417,9 @@ session_start();
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="main_title">
-              <h2 class="mb-3">Client say about me</h2>
+              <h2 class="mb-3">Témoignage</h2>
               <p>
-                Replenish man have thing gathering lights yielding shall you
+                Les témoignages d'un ancien élève et d'un professeur
               </p>
             </div>
           </div>
@@ -602,9 +436,8 @@ session_start();
                   <div class="testi_text">
                     <h4>Elite Martin</h4>
                     <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
+                      Ayant été étudiant au sein de ce lycée en BTS SIO SLAM (Meilleurs filières),
+                      j'ai vite appris et j'ai obtenue mon BTS avec la mention très bien.
                     </p>
                   </div>
                 </div>
@@ -619,77 +452,9 @@ session_start();
                   <div class="testi_text">
                     <h4>Davil Saden</h4>
                     <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t1.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Elite Martin</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t2.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Davil Saden</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t1.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Elite Martin</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="testi_item">
-              <div class="row">
-                <div class="col-lg-4 col-md-6">
-                  <img src="img/testimonials/t2.jpg" alt="" />
-                </div>
-                <div class="col-lg-8">
-                  <div class="testi_text">
-                    <h4>Davil Saden</h4>
-                    <p>
-                      Him, made can't called over won't there on divide there
-                      male fish beast own his day third seed sixth seas unto.
-                      Saw from
+                      Durant mes années en temps que professeurs d'informatique
+                      au sein de ce lycée, j'ai pu constater qu'il y'a une bonne
+                      équipe pédagogique.
                     </p>
                   </div>
                 </div>
@@ -730,49 +495,14 @@ session_start();
               <li><a href="View/inscription.php">Inscription</a></li>
             </ul>
           </div>
-          <div class="col-lg-4 col-md-6 single-footer-widget">
-            <h4>Newsletter</h4>
-            <p>Vous pouvez vous inscrire à la newsletter.</p>
-            <div class="form-wrap" id="mc_embed_signup">
-              <form
-                target="_blank"
-                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                method="get"
-                class="form-inline"
-              >
-                <input
-                  class="form-control"
-                  name="EMAIL"
-                  placeholder="Your Email Address"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Your Email Address'"
-                  required=""
-                  type="email"
-                />
-                <button class="click-btn btn btn-default">
-                  <span>subscribe</span>
-                </button>
-                <div style="position: absolute; left: -5000px;">
-                  <input
-                    name="b_36c4fd991d266f23781ded980_aefe40901a"
-                    tabindex="-1"
-                    value=""
-                    type="text"
-                  />
-                </div>
-
-                <div class="info"></div>
-              </form>
-            </div>
-          </div>
         </div>
         <div class="row footer-bottom d-flex justify-content-between">
           <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.<i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
-          <div class="col-lg-4 col-sm-12 footer-social">
+          <div class="col-lg- col-sm-12 footer-social">
             <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
             <a href="https://www.linkedin.com/authwall?trk=ripf&trkInfo=AQEox7flDVgK6wAAAXTU30Sg9G1wuydfYLa76GB2oassbBSdjOi9-W4ZjXPYF8_C316tFE1wSZJQcJXqWoZZ_TSYGc-KGAmfL2kQ0G2cJ_EJNiW2QL5Z-8o7AyjmF9l5fSLAA-I=&originalReferer=https://www.google.com/&sessionRedirect=https%3A%2F%2Ffr.linkedin.com%2Fschool%2Flyc%25C3%25A9erobertschuman%2F"><i class="ti-linkedin"></i></a>
           </div>
