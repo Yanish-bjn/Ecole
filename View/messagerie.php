@@ -260,13 +260,14 @@ session_start();
   					</div>
   				</div>
           <p><div class="col-md-12 text-right">
-            <button type="button" class="btn btn-warning" onclick="window.location.href='messagerie.php'">Actualiser</button>
-
-          </div></p>
+            <button type="button" class="btn btn-warning" onclick="window.location.href='messagerie.php'">Actualiser</button><p>
+          </div>
        </div>
   			</div>
   		</div>
   	</div>
+
+
 
     <div class="container">
       <form method="POST" action="../manager/messagerie.php"
@@ -278,7 +279,7 @@ session_start();
       >
         <div class="col-md-9">
           <div class="form-group">
-            <center><input  readonly="readonly" type="text" value=" <?php
+            <center><input  style="display:none" readonly="readonly" type="text" value=" <?php
            date_default_timezone_set('Europe/Paris');
            echo date('d m Y h:i:s'). '';
        ?>" class="form-control" id="datetime" name="date" />

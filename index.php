@@ -119,7 +119,7 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="View/messagerie.php">Messagerie</a>
+                           <a class="nav-link" href="View/messagerie_admin.php">Messagerie</a>
                          </li>
                        </ul>
                      </li>

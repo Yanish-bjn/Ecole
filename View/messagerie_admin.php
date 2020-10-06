@@ -13,7 +13,7 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
-    <title>Mon compte admin</title>
+    <title>Messagerie</title>
 
     <!-- Liens contenant le style du tableau -->
 
@@ -140,7 +140,7 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="messagerie_admin.php">Messagerie</a>
+                           <a class="nav-link" href="messagerie.php">Messagerie</a>
                          </li>
                        </ul>
                      </li>
@@ -198,7 +198,7 @@ session_start();
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Evenement </h2>
+                <h2>Messagerie </h2>
               </div>
             </div>
           </div>
@@ -216,108 +216,162 @@ session_start();
   	}
   	?>
 
-
-<div class="container">
-
   <!-- Affichage du tableau contenant des informations -->
-
+<div class="container">
   <p>  <div class="container-table100">
       <div class="wrap-table100">
         <div class="table100 ver1 m-b-110">
           <div class="table100-head">
   						<table>
   							<thead>
-  								<tr class="row100 head">
-                    <th class="cell100 column1">ID</th>
-  									<th class="cell100 column2">Nom de l'évènement</th>
-  									<th class="cell100 column3">Nom de la personne</th>
-  									<th class="cell100 column4">Date</th>
-  									<th class="cell100 column5">Description</th>
-  								</tr>
-  							</thead>
-  						</table>
-  					</div></p>
+                  <tr class="row100 head">
+                    <th class="cell100 column1">Nom</th>
+                    <th class="cell100 column2">prenom</th>
+                    <th class="cell100 column3">date</th>
+                    <th class="cell100 column4">message</th>
+                  </tr>
+                </thead>
+              </table>
+            </div></p>
 
-  					<div class="table100-body js-pscroll">
-  						<table>
-  							<tbody>
-  								<!-- Selection de toute les réservations -->
-  								<?php
-  								$req = $bdd->prepare('SELECT * FROM evenement');
+            <div class="table100-body js-pscroll">
+              <table>
+                <tbody>
+                  <!-- Selection de toute les réservations -->
+                  <?php
+                  $req = $bdd->prepare('SELECT * FROM chat');
                   $req->execute(array('email'=>$_SESSION['email']));
-  								$donnees= $req->fetchall();
+                  $donnees= $req->fetchall();
 
-  								foreach ($donnees as $value) {
-  									echo '<tr class="row100 body">
-                          <td class="cell100 column1">'.$value["id"].'</td>
-  												<td class="cell100 column2">'.$value["nom_evenement"].'</td>
-  												<td class="cell100 column3">'.$value["nom_personne"].'</td>
-  												<td class="cell100 column4">'.$value["date"].'</td>
-  												<td class="cell100 column5">'.$value["description"].'</td>
-  												</tr>';
-  								}
-  								?>
+                  foreach ($donnees as $value) {
+                    echo '<tr class="row100 body">
+                          <td class="cell100 column1">'.$value["nom"].'</td>
+                          <td class="cell100 column2">'.$value["prenom"].'</td>
+                          <td class="cell100 column3">'.$value["date"].'</td>
+                          <td class="cell100 column4">'.$value["message"].'</td>
+                          </tr>';
+                  }
+                  ?>
+
 
   							</tbody>
   						</table>
+
   					</div>
   				</div>
-
-<div class="container">
-
-           <div class="pull-right">
-  				     <button type="button" class="btn btn-warning" onclick="window.location.href='supprimer_evenement.php'">Supprimer</button>
-           </div>
-
-           <div class="pull left">
-         <p><button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_evenement.php'">Ajouter</button>
-           </div>
-       </div>
+          <p><div class="col-md-12 text-right">
+            <button type="button" class="btn btn-warning" onclick="window.location.href='messagerie_admin.php'">Actualiser</button><p>
+            <form method="POST" action="../manager/message.php">
+            <input type="submit" value="Supprimer tout les messages" class="btn btn-warning">
+          </form>
+          </div>
        </div>
   			</div>
   		</div>
   	</div>
-    <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='modifier_evenement.php'">Modifier</button></center></p>
 
+
+
+    <div class="container">
+      <form method="POST" action="../manager/messagerie_admin.php"
+        class="row contact_form"
+        action="contact_process.php"
+        method="post"
+        id="contactForm"
+        novalidate="novalidate"
+      >
+        <div class="col-md-9">
+          <div class="form-group">
+            <center><input  style="display:none" readonly="readonly" type="text" value=" <?php
+           date_default_timezone_set('Europe/Paris');
+           echo date('d m Y h:i:s'). '';
+       ?>" class="form-control" id="datetime" name="date" />
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <input class="form-control" type="text "name="message" id="message" placeholder="Votre message" ></textarea>
+          </div>
+        </div>
+        <div class="col-md-12 text-right">
+          <button type="submit" value="submit" class="btn primary-btn">
+            Envoyé votre message
+          </button>
+        </div>
+      </form>
 </div>
-
+<p>
 <!--================ Start footer Area  =================-->
 <footer class="footer-area section_gap">
   <div class="container">
     <div class="row">
       <div class="col-lg-2 col-md-6 single-footer-widget">
-        <h4>Informations</h4>
+        <h4>informations</h4>
         <ul>
-          <li><a href="index.php">Accueil</a></li>
-
+          <li><a href="../index.php">Nous concernant</a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Prendre contact</h4>
         <ul>
-          <li><a href="View/contact.php">Contact</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Etudiant</h4>
         <ul>
-          <li><a href="View/connexion.php">Connexion</a></li>
+          <li><a href="connexion.php">Connexion</a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Vous inscrire</h4>
         <ul>
-          <li><a href="View/inscription.php">Inscription</a></li>
+          <li><a href="inscription.php">Inscription</a></li>
         </ul>
+      </div>
+      <div class="col-lg-4 col-md-6 single-footer-widget">
+        <h4>Newsletter</h4>
+        <p>Vous pouvez vous inscrire à la newsletter.</p>
+        <div class="form-wrap" id="mc_embed_signup">
+          <form
+            target="_blank"
+            action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+            method="get"
+            class="form-inline"
+          >
+            <input
+              class="form-control"
+              name="EMAIL"
+              placeholder="Your Email Address"
+              onfocus="this.placeholder = ''"
+              onblur="this.placeholder = 'Your Email Address'"
+              required=""
+              type="email"
+            />
+            <button class="click-btn btn btn-default">
+              <span>subscribe</span>
+            </button>
+            <div style="position: absolute; left: -5000px;">
+              <input
+                name="b_36c4fd991d266f23781ded980_aefe40901a"
+                tabindex="-1"
+                value=""
+                type="text"
+              />
+            </div>
+
+            <div class="info"></div>
+          </form>
+        </div>
       </div>
     </div>
     <div class="row footer-bottom d-flex justify-content-between">
       <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.<i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
       </p>
-      <div class="col-lg- col-sm-12 footer-social">
+      <div class="col-lg-4 col-sm-12 footer-social">
         <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
         <a href="https://www.linkedin.com/authwall?trk=ripf&trkInfo=AQEox7flDVgK6wAAAXTU30Sg9G1wuydfYLa76GB2oassbBSdjOi9-W4ZjXPYF8_C316tFE1wSZJQcJXqWoZZ_TSYGc-KGAmfL2kQ0G2cJ_EJNiW2QL5Z-8o7AyjmF9l5fSLAA-I=&originalReferer=https://www.google.com/&sessionRedirect=https%3A%2F%2Ffr.linkedin.com%2Fschool%2Flyc%25C3%25A9erobertschuman%2F"><i class="ti-linkedin"></i></a>
       </div>
@@ -339,8 +393,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
             >
               <i class="ti-close"></i>
             </button>
-            <h2>Merci</h2>
-            <p>Votre message a été correctement envoyé</p>
+            <h2>Thank you</h2>
+            <p>Your message is successfully sent...</p>
           </div>
         </div>
       </div>
@@ -360,8 +414,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
             >
               <i class="ti-close"></i>
             </button>
-            <h2>Désolé !</h2>
-            <p>Un problème est survenu</p>
+            <h2>Sorry !</h2>
+            <p>Something went wrong</p>
           </div>
         </div>
       </div>

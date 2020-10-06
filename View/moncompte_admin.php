@@ -140,7 +140,7 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="messagerie.php">Messagerie</a>
+                           <a class="nav-link" href="messagerie_admin.php">Messagerie</a>
                          </li>
                        </ul>
                      </li>
