@@ -101,9 +101,9 @@ session_start();
                   <?php  }
                     //Sinon c'est donc un admin
                    else { ?>
-                    <div class="position">
-                    <?php echo'Bienvenue, ', $_SESSION['prenom'];?>
-                    </div>
+                     <div class="position">
+                     <?php echo'Lycée Robert Schuman'?>
+                     </div>
                      <li class="nav-item active">
                        <a class="nav-link" href="index.php">Accueil</a>
                      </li>
@@ -128,8 +128,14 @@ session_start();
                      <li class="nav-item">
                        <a class="nav-link" href="View/moncompte_admin.php">Mon compte</a>
                      </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
+                     <li class="nav-item submenu dropdown">
+                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
+                       </a>
+                       <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
+                         </li>
+                       </ul>
                      </li>
                      <a href="#" class="nav-link search" id="search">
                        <i class="ti-search"></i>
