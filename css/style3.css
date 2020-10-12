@@ -1,0 +1,15 @@
+.position{
+  position: absolute;
+  left: 60px;
+  text-transform: capitalize;
+  color: #002347;
+  font: 500 20px/80px "Rubik", sans-serif;
+}
+
+.position2{
+  position: absolute;
+  left: 60px;
+  text-transform: capitalize;
+  color: #ffffff;
+  font: 500 20px/80px "Rubik", sans-serif;
+}

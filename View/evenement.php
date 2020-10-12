@@ -23,6 +23,8 @@ session_start();
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style2.css" />
+    <link rel="stylesheet" href="../css/style3.css" />
+
 
   </head>
 
@@ -51,14 +53,6 @@ session_start();
 
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="../index.php"><img src="../img/logo.png" alt=""/></a>
-            <button
-              class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-bar"></span> <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
 
@@ -67,6 +61,9 @@ session_start();
                 if (isset($_SESSION['email'])){
                   //Si la personne est un client
                   if ($_SESSION['role'] == "client") { ?>
+                    <div class="position">
+                    <?php echo'Bienvenue, ', $_SESSION['prenom'];?>
+                    </div>
                     <li class="nav-item active">
                       <a class="nav-link" href="../index.php">Accueil</a>
                     </li>
@@ -102,6 +99,9 @@ session_start();
                   <?php  }
                     //Sinon c'est donc un admin
                    else { ?>
+                     <div class="position">
+                     <?php echo'Bienvenue, ', $_SESSION['prenom'];?>
+                     </div>
                      <li class="nav-item active">
                        <a class="nav-link" href="../index.php">Accueil</a>
                      </li>
@@ -139,6 +139,9 @@ session_start();
               }
               //Sinon il n'y a pas de sessions ouverte
               else{ ?>
+                <div class="position">
+                <?php echo'Lycée Robert Schuman'?>
+                </div>
                 <li class="nav-item active">
                   <a class="nav-link" href="../index.php">Accueil</a>
                 </li>

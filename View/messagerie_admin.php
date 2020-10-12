@@ -35,6 +35,7 @@ session_start();
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style3.css" />
 
   </head>
 
@@ -88,6 +89,9 @@ session_start();
                 if (isset($_SESSION['email'])){
                   //Si la personne est un client
                   if ($_SESSION['role'] == "client") { ?>
+                    <div class="position2">
+                    <?php echo'Lycée Robert Schuman'?>
+                    </div>
                     <li class="nav-item active">
                       <a class="nav-link" href="../index.php">Accueil</a>
                     </li>
@@ -123,6 +127,9 @@ session_start();
                   <?php  }
                     //Sinon c'est donc un admin
                    else { ?>
+                     <div class="position2">
+                     <?php echo'Lycée Robert Schuman'?>
+                     </div>
                      <li class="nav-item active">
                        <a class="nav-link" href="../index.php">Accueil</a>
                      </li>
@@ -226,9 +233,9 @@ session_start();
   							<thead>
                   <tr class="row100 head">
                     <th class="cell100 column1">Nom</th>
-                    <th class="cell100 column2">prenom</th>
-                    <th class="cell100 column3">date</th>
-                    <th class="cell100 column4">message</th>
+                    <th class="cell100 column2">Prenom</th>
+                    <th class="cell100 column3">Date</th>
+                    <th class="cell100 column4">Message</th>
                   </tr>
                 </thead>
               </table>

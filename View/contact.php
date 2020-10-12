@@ -22,6 +22,7 @@ session_start();
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
 <style>
 #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
@@ -80,6 +81,9 @@ session_start();
                 if (isset($_SESSION['email'])){
                   //Si la personne est un client
                   if ($_SESSION['role'] == "client") { ?>
+                    <div class="position2">
+                    <?php echo'Lycée Robert Schuman'?>
+                    </div>
                     <li class="nav-item active">
                       <a class="nav-link" href="../index.php">Accueil</a>
                     </li>
@@ -115,6 +119,9 @@ session_start();
                   <?php  }
                     //Sinon c'est donc un admin
                    else { ?>
+                     <div class="position2">
+                     <?php echo'Lycée Robert Schuman'?>
+                     </div>
                      <li class="nav-item active">
                        <a class="nav-link" href="index.php">Accueil</a>
                      </li>
@@ -152,6 +159,9 @@ session_start();
               }
               //Sinon il n'y a pas de sessions ouverte
               else{ ?>
+                <div class="position2">
+                <?php echo'Lycée Robert Schuman'?>
+                </div>
                 <li class="nav-item active">
                   <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
