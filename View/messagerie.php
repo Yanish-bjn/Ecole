@@ -226,9 +226,9 @@ session_start();
   							<thead>
                   <tr class="row100 head">
                     <th class="cell100 column1">Nom</th>
-                    <th class="cell100 column2">prenom</th>
-                    <th class="cell100 column3">date</th>
-                    <th class="cell100 column4">message</th>
+                    <th class="cell100 column2">Prenom</th>
+                    <th class="cell100 column3">Date</th>
+                    <th class="cell100 column4">Message</th>
                   </tr>
                 </thead>
               </table>
