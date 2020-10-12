@@ -436,7 +436,7 @@ session_start();
                   <div class="testi_text">
                     <h4>Elite Martin</h4>
                     <p>
-                      Ayant été étudiant au sein de ce lycée en BTS SIO SLAM (Meilleurs filières),
+                      Ayant été étudiant au sein de ce lycée en BTS SIO SLAM (Meilleur filière),
                       j'ai vite appris et j'ai obtenue mon BTS avec la mention très bien.
                     </p>
                   </div>
