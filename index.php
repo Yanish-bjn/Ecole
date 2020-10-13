@@ -63,7 +63,7 @@ session_start();
                   //Si la personne est un client
                   if ($_SESSION['role'] == "client") { ?>
                     <div class="position">
-                    <?php echo'Bienvenue, ', $_SESSION['prenom'];?>
+                    <?php echo'Lycée Robert Schuman'?>
                     </div>
 
                     <li class="nav-item active">
@@ -81,19 +81,20 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Messagerie
+                      <a href="View/messagerie.php" class="nav-link dropdown-toggle"> Messagerie
                       </a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a class="nav-link" href="View/messagerie.php">Messagerie</a>
-                        </li>
-                      </ul>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="View/moncompte_client.php">Mom compte</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="traitement/deconnexion">Déconnexion</a>
+                    <li class="nav-item submenu dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="traitement/deconnexion.php">Déconnexion</a>
+                        </li>
+                      </ul>
                     </li>
                     <a href="#" class="nav-link search" id="search">
                       <i class="ti-search"></i>
@@ -114,19 +115,28 @@ session_start();
                          <li class="nav-item">
                            <a class="nav-link" href="View/evenement_admin.php">Etudiant</a>
                          </li>
-                       </ul>
-                     </li>
-                     <li class="nav-item submenu dropdown">
-                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Messagerie
-                       </a>
-                       <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="View/messagerie_admin.php">Messagerie</a>
+                           <a class="nav-link" href="exportation/evenement.php">Exportation</a>
                          </li>
                        </ul>
                      </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="View/moncompte_admin.php">Mon compte</a>
+                     <li class="nav-item submenu dropdown">
+                       <a href="View/messagerie_admin.php" class="nav-link dropdown-toggle">Messagerie
+                       </a>
+                       <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="exportation/message.php">Exportation</a>
+                         </li>
+                       </ul>
+                     </li>
+                     <li class="nav-item submenu dropdown">
+                       <a href="View/moncompte_admin.php" class="nav-link dropdown-toggle" >Mon Compte
+                       </a>
+                       <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="exportation/compte.php">Exportation</a>
+                         </li>
+                       </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
