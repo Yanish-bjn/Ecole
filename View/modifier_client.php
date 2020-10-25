@@ -60,11 +60,11 @@ catch (Exception $e){
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
                             <?php echo $_SESSION['tel']; ?>
-                            <input type="text" name="tel" minlength="10" maxlength="10" id="birth_date">
+                            <input type="text" name="tel" minlength="10" maxlength="10" id="birth_date" required>
                         </div>
                         <div class="form-group">
                             <label for="pincode">Mot de passe :</label>
-                            <input type="password" name="mdp" id="pincode">
+                            <input type="password" name="mdp" id="pincode" required>
                         </div>
 
                         <div class="form-submit">

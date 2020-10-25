@@ -36,19 +36,19 @@ catch (Exception $e){
                         <form method="POST" action="../manager/modifier_evenement.php" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="nom_evenement"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="nom_evenement" id="name" placeholder="Nom de l'évènement"/>
+                                <input type="text" name="nom_evenement" id="name" placeholder="Nom de l'évènement" required/>
                             </div>
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="nom_personne" id="name" placeholder="Nom de la personne"/>
+                                <input type="text" name="nom_personne" id="name" placeholder="Nom de la personne" required/>
                             </div>
                             <div class="form-group">
                                 <label for="date"><i class="zmdi zmdi-email"></i></label>
-                                <input type="date" name="date" id="email" placeholder="Entrer la date"/>
+                                <input type="date" name="date" id="email" placeholder="Entrer la date" required/>
                             </div>
                             <div class="form-group">
                                 <label for="description"><i class="fa fa-plus"></i></label>
-                                <input type="text" name="description" id="description" placeholder="Description"/>
+                                <input type="text" name="description" id="description" placeholder="Description" required/>
                             </div>
 
                             <div class="custom-dropdown custom-dropdown--white">

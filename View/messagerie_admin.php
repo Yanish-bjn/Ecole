@@ -316,7 +316,7 @@ session_start();
         </div>
         <div class="col-md-12">
           <div class="form-group">
-            <input class="form-control" type="text "name="message" id="message" placeholder="Votre message" ></textarea>
+            <input class="form-control" type="text "name="message" id="message" placeholder="Votre message" required></textarea>
           </div>
         </div>
         <div class="col-md-12 text-right">

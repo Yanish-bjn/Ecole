@@ -64,11 +64,11 @@ $donnees= $rec->fetch();
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
-                            <input type="text" name="tel" minlength="10" maxlength="10" id="birth_date">
+                            <input type="text" name="tel" minlength="10" maxlength="10" id="birth_date" required>
                         </div>
                         <div class="form-group">
                             <label for="pincode">Mot de passe :</label>
-                            <input type="password" name="mdp" id="pincode">
+                            <input type="password" name="mdp" id="pincode" required>
                         </div>
 
                         <h6>Choisissez le rôle de la personne :</h6>  <select class="form-group" name="role" placeholder="Choisissez le role">
