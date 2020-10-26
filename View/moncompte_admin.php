@@ -258,8 +258,9 @@ session_start();
   									<th class="cell100 column1">Nom</th>
   									<th class="cell100 column2">Prenom</th>
   									<th class="cell100 column3">Email</th>
-  									<th class="cell100 column4">Téléphone</th>
-  									<th class="cell100 column5">Mot de passe</th>
+                    <th class="cell100 column4">Ville</th>
+  									<th class="cell100 column5">Téléphone</th>
+  									<th class="cell100 column6">Mot de passe</th>
   								</tr>
   							</thead>
   						</table>
@@ -279,8 +280,9 @@ session_start();
   												<td class="cell100 column1">'.$value["nom"].'</td>
   												<td class="cell100 column2">'.$value["prenom"].'</td>
   												<td class="cell100 column3">'.$value["email"].'</td>
-  												<td class="cell100 column4">'.$value["tel"].'</td>
-  												<td class="cell100 column5">'.$value["mdp"].'</td>
+                          <td class="cell100 column4">'.$value["ville"].'</td>
+  												<td class="cell100 column5">'.$value["tel"].'</td>
+  												<td class="cell100 column6">'.$value["mdp"].'</td>
   												</tr>';
   								}
   								?>

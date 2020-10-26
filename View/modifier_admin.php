@@ -27,6 +27,7 @@ catch (Exception $e){
     <link rel="stylesheet" href="../inscription/css/style.css">
     <link rel="stylesheet" href="../inscription/css/style2.css">
     <link rel="stylesheet" href="../inscription/css/style3.css">
+      <link rel="stylesheet" href="../inscription/css/style4.css">
 
 </head>
 <body>
@@ -58,6 +59,21 @@ catch (Exception $e){
                             <input type="text" name="email" id="address" required/>
                         </div>
                         <div class="form-group">
+                            <p>
+                        <label>
+                          Tapez le début d'un nom de ville ou d'un code postal puis appuyez sur <b>Entrée</b>.<br>
+                        </label>
+                          <?php echo $_SESSION['ville']; ?>
+                          <input type="texte"  name="ville" id="ville" placeholder="Entrez un code postal ou une ville" autocomplete="on" size="50" required>
+                            </p>
+                      <ul>
+                        <li data-vicopo="#ville">
+                          <strong data-vicopo-code-postal></strong>
+                          <span data-vicopo-ville></span>
+                        </li>
+                      </ul>
+                    </div>
+                        <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
                             <?php echo $_SESSION['tel']; ?>
                             <input type="text" name="tel" minlength="10" maxlength="10" id="birth_date" required>
@@ -83,5 +99,7 @@ catch (Exception $e){
     <!-- JS -->
     <script src="../inscription/vendor/jquery/jquery.min.js"></script>
     <script src="../inscription/js/main.js"></script>
+    <script src="../inscription/js/main2.js"></script>
+    <script src="../inscription/js/api.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

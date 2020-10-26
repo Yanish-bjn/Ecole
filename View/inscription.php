@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../inscription/css/style.css">
     <link rel="stylesheet" href="../inscription/css/style2.css">
     <link rel="stylesheet" href="../inscription/css/style3.css">
+    <link rel="stylesheet" href="../inscription/css/style4.css">
 
 </head>
 <body>
@@ -30,25 +31,39 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Nom :</label>
-                                <input type="text" name="nom" id="name" required/>
+                                <input type="text" name="nom" id="name" />
                             </div>
                             <div class="form-group">
                                 <label for="father_name">Prénom :</label>
-                                <input type="text" name="prenom" id="father_name" required/>
+                                <input type="text" name="prenom" id="father_name" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="address">Email :</label>
-                            <input type="text" name="email" id="address" required/>
+                            <input type="text" name="email" id="address" />
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
-                            <input type="tel" name="tel" maxlength="10" minlength="10" id="birth_date" required>
+                            <input type="tel" name="tel" maxlength="10" minlength="10" id="birth_date" >
 
                         </div>
                         <div class="form-group">
+                            <p>
+                        <label>
+                          Tapez le début d'un nom de ville ou d'un code postal puis appuyez sur <b>Entrée</b>.<br>
+                        </label>
+                          <input type="texte"  name="ville" id="ville" placeholder="Entrez un code postal ou une ville" autocomplete="on" size="50" required>
+                            </p>
+                      <ul>
+                        <li data-vicopo="#ville">
+                          <strong data-vicopo-code-postal></strong>
+                          <span data-vicopo-ville></span>
+                        </li>
+                      </ul>
+                    </div>
+                        <div class="form-group">
                             <label for="pincode">Mot de passe :</label>
-                            <input type="password" name="mdp" id="pincode" required>
+                            <input type="password" name="mdp" id="pincode" >
                         </div>
                         <div class="form-submit">
                             <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>
@@ -65,5 +80,8 @@
     <!-- JS -->
     <script src="../inscription/vendor/jquery/jquery.min.js"></script>
     <script src="../inscription/js/main.js"></script>
+    <script src="../inscription/js/main2.js"></script>
+    <script src="../inscription/js/api.js"></script>
+
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

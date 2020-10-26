@@ -13,6 +13,7 @@ public function connexion($donnee){ //function connexion //
   if ($a == true){ // début du si //
     $_SESSION['email'] = $donnee->getemail();
     $_SESSION['role'] = $a['role'];
+    $_SESSION['ville'] = $a['ville'];
     $_SESSION['id'] = $a['id'];
     $_SESSION['nom'] = $a['nom'];
       $_SESSION['prenom'] = $a['prenom'];

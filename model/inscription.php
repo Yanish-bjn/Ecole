@@ -3,15 +3,17 @@ class inscription { // Casse inscription provenant du model et du manager //
   private $nom;
   private $prenom;
   private $email;
+  private $ville;
   private $tel;
   private $mdp;
 
 
-  public function __construct($nom, $prenom, $email, $tel, $mdp){
+  public function __construct($nom, $prenom, $email, $ville, $tel, $mdp){
 
       $this->setNom($nom);
       $this->setprenom($prenom);
       $this->setemail($email);
+      $this->setville($ville);
       $this->settel($tel);
       $this->setmdp($mdp);
 }
@@ -39,6 +41,13 @@ class inscription { // Casse inscription provenant du model et du manager //
     }
     $this->_email = $email;
   }
+  public function setville($ville){
+    if(empty($ville)){ // si la valeur saisie est vide afficher une erreur //
+      trigger_error('la variable doit etre un caractere');
+      return; // retourne le résultat //
+    }
+    $this->_ville = $ville;
+  }
   public function settel($tel){
     if(empty($tel)){ // si la valeur saisie est vide afficher une erreur //
       trigger_error('la variable doit etre un caractere');
@@ -63,6 +72,9 @@ class inscription { // Casse inscription provenant du model et du manager //
   }
   public function getemail(){
     return $this->_email;
+  }
+  public function getville(){
+    return $this->_ville;
   }
   public function gettel(){
     return $this->_tel;

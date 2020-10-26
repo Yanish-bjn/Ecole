@@ -12,10 +12,10 @@ try{
   $newReservations = $sth->fetchAll();
 
   $excel = "";
-  $excel .=  "ID\tNom\tPrenom\tEmail\tTelephone\tmot de passe\tRole\n";
+  $excel .=  "ID\tNom\tPrenom\tEmail\tVille\tTelephone\tmot de passe\tRole\n";
 
   foreach($newReservations as $row) {
-      $excel .= "$row[id]\t$row[nom]\t$row[prenom]\t$row[email]\t$row[tel]\t$row[mdp]\t$row[role]\n";
+      $excel .= "$row[id]\t$row[nom]\t$row[prenom]\t$row[email]\t$row[ville]\t$row[tel]\t$row[mdp]\t$row[role]\n";
   }
 
   header("Content-type: application/vnd.ms-excel");
