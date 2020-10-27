@@ -31,20 +31,20 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Nom :</label>
-                                <input type="text" name="nom" id="name" />
+                                <input type="text" name="nom" id="name" required/>
                             </div>
                             <div class="form-group">
                                 <label for="father_name">Prénom :</label>
-                                <input type="text" name="prenom" id="father_name" />
+                                <input type="text" name="prenom" id="father_name" required/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="address">Email :</label>
-                            <input type="text" name="email" id="address" />
+                            <input type="text" name="email" id="address" required/>
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
-                            <input type="tel" name="tel" maxlength="10" minlength="10" id="birth_date" >
+                            <input type="tel" name="tel" maxlength="10" minlength="10" id="birth_date" required>
 
                         </div>
                         <div class="form-group">
@@ -63,7 +63,7 @@
                     </div>
                         <div class="form-group">
                             <label for="pincode">Mot de passe :</label>
-                            <input type="password" name="mdp" id="pincode" >
+                            <input type="password" name="mdp" id="pincode" required>
                         </div>
                         <div class="form-submit">
                             <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>

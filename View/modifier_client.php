@@ -87,7 +87,7 @@ catch (Exception $e){
 
                         <div class="form-submit">
                             <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>
-                            <button type="button" class="btn btn-warning" onclick="window.location.href='moncompte_admin.php'">Revenir en arrière</button>
+                            <button type="button" class="btn btn-warning" onclick="window.location.href='moncompte_client.php'">Revenir en arrière</button>
                           </div>
                         </form>
                     </div>

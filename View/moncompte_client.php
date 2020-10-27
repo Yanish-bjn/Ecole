@@ -100,7 +100,7 @@ session_start();
                       <a class="nav-link" href="moncompte_client.php">Mon compte</a>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
+                      <a href="moncompte_client.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
@@ -108,11 +108,7 @@ session_start();
                         </li>
                       </ul>
                     </li>
-                    <li class="nav-item">
-                    <a href="#" class="nav-link search" id="search">
-                      <i class="ti-search"></i>
-                    </a>
-                  </li>
+
                   <?php  }
                     //Sinon c'est donc un admin
                     else { ?>
@@ -152,7 +148,7 @@ session_start();
                         </ul>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
+                        <a href="moncompte_admin.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
@@ -160,11 +156,7 @@ session_start();
                           </li>
                         </ul>
                       </li>
-                      <li class="nav-item">
-                      <a href="#" class="nav-link search" id="search">
-                        <i class="ti-search"></i>
-                      </a>
-                    </li>
+
                  <?php }
               }
               //Sinon il n'y a pas de sessions ouverte
@@ -190,10 +182,7 @@ session_start();
                 <li class="nav-item">
                   <a class="nav-link" href="connexion.php">Connexion</a>
                 </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link search" id="search">
-                    <i class="ti-search"></i>
-                  </a>
+
                 <?php	}  ?>
 
                 </li>
