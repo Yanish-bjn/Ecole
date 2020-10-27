@@ -244,11 +244,11 @@ session_start();
   						<table>
   							<thead>
   								<tr class="row100 head">
-                    <th class="cell100 column1">ID</th>
-  									<th class="cell100 column2">Nom de l'évènement</th>
-  									<th class="cell100 column3">Nom de la personne</th>
-  									<th class="cell100 column4">Date</th>
-  									<th class="cell100 column5">Description</th>
+  									<th class="cell100 column1">Nom de l'évènement</th>
+  									<th class="cell100 column2">Nom de la personne</th>
+  									<th class="cell100 column3">Date</th>
+  									<th class="cell100 column4">Description</th>
+                    <th class="cell100 column5">Modification</th>
   								</tr>
   							</thead>
   						</table>
@@ -265,12 +265,13 @@ session_start();
 
   								foreach ($donnees as $value) {
   									echo '<tr class="row100 body">
-                          <td class="cell100 column1">'.$value["id"].'</td>
-  												<td class="cell100 column2">'.$value["nom_evenement"].'</td>
-  												<td class="cell100 column3">'.$value["nom_personne"].'</td>
-  												<td class="cell100 column4">'.$value["date"].'</td>
-  												<td class="cell100 column5">'.$value["description"].'</td>
+  												<td class="cell100 column1">'.$value["nom_evenement"].'</td>
+  												<td class="cell100 column2">'.$value["nom_personne"].'</td>
+  												<td class="cell100 column3">'.$value["date"].'</td>
+  												<td class="cell100 column4">'.$value["description"].'</td>
+                          <td class="cell100 column5"><a class="btn btn-warning" href="modifier_evenement.php">Modifier</a></td>
   												</tr>';
+
   								}
   								?>
 
