@@ -147,6 +147,9 @@ session_start();
               }
               //Sinon il n'y a pas de sessions ouverte
               else{ ?>
+                <div class="position">
+                <?php echo'Lycée Robert Schuman'?>
+                </div>
                 <li class="nav-item active">
                   <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
@@ -164,6 +167,9 @@ session_start();
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="connexion.php">Connexion</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="inscription.php">Inscription</a>
                 </li>
 
                 <?php	}  ?>
