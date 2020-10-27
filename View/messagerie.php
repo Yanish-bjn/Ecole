@@ -369,8 +369,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
               type="button"
               class="close"
               data-dismiss="modal"
-              aria-label="Close"
-            >
+              aria-label="Close">
               <i class="ti-close"></i>
             </button>
             <h2>Thank you</h2>
