@@ -159,7 +159,7 @@ session_start();
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
-                            <a class="nav-link" href="../exportation/message.php">Exportation</a>
+                            <a class="nav-link" href="../exportation/compte.php">Exportation</a>
                           </li>
                         </ul>
                       </li>

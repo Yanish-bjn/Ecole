@@ -8,9 +8,12 @@
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="../evenement/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Main css -->
     <link rel="stylesheet" href="../evenement/css/style.css">
+    <link rel="stylesheet" href="../evenement/css/style2.css">
 
 </head>
 <?php
@@ -35,7 +38,7 @@ catch (Exception $e){
                         <h2 class="form-title">Modifier evenement</h2>
                         <form method="POST" action="../manager/modifier_evenement.php" class="register-form" id="register-form">
                             <div class="form-group">
-                                <label for="nom_evenement"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="nom_evenement"><i class="fa fa-calendar"></i></label>
                                 <input type="text" name="nom_evenement" id="name" placeholder="Nom de l'évènement" required/>
                             </div>
                             <div class="form-group">
@@ -43,16 +46,16 @@ catch (Exception $e){
                                 <input type="text" name="nom_personne" id="name" placeholder="Nom de la personne" required/>
                             </div>
                             <div class="form-group">
-                                <label for="date"><i class="zmdi zmdi-email"></i></label>
+                                <label for="date"><i class="fa fa-clock-o"></i></label>
                                 <input type="date" name="date" id="email" placeholder="Entrer la date" required/>
                             </div>
                             <div class="form-group">
-                                <label for="description"><i class="fa fa-plus"></i></label>
+                                <label for="description"><i class="fa fa-comment-o"></i></label>
                                 <input type="text" name="description" id="description" placeholder="Description" required/>
                             </div>
 
-                            <div class="custom-dropdown custom-dropdown--white">
-                            <h4>Choisissez l'ID de l'événement à modifier :</h4>  <select class="custom-dropdown__select custom-dropdown__select--white" name="id" placeholder="Choisissez l'id">
+                            <div class="custom-dropdown custom-dropdown--whit">
+                            <p><h6>Choisissez l'ID de l'événement à modifier :</h6></p>  <select class="form-control" name="id" placeholder="Choisissez l'id">
 
                             <?php
                           // Sélectionne les nom de la table compte en fonction du role //
@@ -65,11 +68,12 @@ catch (Exception $e){
                           echo '<option>'.$value["id"].'</option>';
                           }
                           ?>
+
                           </select>
                         </div>
-
+<br>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Enregistrer"/>
+                              <input type="submit" name="signup" id="signup" class="btn btn-warning" value="Enregistrer"/>
                             </div>
                         </form>
                     </div>

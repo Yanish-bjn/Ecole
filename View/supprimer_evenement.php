@@ -8,9 +8,11 @@
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="../evenement/fonts/material-icon/css/material-design-iconic-font.min.css">
-
+    <link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Main css -->
     <link rel="stylesheet" href="../evenement/css/style.css">
+    <link rel="stylesheet" href="../evenement/css/style2.css">
 </head>
 
 <?php
@@ -32,10 +34,10 @@ catch (Exception $e){
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Évènement</h2>
+                        <h2 class="form-title">Supprimer évènement</h2>
                         <form method="POST" action="../manager/supprimer_evenement.php" class="register-form" id="register-form">
                             <div class="form-group">
-                            <h4>Choisissez le nom de l'événement à supprimer :</h4>  <select class="form-control" name="nom_evenement" placeholder="Choisissez l'id">
+                            <h6>Choisissez le nom de l'événement à supprimer :</h6>  <select class="form-control" name="nom_evenement" placeholder="Choisissez l'id">
 
 
                             <?php
@@ -52,7 +54,7 @@ catch (Exception $e){
                   </select>
                     </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Supprimer"/>
+                              <input type="submit" name="signup" id="signup" class="btn btn-warning" value="Enregistrer"/>
                             </div>
                         </form>
                     </div>
