@@ -100,7 +100,7 @@ session_start();
                       <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                      <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
@@ -134,7 +134,7 @@ session_start();
                         <a class="nav-link" href="../index.php">Accueil</a>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                        <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
@@ -249,7 +249,6 @@ session_start();
   									<th class="cell100 column3">Email</th>
                     <th class="cell100 column4">Ville</th>
   									<th class="cell100 column5">Téléphone</th>
-  									<th class="cell100 column6">Mot de passe</th>
   								</tr>
   							</thead>
   						</table>
@@ -271,7 +270,6 @@ session_start();
   												<td class="cell100 column3">'.$value["email"].'</td>
                           <td class="cell100 column4">'.$value["ville"].'</td>
   												<td class="cell100 column5">'.$value["tel"].'</td>
-  												<td class="cell100 column6">'.$value["mdp"].'</td>
   												</tr>';
   								}
   								?>

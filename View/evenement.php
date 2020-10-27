@@ -71,7 +71,7 @@ session_start();
                       <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                      <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
@@ -105,7 +105,7 @@ session_start();
                        <a class="nav-link" href="../index.php">Accueil</a>
                      </li>
                      <li class="nav-item submenu dropdown">
-                       <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                       <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
@@ -157,13 +157,8 @@ session_start();
                   <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
-                  <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                  <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                   </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a class="nav-link" href="evenement.php">Ecole</a>
-                    </li>
-                  </ul>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="connexion.php">Connexion</a>

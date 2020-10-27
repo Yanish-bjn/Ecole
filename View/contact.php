@@ -91,7 +91,7 @@ session_start();
                       <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                      <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">
@@ -125,7 +125,7 @@ session_start();
                         <a class="nav-link" href="../index.php">Accueil</a>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                        <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
@@ -260,12 +260,12 @@ session_start();
               </div>
               <div class="info_item">
                 <i class="ti-headphone"></i>
-                <h6><a href="#"> 01 48 37 74 26</a></h6>
+                <h6><a> 01 48 37 74 26</a></h6>
                 <p>Du lundi au vendredi 8h-20h</p>
               </div>
               <div class="info_item">
                 <i class="ti-email"></i>
-                <h6><a href="#">administration@schuman.com</a></h6>
+                <h6><a>administration@schuman.com</a></h6>
                 <p>Poser nous vos questions !</p>
               </div>
             </div>
