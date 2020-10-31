@@ -1,0 +1,9 @@
+.message{
+  background-color: lightgreen;
+  padding: 1em;
+}
+
+.erreur{
+  background-color: #fb4141;
+  padding: 1em;
+}

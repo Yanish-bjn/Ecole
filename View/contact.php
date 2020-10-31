@@ -23,6 +23,7 @@ session_start();
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
+    <link rel="stylesheet" href="../css/erreur.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
 <style>
 #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
@@ -30,6 +31,22 @@ session_start();
         }
         </style>
   </head>
+
+  <?php
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 1) { ?>
+  <div id="reussie" class="message">
+  <?php echo "Demande envoyé";
+  }?>
+</div>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 2) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur votre demande n'a pas était envoyé, veuillez réessayer";
+}?>
+</div>
 
   <body>
     <!--================ Start Header Menu Area =================-->
@@ -287,7 +304,7 @@ session_start();
                     name="nom"
                     placeholder="Entrer votre nom"
                     onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter your name'"
+                    onblur="this.placeholder = 'Enter votre nom'"
                     required=""
                   />
                 </div>
@@ -299,7 +316,7 @@ session_start();
                     name="email"
                     placeholder="Entrer votre email"
                     onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter email address'"
+                    onblur="this.placeholder = 'Enter votre email'"
                     required=""
                   />
                 </div>
@@ -311,7 +328,7 @@ session_start();
                     name="sujet"
                     placeholder="Entrer un sujet"
                     onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Subject'"
+                    onblur="this.placeholder = 'Entrer un sujet'"
                     required=""
                   />
                 </div>
@@ -325,7 +342,7 @@ session_start();
                     rows="1"
                     placeholder="Votre message"
                     onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Message'"
+                    onblur="this.placeholder = 'Votre message'"
                     required=""
                   ></textarea>
                 </div>

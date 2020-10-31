@@ -15,11 +15,11 @@ public function modifier_evenement($donnee){
     $req->fetchall();
     //var_dump($a);
     if ($req == true){
-      header("location: ../View/evenement_admin.php");
+      header("location: ../View/evenement_admin.php?msg=3'");
     }   // Si la requete ne s'execute pas alors on redirige vers une autre page//
     else{
-      echo '<body onLoad="alert(\'Erreur\')">';
-    echo '<meta http-equiv="refresh" content="0;URL=../View/modifier_client.php">';
+      header("location: ../View/modifier_evenement.php?msg=2'");
+
     }
 
           }

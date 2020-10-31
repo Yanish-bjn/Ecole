@@ -44,10 +44,9 @@ public function ajouter_client($donnee){
           $mail->addAddress($donnee->getemail(), 'Bienvenue');     // Add a recipient //Recipients
            $mail->Body    =   "Vous avez était inscrit par l'admin !! :)";
           if(!$mail->Send()) {
-            echo '<body onLoad="alert(\'Erreur\')">';
-          echo '<meta http-equiv="refresh" content="0;URL=../View/ajouter_cient.php">';
+            header("location: ../View/ajouter_client.php?msg=2'");
           } else {
-             header("location: ../View/moncompte_admin.php");
+             header("location: ../View/moncompte_admin.php?msg=3'");
           }
 
               }

@@ -11,11 +11,11 @@ public function evenement($donnee){
     $req->fetchall();
     // Si la requete s'execute alors on redirige vers une page//
     if ($req ==true){
-      header("location: ../View/evenement_admin.php");
+      header("location: ../View/evenement_admin.php?msg=1'");
     }   // Sinon on redirige vers une autre page//
     else{
-      echo '<body onLoad="alert(\'Erreur\')">';
-    echo '<meta http-equiv="refresh" content="0;URL=../View/ajouter_evenement.php">';
+      header("location: ../View/ajouter_evenement.php?msg=2'");
+
     }
   }
 }

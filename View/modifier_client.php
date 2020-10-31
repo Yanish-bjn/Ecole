@@ -28,11 +28,41 @@ catch (Exception $e){
     <link rel="stylesheet" href="../inscription/css/style2.css">
     <link rel="stylesheet" href="../inscription/css/style3.css">
     <link rel="stylesheet" href="../inscription/css/style4.css">
+    <link rel="stylesheet" href="../css/erreur.css">
+
 
 </head>
+
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 2) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur veuillez réessayer";
+}?>
+
+</div>
+
 <body>
 
     <div class="main">
+      <?php
+      $id = $_GET['id'];
+      // Sélectionne les nom de la table compte en fonction du role //
+      $req = $bdd->query("SELECT * FROM compte where id = '$id' ");
+      $donnees= $req->fetchall();
+
+      //Liste déroulante avec le nom de chaque client
+      foreach ($donnees as $value) {
+        $nom  = $value['nom'];
+        $prenom  = $value['prenom'];
+        $email  = $value['email'];
+        $ville  = $value['ville'];
+        $tel  = $value['tel'];
+
+
+      //affiche les valeurs //
+      ?>
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
@@ -44,19 +74,16 @@ catch (Exception $e){
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nom">Nom :</label>
-                                <?php echo $_SESSION['nom']; ?>
-                                <input type="text" name="nom" id="nom" required />
+                                <input type="text" name="nom" id="nom" <?php echo 'value='.'"'.$value["nom"].'"'.''?> required />
                             </div>
                             <div class="form-group">
                                 <label for="father_name">Prénom :</label>
-                                <?php echo $_SESSION['prenom']; ?>
-                                <input type="text" name="prenom" id="father_name" required/>
+                                <input type="text" name="prenom" id="prenom" <?php echo 'value='.'"'.$value["prenom"].'"'.''?> required/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="address">Email :</label>
-                            <?php echo $_SESSION['email']; ?>
-                            <input type="text" name="email" id="address" required/>
+                            <input type="text" name="email" id="email" <?php echo 'value='.'"'.$value["email"].'"'.''?> required/>
                         </div>
 
                         <div class="form-group">
@@ -64,8 +91,7 @@ catch (Exception $e){
                         <label>
                           Tapez le début d'un nom de ville ou d'un code postal puis appuyez sur <b>Entrée</b>.<br>
                         </label>
-                          <?php echo $_SESSION['ville']; ?>
-                          <input type="texte"  name="ville" id="ville" placeholder="Entrez un code postal ou une ville" autocomplete="on" size="50" required>
+                          <input type="texte"  name="ville" id="ville" placeholder="Entrez un code postal ou une ville" <?php echo 'value='.'"'.$value["ville"].'"'.''?> autocomplete="on" size="50" required>
                             </p>
                       <ul>
                         <li data-vicopo="#ville">
@@ -77,13 +103,14 @@ catch (Exception $e){
 
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
-                            <?php echo $_SESSION['tel']; ?>
-                            <input type="text" name="tel" minlength="10" maxlength="10" id="birth_date" required>
+                            <input type="text" name="tel" minlength="10" maxlength="10" id="tel" <?php echo 'value='.'"'.$value["tel"].'"'.''?> required>
                         </div>
                         <div class="form-group">
                             <label for="pincode">Mot de passe :</label>
-                            <input type="password" name="mdp" id="pincode" required>
+                            <input type="password" name="mdp" id="mdp" required>
                         </div>
+                      <?php  }?>
+
 
                         <div class="form-submit">
                             <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>

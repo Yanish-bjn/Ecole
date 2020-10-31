@@ -36,9 +36,41 @@ session_start();
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
-
+    <link rel="stylesheet" href="../css/erreur.css" />
 
   </head>
+
+  <?php
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 1) { ?>
+  <div id="reussie" class="message">
+  <?php echo "Evenement ajouter avec succés";
+  }?>
+</div>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 3) { ?>
+<div id="reussie" class="message">
+<?php echo "Evenement modifier avec succés";
+}?>
+</div>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 4) { ?>
+<div id="reussie" class="message">
+<?php echo "Evenement supprimer avec succés";
+}?>
+</div>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 2) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur votre demande n'a pas était envoyé, veuillez réessayer";
+}?>
+</div>
 
   <body>
     <!--================ Start Header Menu Area =================-->
@@ -248,7 +280,8 @@ session_start();
   									<th class="cell100 column2">Nom de la personne</th>
   									<th class="cell100 column3">Date</th>
   									<th class="cell100 column4">Description</th>
-                    <th class="cell100 column5">Modification</th>
+                    <th class="cell100 column5">Modif/Ajout</th>
+                    <th class="cell100 column6">Suppression</th>
   								</tr>
   							</thead>
   						</table>
@@ -263,38 +296,33 @@ session_start();
                   $req->execute(array('email'=>$_SESSION['email']));
   								$donnees= $req->fetchall();
 
-  								foreach ($donnees as $value) {
-  									echo '<tr class="row100 body">
-  												<td class="cell100 column1">'.$value["nom_evenement"].'</td>
-  												<td class="cell100 column2">'.$value["nom_personne"].'</td>
-  												<td class="cell100 column3">'.$value["date"].'</td>
-  												<td class="cell100 column4">'.$value["description"].'</td>
-                          <td class="cell100 column5"><a class="btn btn-warning" href="modifier_evenement.php">Modifier</a></td>
-  												</tr>';
+                  foreach ($donnees as $value) { ?>
+                    <tr class="row100 body">
+                          <td class="cell100 column1"><?php echo $value['nom_evenement']?></td>
+                          <td class="cell100 column2"><?php echo $value['nom_personne']?></td>
+                          <td class="cell100 column3"><?php echo $value['date']?></td>
+                          <td class="cell100 column4"><?php echo $value['description']?></td>
+                          <td class="cell100 column5"><a class="btn btn-warning" href="ajouter_evenement.php">Ajouter&nbsp;&nbsp;</a><br></br><a class="btn btn-warning" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
+                          <td class="cell100 column6"><a class="btn btn-warning" href="../manager/supprimer_evenement.php?id=<?php echo $value['id']; ?>">Supprimer</a>
+                          </tr>
 
+<?php
   								}
-  								?>
+?>
 
   							</tbody>
   						</table>
   					</div>
   				</div>
 
-<div class="container">
-
-           <div class="pull-right">
-  				     <button type="button" class="btn btn-warning" onclick="window.location.href='supprimer_evenement.php'">Supprimer</button>
-           </div>
-
-           <div class="pull left">
-         <p><button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_evenement.php'">Ajouter</button>
+          <div class="container">
+              <center><p><a class="btn btn-warning" href="ajouter_evenement.php">Ajouter</a></center></p>
            </div>
        </div>
        </div>
   			</div>
   		</div>
   	</div>
-    <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='modifier_evenement.php'">Modifier</button></center></p>
 
 </div>
 

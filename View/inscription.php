@@ -15,8 +15,26 @@
     <link rel="stylesheet" href="../inscription/css/style2.css">
     <link rel="stylesheet" href="../inscription/css/style3.css">
     <link rel="stylesheet" href="../inscription/css/style4.css">
+    <link rel="stylesheet" href="../css/erreur.css">
 
 </head>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 2) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur, veuillez réessayer";
+}?>
+</div>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 3) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur, le compte existe veuillez vous connecter";
+}?>
+</div>
+
 <body>
 
     <div class="main">
@@ -40,7 +58,7 @@
                         </div>
                         <div class="form-group">
                             <label for="address">Email :</label>
-                            <input type="text" name="email" id="address" required/>
+                            <input type="email" name="email" id="address" required/>
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>

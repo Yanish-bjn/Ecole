@@ -26,11 +26,28 @@
 	<link rel="stylesheet" type="text/css" href="../connexion/css/util.css">
 	<link rel="stylesheet" type="text/css" href="../connexion/css/main.css">
 	<link rel="stylesheet" type="text/css" href="../connexion/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/erreur.css">
 <!--===============================================================================================-->
 </head>
 <body>
+	<?php
+	ini_set('display_errors', 'off');
+	if($_GET['msg'] == 2) { ?>
+	<div id="erreur" class="erreur">
+	<?php echo "Erreur, veuillez réessayer";
+	}?>
+</div>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 1) { ?>
+<div id="reussie" class="message">
+<?php echo "inscription réussie";
+}?>
+</div>
 
 	<div class="limiter">
+
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(../connexion/images/bg-01.jpg);">

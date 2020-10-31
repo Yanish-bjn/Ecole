@@ -38,6 +38,15 @@ $donnees= $rec->fetch();
     <link rel="stylesheet" href="../inscription/css/style4.css">
 
 </head>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 2) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur veuillez réessayer";
+}?>
+</div>
+
 <body>
 
     <div class="main">

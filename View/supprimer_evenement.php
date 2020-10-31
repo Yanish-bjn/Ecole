@@ -13,6 +13,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="../evenement/css/style.css">
     <link rel="stylesheet" href="../evenement/css/style2.css">
+    <link rel="stylesheet" href="../css/erreur.css">
 </head>
 
 <?php
@@ -24,6 +25,14 @@ catch (Exception $e){
   die('Erreur:'.$e->getMessage());
 }
 ?>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 2) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur veuillez réessayer";
+}?>
+</div>
 
 <body>
 
@@ -54,7 +63,7 @@ catch (Exception $e){
                   </select>
                     </div>
                             <div class="form-group form-button">
-                              <input type="submit" name="signup" id="signup" class="btn btn-warning" value="Enregistrer"/>
+                              <input type="submit" name="signup" id="signup" class="btn btn-warning" value="Supprimer"/>
                             </div>
                         </form>
                     </div>

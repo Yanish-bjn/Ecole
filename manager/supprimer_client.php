@@ -12,11 +12,10 @@ public function supprimer_client($donnee){
     $req->fetchall();
     // Si la requete s'execute alors on redirige vers une page//
     if ($req ==true){
-      header("location: ../View/moncompte_admin.php");
+      header("location: ../View/moncompte_admin.php?msg=4'");
     }   // Si la requete ne s'execute pas alors on redirige vers une autre page//
     else{
-      echo '<body onLoad="alert(\'Erreur\')">';
-    echo '<meta http-equiv="refresh" content="0;URL=../View/supprimer_client.php">';
+      header("location: ../View/supprimer_client.php?msg=2'");
     }
   }
 }

@@ -44,10 +44,9 @@ public function contact($donnee){
   $mail->addAddress($donnee->getemail(), 'Contact');     // Add a recipient //Recipients
    $mail->Body    =   $donnee->getmessage();
   if(!$mail->Send()) {
-    echo '<body onLoad="alert(\'Erreur\')">';
-  echo '<meta http-equiv="refresh" content="0;URL=../View/contact.php">';
+    header("location: ../View/contact.php?msg=2'");
   } else {
-     header("location: ../index.php");
+    header("location: ../View/contact.php?msg=1'");
   }
 
       }

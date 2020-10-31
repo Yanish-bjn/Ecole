@@ -24,11 +24,38 @@ try{
 catch (Exception $e){
   die('Erreur:'.$e->getMessage());
 }
+
 ?>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 2) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur veuillez réessayer";
+}?>
+
+</div>
+
 <body>
 
     <div class="main">
+      <?php
+      $id = $_GET['id'];
+      // Sélectionne les nom de la table compte en fonction du role //
+      $req = $bdd->query("SELECT * FROM evenement where id = '$id' ");
+      $donnees= $req->fetchall();
 
+      //Liste déroulante avec le nom de chaque client
+      foreach ($donnees as $value) {
+        $nom_evenement  = $value['nom_evenement'];
+        $nom_personne  = $value['nom_personne'];
+        $date  = $value['date'];
+        $description  = $value['description'];
+        $id  = $value['id'];
+
+
+      //affiche les valeurs //
+      ?>
         <!-- Sign up form -->
 
         <section class="signup">
@@ -37,43 +64,34 @@ catch (Exception $e){
                     <div class="signup-form">
                         <h2 class="form-title">Modifier evenement</h2>
                         <form method="POST" action="../manager/modifier_evenement.php" class="register-form" id="register-form">
+
                             <div class="form-group">
                                 <label for="nom_evenement"><i class="fa fa-calendar"></i></label>
-                                <input type="text" name="nom_evenement" id="name" placeholder="Nom de l'évènement" required/>
+                                <input type="text" name="nom_evenement" id="name" placeholder="Nom de l'évènement" <?php echo 'value='.'"'.$value["nom_evenement"].'"'.''?> required/>
                             </div>
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="nom_personne" id="name" placeholder="Nom de la personne" required/>
+                                <input type="text" name="nom_personne" id="name" placeholder="Nom de la personne" <?php echo 'value='.'"'.$value["nom_personne"].'"'.''?> required/>
                             </div>
                             <div class="form-group">
                                 <label for="date"><i class="fa fa-clock-o"></i></label>
-                                <input type="date" name="date" id="email" placeholder="Entrer la date" required/>
+                                <input type="date" name="date" id="email" placeholder="Entrer la date" <?php echo 'value='.'"'.$value["date"].'"'.''?> required/>
                             </div>
                             <div class="form-group">
                                 <label for="description"><i class="fa fa-comment-o"></i></label>
-                                <input type="text" name="description" id="description" placeholder="Description" required/>
+                                <input type="text" name="description" id="description" placeholder="Description" <?php echo 'value='.'"'.$value["description"].'"'.''?> required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="id" id="id" placeholder="Id" <?php echo 'value='.'"'.$value["id"].'"'.''?> required/>
                             </div>
 
-                            <div class="custom-dropdown custom-dropdown--whit">
-                            <p><h6>Choisissez l'ID de l'événement à modifier :</h6></p>  <select class="form-control" name="id" placeholder="Choisissez l'id">
 
-                            <?php
-                          // Sélectionne les nom de la table compte en fonction du role //
-                          $req = $bdd->query('SELECT id FROM evenement');
-                          $donnees= $req->fetchall();
-
-                          //Liste déroulante avec le nom de chaque client
-                          foreach ($donnees as $value) {
-                          //affiche les valeurs //
-                          echo '<option>'.$value["id"].'</option>';
+                        <?php
                           }
-                          ?>
+                        ?>
 
-                          </select>
-                        </div>
-<br>
                             <div class="form-group form-button">
-                              <input type="submit" name="signup" id="signup" class="btn btn-warning" value="Enregistrer"/>
+                              <input type="submit" name="signup" id="signup" class="btn btn-warning" value="Modifier"/>
                             </div>
                         </form>
                     </div>

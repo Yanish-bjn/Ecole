@@ -24,10 +24,19 @@ session_start();
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style2.css" />
     <link rel="stylesheet" href="css/style3.css" />
+    <link rel="stylesheet" href="css/erreur.css" />
 
 
   </head>
 
+  <?php
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 1) { ?>
+  <div id="reussie" class="message">
+  <?php echo "Connexion réussie";
+  }?>
+
+  </div>
   <body>
     <!--================ Start Header Menu Area =================-->
     <header class="header_area">
@@ -88,7 +97,7 @@ session_start();
                       <a class="nav-link" href="View/moncompte_client.php">Mom compte</a>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="moncompte_client.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
+                      <a href="View/moncompte_client.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
                       </a>
                       <ul class="dropdown-menu">
                         <li class="nav-item">

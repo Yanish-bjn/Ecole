@@ -18,10 +18,11 @@ public function connexion($donnee){ //function connexion //
     $_SESSION['nom'] = $a['nom'];
       $_SESSION['prenom'] = $a['prenom'];
       $_SESSION['tel'] = $a['tel'];
-    header("location: ../index.php"); // redirection vers ... //
+    header("location: ../index.php?msg=1'"); // redirection vers ... //
+
   }// fin  du si //
   else{ //début du si non //
-    header("location: ../View/connexion.php"); // redirection vers la page .... //
+    header("location: ../View/connexion.php?msg=2'"); // redirection vers la page .... //
   }// fin du si non //
     //header("Location: index.php");
     //$_SESSION['email']=$this->_email;

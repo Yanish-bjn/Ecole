@@ -36,9 +36,42 @@ session_start();
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
+    <link rel="stylesheet" href="../css/erreur.css" />
 
 
   </head>
+
+  <?php
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 1) { ?>
+  <div id="reussie" class="message">
+  <?php echo "Modification effectuer avec succes";
+  }?>
+  </div>
+
+  <?php
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 3) { ?>
+  <div id="reussie" class="message">
+  <?php echo "la personne à bien était ajouté";
+  }?>
+  </div>
+
+  <?php
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 4) { ?>
+  <div id="reussie" class="message">
+  <?php echo "Suppression effectuer avec succes";
+  }?>
+  </div>
+
+  <?php
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 2) { ?>
+  <div id="erreur" class="erreur">
+  <?php echo "Erreur veuillez réessayer";
+  }?>
+</div>
 
   <body>
     <!--================ Start Header Menu Area =================-->
@@ -282,7 +315,7 @@ session_start();
 
 
            <div class="pull-right">
-  				     <button type="button" class="btn btn-warning" onclick="window.location.href='modifier_admin.php'">Modifier</button>
+              <a class="btn btn-warning" href="modifier_admin.php?id=<?php echo $_SESSION['id']; ?>">Modifier</a>
            </div>
 
            <div class="pull left">

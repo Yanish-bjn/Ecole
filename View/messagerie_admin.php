@@ -36,8 +36,25 @@ session_start();
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
-
+    <link rel="stylesheet" href="../css/erreur.css" />
   </head>
+
+  <?php
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 1) { ?>
+  <div id="reussie" class="message">
+  <?php echo "Message envoyé";
+  }?>
+</div>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 2) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur veuillez réessayer";
+}?>
+</div>
+
 
   <body>
     <!--================ Start Header Menu Area =================-->

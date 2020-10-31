@@ -27,8 +27,17 @@ catch (Exception $e){
     <link rel="stylesheet" href="../inscription/css/style.css">
     <link rel="stylesheet" href="../inscription/css/style2.css">
     <link rel="stylesheet" href="../inscription/css/style3.css">
-
+    <link rel="stylesheet" href="../css/erreur.css">
 </head>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 2) { ?>
+<div id="erreur" class="erreur">
+<?php echo "Erreur veuillez resseillez";
+}?>
+</div>
+
 <body>
 
     <div class="main">
