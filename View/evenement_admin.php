@@ -40,37 +40,61 @@ session_start();
 
   </head>
 
+  <SCRIPT language="JavaScript">
+  function cacherDiv() {
+       document.getElementById("reussie").style.display = "none";
+  }
+  function cacherDiv1() {
+       document.getElementById("modifier").style.display = "none";
+  }
+  function cacherDiv3() {
+       document.getElementById("supprimer").style.display = "none";
+  }
+
+  function cacherDiv2() {
+       document.getElementById("erreur").style.display = "none";
+  }
+  </SCRIPT>
+
   <?php
   ini_set('display_errors', 'off');
   if($_GET['msg'] == 1) { ?>
+    <body onload="setTimeout(cacherDiv,4000);">
   <div id="reussie" class="message">
   <?php echo "Evenement ajouter avec succés";
   }?>
 </div>
+</body>
 
 <?php
 ini_set('display_errors', 'off');
 if($_GET['msg'] == 3) { ?>
-<div id="reussie" class="message">
+  <body onload="setTimeout(cacherDiv1,4000);">
+<div id="modifier" class="message">
 <?php echo "Evenement modifier avec succés";
 }?>
 </div>
+</body>
 
 <?php
 ini_set('display_errors', 'off');
 if($_GET['msg'] == 4) { ?>
-<div id="reussie" class="message">
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="supprimer" class="message">
 <?php echo "Evenement supprimer avec succés";
 }?>
 </div>
+</body>
 
 <?php
 ini_set('display_errors', 'off');
 if($_GET['msg'] == 2) { ?>
+  <body onload="setTimeout(cacherDiv2,4000);">
 <div id="erreur" class="erreur">
 <?php echo "Erreur votre demande n'a pas était envoyé, veuillez réessayer";
 }?>
 </div>
+</body>
 
   <body>
     <!--================ Start Header Menu Area =================-->

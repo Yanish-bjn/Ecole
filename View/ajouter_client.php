@@ -39,13 +39,23 @@ $donnees= $rec->fetch();
 
 </head>
 
+<SCRIPT language="JavaScript">
+
+function cacherDiv2() {
+     document.getElementById("erreur").style.display = "none";
+}
+
+</SCRIPT>
+
 <?php
 ini_set('display_errors', 'off');
 if($_GET['msg'] == 2) { ?>
+  <body onload="setTimeout(cacherDiv2,4000);">
 <div id="erreur" class="erreur">
 <?php echo "Erreur veuillez réessayer";
 }?>
 </div>
+</body>
 
 <body>
 

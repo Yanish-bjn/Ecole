@@ -28,15 +28,25 @@ session_start();
 
 
   </head>
+  <SCRIPT language="JavaScript">
+
+  function cacherDiv() {
+       document.getElementById("reussie").style.display = "none";
+  }
+
+  </SCRIPT>
 
   <?php
   ini_set('display_errors', 'off');
   if($_GET['msg'] == 1) { ?>
+    <body onload="setTimeout(cacherDiv,4000);">
   <div id="reussie" class="message">
   <?php echo "Connexion réussie";
   }?>
-
   </div>
+</body>
+
+
   <body>
     <!--================ Start Header Menu Area =================-->
     <header class="header_area">

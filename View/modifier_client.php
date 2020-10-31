@@ -33,15 +33,22 @@ catch (Exception $e){
 
 </head>
 
+<SCRIPT language="JavaScript">
+
+function cacherDiv2() {
+     document.getElementById("erreur").style.display = "none";
+}
+</SCRIPT>
 
 <?php
 ini_set('display_errors', 'off');
 if($_GET['msg'] == 2) { ?>
 <div id="erreur" class="erreur">
+  <body onload="setTimeout(cacherDiv2,4000);">
 <?php echo "Erreur veuillez réessayer";
 }?>
-
 </div>
+</body>
 
 <body>
 

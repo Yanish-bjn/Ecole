@@ -21,12 +21,7 @@ public function contact($donnee){
     $req->execute(array('nom'=>$donnee->getnom(), 'email'=>$donnee->getemail(), 'sujet'=>$donnee->getsujet(), 'message'=>$donnee->getmessage()));
     $a=$req->fetchall();
     // Si la requete s'execute alors on redirige vers une page//
-    if ($req ==true){
-      header("location: ../index.php");
-    }   // Si la requete ne s'execute pas alors on redirige vers une autre page//
-    else{
-      header("location: ../View/contact.php");
-    }
+
   }
 
   public function Mail($donnee){

@@ -25,30 +25,45 @@ session_start();
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+  </head>
 <style>
 #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
             height:400px;
         }
         </style>
-  </head>
-
-  <?php
-  ini_set('display_errors', 'off');
-  if($_GET['msg'] == 1) { ?>
-  <div id="reussie" class="message">
-  <?php echo "Demande envoyé";
-  }?>
-</div>
-
-<?php
-ini_set('display_errors', 'off');
-if($_GET['msg'] == 2) { ?>
-<div id="erreur" class="erreur">
-<?php echo "Erreur votre demande n'a pas était envoyé, veuillez réessayer";
-}?>
-</div>
 
   <body>
+
+            <SCRIPT language="JavaScript">
+          	function cacherDiv2() {
+          			 document.getElementById("erreur").style.display = "none";
+          	}
+
+          	function cacherDiv() {
+          			 document.getElementById("reussie").style.display = "none";
+          	}
+          	</SCRIPT>
+
+          	<?php
+          	ini_set('display_errors', 'off');
+          	if($_GET['msg'] == 2) { ?>
+          		<body onload="setTimeout(cacherDiv2,4000);">
+          	<div id="erreur" class="erreur">
+          	<?php echo "Erreur, veuillez réessayer";
+          	}?>
+          </div>
+          </body>
+
+          <?php
+          ini_set('display_errors', 'off');
+          if($_GET['msg'] == 1) { ?>
+          	<body onload="setTimeout(cacherDiv,4000);">
+          <div id="reussie" class="message">
+          <?php echo "Demande envoyer";
+          }?>
+          </div>
+          </body>
+
     <!--================ Start Header Menu Area =================-->
     <header class="header_area white-header">
       <div class="main_menu">
