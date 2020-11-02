@@ -76,7 +76,7 @@ if($_GET['msg'] == 2) { ?>
 
                         <div class="form-submit">
                             <input type="submit" value="Supprimer" class="submit" name="submit" id="submit"/>
-                            <button type="button" class="btn btn-warning" onclick="window.location.href='moncompte_admin.php'">Revenir en arriére</button>
+                            <button type="button" class="btn btn-warning" onclick="window.location.href='moncompte_admin.php'">Revenir en arrière</button>
 
                           </div>
                           </div>

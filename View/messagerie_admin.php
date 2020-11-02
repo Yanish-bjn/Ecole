@@ -321,14 +321,41 @@ if($_GET['msg'] == 3) { ?>
   				</div>
           <p><div class="col-md-12 text-right">
             <button type="button" class="btn btn-warning" onclick="window.location.href='messagerie_admin.php'">Actualiser</button><p>
-            <form method="POST" action="../manager/message.php">
-            <input type="submit" value="Supprimer tout les messages" class="btn btn-warning">
-          </form>
+
+          <p></p>
+
+          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+          Supprimer tous les messages
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Etes-vous sur de vouloir tout supprimer ?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                  <button type="button" class="btn btn-warning" onclick="window.location.href='../manager/message.php'">Valider</button><p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           </div>
        </div>
   			</div>
   		</div>
   	</div>
+    <!-- Button trigger modal -->
+
 
 
 
