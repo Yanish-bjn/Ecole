@@ -47,6 +47,10 @@ session_start();
   function cacherDiv2() {
        document.getElementById("erreur").style.display = "none";
   }
+
+  function cacherDiv3() {
+       document.getElementById("message").style.display = "none";
+  }
   </SCRIPT>
 
   <?php
@@ -65,6 +69,16 @@ if($_GET['msg'] == 2) { ?>
   <body onload="setTimeout(cacherDiv2,4000);">
 <div id="erreur" class="erreur">
 <?php echo "Erreur veuillez réessayer";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 3) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="message" class="message">
+<?php echo "Tout les messages ont était supprimer avec succés";
 }?>
 </div>
 </body>

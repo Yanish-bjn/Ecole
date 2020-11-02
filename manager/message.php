@@ -12,11 +12,11 @@ $sth->execute();
 
 $count = $sth->rowCount();
   if ($sth == true){
-    header("location: ../View/messagerie_admin.php");
+    header("location: ../View/messagerie_admin.php?msg=3'");
   }   // Si la requete ne s'execute pas alors on redirige vers une autre page//
   else{
-    echo '<body onLoad="alert(\'Erreur\')">';
-    echo '<meta http-equiv="refresh" content="0;URL=../View/messagerie.php">';
+    header("location: ../View/messagerie_admin.php?msg=2'");
+
   }
 
            }
