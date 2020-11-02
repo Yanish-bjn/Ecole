@@ -75,8 +75,30 @@ if($_GET['msg'] == 2) { ?>
 
 
                         <div class="form-submit">
-                            <input type="submit" value="Supprimer" class="submit" name="submit" id="submit"/>
-                            <button type="button" class="btn btn-warning" onclick="window.location.href='moncompte_admin.php'">Revenir en arrière</button>
+  <!-- Button trigger modal -->
+  <a class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Supprimer</a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Supprimer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Etes-vous sur de vouloir supprimer cet évènement ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>
+      </div>
+    </div>
+  </div>
+</div>
+  <button type="button" class="btn btn-warning" onclick="window.location.href='moncompte_admin.php'">Revenir en arrière</button>
 
                           </div>
                           </div>
@@ -91,5 +113,14 @@ if($_GET['msg'] == 2) { ?>
     <!-- JS -->
     <script src="../inscription/vendor/jquery/jquery.min.js"></script>
     <script src="../inscription/js/main.js"></script>
+    <script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../tableau/vendor/bootstrap/js/popper.js"></script>
+    <script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../tableau/vendor/bootstrap/js/popper.js"></script>
+    <script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
