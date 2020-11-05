@@ -329,7 +329,7 @@ if($_GET['msg'] == 4) { ?>
                           <td class="cell100 column3"><?php echo $value['rue']?></td>
                           <td class="cell100 column4"><?php echo $value['email']?></td>
                           <td class="cell100 column5"><?php echo $value['date']?></td>
-                          <td class="cell100 column6"><?php echo $value['piece']?></td>
+                          <td class="cell100 column6"><a class="btn btn-secondary" href="<?php echo $value['piece']; ?>">Telecharger</a></td>
                           <td class="cell100 column6"><a class="btn btn-warning" href="modifier_emploi.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
                           <td class="cell100 column8"><a class="btn btn-warning" href="../manager/supprimer_emploi.php?id=<?php echo $value['id']; ?>">Supprimer</a>
                           </tr>
