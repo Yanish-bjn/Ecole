@@ -195,7 +195,7 @@ if($_GET['msg'] == 2) { ?>
                         </ul>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a href="moncompte_admin.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
+                        <a href="admin.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">

@@ -33,7 +33,7 @@ session_start();
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
-    
+
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
@@ -318,19 +318,20 @@ if($_GET['msg'] == 2) { ?>
   								<!-- Selection de toute les réservations -->
   								<?php
   								$req = $bdd->prepare('SELECT * FROM evenement');
-                  $req->execute(array('email'=>$_SESSION['email']));
+                  $req->execute(array('id'=>$_SESSION['id']));
   								$donnees= $req->fetchall();
 
                   foreach ($donnees as $value) { ?>
                     <tr class="row100 body">
-                          <td class="cell100 column1"><?php echo $value['nom_evenement']?></td>
-                          <td class="cell100 column2"><?php echo $value['nom_personne']?></td>
-                          <td class="cell100 column3"><?php echo $value['date']?></td>
-                          <td class="cell100 column4"><?php echo $value['description']?></td>
-                          <td class="cell100 column5"><a class="btn btn-warning" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
-                          <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" href="../manager/supprimer_evenement.php?id=<?php echo $value['id']; ?>">Supprimer</a>
+                          <td><?php echo $value['nom_evenement']?></td>
+                          <td><?php echo $value['nom_personne']?></td>
+                          <td><?php echo $value['date']?></td>
+                          <td><?php echo $value['description']?></td>
+                          <td><a class="btn btn-warning" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
+                          <td><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" href="../manager/supprimer_evenement.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
+                    
 
-
+                            <!-- $a = $value['value']; -->
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
@@ -346,16 +347,19 @@ if($_GET['msg'] == 2) { ?>
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                    <a class="btn btn-warning" href="../manager/supprimer_evenement.php?id=<?php echo $value['id']; ?>">Valider</a>
-                                  </div>
+
+                                    <button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_client.php?id=<?php echo $value['id']; ?>'"><?php echo $value['id'] ?></button>
+                                    <?php
+
+                                      }
+                                      ?>
+                                </div>
                                 </div>
                               </div>
                             </div>
+                          </td>
                           </tr>
 
-<?php
-  								}
-?>
 
   							</tbody>
   						</table>

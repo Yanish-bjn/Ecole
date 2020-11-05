@@ -1,22 +1,22 @@
 <?php
 class supprimer_client { // classe connexion reprenant les information du manager, formulaire, model//
-  private $_nom;
+  private $_id;
 
-  public function __construct($nom){
+  public function __construct($id){
 
-      $this->setnom($nom);
+      $this->setid($id);
 }
 
-public function setnom($nom){
-  if(empty($nom)){ // si la valeur saisie est vide afficher une erreur //
+public function setid($id){
+  if(empty($id)){ // si la valeur saisie est vide afficher une erreur //
     trigger_error('la variable doit etre en caractere');
     return; // retourne le résultat //
   }
-  $this->_nom = $nom;
+  $this->_id = $id;
 }
 
-public function getnom(){
-  return $this->_nom;
+public function getid(){
+  return $this->_id;
 }
 }
 ?>

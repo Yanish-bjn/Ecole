@@ -13,7 +13,20 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
-    <title>Contact</title>
+    <title>Offres d'emploi</title>
+
+    <!-- Liens contenant le style du tableau -->
+
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/util.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/main.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
+<link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
@@ -24,40 +37,62 @@ session_start();
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
-<style>
-#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-            height:400px;
-        }
-        </style>
+
+
   </head>
 
   <SCRIPT language="JavaScript">
   function cacherDiv() {
        document.getElementById("reussie").style.display = "none";
   }
-	function cacherDiv2() {
-			 document.getElementById("erreur").style.display = "none";
-	}
+  function cacherDiv3() {
+       document.getElementById("modifier").style.display = "none";
+  }
+  function cacherDiv4() {
+       document.getElementById("supprimer").style.display = "none";
+  }
 
-	</SCRIPT>
+  function cacherDiv2() {
+       document.getElementById("erreur").style.display = "none";
+  }
+  </SCRIPT>
 
   <?php
-	ini_set('display_errors', 'off');
-	if($_GET['msg'] == 2) { ?>
-		<body onload="setTimeout(cacherDiv2,4000);">
-	<div id="erreur" class="erreur">
-	<?php echo "Erreur, veuillez réessayer";
-	}?>
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 1) { ?>
+    <body onload="setTimeout(cacherDiv,4000);">
+  <div id="reussie" class="message">
+  <?php echo "Ajout effectuer avec succes";
+  }?>
+  </div>
+</body>
+
+  <?php
+  ini_set('display_errors', 'off');
+  if($_GET['msg'] == 2) { ?>
+    <body onload="setTimeout(cacherDiv2,4000);">
+  <div id="erreur" class="erreur">
+  <?php echo "Erreur veuillez réessayer";
+  }?>
 </div>
 </body>
 
 <?php
 ini_set('display_errors', 'off');
-if($_GET['msg'] == 1) { ?>
-	<body onload="setTimeout(cacherDiv,4000);">
-<div id="reussie" class="message">
-<?php echo "demande envoyé";
+if($_GET['msg'] == 3) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="modifier" class="message">
+<?php echo "Modification effectuer avec succés";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 4) { ?>
+  <body onload="setTimeout(cacherDiv4,4000);">
+<div id="supprimer" class="message">
+<?php echo "Suppression reussie avec succés ";
 }?>
 </div>
 </body>
@@ -167,7 +202,7 @@ if($_GET['msg'] == 1) { ?>
                             </ul>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a href="messagerie.php" class="nav-link dropdown-toggle"> Messagerie
+                        <a href="messagerie_admin.php" class="nav-link dropdown-toggle"> Messagerie
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
@@ -205,14 +240,16 @@ if($_GET['msg'] == 1) { ?>
                   <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
-                  <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
+                  <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
                   </a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a class="nav-link" href="evenement.php">Ecole</a>
+                    </li>
+                  </ul>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="connexion.php">Connexion</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="inscription.php">Inscription</a>
                 </li>
 
                 <?php	}  ?>
@@ -234,7 +271,7 @@ if($_GET['msg'] == 1) { ?>
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Nous contacter</h2>
+                <h2>Offres d'emploi </h2>
               </div>
             </div>
           </div>
@@ -243,136 +280,74 @@ if($_GET['msg'] == 1) { ?>
     </section>
     <!--================End Home Banner Area =================-->
 
-    <!--================Contact Area =================-->
-    <div class="container">
-    <p><div id="map">
-          <!-- Ici s'affichera la carte -->
-      </div></p>
-    </div>
-  <!-- Liens contenat le script de la carte  -->
-  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
-  <script type="text/javascript">
-            // On initialise la latitude et la longitude de Paris (centre de la carte)
-            var lat = 48.9206;
-            var lon = 2.3476;
-            var macarte = null;
-            // Fonction d'initialisation de la carte
-            function initMap() {
-                // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-                macarte = L.map('map').setView([lat, lon], 11);
-                // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
-                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-                    // Il est toujours bien de laisser le lien vers la source des données
-                    attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
-                    minZoom: 1,
-                    maxZoom: 20
-                }).addTo(macarte);
-            }
-            window.onload = function(){
-    // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+    <?php
+  	try{
+  		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+  	}
+  	catch (Exception $e){
+  		die('Erreur:'.$e->getMessage());
+  	}
+  	?>
 
-    initMap();
-    var marker = L.marker([48.9493127, 2.4152982,21]).addTo(macarte);
-            };
-        </script>
-</div>
 
-<!-- Fin de la carte  -->
+<div class="container">
 
-    <section class="contact_area section_gap">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="contact_info">
-              <div class="info_item">
-                <i class="ti-home"></i>
-                <h6>Lycée Robert Schuman</h6>
-                <p>Dugny, Seine-Saint-Denis</p>
-              </div>
-              <div class="info_item">
-                <i class="ti-headphone"></i>
-                <h6><a> 01 48 37 74 26</a></h6>
-                <p>Du lundi au vendredi 8h-20h</p>
-              </div>
-              <div class="info_item">
-                <i class="ti-email"></i>
-                <h6><a>administration@schuman.com</a></h6>
-                <p>Poser nous vos questions !</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-9">
-            <form method="POST" action="../manager/contact.php"
-              class="row contact_form"
-              action="contact_process.php"
-              method="post"
-              id="contactForm"
-              novalidate="novalidate"
-            >
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="nom"
-                    placeholder="Entrer votre nom"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter votre nom'"
-                    required=""
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="Entrer votre email"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter votre email'"
-                    required=""
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="subject"
-                    name="sujet"
-                    placeholder="Entrer un sujet"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Entrer un sujet'"
-                    required=""
-                  />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <textarea
-                    class="form-control"
-                    name="message"
-                    id="message"
-                    rows="1"
-                    placeholder="Votre message"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Votre message'"
-                    required=""
-                  ></textarea>
-                </div>
-              </div>
-              <div class="col-md-12 text-right">
-                <button type="submit" value="submit" class="btn primary-btn">
-                  Envoyer votre message
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================Contact Area =================-->
+  <!-- Affichage du tableau contenant des informations -->
 
+  <p>  <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 ver1 m-b-110">
+          <div class="table100-head">
+  						<table>
+  							<thead>
+  								<tr class="row100 head">
+  									<th class="cell100 column1">Nom de l'entreprise</th>
+  									<th class="cell100 column2">Adresse</th>
+  									<th class="cell100 column3">Rue</th>
+                    <th class="cell100 column4">Email</th>
+                    <th class="cell100 column5">Pièce jointe</th>
+                    <th class="cell100 column7">Suppression/Modification</th>
+  								</tr>
+  							</thead>
+  						</table>
+  					</div></p>
+
+  					<div class="table100-body js-pscroll">
+  						<table>
+  							<tbody>
+  								<!-- Selection de toute les réservations -->
+                  <?php
+                  $req = $bdd->prepare('SELECT * FROM emploi');
+                  $req->execute(array('email'=>$_SESSION['email']));
+                  $donnees= $req->fetchall();
+
+                  foreach ($donnees as $value) { ?>
+                    <tr class="row100 body">
+                          <td class="cell100 column1"><?php echo $value['nom_entreprise']?></td>
+                          <td class="cell100 column2"><?php echo $value['adresse']?></td>
+                          <td class="cell100 column3"><?php echo $value['rue']?></td>
+                          <td class="cell100 column4"><?php echo $value['email']?></td>
+                          <td class="cell100 column5"><?php echo $value['piece']?></td>
+                          <td class="cell100 column6"><a class="btn btn-warning" href="modifier_emploi.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
+                          <td class="cell100 column7"><a class="btn btn-warning" href="../manager/supprimer_emploi.php?id=<?php echo $value['id']; ?>">Supprimer</a>
+                          </tr>
+
+<?php
+                  }
+?>
+
+  							</tbody>
+  						</table>
+  					</div>
+  				</div>
+
+
+         <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_emploi.php'">Ajouter</button></center></p>
+       </div>
+       </div>
+  			</div>
+  		</div>
+  	</div>
 
     <!--================ Start footer Area  =================-->
     <footer class="footer-area section_gap">
@@ -381,34 +356,34 @@ if($_GET['msg'] == 1) { ?>
           <div class="col-lg-2 col-md-6 single-footer-widget">
             <h4>Informations</h4>
             <ul>
-              <li><a href="../index.php">Accueil</a></li>
+              <li><a href="index.php">Accueil</a></li>
 
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 single-footer-widget">
             <h4>Prendre contact</h4>
             <ul>
-              <li><a href="contact.php">Contact</a></li>
+              <li><a href="View/contact.php">Contact</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 single-footer-widget">
             <h4>Etudiant</h4>
             <ul>
-              <li><a href="connexion.php">Connexion</a></li>
+              <li><a href="View/connexion.php">Connexion</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 single-footer-widget">
             <h4>Vous inscrire</h4>
             <ul>
-              <li><a href="inscription.php">Inscription</a></li>
+              <li><a href="View/inscription.php">Inscription</a></li>
             </ul>
           </div>
         </div>
         <div class="row footer-bottom d-flex justify-content-between">
           <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
           <div class="col-lg- col-sm-12 footer-social">
             <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
@@ -419,47 +394,47 @@ if($_GET['msg'] == 1) { ?>
     </footer>
     <!--================ End footer Area  =================-->
 
-        <!--================Contact Success and Error message Area =================-->
-        <div id="success" class="modal modal-message fade" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <i class="ti-close"></i>
-                </button>
-                <h2>Merci</h2>
-                <p>Votre message a été correctement envoyé</p>
-              </div>
-            </div>
+    <!--================Contact Success and Error message Area =================-->
+    <div id="success" class="modal modal-message fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ti-close"></i>
+            </button>
+            <h2>Merci</h2>
+            <p>Votre message a été correctement envoyé</p>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Modals error -->
+    <!-- Modals error -->
 
-        <div id="error" class="modal modal-message fade" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <i class="ti-close"></i>
-                </button>
-                <h2>Désolé !</h2>
-                <p>Un problème est survenu</p>
-              </div>
-            </div>
+    <div id="error" class="modal modal-message fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ti-close"></i>
+            </button>
+            <h2>Désolé !</h2>
+            <p>Un problème est survenu</p>
           </div>
         </div>
-        <!--================End Contact Success and Error message Area =================-->
+      </div>
+    </div>
+    <!--================End Contact Success and Error message Area =================-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -478,5 +453,12 @@ if($_GET['msg'] == 1) { ?>
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>
     <script src="../js/theme.js"></script>
+
+    <!-- Liens contenant le script du tableau -->
+	<script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../tableau/vendor/bootstrap/js/popper.js"></script>
+	<script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../tableau/vendor/select2/select2.min.js"></script>
+	<script src="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
   </body>
 </html>

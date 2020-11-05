@@ -16,10 +16,10 @@ public function modifier($donnee){
     $req->fetchall();
     //var_dump($a);
     if ($req == true){
-      header("location: ../View/moncompte_admin.php?msg=1'");
+      header("location: ../View/admin.php?msg=1'");
     }   // Si la requete ne s'execute pas alors on redirige vers une autre page//
     else{
-        header("location: ../View/modifier_admin.php?msg=2'");
+        header("location: ../View/admin.php?msg=2'");
     }
 
           }

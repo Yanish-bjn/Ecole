@@ -156,7 +156,7 @@ session_start();
                        </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
-                       <a href="View/moncompte_admin.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
+                       <a href="View/admin.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">

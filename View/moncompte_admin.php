@@ -13,7 +13,7 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
-    <title>Mon compte admin</title>
+    <title>Les comptes</title>
 
     <!-- Liens contenant le style du tableau -->
 
@@ -220,7 +220,7 @@ session_start();
                         </ul>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a href="moncompte_admin.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
+                        <a href="admin.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
@@ -271,7 +271,7 @@ session_start();
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Mon compte </h2>
+                <h2>Les comptes </h2>
               </div>
             </div>
           </div>
@@ -306,6 +306,7 @@ session_start();
   									<th class="cell100 column3">Email</th>
                     <th class="cell100 column4">Ville</th>
   									<th class="cell100 column5">Téléphone</th>
+                    <th class="cell100 column5">Suppression</th>
   								</tr>
   							</thead>
   						</table>
@@ -315,21 +316,47 @@ session_start();
   						<table>
   							<tbody>
   								<!-- Selection de toute les réservations -->
-  								<?php
-  								$req = $bdd->prepare('SELECT * FROM compte');
+                  <?php
+                  $req = $bdd->prepare('SELECT * FROM compte');
                   $req->execute(array('email'=>$_SESSION['email']));
-  								$donnees= $req->fetchall();
+                  $donnees= $req->fetchall();
 
-  								foreach ($donnees as $value) {
-  									echo '<tr class="row100 body">
-  												<td class="cell100 column1">'.$value["nom"].'</td>
-  												<td class="cell100 column2">'.$value["prenom"].'</td>
-  												<td class="cell100 column3">'.$value["email"].'</td>
-                          <td class="cell100 column4">'.$value["ville"].'</td>
-  												<td class="cell100 column5">'.$value["tel"].'</td>
-  												</tr>';
-  								}
-  								?>
+                  foreach ($donnees as $value) { ?>
+                    <tr class="row100 body">
+                          <td class="cell100 column1"><?php echo $value['nom']?></td>
+                          <td class="cell100 column2"><?php echo $value['prenom']?></td>
+                          <td class="cell100 column3"><?php echo $value['email']?></td>
+                          <td class="cell100 column4"><?php echo $value['ville']?></td>
+                          <td class="cell100 column5"><?php echo $value['tel']?></td>
+                          <td class="cell100 column5"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" href="../manager/supprimer_client.php?id=<?php echo $value['id']; ?>">Supprimer</a>
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    Etes-vous sur de vouloir supprimer ce compte ?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                    <a class="btn btn-warning" href="../manager/supprimer_client.php?id=<?php echo $value['id']; ?>">Valider</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </tr>
+
+<?php
+                  }
+?>
+
   							</tbody>
   						</table>
   					</div>
@@ -343,14 +370,13 @@ session_start();
            </div>
 
            <div class="pull left">
-         <p><button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_client.php'">Ajouter</button>
+         <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_client.php'">Ajouter</button></center></p>
            </div>
        </div>
        </div>
   			</div>
   		</div>
   	</div>
-    <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='supprimer_client.php'">Supprimer</button></center></p>
 
     <!--================ Start footer Area  =================-->
     <footer class="footer-area section_gap">
