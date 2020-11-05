@@ -54,6 +54,7 @@
       $adresse = $value['adresse'];
       $rue  = $value['rue'];
       $email  = $value['email'];
+      $date  = $value['date'];
       $piece  = $value['piece'];
       $id = $value['id'];
 
@@ -87,6 +88,10 @@
           <div class="form-wrapper">
             <label for="" class="label-input">Email</label>
             <input type="text" name="email"  <?php echo 'value='.'"'.$value["email"].'"'.''?> class="form-control">
+          </div>
+          <div class="form-wrapper">
+            <label for="" class="label-input">Date</label>
+            <input type="date" name="date" <?php echo 'value='.'"'.$value["date"].'"'.''?> class="form-control">
           </div>
           <div class="form-wrapper">
             <label for="fileField">Fiche de poste</label>

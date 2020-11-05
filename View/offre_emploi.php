@@ -301,12 +301,13 @@ if($_GET['msg'] == 4) { ?>
   						<table>
   							<thead>
   								<tr class="row100 head">
-  									<th class="cell100 column1">Nom de l'entreprise</th>
+  									<th class="cell100 column1">Entreprise</th>
   									<th class="cell100 column2">Adresse</th>
   									<th class="cell100 column3">Rue</th>
                     <th class="cell100 column4">Email</th>
-                    <th class="cell100 column5">Pièce jointe</th>
-                    <th class="cell100 column7">Suppression/Modification</th>
+                    <th class="cell100 column5">Date</th>
+                    <th class="cell100 column5">Fiche de poste</th>
+                    <th class="cell100 column7">Modifier/Supprimer</th>
   								</tr>
   							</thead>
   						</table>
@@ -327,9 +328,10 @@ if($_GET['msg'] == 4) { ?>
                           <td class="cell100 column2"><?php echo $value['adresse']?></td>
                           <td class="cell100 column3"><?php echo $value['rue']?></td>
                           <td class="cell100 column4"><?php echo $value['email']?></td>
-                          <td class="cell100 column5"><?php echo $value['piece']?></td>
+                          <td class="cell100 column5"><?php echo $value['date']?></td>
+                          <td class="cell100 column6"><?php echo $value['piece']?></td>
                           <td class="cell100 column6"><a class="btn btn-warning" href="modifier_emploi.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
-                          <td class="cell100 column7"><a class="btn btn-warning" href="../manager/supprimer_emploi.php?id=<?php echo $value['id']; ?>">Supprimer</a>
+                          <td class="cell100 column8"><a class="btn btn-warning" href="../manager/supprimer_emploi.php?id=<?php echo $value['id']; ?>">Supprimer</a>
                           </tr>
 
 <?php

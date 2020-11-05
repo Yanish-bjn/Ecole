@@ -45,8 +45,12 @@
             <input type="text" name="email" class="form-control">
           </div>
           <div class="form-wrapper">
+            <label for="" class="label-input">Date</label>
+            <input type="date" name="date" class="form-control">
+          </div>
+          <div class="form-wrapper">
             <label for="fileField">Fiche de poste</label>
-            <input type="file" name="piece" class="form-control">
+            <input type="file" name="piece" class="form-control" accept="application/msword, application/pdf">
 					</div>
           <button>
             Enregistrer
