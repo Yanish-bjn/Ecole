@@ -362,13 +362,6 @@ session_start();
   					</div>
   				</div>
 
-
-
-
-           <div class="pull-right">
-              <a class="btn btn-warning" href="modifier_admin.php?id=<?php echo $_SESSION['id']; ?>">Modifier</a>
-           </div>
-
            <div class="pull left">
          <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_client.php'">Ajouter</button></center></p>
            </div>
