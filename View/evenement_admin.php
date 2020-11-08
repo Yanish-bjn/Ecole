@@ -323,13 +323,13 @@ if($_GET['msg'] == 2) { ?>
 
                   foreach ($donnees as $value) { ?>
                     <tr class="row100 body">
-                          <td><?php echo $value['nom_evenement']?></td>
-                          <td><?php echo $value['nom_personne']?></td>
-                          <td><?php echo $value['date']?></td>
-                          <td><?php echo $value['description']?></td>
-                          <td><a class="btn btn-warning" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
-                          <td><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" href="../manager/supprimer_evenement.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
-                    
+                          <td class="cell100 column1"><?php echo $value['nom_evenement']?></td>
+                          <td class="cell100 column2"><?php echo $value['nom_personne']?></td>
+                          <td class="cell100 column3"><?php echo $value['date']?></td>
+                          <td class="cell100 column4"><?php echo $value['description']?></td>
+                          <td class="cell100 column5"><a class="btn btn-warning" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
+                          <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" href="../manager/supprimer_evenement.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
+
 
                             <!-- $a = $value['value']; -->
                             <!-- Modal -->
