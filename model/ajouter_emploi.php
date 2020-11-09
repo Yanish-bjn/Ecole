@@ -5,17 +5,15 @@ class ajouter_emploi { // Casse inscription provenant du model et du manager //
   private $rue;
   private $email;
   private $date;
-  private $piece;
 
 
-  public function __construct($nom_entreprise, $adresse, $rue, $email, $date, $piece){
+  public function __construct($nom_entreprise, $adresse, $rue, $email, $date){
 
       $this->setnom_entreprise($nom_entreprise);
       $this->setadresse($adresse);
       $this->setrue($rue);
       $this->setemail($email);
       $this->setdate($date);
-      $this->setpiece($piece);
 
 }
 
@@ -57,13 +55,7 @@ class ajouter_emploi { // Casse inscription provenant du model et du manager //
     $this->_date = $date;
   }
 
-  public function setpiece($piece){
-    if(empty($piece)){ // si la valeur saisie est vide afficher une erreur //
-      trigger_error('la variable doit etre un caractere');
-      return; // retourne le résultat //
-    }
-    $this->_piece = $piece;
-  }
+
 
   public function getnom_entreprise(){
     return $this->_nom_entreprise;
@@ -80,8 +72,6 @@ class ajouter_emploi { // Casse inscription provenant du model et du manager //
   public function getdate(){
     return $this->_date;
   }
-  public function getpiece(){
-    return $this->_piece;
-  }
+
 }
 ?>
