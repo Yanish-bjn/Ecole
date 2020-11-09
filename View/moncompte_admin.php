@@ -150,11 +150,14 @@ session_start();
                     <div class="position2">
                     <?php echo'Lycée Robert Schuman'?>
                     </div>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="nav-link" href="../index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="offre_emploi.php">Offres</a>
                     </li>
                     <li class="nav-item submenu dropdown">
                       <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
@@ -187,8 +190,11 @@ session_start();
                       <div class="position2">
                       <?php echo'Lycée Robert Schuman'?>
                       </div>
-                      <li class="nav-item active">
+                      <li class="nav-item">
                         <a class="nav-link" href="../index.php">Accueil</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="offre_emploi.php">Offres</a>
                       </li>
                       <li class="nav-item submenu dropdown">
                         <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
@@ -233,7 +239,7 @@ session_start();
               }
               //Sinon il n'y a pas de sessions ouverte
               else{ ?>
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
                 <li class="nav-item">

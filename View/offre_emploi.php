@@ -150,11 +150,14 @@ if($_GET['msg'] == 4) { ?>
                     <div class="position2">
                     <?php echo'Lycée Robert Schuman'?>
                     </div>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="nav-link" href="../index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="offre_emploi.php">Offres</a>
                     </li>
                     <li class="nav-item submenu dropdown">
                       <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
@@ -187,8 +190,11 @@ if($_GET['msg'] == 4) { ?>
                       <div class="position2">
                       <?php echo'Lycée Robert Schuman'?>
                       </div>
-                      <li class="nav-item active">
+                      <li class="nav-item">
                         <a class="nav-link" href="../index.php">Accueil</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="offre_emploi.php">Offres</a>
                       </li>
                       <li class="nav-item submenu dropdown">
                         <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
@@ -233,7 +239,7 @@ if($_GET['msg'] == 4) { ?>
               }
               //Sinon il n'y a pas de sessions ouverte
               else{ ?>
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
@@ -271,7 +277,7 @@ if($_GET['msg'] == 4) { ?>
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Offres d'emploi </h2>
+                <h2>Offre d'emploi </h2>
               </div>
             </div>
           </div>

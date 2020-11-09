@@ -85,11 +85,14 @@ session_start();
                     <?php echo'Lycée Robert Schuman'?>
                     </div>
 
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="nav-link" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="View/contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="View/offre_emploi.php">Offres</a>
                     </li>
                     <li class="nav-item submenu dropdown">
                       <a href="View/evenement.php" class="nav-link dropdown-toggle"> Evénements
@@ -122,8 +125,11 @@ session_start();
                      <div class="position">
                      <?php echo'Lycée Robert Schuman'?>
                      </div>
-                     <li class="nav-item active">
+                     <li class="nav-item">
                        <a class="nav-link" href="index.php">Accueil</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="View/offre_emploi.php">Offres</a>
                      </li>
                      <li class="nav-item submenu dropdown">
                        <a href="View/evenement.php" class="nav-link dropdown-toggle"> Evénements
@@ -172,7 +178,7 @@ session_start();
                 <div class="position">
                 <?php echo'Lycée Robert Schuman'?>
                 </div>
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
