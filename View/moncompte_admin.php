@@ -328,11 +328,11 @@ session_start();
                           <td class="cell100 column3"><?php echo $value['email']?></td>
                           <td class="cell100 column4"><?php echo $value['ville']?></td>
                           <td class="cell100 column5"><?php echo $value['tel']?></td>
-                          <td class="cell100 column5"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" href="../manager/supprimer_client.php?id=<?php echo $value['id']; ?>">Supprimer</a>
+                          <td class="cell100 column5"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal<?php echo $value['id'] ?>" href="../manager/supprimer_client.php?id=<?php echo $value['id']; ?>">Supprimer</a>
 
 
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal-" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="exampleModal<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
