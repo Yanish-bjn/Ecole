@@ -328,7 +328,7 @@ if($_GET['msg'] == 2) { ?>
                           <td class="cell100 column3"><?php echo $value['date']?></td>
                           <td class="cell100 column4"><?php echo $value['description']?></td>
                           <td class="cell100 column5"><a class="btn btn-warning" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
-                          <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal <?php echo $value['id']; ?>" href="../manager/supprimer_evenement.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
+                          <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" href="../manager/supprimer_evenement.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
 
 
                             <!-- $a = $value['value']; -->
@@ -348,7 +348,7 @@ if($_GET['msg'] == 2) { ?>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
 
-                                    <button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_client.php?id=<?php echo $value['id']; ?>'"><?php echo $value['id'] ?></button>
+                                    <button type="button" class="btn btn-warning" onclick="window.location.href='../manager/supprimer_evenement.php?id=<?php echo $value['id']; ?>'"><?php echo $value['id'] ?></button>
                                     <?php
 
                                       }
