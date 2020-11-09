@@ -144,7 +144,7 @@ if($_GET['msg'] == 3) { ?>
                       <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="offre_emploi.php">Offres</a>
+                      <a class="nav-link" href="offre_emploi_client.php">Offres</a>
                     </li>
                     <li class="nav-item submenu dropdown">
                       <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements

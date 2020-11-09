@@ -92,7 +92,7 @@ session_start();
                       <a class="nav-link" href="View/contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="View/offre_emploi.php">Offres</a>
+                      <a class="nav-link" href="View/offre_emploi_client.php">Offres</a>
                     </li>
                     <li class="nav-item submenu dropdown">
                       <a href="View/evenement.php" class="nav-link dropdown-toggle"> Evénements

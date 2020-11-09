@@ -13,7 +13,7 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
-    <title>Mon compte admin</title>
+    <title>Offres d'emploi</title>
 
     <!-- Liens contenant le style du tableau -->
 
@@ -42,9 +42,14 @@ session_start();
   </head>
 
   <SCRIPT language="JavaScript">
-
-  function cacherDiv1() {
+  function cacherDiv() {
+       document.getElementById("reussie").style.display = "none";
+  }
+  function cacherDiv3() {
        document.getElementById("modifier").style.display = "none";
+  }
+  function cacherDiv4() {
+       document.getElementById("supprimer").style.display = "none";
   }
 
   function cacherDiv2() {
@@ -55,9 +60,9 @@ session_start();
   <?php
   ini_set('display_errors', 'off');
   if($_GET['msg'] == 1) { ?>
-    <body onload="setTimeout(cacherDiv1,4000);">
-  <div id="modifier" class="message">
-  <?php echo "Modification effectuer avec succes";
+    <body onload="setTimeout(cacherDiv,4000);">
+  <div id="reussie" class="message">
+  <?php echo "Ajout effectuer avec succes";
   }?>
   </div>
 </body>
@@ -69,6 +74,26 @@ session_start();
   <div id="erreur" class="erreur">
   <?php echo "Erreur veuillez réessayer";
   }?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 3) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="modifier" class="message">
+<?php echo "Modification effectuer avec succés";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 4) { ?>
+  <body onload="setTimeout(cacherDiv4,4000);">
+<div id="supprimer" class="message">
+<?php echo "Suppression reussie avec succés ";
+}?>
 </div>
 </body>
 
@@ -252,7 +277,7 @@ session_start();
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Mon compte </h2>
+                <h2>Offre d'emploi </h2>
               </div>
             </div>
           </div>
@@ -282,11 +307,12 @@ session_start();
   						<table>
   							<thead>
   								<tr class="row100 head">
-  									<th class="cell100 column1">Nom</th>
-  									<th class="cell100 column2">Prenom</th>
-  									<th class="cell100 column3">Email</th>
-                    <th class="cell100 column4">Ville</th>
-  									<th class="cell100 column5">Téléphone</th>
+  									<th class="cell100 column1">Entreprise</th>
+  									<th class="cell100 column2">Adresse</th>
+  									<th class="cell100 column3">Rue</th>
+                    <th class="cell100 column4">Email</th>
+                    <th class="cell100 column5">Date</th>
+                    <th class="cell100 column6">Fiche de poste</th>
   								</tr>
   							</thead>
   						</table>
@@ -297,17 +323,18 @@ session_start();
   							<tbody>
   								<!-- Selection de toute les réservations -->
                   <?php
-                  $req = $bdd->prepare('SELECT * FROM compte WHERE email=:email');
+                  $req = $bdd->prepare('SELECT * FROM emploi');
                   $req->execute(array('email'=>$_SESSION['email']));
                   $donnees= $req->fetchall();
 
                   foreach ($donnees as $value) { ?>
                     <tr class="row100 body">
-                          <td class="cell100 column1"><?php echo $value['nom']?></td>
-                          <td class="cell100 column2"><?php echo $value['prenom']?></td>
-                          <td class="cell100 column3"><?php echo $value['email']?></td>
-                          <td class="cell100 column4"><?php echo $value['ville']?></td>
-                          <td class="cell100 column5"><?php echo $value['tel']?></td>
+                          <td class="cell100 column1"><?php echo $value['nom_entreprise']?></td>
+                          <td class="cell100 column2"><?php echo $value['adresse']?></td>
+                          <td class="cell100 column3"><?php echo $value['rue']?></td>
+                          <td class="cell100 column4"><?php echo $value['email']?></td>
+                          <td class="cell100 column5"><?php echo $value['date']?></td>
+                          <td class="cell100 column6"><a class="btn btn-secondary" href="<?php echo $value['piece']; ?>">Telecharger</a></td>
                           </tr>
 
 <?php
@@ -318,9 +345,6 @@ session_start();
   						</table>
   					</div>
   				</div>
-
-             <p><center><a class="btn btn-warning" href="modifier_admin.php?id=<?php echo $_SESSION['id']; ?>">Modifier</a></center></p>
-
        </div>
        </div>
   			</div>
