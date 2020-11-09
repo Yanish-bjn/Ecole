@@ -332,7 +332,7 @@ session_start();
 
 
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="exampleModal-" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
@@ -346,7 +346,7 @@ session_start();
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                    <a class="btn btn-warning" href="../manager/supprimer_client.php?id=<?php echo $value['id']; ?>">Valider</a>
+                                    <a class="btn btn-warning" href="../manager/supprimer_client.php?id=<?= $value['id']; ?>">Valider</a>
                                   </div>
                                 </div>
                               </div>
