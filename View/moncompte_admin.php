@@ -331,36 +331,38 @@ session_start();
                           <td class="cell100 column5"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal<?php echo $value['id'] ?>" href="../manager/supprimer_client.php?id=<?php echo $value['id']; ?>">Supprimer</a>
 
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-                                    Etes-vous sur de vouloir supprimer ce compte ?
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                    <a class="btn btn-warning" href="../manager/supprimer_client.php?id=<?= $value['id']; ?>">Valider</a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </tr>
+                           <!-- Modal -->
+                           <div class="modal fade" id="exampleModal<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                             <div class="modal-dialog" role="document">
+                               <div class="modal-content">
+                                 <div class="modal-header">
+                                   <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
+                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                   </button>
+                                 </div>
+                                 <div class="modal-body">
+                                   Etes-vous sur de vouloir supprimer ce compte ?
+                                 </div>
+                                 <div class="modal-footer">
+                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                   <a class="btn btn-warning" href="../manager/supprimer_client.php?id=<?= $value['id']; ?>">Valider</a>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                         </tr>
 
 <?php
-                  }
+                 }
 ?>
 
-  							</tbody>
-  						</table>
-  					</div>
-  				</div>
+               </tbody>
+             </table>
+           </div>
+         </div>
+
+
 
            <div class="pull left">
          <p><center><button type="button" class="btn btn-warning" onclick="window.location.href='ajouter_client.php'">Ajouter</button></center></p>
