@@ -331,7 +331,30 @@ if($_GET['msg'] == 4) { ?>
                           <td class="cell100 column5"><?php echo $value['date']?></td>
                           <td class="cell100 column6"><a class="btn btn-secondary" href="<?php echo $value['piece']; ?>">Telecharger</a></td>
                           <td class="cell100 column6"><a class="btn btn-warning" href="modifier_emploi.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
-                          <td class="cell100 column8"><a class="btn btn-warning" href="../manager/supprimer_emploi.php?id=<?php echo $value['id']; ?>">Supprimer</a>
+                          <td class="cell100 column8"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal<?php echo $value['id'] ?>" href="../manager/supprimer_client.php?id=<?php echo $value['id']; ?>">Supprimer</a>
+
+
+                             <!-- Modal -->
+                             <div class="modal fade" id="exampleModal<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                               <div class="modal-dialog" role="document">
+                                 <div class="modal-content">
+                                   <div class="modal-header">
+                                     <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
+                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                       <span aria-hidden="true">&times;</span>
+                                     </button>
+                                   </div>
+                                   <div class="modal-body">
+                                     Etes-vous sur de vouloir supprimer ce compte ?
+                                   </div>
+                                   <div class="modal-footer">
+                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                     <a class="btn btn-warning" href="../manager/supprimer_emploi.php?id=<?= $value['id']; ?>">Valider</a>
+                                   </div>
+                                 </div>
+                               </div>
+                             </div>
+
                           </tr>
 
 <?php
