@@ -28,6 +28,27 @@ session_start();
 
   </head>
 
+  <SCRIPT language="JavaScript">
+  function compte()
+    {
+    w1 = window.open("../exportation/compte_pdf.php");
+    }
+
+  function message()
+    {
+    w1 = window.open("../exportation/message_pdf.php");
+    }
+
+  function evenement()
+    {
+    w1 = window.open("../exportation/evenement_pdf.php");
+    }
+    function offre()
+      {
+      w1 = window.open("../exportation/offre_pdf.php");
+      }
+    </SCRIPT>
+
   <body>
     <!--================ Start Header Menu Area =================-->
     <header class="header_area">
@@ -107,9 +128,14 @@ session_start();
                      <li class="nav-item">
                        <a class="nav-link" href="../index.php">Accueil</a>
                      </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="offre_emploi.php">Offres</a>
-                     </li>
+                     <li class="nav-item submenu dropdown">
+                       <a href="offre_emploi.php" class="nav-link dropdown-toggle"> Offres
+                       </a>
+                       <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="../exportation/offre.php" onClick='javascript:offre();'>Exportation</a>
+                         </li>
+                       </ul>
                      <li class="nav-item submenu dropdown">
                        <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                        </a>
@@ -118,7 +144,7 @@ session_start();
                            <a class="nav-link" href="evenement_admin.php">Etudiant</a>
                          </li>
                         <li class="nav-item">
-                             <a class="nav-link" href="../exportation/evenement.php">Exportation</a>
+                          <a class="nav-link" href="../exportation/evenement.php" onClick='javascript:evenement();'>Exportation</a>
                            </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
@@ -126,7 +152,7 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="../exportation/message.php">Exportation</a>
+                           <a class="nav-link" href="../exportation/message.php" onClick='javascript:message();'>Exportation</a>
                          </li>
                        </ul>
                      </li>
@@ -135,7 +161,7 @@ session_start();
                        </a>
                        <ul class="dropdown-menu">
                          <li class="nav-item">
-                           <a class="nav-link" href="../exportation/compte.php">Exportation</a>
+                           <a class="nav-link" href="../exportation/compte.php" onClick='javascript:compte();'>Exportation</a>
                          </li>
                        </ul>
                      </li>
