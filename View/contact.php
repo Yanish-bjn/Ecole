@@ -318,14 +318,19 @@ if($_GET['msg'] == 1) { ?>
               <div class="col-md-6">
                 <div class="form-group">
                   <input
-                    type="text"
+                  type="text"
                     class="form-control"
                     id="name"
                     name="nom"
+                    value="<?php echo $_SESSION['nom'];?>"
                     placeholder="Entrer votre nom"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Enter votre nom'"
                     required=""
+                    <?php
+                    if ($_SESSION['role'] == "client") { ?>
+                      style="display:none" readonly="readonly" type="text"
+                    <?php } ?>
                   />
                 </div>
                 <div class="form-group">
