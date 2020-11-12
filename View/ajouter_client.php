@@ -86,7 +86,7 @@ if($_GET['msg'] == 2) { ?>
                         <div class="form-group">
                             <p>
                         <label>
-                          Tapez le début d'un nom de ville ou d'un code postal puis appuyez sur <b>Entrée</b>.<br>
+                          Tapez le début d'un nom de ville ou d'un code postal puis appuyez sur <b> Ctrl + Entrée</b>.<br>
                         </label>
                           <input type="texte"  name="ville" id="ville" placeholder="Entrez un code postal ou une ville" autocomplete="on" size="50" required>
                             </p>

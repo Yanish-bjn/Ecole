@@ -449,48 +449,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     </footer>
     <!--================ End footer Area  =================-->
 
-    <!--================Contact Success and Error message Area =================-->
-    <div id="success" class="modal modal-message fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <i class="ti-close"></i>
-            </button>
-            <h2>Merci</h2>
-            <p>Votre message a été correctement envoyé</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modals error -->
-
-    <div id="error" class="modal modal-message fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <i class="ti-close"></i>
-            </button>
-            <h2>Désolé !</h2>
-            <p>Un problème est survenu</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================End Contact Success and Error message Area =================-->
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../js/jquery-3.2.1.min.js"></script>

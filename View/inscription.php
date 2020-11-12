@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="../inscription/css/style3.css">
     <link rel="stylesheet" href="../inscription/css/style4.css">
     <link rel="stylesheet" href="../css/erreur.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
 </head>
 
@@ -80,18 +82,18 @@ if($_GET['msg'] == 3) { ?>
 
                         </div>
                         <div class="form-group">
-                            <p>
-                        <label>
-                          Tapez le début d'un nom de ville ou d'un code postal puis appuyez sur <b>Entrée</b>.<br>
-                        </label>
-                          <input type="texte"  name="ville" id="ville" placeholder="Entrez un code postal ou une ville" autocomplete="on" size="50" required>
-                            </p>
-                      <ul>
-                        <li data-vicopo="#ville">
-                          <strong data-vicopo-code-postal></strong>
-                          <span data-vicopo-ville></span>
-                        </li>
-                      </ul>
+                          <p>
+                      <label>
+                        Tapez le début d'un nom de ville ou d'un code postal puis appuyez sur <b>Ctrl + Entrée</b>.<br>
+                        <input id="ville" placeholder="Entrez un code postal ou une ville" autocomplete="on" size="50">
+                      </label>
+                    </p>
+                    <ul>
+                      <li data-vicopo="#ville">
+                        <strong data-vicopo-code-postal></strong>
+                        <span data-vicopo-ville></span>
+                      </li>
+                    </ul>
                     </div>
                         <div class="form-group">
                             <label for="pincode">Mot de passe :</label>
@@ -111,9 +113,12 @@ if($_GET['msg'] == 3) { ?>
 
     <!-- JS -->
     <script src="../inscription/vendor/jquery/jquery.min.js"></script>
-    <script src="../inscription/js/main.js"></script>
-    <script src="../inscription/js/main2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="../inscription/js/api.js"></script>
+    <script src="../inscription/js/main2.js"></script>
+    <script src="../inscription/js/main.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
