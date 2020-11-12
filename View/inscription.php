@@ -85,7 +85,7 @@ if($_GET['msg'] == 3) { ?>
                           <p>
                       <label>
                         Tapez le début d'un nom de ville ou d'un code postal puis appuyez sur <b>Ctrl + Entrée</b>.<br>
-                        <input id="ville" placeholder="Entrez un code postal ou une ville" autocomplete="on" size="50">
+                        <input id="ville" name="ville" placeholder="Entrez un code postal ou une ville" autocomplete="on" size="50">
                       </label>
                     </p>
                     <ul>
@@ -100,7 +100,7 @@ if($_GET['msg'] == 3) { ?>
                             <input type="password" name="mdp" id="pincode" required>
                         </div>
                         <div class="form-submit">
-                            <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>
+                          <button type="submit" class="btn btn-secondary">Valider</button>
                             <button type="button" class="btn btn-warning" onclick="window.location.href='connexion.php'">Deja inscrit ?</button>
                           </div>
                         </form>

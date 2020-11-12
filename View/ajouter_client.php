@@ -112,7 +112,7 @@ if($_GET['msg'] == 2) { ?>
                           <option>client</option>
                         </select>
                         <div class="form-submit">
-                            <input type="submit" value="Valider" class="submit" name="submit" id="submit"/>
+                            <button type="submit" class="btn btn-secondary">Valider</button>
                             <button type="button" class="btn btn-warning" onclick="window.location.href='moncompte_admin.php'">Revenir en arrière</button>
                           </div>
                         </form>
