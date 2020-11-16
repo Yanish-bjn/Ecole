@@ -1,0 +1,3 @@
+ID	Nom	Prenom	Email	Ville	Telephone	mot de passe	Role
+16	Yanish	Bhujun	Yanish.bhujun@gmail.com	93210	0123456789	164b6da6ab4209c16ff3841306dbec83	admin
+24	Test	Test	Test@test.fr	93210	0000000000	0cbc6611f5540bd0809a388dc95a615b	client

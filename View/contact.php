@@ -204,6 +204,9 @@ if($_GET['msg'] == 1) { ?>
               }
               //Sinon il n'y a pas de sessions ouverte
               else{ ?>
+                <div class="position2">
+                <?php echo'Lycée Robert Schuman'?>
+                </div>
                 <li class="nav-item">
                   <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
