@@ -14,7 +14,7 @@ if(isset($_FILES['piece']))
   $file_tmp_name = $_FILES['piece']['tmp_name'];
   $file_dest = '../fiche/'.$file_name;
 
-  $extensions_autorisees = array('.pdf', '. PDF');
+  $extensions_autorisees = array('.pdf', '.PDF','.DOC', '.DOCX', '.doc', '.docx' );
   var_dump($file_dest);
   //Enregistre les données dans la BDD et rédireige en fonction du résultat //
         $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'root', '');
