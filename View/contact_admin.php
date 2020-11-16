@@ -33,6 +33,7 @@ session_start();
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
@@ -82,7 +83,7 @@ session_start();
   if($_GET['msg'] == 1) { ?>
     <body onload="setTimeout(cacherDiv,4000);">
   <div id="reussie" class="message">
-  <?php echo "Evenement ajouter avec succés";
+  <?php echo "Email envoyé avec succés";
   }?>
 </div>
 </body>
@@ -358,11 +359,104 @@ if($_GET['msg'] == 2) { ?>
                           <td class="cell100 column2"><?php echo $value['email']?></td>
                           <td class="cell100 column3"><?php echo $value['sujet']?></td>
                           <td class="cell100 column4"><?php echo $value['message']?></td>
-                          <td class="cell100 column5"><a class="btn btn-warning" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a></td>
+                          <td class="cell100 column5"><a class="btn btn-warning" data-toggle="modal" data-target="#Modal<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
                           <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal<?php echo $value['id'] ?>" href="../manager/supprimer_contact.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
 
 
-                              <!-- $a = $value['value']; -->
+                            <!-- Modal -->
+                            <div class="modal fade" id="Modal<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Répondre</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                  <center><h2>Contact</h2></center>
+                                          <div class="col-lg-9">
+                                            <form method="POST" action="../manager/repondre_contact.php"
+                                              class="row contact_form"
+                                              action="contact_process.php"
+                                              method="post"
+                                              id="contactForm"
+                                              novalidate="novalidate"
+                                            >
+                                              <div class="col-md-12">
+                                                  <input
+                                                  type="text"
+                                                    class="form-control"
+                                                    id="name"
+                                                    name="nom"
+                                                    value="<?php echo $_SESSION['nom']?>"
+                                                    placeholder="Entrer votre nom"
+                                                    onfocus="this.placeholder = ''"
+                                                    onblur="this.placeholder = 'Enter votre nom'"
+                                                    required=""
+                                                    <?php
+                                                    if ($_SESSION['role'] == "admin") { ?>
+                                                      style="display:none" readonly="readonly" type="text"
+                                                    <?php } ?>
+                                                  />
+                                                </div>
+                                                <br></br>
+                                                  <div class="col-md-12">
+                                                  <input
+                                                    type="email"
+                                                    class="form-control"
+                                                    id="email"
+                                                    value="<?php echo $value['email']?>"
+                                                    name="email"
+                                                    disabled="disabled"
+                                                    placeholder="Entrer votre email"
+                                                    onfocus="this.placeholder = ''"
+                                                    onblur="this.placeholder = 'Enter votre email'"
+                                                    required=""
+                                                  />
+                                                </div>
+                                                <br></br>
+                                                <div class="col-md-12">
+                                                  <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="subject"
+                                                    value="<?php echo $value['sujet']?>"
+                                                    name="sujet"
+                                                    placeholder="Entrer un sujet"
+                                                    onfocus="this.placeholder = ''"
+                                                    onblur="this.placeholder = 'Entrer un sujet'"
+                                                    required=""
+                                                    disabled="disabled"
+                                                  />
+                                              </div>
+                                              <br></br>
+                                              <div class="col-md-12">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="message"
+                                                  name="message"
+                                                  placeholder="Entrer un message"
+                                                  onfocus="this.placeholder = ''"
+                                                  onblur="this.placeholder = 'Entrer un message'"
+                                                  required=""
+                                                />
+                                            </div>
+
+                                        </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+
+                                    <button type="submit" class="btn btn-warning">Valider</button>
+                                  </form>
+                              </div>
+                              </div>
+                            </div>
+                            </div>
+                            </td>
+
                               <!-- Modal -->
                               <div class="modal fade" id="exampleModal<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -399,10 +493,7 @@ if($_GET['msg'] == 2) { ?>
        </div>
        </div>
   			</div>
-  		</div>
-  	</div>
 
-</div>
 
 <!--================ Start footer Area  =================-->
 <footer class="footer-area section_gap">
@@ -448,48 +539,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
   </div>
 </footer>
 <!--================ End footer Area  =================-->
-
-    <!--================Contact Success and Error message Area =================-->
-    <div id="success" class="modal modal-message fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <i class="ti-close"></i>
-            </button>
-            <h2>Merci</h2>
-            <p>Votre message a été correctement envoyé</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modals error -->
-
-    <div id="error" class="modal modal-message fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <i class="ti-close"></i>
-            </button>
-            <h2>Désolé !</h2>
-            <p>Un problème est survenu</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================End Contact Success and Error message Area =================-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
