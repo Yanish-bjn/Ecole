@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 16 nov. 2020 à 13:03
+-- Généré le :  mar. 17 nov. 2020 à 18:36
 -- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Version de PHP :  7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,14 +36,14 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `date` varchar(20) COLLATE utf8_bin NOT NULL,
   `message` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `chat`
 --
 
 INSERT INTO `chat` (`id`, `nom`, `prenom`, `date`, `message`) VALUES
-(6, 'Yalap', 'Thomas', ' 02-11-2020 17:06:03', 'Saluttttt');
+(19, 'BHUJUN', 'YANISH', ' 03-11-2020 17:19:44', 'Bonjour');
 
 -- --------------------------------------------------------
 
@@ -61,16 +61,19 @@ CREATE TABLE IF NOT EXISTS `compte` (
   `tel` varchar(20) NOT NULL,
   `mdp` varchar(50) NOT NULL,
   `role` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `nom` (`nom`),
+  KEY `tel` (`tel`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `compte`
 --
 
 INSERT INTO `compte` (`id`, `nom`, `prenom`, `email`, `ville`, `tel`, `mdp`, `role`) VALUES
-(22, 'Yalap', 'Thomas', 'T.YALAP@lprs.fr', 'Groslay', '0641301961', '3ed7dceaf266cafef032b9d5db224717', 'admin'),
-(24, 'Bhujun', 'Yanish', 'yanish.bhujun@gmail.com', 'Saint-Denis', '0611111111', 'b8754b669cf0379bbee0011827a42e87', 'admin');
+(33, 'BHUJUN', 'YANISH', 'yanish.bhujun@gmail.com', 'ST DENIS', '0782685300', '164b6da6ab4209c16ff3841306dbec83', 'admin'),
+(34, 'aa', 'aa', 'aa@gmail.com', '93210', '0000000000', '4124bc0a9335c27f086f24ba207a4912', 'client'),
+(36, 'Test', 'Test', 'Test@test.fr', '93210', '0000000000', '0cbc6611f5540bd0809a388dc95a615b', 'client');
 
 -- --------------------------------------------------------
 
@@ -86,19 +89,16 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `sujet` varchar(50) COLLATE utf8_bin NOT NULL,
   `message` varchar(200) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `contact`
 --
 
 INSERT INTO `contact` (`id`, `nom`, `email`, `sujet`, `message`) VALUES
-(1, 'Test', 'yanish.bhujun@gmail.com', 'aaaa', 'aaaaaaaaaaaavuhftyjdutyj'),
-(2, 'Yanish BHUJUN', 'yanish.bhujun@gmail.com', 'cdffffffffffffff', 'aaaaaaaaaasezftrgtrzgere'),
-(3, 'Yanish BHUJUN', 'yanish.bhujun@gmail.com', 'aaaaaabbbv', 'buibdfkhvbqdufvqbufsuref'),
-(4, 'Yanish BHUJUN', 'yanish.bhujun@gmail.com', ' dfvrfdgtrfdginutrbtibuit', ' cerfbvuiqebrrefrerfef'),
-(5, 'Yanish BHUJUN', 'yanish.bhujun@gmail.com', 'cdffffffffffffff', 'cdiucbeicdbcfiurfebehuer'),
-(6, 'Yalap', 'T.YALAP@lprs.fr', 'verbe', 'salutvytftyctycdtyuctycytty');
+(2, 'aa', 'aa@gmail.com', 'aaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
+(3, 'aa', 'aa@gmail.com', 'aa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
+(4, 'bb', 'bb@gmail.com', 'bbb', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba');
 
 -- --------------------------------------------------------
 
@@ -109,21 +109,23 @@ INSERT INTO `contact` (`id`, `nom`, `email`, `sujet`, `message`) VALUES
 DROP TABLE IF EXISTS `emploi`;
 CREATE TABLE IF NOT EXISTS `emploi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom_entreprise` varchar(100) COLLATE utf8_bin NOT NULL,
-  `adresse` varchar(100) COLLATE utf8_bin NOT NULL,
-  `rue` varchar(100) COLLATE utf8_bin NOT NULL,
-  `email` varchar(100) COLLATE utf8_bin NOT NULL,
-  `date` varchar(100) COLLATE utf8_bin NOT NULL,
+  `nom_entreprise` varchar(50) COLLATE utf8_bin NOT NULL,
+  `adresse` varchar(50) COLLATE utf8_bin NOT NULL,
+  `rue` varchar(50) COLLATE utf8_bin NOT NULL,
+  `email` varchar(50) COLLATE utf8_bin NOT NULL,
+  `date` date NOT NULL,
   `piece` varchar(100) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `emploi`
 --
 
 INSERT INTO `emploi` (`id`, `nom_entreprise`, `adresse`, `rue`, `email`, `date`, `piece`) VALUES
-(1, 'Apple', 'ST DENIS', 'Rue des fleurs', 'T.YALAP@lprs.fr', '2020-11-06', '../fiche/BTS inscription.pdf');
+(7, 'Amazon', 'CLICHY', 'Avenue jean jaures', 'yanish.bhujun@gmail.com', '2020-11-05', '../fiche/'),
+(8, 'Nvidia', 'MONTGERON', 'rue la fleur', 'yanish.bhujun@gmail.com', '2020-11-06', '../fiche/Cours 7 Vitesse et lenteur.pdf'),
+(13, 'Intermarche', 'CLICHY', 'Avenue jean jaures', 'inter@inter.com', '2020-11-13', '../fiche/Cours 7 Vitesse et lenteur.pdf');
 
 -- --------------------------------------------------------
 
@@ -139,15 +141,33 @@ CREATE TABLE IF NOT EXISTS `evenement` (
   `date` date NOT NULL,
   `description` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `evenement`
 --
 
 INSERT INTO `evenement` (`id`, `nom_evenement`, `nom_personne`, `date`, `description`) VALUES
-(8, 'JPO', 'Fizaine', '2020-11-02', 'Tournoi de Tennis de Table'),
-(10, 'Tournois', 'Noguez', '2020-11-28', 'Tournoi de Tennis de Table');
+(61, 'Journee presentation', 'Nogoz', '2020-11-04', 'Presentation BTS SIO '),
+(63, 'Reunion', 'Fizaine', '2020-12-03', 'azz'),
+(64, 'Journee presentation', 'Fizaine', '2020-12-05', 'Presentation BTS SIO ');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reponse`
+--
+
+DROP TABLE IF EXISTS `reponse`;
+CREATE TABLE IF NOT EXISTS `reponse` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(50) COLLATE utf8_bin NOT NULL,
+  `email` varchar(50) COLLATE utf8_bin NOT NULL,
+  `sujet` varchar(50) COLLATE utf8_bin NOT NULL,
+  `message` varchar(50) COLLATE utf8_bin NOT NULL,
+  `date` varchar(50) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

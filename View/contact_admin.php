@@ -61,7 +61,6 @@ session_start();
     {
     w1 = window.open("../exportation/compte_pdf.php");
     }
-
   function message()
     {
     w1 = window.open("../exportation/message_pdf.php");
@@ -93,7 +92,7 @@ ini_set('display_errors', 'off');
 if($_GET['msg'] == 3) { ?>
   <body onload="setTimeout(cacherDiv1,4000);">
 <div id="modifier" class="message">
-<?php echo "Evenement modifier avec succés";
+<?php echo "Message modifier avec succés";
 }?>
 </div>
 </body>
@@ -103,7 +102,7 @@ ini_set('display_errors', 'off');
 if($_GET['msg'] == 4) { ?>
   <body onload="setTimeout(cacherDiv3,4000);">
 <div id="supprimer" class="message">
-<?php echo "Evenement supprimer avec succés";
+<?php echo "Message supprimer avec succés";
 }?>
 </div>
 </body>
@@ -323,7 +322,7 @@ if($_GET['msg'] == 2) { ?>
 
 
 <div class="container">
-
+  <p><center><h2>Message :</h2></center></p>
   <!-- Affichage du tableau contenant des informations -->
 
   <p>  <div class="container-table100">
@@ -338,7 +337,6 @@ if($_GET['msg'] == 2) { ?>
   									<th class="cell100 column3">Sujet</th>
   									<th class="cell100 column4">Message</th>
                     <th class="cell100 column5">Répondre</th>
-                    <th class="cell100 column6">Suppression</th>
   								</tr>
   							</thead>
   						</table>
@@ -360,7 +358,6 @@ if($_GET['msg'] == 2) { ?>
                           <td class="cell100 column3"><?php echo $value['sujet']?></td>
                           <td class="cell100 column4"><?php echo $value['message']?></td>
                           <td class="cell100 column5"><a class="btn btn-warning" data-toggle="modal" data-target="#Modal<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
-                          <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal<?php echo $value['id'] ?>" href="../manager/supprimer_contact.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
 
 
                             <!-- Modal -->
@@ -378,37 +375,49 @@ if($_GET['msg'] == 2) { ?>
                                           <div class="col-lg-9">
                                             <form method="POST" action="../manager/repondre_contact.php"
                                               class="row contact_form"
-                                              action="contact_process.php"
-                                              method="post"
                                               id="contactForm"
                                               novalidate="novalidate"
                                             >
+                                            <div class="col-md-12">
+                                              <input
+                                                type="text"
+                                                readonly="readonly"
+                                                class="form-control"
+                                                id="id"
+                                                value="<?php echo $value['id']?>"
+                                                name="id"
+                                                placeholder="Entrer un sujet"
+                                                onfocus="this.placeholder = ''"
+                                                onblur="this.placeholder = 'Entrer un sujet'"
+                                                required=""
+                                                style="display: none"
+                                              />
+                                          </div>
+                                          <br></br>
                                               <div class="col-md-12">
                                                   <input
                                                   type="text"
+                                                  readonly="readonly"
                                                     class="form-control"
                                                     id="name"
                                                     name="nom"
-                                                    value="<?php echo $_SESSION['nom']?>"
+                                                    value="<?php echo $value['nom']?>"
                                                     placeholder="Entrer votre nom"
                                                     onfocus="this.placeholder = ''"
                                                     onblur="this.placeholder = 'Enter votre nom'"
                                                     required=""
-                                                    <?php
-                                                    if ($_SESSION['role'] == "admin") { ?>
-                                                      style="display:none" readonly="readonly" type="text"
-                                                    <?php } ?>
+
                                                   />
                                                 </div>
                                                 <br></br>
                                                   <div class="col-md-12">
                                                   <input
                                                     type="email"
+                                                    readonly="readonly"
                                                     class="form-control"
                                                     id="email"
-                                                    value="<?php echo $value['email']?>"
                                                     name="email"
-                                                    disabled="disabled"
+                                                    value="<?php echo $value['email']?>"
                                                     placeholder="Entrer votre email"
                                                     onfocus="this.placeholder = ''"
                                                     onblur="this.placeholder = 'Enter votre email'"
@@ -419,6 +428,7 @@ if($_GET['msg'] == 2) { ?>
                                                 <div class="col-md-12">
                                                   <input
                                                     type="text"
+                                                    readonly="readonly"
                                                     class="form-control"
                                                     id="subject"
                                                     value="<?php echo $value['sujet']?>"
@@ -427,7 +437,6 @@ if($_GET['msg'] == 2) { ?>
                                                     onfocus="this.placeholder = ''"
                                                     onblur="this.placeholder = 'Entrer un sujet'"
                                                     required=""
-                                                    disabled="disabled"
                                                   />
                                               </div>
                                               <br></br>
@@ -443,7 +452,12 @@ if($_GET['msg'] == 2) { ?>
                                                   required=""
                                                 />
                                             </div>
-
+                                            <div class="col-md-12">
+                                              <center><input  style="display:none" readonly="readonly" type="text" value=" <?php
+                                             date_default_timezone_set('Europe/Paris');
+                                             echo date('d-m-Y H:i:s'). '';
+                                         ?>" class="form-control" id="datetime" name="date" />
+                                            </div>
                                         </div>
                                   </div>
                                   <div class="modal-footer">
@@ -456,36 +470,11 @@ if($_GET['msg'] == 2) { ?>
                             </div>
                             </div>
                             </td>
+                            <?php
 
-                              <!-- Modal -->
-                              <div class="modal fade" id="exampleModal<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body">
-                                      Etes-vous sur de vouloir supprimer ce message ?
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-                                      <button type="button" class="btn btn-warning" onclick="window.location.href='../manager/supprimer_contact.php?id=<?php echo $value['id']; ?>'">Valider</button>
-                                      <?php
-
-                                        }
-                                        ?>
-                                </div>
-                                </div>
-                              </div>
-                            </div>
-                          </td>
+                              }
+                              ?>
                           </tr>
-
-
   							</tbody>
   						</table>
   					</div>
@@ -493,6 +482,106 @@ if($_GET['msg'] == 2) { ?>
        </div>
        </div>
   			</div>
+
+
+        <div class="container">
+          <center><h2>Message répondu :</h2></center>
+          <!-- Affichage du tableau contenant des informations -->
+
+          <p>  <div class="container-table100">
+              <div class="wrap-table100">
+                <div class="table100 ver1 m-b-110">
+                  <div class="table100-head">
+          						<table>
+          							<thead>
+          								<tr class="row100 head">
+          									<th class="cell100 column1">Nom</th>
+          									<th class="cell100 column2">Email</th>
+          									<th class="cell100 column3">Sujet</th>
+          									<th class="cell100 column4">Message</th>
+                            <th class="cell100 column5">Date</th>
+                            <th class="cell100 column6">Suppression</th>
+          								</tr>
+          							</thead>
+          						</table>
+          					</div></p>
+
+          					<div class="table100-body js-pscroll">
+          						<table>
+          							<tbody>
+          								<!-- Selection de toute les réservations -->
+          								<?php
+          								$req = $bdd->prepare('SELECT * FROM reponse');
+                          $req->execute(array('id'=>$_SESSION['id']));
+          								$donnees= $req->fetchall();
+
+                          foreach ($donnees as $value) { ?>
+                            <tr class="row100 body">
+                                  <td class="cell100 column1"><?php echo $value['nom']?></td>
+                                  <td class="cell100 column2"><?php echo $value['email']?></td>
+                                  <td class="cell100 column3"><?php echo $value['sujet']?></td>
+                                  <td class="cell100 column4"><?php echo $value['message']?></td>
+                                  <td class="cell100 column5"><?php echo $value['date']?></td>
+                                  <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#supprimer<?php echo $value['id'] ?>" href="../manager/supprimer_contact.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
+
+                                      <!-- Modal -->
+                                      <div class="modal fade" id="supprimer<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <div class="col-lg-9">
+                                                <form method="POST" action="../manager/supprimer_contact.php"
+                                                  class="row contact_form"
+                                                  id="contactForm"
+                                                  novalidate="novalidate"
+                                                >
+                                              </div>
+                                                <div class="col-md-12">
+                                                  <input
+                                                    type="text"
+                                                    readonly="readonly"
+                                                    class="form-control"
+                                                    id="id"
+                                                    value="<?php echo $value['id']?>"
+                                                    name="id"
+                                                    placeholder="Entrer un sujet"
+                                                    onfocus="this.placeholder = ''"
+                                                    onblur="this.placeholder = 'Entrer un sujet'"
+                                                    required=""
+                                                    style="display: none"
+                                                  />
+                                                </div>
+                                              Etes-vous sur de vouloir supprimer ce message ?
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+
+                                              <button type="submit" class="btn btn-warning">Valider</button>
+                                            </form>
+                                              <?php
+
+                                                }
+                                                ?>
+                                        </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  </tr>
+
+
+          							</tbody>
+          						</table>
+          					</div>
+          				</div>
+               </div>
+               </div>
+          			</div>
 
 
 <!--================ Start footer Area  =================-->

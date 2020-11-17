@@ -342,10 +342,15 @@ if($_GET['msg'] == 1) { ?>
                     class="form-control"
                     id="email"
                     name="email"
+                    value="<?php echo $_SESSION['email'];?>"
                     placeholder="Entrer votre email"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Enter votre email'"
                     required=""
+                    <?php
+                    if ($_SESSION['role'] == "client") { ?>
+                      style="display:none" readonly="readonly" type="text"
+                    <?php } ?>
                   />
                 </div>
                 <div class="form-group">
