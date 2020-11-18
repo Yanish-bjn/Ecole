@@ -103,8 +103,7 @@ if($_GET['msg'] == 1) { ?>
 							Connexion
 							</button>
 					</div>
-					<a class="login100-form-btn" href="inscription.php">Inscription</a>
-					</button>
+					<button type="button" class="login100-form-btn" onclick="window.location.href='inscription.php'">Inscription</button>
 
 				</form>
 			</div>
