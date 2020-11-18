@@ -137,6 +137,9 @@ session_start();
                         <a class="nav-link" href="../index.php">Accueil</a>
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link" href="Contact_admin.php">Contact</a>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link" href="offre_emploi.php">Offres</a>
                       </li>
                       <li class="nav-item submenu dropdown">

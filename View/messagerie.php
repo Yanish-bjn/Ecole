@@ -169,6 +169,9 @@ if($_GET['msg'] == 2) { ?>
                         <a class="nav-link" href="../index.php">Accueil</a>
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link" href="Contact_admin.php">Contact</a>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link" href="offre_emploi.php">Offres</a>
                       </li>
                       <li class="nav-item submenu dropdown">
@@ -359,26 +362,26 @@ if($_GET['msg'] == 2) { ?>
         <div class="col-lg-2 col-md-6 single-footer-widget">
           <h4>informations</h4>
           <ul>
-            <li><a href="index.php">Nous concernant</a></li>
+            <li><a href="../index.php">Nous concernant</a></li>
 
           </ul>
         </div>
         <div class="col-lg-2 col-md-6 single-footer-widget">
           <h4>Prendre contact</h4>
           <ul>
-            <li><a href="View/contact.php">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-6 single-footer-widget">
           <h4>Etudiant</h4>
           <ul>
-            <li><a href="View/connexion.php">Connexion</a></li>
+            <li><a href="connexion.php">Connexion</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-6 single-footer-widget">
           <h4>Vous inscrire</h4>
           <ul>
-            <li><a href="View/inscription.php">Inscription</a></li>
+            <li><a href="inscription.php">Inscription</a></li>
           </ul>
         </div>
       </div>
@@ -397,46 +400,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
   </footer>
   <!--================ End footer Area  =================-->
 
-    <!--================Contact Success and Error message Area =================-->
-    <div id="success" class="modal modal-message fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close">
-              <i class="ti-close"></i>
-            </button>
-            <h2>Thank you</h2>
-            <p>Your message is successfully sent...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modals error -->
-
-    <div id="error" class="modal modal-message fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <i class="ti-close"></i>
-            </button>
-            <h2>Sorry !</h2>
-            <p>Something went wrong</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--================End Contact Success and Error message Area =================-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

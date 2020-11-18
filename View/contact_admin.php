@@ -213,6 +213,9 @@ if($_GET['msg'] == 2) { ?>
                      <li class="nav-item">
                        <a class="nav-link" href="../index.php">Accueil</a>
                      </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="Contact_admin.php">Contact</a>
+                     </li>
                      <li class="nav-item submenu dropdown">
                        <a href="offre_emploi.php" class="nav-link dropdown-toggle"> Offres
                        </a>
@@ -591,26 +594,26 @@ if($_GET['msg'] == 2) { ?>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Informations</h4>
         <ul>
-          <li><a href="index.php">Accueil</a></li>
+          <li><a href="../index.php">Accueil</a></li>
 
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Prendre contact</h4>
         <ul>
-          <li><a href="View/contact.php">Contact</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Etudiant</h4>
         <ul>
-          <li><a href="View/connexion.php">Connexion</a></li>
+          <li><a href="connexion.php">Connexion</a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 single-footer-widget">
         <h4>Vous inscrire</h4>
         <ul>
-          <li><a href="View/inscription.php">Inscription</a></li>
+          <li><a href="inscription.php">Inscription</a></li>
         </ul>
       </div>
     </div>
@@ -627,6 +630,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     </div>
   </div>
 </footer>
+
 <!--================ End footer Area  =================-->
 
     <!-- Optional JavaScript -->
