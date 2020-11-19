@@ -168,8 +168,14 @@ if($_GET['msg'] == 2) { ?>
                       <li class="nav-item">
                         <a class="nav-link" href="../index.php">Accueil</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item submenu dropdown">
                         <a class="nav-link" href="Contact_admin.php">Contact</a>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item">
+                            <a class="nav-link" href="../exportation/contact.php" onClick='javascript:contact();'>Exportation</a>
+                          </li>
+                        </ul>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="offre_emploi.php">Offres</a>

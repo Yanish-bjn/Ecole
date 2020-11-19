@@ -52,6 +52,10 @@ session_start();
     {
     w1 = window.open("exportation/offre_pdf.php");
     }
+  function contact()
+    {
+    w1 = window.open("exportation/contact_pdf.php");
+    }
 
 
   </SCRIPT>
@@ -147,8 +151,15 @@ session_start();
                      </div>
                      <li class="nav-item">
                        <a class="nav-link" href="index.php">Accueil</a>
-                     </li><li class="nav-item">
+                     </li>
+                     <li class="nav-item submenu dropdown">
                        <a class="nav-link" href="View/Contact_admin.php">Contact</a>
+                       </a>
+                       <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="exportation/contact.php" onClick='javascript:contact();'>Exportation</a>
+                         </li>
+                       </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
                        <a href="View/offre_emploi.php" class="nav-link dropdown-toggle"> Offres

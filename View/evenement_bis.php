@@ -13,20 +13,7 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
-    <title>Mon compte admin</title>
-
-    <!-- Liens contenant le style du tableau -->
-
-<link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../tableau/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="../tableau/vendor/animate/animate.css">
-<link rel="stylesheet" type="text/css" href="../tableau/vendor/select2/select2.min.css">
-<link rel="stylesheet" type="text/css" href="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/util.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/main.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
-
+    <title>Evenement</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
@@ -37,65 +24,34 @@ session_start();
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
 
   </head>
 
   <SCRIPT language="JavaScript">
+    function compte()
+      {
+      w1 = window.open("../exportation/compte_pdf.php");
+      }
 
-  function cacherDiv1() {
-       document.getElementById("modifier").style.display = "none";
-  }
+    function message()
+      {
+      w1 = window.open("../exportation/message_pdf.php");
+      }
 
-  function cacherDiv2() {
-       document.getElementById("erreur").style.display = "none";
-  }
-
-  function compte()
-    {
-    w1 = window.open("../exportation/compte_pdf.php");
-    }
-
-  function message()
-    {
-    w1 = window.open("../exportation/message_pdf.php");
-    }
-
-  function evenement()
-    {
-    w1 = window.open("../exportation/evenement_pdf.php");
-    }
-
-  function offre()
-    {
-    w1 = window.open("../exportation/offre_pdf.php");
-    }
-  function contact()
-    {
-    w1 = window.open("../exportation/contact_pdf.php");
-    }
-
-  </SCRIPT>
-
-  <?php
-  ini_set('display_errors', 'off');
-  if($_GET['msg'] == 1) { ?>
-    <body onload="setTimeout(cacherDiv1,4000);">
-  <div id="modifier" class="message">
-  <?php echo "Modification effectuer avec succes";
-  }?>
-  </div>
-</body>
-
-  <?php
-  ini_set('display_errors', 'off');
-  if($_GET['msg'] == 2) { ?>
-    <body onload="setTimeout(cacherDiv2,4000);">
-  <div id="erreur" class="erreur">
-  <?php echo "Erreur veuillez réessayer";
-  }?>
-</div>
-</body>
+    function evenement()
+      {
+      w1 = window.open("../exportation/evenement_pdf.php");
+      }
+      function offre()
+        {
+        w1 = window.open("../exportation/offre_pdf.php");
+        }
+      function contact()
+        {
+        w1 = window.open("../exportation/contact_pdf.php");
+        }
+	</SCRIPT>
 
   <body>
     <!--================ Start Header Menu Area =================-->
@@ -156,14 +112,9 @@ session_start();
                     <li class="nav-item">
                       <a class="nav-link" href="contact.php">Contact</a>
                     </li>
-                    <li class="nav-item submenu dropdown">
-                      <a href="offre_emploi.php" class="nav-link dropdown-toggle"> Offres
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a class="nav-link" href="../exportation/offre.php" onClick='javascript:offre();'>Exportation</a>
-                        </li>
-                      </ul>
+                    <li class="nav-item">
+                      <a class="nav-link" href="offre_emploi_client.php">Offres</a>
+                    </li>
                     <li class="nav-item submenu dropdown">
                       <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                       </a>
@@ -218,15 +169,15 @@ session_start();
                             <a class="nav-link" href="evenement_admin.php">Etudiant</a>
                           </li>
                          <li class="nav-item">
-                           <a class="nav-link" href="../exportation/evenement.php" onClick='javascript:evenement();'>Exportation</a>
+                              <a class="nav-link" href="../exportation/evenement.php">Exportation</a>
                             </ul>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a href="messagerie_admin.php" class="nav-link dropdown-toggle"> Messagerie
+                        <a href="messagerie.php" class="nav-link dropdown-toggle"> Messagerie
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
-                            <a class="nav-link" href="../exportation/message.php" onClick='javascript:message();'>Exportation</a>
+                            <a class="nav-link" href="../exportation/message.php">Exportation</a>
                           </li>
                         </ul>
                       </li>
@@ -235,7 +186,7 @@ session_start();
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
-                            <a class="nav-link" href="../exportation/compte.php" onClick='javascript:compte();'>Exportation</a>
+                            <a class="nav-link" href="../exportation/compte.php">Exportation</a>
                           </li>
                         </ul>
                       </li>
@@ -253,6 +204,9 @@ session_start();
               }
               //Sinon il n'y a pas de sessions ouverte
               else{ ?>
+                <div class="position2">
+                <?php echo'Lycée Robert Schuman'?>
+                </div>
                 <li class="nav-item">
                   <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
@@ -260,16 +214,14 @@ session_start();
                   <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item submenu dropdown">
-                  <a href="evenement.php" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Evénements
+                  <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                   </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a class="nav-link" href="evenement.php">Ecole</a>
-                    </li>
-                  </ul>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="connexion.php">Connexion</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="inscription.php">Inscription</a>
                 </li>
 
                 <?php	}  ?>
@@ -291,7 +243,7 @@ session_start();
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Mon compte </h2>
+                <h2>Évenements</h2>
               </div>
             </div>
           </div>
@@ -300,71 +252,131 @@ session_start();
     </section>
     <!--================End Home Banner Area =================-->
 
-    <?php
-  	try{
-  		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
-  	}
-  	catch (Exception $e){
-  		die('Erreur:'.$e->getMessage());
-  	}
-  	?>
+    <!--================ Start Events Area =================-->
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <br></br>
+              <h2 class="mb-3">Évenements à venir</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="single_event position-relative">
+              <div class="event_thumb">
+                <img src="../img/event/e1.jpg" alt="" />
+              </div>
+              <div class="event_details">
+                <div class="d-flex mb-4">
+                  <div class="date"><span>23</span> Mai</div>
+
+                  <div class="time-location">
+                    <p>
+                      <span class="ti-time mr-2"></span> 09:30  - 17:30
+                    </p>
+                    <p>
+                      <span class="ti-location-pin mr-2"></span> Dugny, France
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  Venez découvrir les différentes formations au sein du lycée Robert Schuman
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6">
+            <div class="single_event position-relative">
+              <div class="event_thumb">
+                <img src="../img/event/e3.jpg" alt="" />
+              </div>
+              <div class="event_details">
+                <div class="d-flex mb-4">
+                  <div class="date"><span>20</span> JUIN</div>
+
+                  <div class="time-location">
+                    <p>
+                      <span class="ti-time mr-2"></span> 08:30  - 17:30
+                    </p>
+                    <p>
+                      <span class="ti-location-pin mr-2"></span> Dugny, France
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  Tous les ans le lycée organise un tournoi de football avec à la fin une remise des prix
+                </p>
+              </div>
+            </div>
+          </div>
 
 
-<div class="container">
+          <div class="col-lg-6 col-md-6">
+            <div class="single_event position-relative">
+              <div class="event_thumb">
+                <img src="../img/event/e2.jpg" alt="" />
+              </div>
+              <div class="event_details">
+                <div class="d-flex mb-4">
+                  <div class="date"><span>15</span> Mai</div>
 
-  <!-- Affichage du tableau contenant des informations -->
+                  <div class="time-location">
+                    <p>
+                      <span class="ti-time mr-2"></span> 08:30  - 17:30
+                    </p>
+                    <p>
+                      <span class="ti-location-pin mr-2"></span> Dugny, France
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  En plus du tournois de football, il y a aussi un tournoi de tennis de table avec un lot pour les gagnants
+                </p>
+              </div>
+            </div>
+          </div>
 
-  <p>  <div class="container-table100">
-      <div class="wrap-table100">
-        <div class="table100 ver1 m-b-110">
-          <div class="table100-head">
-  						<table>
-  							<thead>
-  								<tr class="row100 head">
-  									<th class="cell100 column1">Nom</th>
-  									<th class="cell100 column2">Prenom</th>
-  									<th class="cell100 column3">Email</th>
-                    <th class="cell100 column4">Ville</th>
-  									<th class="cell100 column5">Téléphone</th>
-  								</tr>
-  							</thead>
-  						</table>
-  					</div></p>
+          <div class="col-lg-6 col-md-6">
+            <div class="single_event position-relative">
+              <div class="event_thumb">
+                <img src="../img/event/e4.jpg" alt="" />
+              </div>
+              <div class="event_details">
+                <div class="d-flex mb-4">
+                  <div class="date"><span>18</span>Juin</div>
 
-  					<div class="table100-body js-pscroll">
-  						<table>
-  							<tbody>
-  								<!-- Selection de toute les réservations -->
-                  <?php
-                  $req = $bdd->prepare('SELECT * FROM compte WHERE email=:email');
-                  $req->execute(array('email'=>$_SESSION['email']));
-                  $donnees= $req->fetchall();
+                  <div class="time-location">
+                    <p>
+                      <span class="ti-time mr-2"></span> 08:30  - 17:30
+                    </p>
+                    <p>
+                      <span class="ti-location-pin mr-2"></span> Dugny, France
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  Le Projet Voltaire est un lieu fusionnel entre l'expertise dans le domaine de l'acquisition des savoirs et des automatismes
+                </p>
+              </div>
+            </div>
+          </div><p>
 
-                  foreach ($donnees as $value) { ?>
-                    <tr class="row100 body">
-                          <td class="cell100 column1"><?php echo $value['nom']?></td>
-                          <td class="cell100 column2"><?php echo $value['prenom']?></td>
-                          <td class="cell100 column3"><?php echo $value['email']?></td>
-                          <td class="cell100 column4"><?php echo $value['ville']?></td>
-                          <td class="cell100 column5"><?php echo $value['tel']?></td>
-                          </tr>
 
-<?php
-                  }
-?>
 
-  							</tbody>
-  						</table>
-  					</div>
-  				</div>
+          <div class="col-lg-12">
+            <div class="text-center pt-lg-5 pt-3">
+              <a href="#" class="event-link">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Events Area =================-->
 
-             <p><center><a class="btn btn-warning" href="modifier_admin.php?id=<?php echo $_SESSION['id']; ?>">Modifier</a></center></p>
-
-       </div>
-       </div>
-  			</div>
-  		</div>
-  	</div>
 
     <!--================ Start footer Area  =================-->
     <footer class="footer-area section_gap">
@@ -399,8 +411,8 @@ session_start();
         <div class="row footer-bottom d-flex justify-content-between">
           <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
           <div class="col-lg- col-sm-12 footer-social">
             <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
@@ -410,6 +422,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
       </div>
     </footer>
     <!--================ End footer Area  =================-->
+
 
 
     <!-- Optional JavaScript -->
@@ -429,12 +442,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>
     <script src="../js/theme.js"></script>
-
-    <!-- Liens contenant le script du tableau -->
-	<script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script src="../tableau/vendor/bootstrap/js/popper.js"></script>
-	<script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="../tableau/vendor/select2/select2.min.js"></script>
-	<script src="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
   </body>
 </html>
