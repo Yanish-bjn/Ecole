@@ -13,7 +13,7 @@ session_start();
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
-    <title>Lycée Robert Schuman</title>
+    <title>Evenement</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
@@ -22,40 +22,40 @@ session_start();
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/style2.css" />
     <link rel="stylesheet" href="../css/style3.css" />
-
+    <link rel="stylesheet" href="../css/erreur.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
 
   </head>
 
   <SCRIPT language="JavaScript">
-  function compte()
-    {
-    w1 = window.open("../exportation/compte_pdf.php");
-    }
-
-  function message()
-    {
-    w1 = window.open("../exportation/message_pdf.php");
-    }
-
-  function evenement()
-    {
-    w1 = window.open("../exportation/evenement_pdf.php");
-    }
-    function offre()
+    function compte()
       {
-      w1 = window.open("../exportation/offre_pdf.php");
+      w1 = window.open("../exportation/compte_pdf.php");
       }
-    function contact()
+
+    function message()
       {
-      w1 = window.open("../exportation/contact_pdf.php");
+      w1 = window.open("../exportation/message_pdf.php");
       }
-    </SCRIPT>
+
+    function evenement()
+      {
+      w1 = window.open("../exportation/evenement_pdf.php");
+      }
+      function offre()
+        {
+        w1 = window.open("../exportation/offre_pdf.php");
+        }
+      function contact()
+        {
+        w1 = window.open("../exportation/contact_pdf.php");
+        }
+	</SCRIPT>
 
   <body>
     <!--================ Start Header Menu Area =================-->
-    <header class="header_area">
+    <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
           <div class="container">
@@ -78,6 +78,23 @@ session_start();
 
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand" href="index.html">
+              <img class="logo-2" src="img/logo2.png" alt="" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon-bar"></span> <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
 
@@ -86,7 +103,7 @@ session_start();
                 if (isset($_SESSION['email'])){
                   //Si la personne est un client
                   if ($_SESSION['role'] == "client") { ?>
-                    <div class="position">
+                    <div class="position2">
                     <?php echo'Lycée Robert Schuman'?>
                     </div>
                     <li class="nav-item">
@@ -125,74 +142,69 @@ session_start();
 
                   <?php  }
                     //Sinon c'est donc un admin
-                   else { ?>
-                     <div class="position">
-                     <?php echo'Lycée Robert Schuman'?>
-                     </div>
-                     <li class="nav-item">
-                       <a class="nav-link" href="../index.php">Accueil</a>
-                     </li>
-                     <li class="nav-item submenu dropdown">
-                       <a class="nav-link" href="Contact_admin.php">Contact</a>
-                       </a>
-                       <ul class="dropdown-menu">
+                    else { ?>
+                      <div class="position2">
+                      <?php echo'Lycée Robert Schuman'?>
+                      </div>
+                      <li class="nav-item">
+                        <a class="nav-link" href="../index.php">Accueil</a>
+                      </li>
+                      <li class="nav-item submenu dropdown">
+                        <a class="nav-link" href="Contact_admin.php">Contact</a>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item">
+                            <a class="nav-link" href="../exportation/contact.php" onClick='javascript:contact();'>Exportation</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="offre_emploi.php">Offres</a>
+                      </li>
+                      <li class="nav-item submenu dropdown">
+                        <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item">
+                            <a class="nav-link" href="evenement_admin.php">Etudiant</a>
+                          </li>
                          <li class="nav-item">
-                           <a class="nav-link" href="../exportation/contact.php" onClick='javascript:contact();'>Exportation</a>
-                         </li>
-                       </ul>
-                     </li>
-                     <li class="nav-item submenu dropdown">
-                       <a href="offre_emploi.php" class="nav-link dropdown-toggle"> Offres
-                       </a>
-                       <ul class="dropdown-menu">
-                         <li class="nav-item">
-                           <a class="nav-link" href="../exportation/offre.php" onClick='javascript:offre();'>Exportation</a>
-                         </li>
-                       </ul>
-                     <li class="nav-item submenu dropdown">
-                       <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
-                       </a>
-                       <ul class="dropdown-menu">
-                         <li class="nav-item">
-                           <a class="nav-link" href="evenement_admin.php">Etudiant</a>
-                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="../exportation/evenement.php" onClick='javascript:evenement();'>Exportation</a>
-                           </ul>
-                     </li>
-                     <li class="nav-item submenu dropdown">
-                       <a href="messagerie_admin.php" class="nav-link dropdown-toggle"> Messagerie
-                       </a>
-                       <ul class="dropdown-menu">
-                         <li class="nav-item">
-                           <a class="nav-link" href="../exportation/message.php" onClick='javascript:message();'>Exportation</a>
-                         </li>
-                       </ul>
-                     </li>
-                     <li class="nav-item submenu dropdown">
-                       <a href="moncompte_admin.php" class="nav-link dropdown-toggle"> Mon compte
-                       </a>
-                       <ul class="dropdown-menu">
-                         <li class="nav-item">
-                           <a class="nav-link" href="../exportation/compte.php" onClick='javascript:compte();'>Exportation</a>
-                         </li>
-                       </ul>
-                     </li>
-                     <li class="nav-item submenu dropdown">
-                       <a href="admin.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
-                       </a>
-                       <ul class="dropdown-menu">
-                         <li class="nav-item">
-                           <a class="nav-link" href="../traitement/deconnexion.php">Déconnexion</a>
-                         </li>
-                       </ul>
-                     </li>
+                              <a class="nav-link" href="../exportation/evenement.php">Exportation</a>
+                            </ul>
+                      </li>
+                      <li class="nav-item submenu dropdown">
+                        <a href="messagerie.php" class="nav-link dropdown-toggle"> Messagerie
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item">
+                            <a class="nav-link" href="../exportation/message.php">Exportation</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item submenu dropdown">
+                        <a href="moncompte_admin.php" class="nav-link dropdown-toggle"> Mon compte
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item">
+                            <a class="nav-link" href="../exportation/compte.php">Exportation</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item submenu dropdown">
+                        <a href="admin.php" class="nav-link dropdown-toggle"><?php echo'Bienvenue : ', $_SESSION['prenom'];?>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item">
+                            <a class="nav-link" href="../traitement/deconnexion.php">Déconnexion</a>
+                          </li>
+                        </ul>
+                      </li>
 
-                <?php }
+                 <?php }
               }
               //Sinon il n'y a pas de sessions ouverte
               else{ ?>
-                <div class="position">
+                <div class="position2">
                 <?php echo'Lycée Robert Schuman'?>
                 </div>
                 <li class="nav-item">
@@ -223,31 +235,28 @@ session_start();
     </header>
     <!--================ End Header Menu Area =================-->
 
-    <!--================ Start Home Banner Area =================-->
-    <section class="home_banner_area">
-      <div class="banner_inner">
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
         <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2 class="text-uppercase mt-4 mb-5">
-                  Bienvenue sur la page évenement
-                </h2>
+                <h2>Évenements</h2>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--================ End Home Banner Area =================-->
+    <!--================End Home Banner Area =================-->
 
     <!--================ Start Events Area =================-->
-    <div class="events_area">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="main_title">
-              <h2 class="mb-3 text-white">Évenements à venir</h2>
             </div>
           </div>
         </div>
@@ -367,7 +376,6 @@ session_start();
     <!--================ End Events Area =================-->
 
 
-
     <!--================ Start footer Area  =================-->
     <footer class="footer-area section_gap">
       <div class="container">
@@ -413,19 +421,24 @@ session_start();
     </footer>
     <!--================ End footer Area  =================-->
 
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/stellar.js"></script>
     <script src="../vendors/nice-select/js/jquery.nice-select.min.js"></script>
     <script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
     <script src="../js/owl-carousel-thumb.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/jquery.ajaxchimp.min.js"></script>
     <script src="../js/mail-script.js"></script>
     <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="../js/gmaps.min.js"></script>
+    <script src="../js/contact.js"></script>
     <script src="../js/theme.js"></script>
   </body>
 </html>
