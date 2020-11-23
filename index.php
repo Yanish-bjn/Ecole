@@ -127,8 +127,13 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="View/messagerie.php" class="nav-link dropdown-toggle"> Messagerie
+                      <a href="View/messagerie.php" class="nav-link dropdown-toggle">Messagerie
                       </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="View/messagerie_priver.php">Messagerie privé</a>
+                        </li>
+                      </ul>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="View/moncompte_client.php">Mom compte</a>
@@ -185,6 +190,9 @@ session_start();
                        <a href="View/messagerie_admin.php" class="nav-link dropdown-toggle">Messagerie
                        </a>
                        <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="View/messagerie_priver.php">Messagerie privé</a>
+                         </li>
                          <li class="nav-item">
                            <a class="nav-link" href="exportation/message.php" onClick='javascript:message();'>Exportation</a>
                          </li>

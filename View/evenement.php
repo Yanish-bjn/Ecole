@@ -243,7 +243,7 @@ session_start();
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content text-center">
-                <h2>Évenements</h2>
+                <h2>Évenements général</h2>
               </div>
             </div>
           </div>
