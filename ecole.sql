@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 17 nov. 2020 à 18:36
+-- Généré le :  lun. 23 nov. 2020 à 16:14
 -- Version du serveur :  5.7.26
--- Version de PHP :  7.3.5
+-- Version de PHP :  7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -88,17 +88,10 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `email` varchar(50) COLLATE utf8_bin NOT NULL,
   `sujet` varchar(50) COLLATE utf8_bin NOT NULL,
   `message` varchar(200) COLLATE utf8_bin NOT NULL,
+  `date` varchar(100) COLLATE utf8_bin NOT NULL,
+  `verification` varchar(50) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Déchargement des données de la table `contact`
---
-
-INSERT INTO `contact` (`id`, `nom`, `email`, `sujet`, `message`) VALUES
-(2, 'aa', 'aa@gmail.com', 'aaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(3, 'aa', 'aa@gmail.com', 'aa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(4, 'bb', 'bb@gmail.com', 'bbb', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba');
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -151,23 +144,6 @@ INSERT INTO `evenement` (`id`, `nom_evenement`, `nom_personne`, `date`, `descrip
 (61, 'Journee presentation', 'Nogoz', '2020-11-04', 'Presentation BTS SIO '),
 (63, 'Reunion', 'Fizaine', '2020-12-03', 'azz'),
 (64, 'Journee presentation', 'Fizaine', '2020-12-05', 'Presentation BTS SIO ');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `reponse`
---
-
-DROP TABLE IF EXISTS `reponse`;
-CREATE TABLE IF NOT EXISTS `reponse` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) COLLATE utf8_bin NOT NULL,
-  `email` varchar(50) COLLATE utf8_bin NOT NULL,
-  `sujet` varchar(50) COLLATE utf8_bin NOT NULL,
-  `message` varchar(50) COLLATE utf8_bin NOT NULL,
-  `date` varchar(50) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

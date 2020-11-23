@@ -27,8 +27,8 @@ class Manager{
 public function repondre_contact($donnee){
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //
       $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
-    $req=$bdd->prepare('INSERT into reponse (nom, email, sujet, message, date) VALUES(:nom, :email, :sujet, :message, :date)');
-    $req->execute(array('nom'=>$donnee->getnom(), 'email'=>$donnee->getemail(), 'sujet'=>$donnee->getsujet(), 'message'=>$donnee->getmessage(), 'date'=>$donnee->getdate()));
+    $req=$bdd->prepare('INSERT into contact (nom, email, sujet, message, date, verification) VALUES(:nom, :email, :sujet, :message, :date, :verification)');
+    $req->execute(array('nom'=>$donnee->getnom(), 'email'=>$donnee->getemail(), 'sujet'=>$donnee->getsujet(), 'message'=>$donnee->getmessage(), 'date'=>$donnee->getdate(), 'verification'=>'Fait'));
     $req->fetchall();
 
           $mail = new PHPMailer();

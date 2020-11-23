@@ -263,7 +263,7 @@ if($_GET['msg'] == 1) { ?>
 
     <!--================Contact Area =================-->
     <div class="container">
-    <p><div id="map">
+    <p><div id="map" style=" z-index: 1">
           <!-- Ici s'affichera la carte -->
       </div></p>
     </div>
@@ -374,6 +374,15 @@ if($_GET['msg'] == 1) { ?>
                     required=""
                   />
                 </div>
+                <div class="col-md-13">
+                  <div class="form-group">
+                    <center><input  style="display:none" readonly="readonly" type="text" value=" <?php
+                   date_default_timezone_set('Europe/Paris');
+                   echo date('d-m-Y H:i:s'). '';
+               ?>" class="form-control" id="datetime" name="date" />
+                  </div>
+                </div>
+
               </div>
               <div class="col-md-6">
                 <div class="form-group">

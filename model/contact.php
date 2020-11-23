@@ -4,13 +4,16 @@ class contact { // classe contact reprenant les informations du manager, formula
   private $email;
 	private $sujet;
   private $message;
+  private $date;
 
-  public function __construct($nom, $email, $sujet, $message){
+  public function __construct($nom, $email, $sujet, $message, $date){
 
       $this->setnom($nom);
       $this->setemail($email);
 			$this->setsujet($sujet);
       $this->setmessage($message);
+      $this->setdate($date);
+
 }
 
 public function setnom($nom){
@@ -43,6 +46,14 @@ public function setmessage($message){
   }
   $this->_message = $message;
 }
+public function setdate($date){
+  if(empty($date)){ // si la valeur saisie est vide afficher une erreur //
+    trigger_error('la variable doit etre un caractere');
+    return; // retourne le résultat //
+  }
+  $this->_date = $date;
+}
+
 public function getnom(){
   return $this->_nom;
 }
@@ -54,6 +65,9 @@ public function getsujet(){
 }
 public function getmessage(){
   return $this->_message;
+}
+public function getdate(){
+  return $this->_date;
 
 }
 }
