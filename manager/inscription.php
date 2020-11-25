@@ -17,7 +17,36 @@ require '../traitement/inscription.php';
 class Manager{
 public function inscription($donnee){
 
+  try{
+       //Test de connexion à la bdd //
+       $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+     }
+     catch (Exception $e){
+       die('Erreur:'.$e->getMessage());
+     }
+     //Sélection des informations en fonction de l'adresse mail
+     $req = $bdd->prepare('SELECT * FROM compte WHERE email=?');
+     $req->execute(array($donnee->getemail()));
+     $a= $req->fetch();
+     // Affiche une erreur ou effectue une redirection en fonction de l'execution de la rêquette //
+     if ($a == true) {
+       // Si la personne exsite deja alors on affiche une erreur //
+       header("location: ../View/inscription.php?msg=3'");
 
+     }
+     elseif($a ==false){
+       $req = $bdd->prepare('SELECT * FROM compte WHERE nom=?');
+       $req->execute(array($donnee->getnom()));
+       $a= $req->fetch();
+       // Affiche une erreur ou effectue une redirection en fonction de l'execution de la rêquette //
+       if ($a == true) {
+         // Si la personne exsite deja alors on affiche une erreur //
+         header("location: ../View/inscription.php?msg=4'");
+
+       }
+
+     else{
+ //Enregistre les données dans la BDD et rédireige en fonction du résultat //
           $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'root', '');
         $req=$bdd->prepare('INSERT into compte (nom, prenom, email, ville, tel, mdp, role) VALUES(:nom, :prenom, :email, :ville, :tel, :mdp, :role)');
         $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'ville'=>$donnee->getville(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'role'=>'client'));
@@ -43,9 +72,10 @@ public function inscription($donnee){
           } else {
              header("location: ../View/connexion.php?msg=1'");
           }
+        }
+      }
 }
-              }
-
+}
 
 
 //echo '<body onLoad="alert(\'Erreur\')">';//

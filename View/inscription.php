@@ -46,7 +46,27 @@ ini_set('display_errors', 'off');
 if($_GET['msg'] == 3) { ?>
   <body onload="setTimeout(cacherDiv3,4000);">
 <div id="compte" class="erreur">
-<?php echo "Erreur, le compte existe veuillez vous connecter";
+<?php echo "Erreur, l'email existe veuillez vous connecter";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 4) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="compte" class="erreur">
+<?php echo "Erreur, le nom existe, veuillez vous connecter";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 5) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="compte" class="erreur">
+<?php echo "Erreur, le prenom existe, veuillez vous connecter";
 }?>
 </div>
 </body>
