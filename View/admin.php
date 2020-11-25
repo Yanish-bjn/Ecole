@@ -156,14 +156,9 @@ session_start();
                     <li class="nav-item">
                       <a class="nav-link" href="contact.php">Contact</a>
                     </li>
-                    <li class="nav-item submenu dropdown">
-                      <a href="offre_emploi.php" class="nav-link dropdown-toggle"> Offres
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a class="nav-link" href="../exportation/offre.php" onClick='javascript:offre();'>Exportation</a>
-                        </li>
-                      </ul>
+                    <li class="nav-item">
+                      <a class="nav-link" href="offre_emploi_client.php">Offres</a>
+                    </li>
                     <li class="nav-item submenu dropdown">
                       <a href="evenement.php" class="nav-link dropdown-toggle"> Evénements
                       </a>
@@ -173,8 +168,13 @@ session_start();
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="messagerie.php" class="nav-link dropdown-toggle"> Messagerie
+                      <a href="messagerie.php" class="nav-link dropdown-toggle">Messagerie
                       </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="messagerie_priver.php">Messagerie privé</a>
+                        </li>
+                      </ul>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="moncompte_client.php">Mon compte</a>
@@ -222,9 +222,12 @@ session_start();
                             </ul>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a href="messagerie_admin.php" class="nav-link dropdown-toggle"> Messagerie
+                        <a href="messagerie_admin.php" class="nav-link dropdown-toggle">Messagerie
                         </a>
                         <ul class="dropdown-menu">
+                          <li class="nav-item">
+                            <a class="nav-link" href="messagerie_priver.php">Messagerie privé</a>
+                          </li>
                           <li class="nav-item">
                             <a class="nav-link" href="../exportation/message.php" onClick='javascript:message();'>Exportation</a>
                           </li>

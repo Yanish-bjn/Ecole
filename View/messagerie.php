@@ -143,8 +143,13 @@ if($_GET['msg'] == 2) { ?>
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="messagerie.php" class="nav-link dropdown-toggle"> Messagerie
+                      <a href="messagerie.php" class="nav-link dropdown-toggle">Messagerie
                       </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="messagerie_priver.php">Messagerie privé</a>
+                        </li>
+                      </ul>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="moncompte_client.php">Mon compte</a>
@@ -192,11 +197,14 @@ if($_GET['msg'] == 2) { ?>
                             </ul>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a href="messagerie.php" class="nav-link dropdown-toggle"> Messagerie
+                        <a href="messagerie_admin.php" class="nav-link dropdown-toggle">Messagerie
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
-                            <a class="nav-link" href="../exportation/message.php">Exportation</a>
+                            <a class="nav-link" href="messagerie_priver.php">Messagerie privé</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="../exportation/message.php" onClick='javascript:message();'>Exportation</a>
                           </li>
                         </ul>
                       </li>

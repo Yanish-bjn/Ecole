@@ -78,7 +78,7 @@ if($_GET['msg'] == 3) { ?>
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Numéro de télephone :</label>
-                            <input type="tel" name="tel" maxlength="10" minlength="10" id="birth_date" required>
+                            <input type="tel" name="tel" maxlength="10" minlength="10"  pattern="[0-9]{10}" id="birth_date" required>
 
                         </div>
                         <div class="form-group">

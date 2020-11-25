@@ -41,6 +41,8 @@ public function repondre_contact($donnee){
           $mail->Port       = 587;                                    // TCP port to connect to
 
           //Recipients
+          $mail->CharSet = "utf-8";
+          $mail->Subject = 'Réponse demande de contact';
           $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert Schuman');
           $mail->addAddress($donnee->getemail(), 'Réponse');     // Add a recipient //Recipients
            $mail->Body    =   $donnee->getmessage();

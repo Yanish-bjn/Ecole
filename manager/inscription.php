@@ -33,9 +33,11 @@ public function inscription($donnee){
           $mail->Port       = 587;                                    // TCP port to connect to
 
           //Recipients
+          $mail->CharSet = "utf-8";
+          $mail->Subject = 'Demande D\'inscription';
           $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert Schuman');
           $mail->addAddress($donnee->getemail(), 'Bienvenue');     // Add a recipient //Recipients
-           $mail->Body    =   "Bienvenue, merci de nous avoir rejoin !! :)";
+           $mail->Body    =   "Bienvenue votre demande d'inscription a été approuvé, merci de nous avoir rejoin.)";
           if(!$mail->Send()) {
             header("location: ../View/inscription.php?msg=2'");
           } else {

@@ -198,8 +198,13 @@ if($_GET['msg'] == 2) { ?>
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="messagerie.php" class="nav-link dropdown-toggle"> Messagerie
+                      <a href="messagerie.php" class="nav-link dropdown-toggle">Messagerie
                       </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="messagerie_priver.php">Messagerie privé</a>
+                        </li>
+                      </ul>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="moncompte_client.php">Mon compte</a>
@@ -252,9 +257,12 @@ if($_GET['msg'] == 2) { ?>
                            </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
-                       <a href="messagerie_admin.php" class="nav-link dropdown-toggle"> Messagerie
+                       <a href="messagerie_admin.php" class="nav-link dropdown-toggle">Messagerie
                        </a>
                        <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="messagerie_priver.php">Messagerie privé</a>
+                         </li>
                          <li class="nav-item">
                            <a class="nav-link" href="../exportation/message.php" onClick='javascript:message();'>Exportation</a>
                          </li>
@@ -341,7 +349,7 @@ if($_GET['msg'] == 2) { ?>
 
 
 <div class="container">
-  <p><center><h2>Message :</h2></center></p>
+  <p><center><h2>Message reçu:</h2></center></p>
   <!-- Affichage du tableau contenant des informations -->
 
   <p>  <div class="container-table100">
@@ -357,6 +365,7 @@ if($_GET['msg'] == 2) { ?>
   									<th class="cell100 column4">Message</th>
                     <th class="cell100 column5">Date</th>
                     <th class="cell100 column6">Répondre</th>
+                    <th class="cell100 column7">Supprimer</th>
   								</tr>
   							</thead>
   						</table>
@@ -377,8 +386,9 @@ if($_GET['msg'] == 2) { ?>
                           <td class="cell100 column2"><?php echo $value['prenom']?></td>
                           <td class="cell100 column3"><?php echo $value['email']?></td>
                           <td class="cell100 column4"><?php echo $value['message']?></td>
-                          <td class="cell100 column6"><?php echo $value['date']?></td>
-                          <td class="cell100 column7"><a class="btn btn-warning" data-toggle="modal" data-target="#Modal<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
+                          <td class="cell100 column5"><?php echo $value['date']?></td>
+                          <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#Modal<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
+                          <td class="cell100 column7"><a class="btn btn-warning" data-toggle="modal" data-target="#Modal2<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
 
 
                             <!-- Modal -->
@@ -496,7 +506,7 @@ if($_GET['msg'] == 2) { ?>
   			</div>
 
         <center><a class="btn btn-warning" data-toggle="modal" data-target="#Modal2<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Créer un message</a></center>
-
+<br></br>
 
           <!-- Modal -->
           <div class="modal fade" id="Modal2<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -589,105 +599,7 @@ if($_GET['msg'] == 2) { ?>
             </div>
           </div>
           </div>
-        <br></br>
 
-        <div class="container">
-          <center><h2>Message envoyer :</h2></center>
-          <!-- Affichage du tableau contenant des informations -->
-
-          <p>  <div class="container-table100">
-              <div class="wrap-table100">
-                <div class="table100 ver1 m-b-110">
-                  <div class="table100-head">
-          						<table>
-          							<thead>
-          								<tr class="row100 head">
-          									<th class="cell100 column1">Nom</th>
-          									<th class="cell100 column2">Prenom</th>
-          									<th class="cell100 column3">Email</th>
-          									<th class="cell100 column4">Message</th>
-                            <th class="cell100 column5">Date</th>
-                            <th class="cell100 column6">Suppression</th>
-          								</tr>
-          							</thead>
-          						</table>
-          					</div></p>
-
-          					<div class="table100-body js-pscroll">
-          						<table>
-          							<tbody>
-          								<!-- Selection de toute les réservations -->
-          								<?php
-          								$req = $bdd->prepare('SELECT * FROM contact where nom = "$_SESSION["nom"]"');
-                          $req->execute(array('id'=>$_SESSION['id']));
-          								$donnees= $req->fetchall();
-
-                          foreach ($donnees as $value) { ?>
-                            <tr class="row100 body">
-                                  <td class="cell100 column1"><?php echo $value['nom']?></td>
-                                  <td class="cell100 column2"><?php echo $value['prenom']?></td>
-                                  <td class="cell100 column3"><?php echo $value['email']?></td>
-                                  <td class="cell100 column4"><?php echo $value['message']?></td>
-                                  <td class="cell100 column5"><?php echo $value['date']?></td>
-                                  <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#supprimer<?php echo $value['id'] ?>" href="../manager/supprimer_contact.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
-
-                                      <!-- Modal -->
-                                      <div class="modal fade" id="supprimer<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                          <div class="modal-content">
-                                            <div class="modal-header">
-                                              <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
-                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                              </button>
-                                            </div>
-                                            <div class="modal-body">
-                                              <div class="col-lg-9">
-                                                <form method="POST" action="../manager/supprimer_contact.php"
-                                                  class="row contact_form"
-                                                  id="contactForm"
-                                                  novalidate="novalidate"
-                                                >
-                                              </div>
-                                                <div class="col-md-12">
-                                                  <input
-                                                    type="text"
-                                                    readonly="readonly"
-                                                    class="form-control"
-                                                    id="id"
-                                                    value="<?php echo $value['id']?>"
-                                                    name="id"
-                                                    placeholder="Entrer un sujet"
-                                                    onfocus="this.placeholder = ''"
-                                                    onblur="this.placeholder = 'Entrer un sujet'"
-                                                    required=""
-                                                    style="display: none"
-                                                  />
-                                                </div>
-                                              Etes-vous sur de vouloir supprimer ce message ?
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-                                              <button type="submit" class="btn btn-warning">Valider</button>
-                                            </form>
-                                              <?php
-
-                                                }
-                                                ?>
-                                        </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </td>
-                                  </tr>
-
-          							</tbody>
-          						</table>
-          					</div>
-          				</div>
-               </div>
-               </div>
-          			</div>
 
 
 <!--================ Start footer Area  =================-->

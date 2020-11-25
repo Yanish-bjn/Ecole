@@ -198,8 +198,13 @@ if($_GET['msg'] == 2) { ?>
                         </ul>
                     </li>
                     <li class="nav-item submenu dropdown">
-                      <a href="messagerie.php" class="nav-link dropdown-toggle"> Messagerie
+                      <a href="messagerie.php" class="nav-link dropdown-toggle">Messagerie
                       </a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="messagerie_priver.php">Messagerie privé</a>
+                        </li>
+                      </ul>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="moncompte_client.php">Mon compte</a>
@@ -252,9 +257,12 @@ if($_GET['msg'] == 2) { ?>
                            </ul>
                      </li>
                      <li class="nav-item submenu dropdown">
-                       <a href="messagerie_admin.php" class="nav-link dropdown-toggle"> Messagerie
+                       <a href="messagerie_admin.php" class="nav-link dropdown-toggle">Messagerie
                        </a>
                        <ul class="dropdown-menu">
+                         <li class="nav-item">
+                           <a class="nav-link" href="messagerie_priver.php">Messagerie privé</a>
+                         </li>
                          <li class="nav-item">
                            <a class="nav-link" href="../exportation/message.php" onClick='javascript:message();'>Exportation</a>
                          </li>
@@ -357,7 +365,7 @@ if($_GET['msg'] == 2) { ?>
   									<th class="cell100 column4">Message</th>
                     <th class="cell100 column5">Vérification</th>
                     <th class="cell100 column5">Date</th>
-                    <th class="cell100 column6">Répondre</th>
+                    <th class="cell100 column7">Répondre</th>
   								</tr>
   							</thead>
   						</table>
@@ -379,7 +387,7 @@ if($_GET['msg'] == 2) { ?>
                           <td class="cell100 column3"><?php echo $value['sujet']?></td>
                           <td class="cell100 column4"><?php echo $value['message']?></td>
                           <td class="cell100 column5"><?php echo $value['verification']?></td>
-                          <td class="cell100 column6"><?php echo $value['date']?></td>
+                          <td class="cell100 column5"><?php echo $value['date']?></td>
                           <td class="cell100 column7"><a class="btn btn-warning" data-toggle="modal" data-target="#Modal<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
 
 

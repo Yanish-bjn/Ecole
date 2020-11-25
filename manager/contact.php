@@ -35,9 +35,11 @@ public function contact($donnee){
   $mail->Port       = 587;                                    // TCP port to connect to
 
   //Recipients
+  $mail->CharSet = "utf-8";
+  $mail->Subject = 'Demande de contact';
   $mail->setFrom('yanishverif@gmail.com', 'Nouvelle demande de contact');
   $mail->addAddress($donnee->getemail(), 'Contact');     // Add a recipient //Recipients
-   $mail->Body    =   $donnee->getmessage();
+   $mail->Body    =   "Votre message a été trasmit une personne viendra vers vous des que possible.";
   if(!$mail->Send()) {
     header("location: ../View/contact.php?msg=2'");
   } else {

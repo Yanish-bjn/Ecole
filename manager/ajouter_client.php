@@ -42,9 +42,11 @@ public function ajouter_client($donnee){
           $mail->Port       = 587;                                    // TCP port to connect to
 
           //Recipients
+          $mail->CharSet = "utf-8";
+          $mail->Subject = 'Demande d\'ajout de client';
           $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert Schuman');
           $mail->addAddress($donnee->getemail(), 'Bienvenue');     // Add a recipient //Recipients
-           $mail->Body    =   "Vous avez était inscrit par l'admin !! :)";
+           $mail->Body    =   "Bonjour et bienvenu sur le site du lycée robert schuman, Vous avez été inscrit par l'admin !! :)";
           if(!$mail->Send()) {
             header("location: ../View/ajouter_client.php?msg=2'");
           } else {
