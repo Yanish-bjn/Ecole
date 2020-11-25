@@ -52,14 +52,16 @@
                             <label for="description"><i class="fa fa-envelope"></i></label>
                             <input type="text" name="email" id="Email" placeholder="Email" required/>
                         </div>
-                        <div class="form-group">
-                            <label for="date"><i class="fa fa-clock-o"></i></label>
-                            <input type="date" name="date" id="date" placeholder="Entrer la date" required/>
-                        </div>
-                        <div class="form-group">
+												<div class="form-group">
                           <label for="Fiche de poste"><i class="fa fa-share-square-o"></i></label>
                           <input type="file" name="piece" placeholder="Fiche de poste" accept="application/msword, application/pdf">
                         </div>
+				                  <div class="form-group">
+				                    <center><input  style="display:none" readonly="readonly" type="text" value=" <?php
+				                   date_default_timezone_set('Europe/Paris');
+				                   echo date('d-m-Y H:i:s'). '';
+				               ?>" class="form-control" id="datetime" name="date" />
+				                  </div>
                         <div class="form-group form-button">
                             <input type="submit" name="signup" id="signup" class="btn btn-warning" value="Enregistrer"/>
                         </div>

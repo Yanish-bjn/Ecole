@@ -355,7 +355,7 @@ if($_GET['msg'] == 2) { ?>
   								<tr class="row100 head">
   									<th class="cell100 column1">Nom de l'évènement</th>
   									<th class="cell100 column2">Nom de la personne</th>
-  									<th class="cell100 column3">Date</th>
+  									<th class="cell100 column3">Date de l'évènement</th>
   									<th class="cell100 column4">Description</th>
                     <th class="cell100 column5">Modif/Ajout</th>
                     <th class="cell100 column6">Suppression</th>
