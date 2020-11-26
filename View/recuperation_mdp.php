@@ -41,17 +41,19 @@
 
 				<form class="login100-form validate-form" method="POST" action="../Manager/mot_de_passe2.php">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Entre l'email" required>
+						<span class="label-input100">Mot de passe</span>
+						<input class="input100" type="password" name="mdp" placeholder="Entrer votre nouveau mot de passe" required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Mot de passe</span>
-						<input class="input100" type="password" name="mdp" placeholder="Entrer le mot de passe" required>
+						<input class="input100" type="password" name="mdp_confirmer" placeholder="Confirmer votre mot de passe" required>
 						<span class="focus-input100"></span>
 					</div>
-
+					<div class="wrap-input100 validate-input m-b-18" style="display: none">
+						<input class="input100" type="texte" name="code" readonly="readonly" style="display: none" value="<?php echo $_GET['code']; ?>"placeholder="Entrer le mot de passe">
+					</div>
 					<div class="flex-sb-m w-full p-b-30">
 					<div class="form-group">
 						<button class="login100-form-btn">

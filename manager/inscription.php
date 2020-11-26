@@ -45,6 +45,28 @@ public function inscription($donnee){
 
        }
 
+       elseif($a ==false){
+         $req = $bdd->prepare('SELECT * FROM compte WHERE tel=?');
+         $req->execute(array($donnee->gettel()));
+         $a= $req->fetch();
+         // Affiche une erreur ou effectue une redirection en fonction de l'execution de la rêquette //
+         if ($a == true) {
+           // Si la personne exsite deja alors on affiche une erreur //
+           header("location: ../View/inscription.php?msg=6'");
+
+         }
+
+         elseif($a ==false){
+           $req = $bdd->prepare('SELECT * FROM compte WHERE prenom=?');
+           $req->execute(array($donnee->getprenom()));
+           $a= $req->fetch();
+           // Affiche une erreur ou effectue une redirection en fonction de l'execution de la rêquette //
+           if ($a == true) {
+             // Si la personne exsite deja alors on affiche une erreur //
+             header("location: ../View/inscription.php?msg=5'");
+
+           }
+
      else{
  //Enregistre les données dans la BDD et rédireige en fonction du résultat //
           $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'root', '');
@@ -63,7 +85,7 @@ public function inscription($donnee){
 
           //Recipients
           $mail->CharSet = "utf-8";
-          $mail->Subject = 'Demande D\'inscription';
+          $mail->Subject = 'Demande d\'inscription';
           $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert Schuman');
           $mail->addAddress($donnee->getemail(), 'Bienvenue');     // Add a recipient //Recipients
            $mail->Body    =   "Bienvenue votre demande d'inscription a été approuvé, merci de nous avoir rejoin.)";
@@ -74,6 +96,8 @@ public function inscription($donnee){
           }
         }
       }
+    }
+    }
 }
 }
 

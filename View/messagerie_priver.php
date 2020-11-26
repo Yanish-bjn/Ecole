@@ -388,8 +388,29 @@ if($_GET['msg'] == 2) { ?>
                           <td class="cell100 column4"><?php echo $value['message']?></td>
                           <td class="cell100 column5"><?php echo $value['date']?></td>
                           <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#Modal<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
-                          <td class="cell100 column7"><a class="btn btn-warning" data-toggle="modal" data-target="#Modal2<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
+                          <td class="cell100 column7"><a class="btn btn-warning" data-toggle="modal" data-target="#modal3<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Supprimer</a>
 
+
+                            <!-- Modal -->
+                    <div class="modal fade" id="modal3<?php echo $value['id'] ?>" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Voulez vous supprimer définitivement ce message ?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                          <button type="button" class="btn btn-warning" onclick="window.location.href='../manager/supprimer_message.php?id=<?php echo $value['id']; ?>'">Valider</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                             <!-- Modal -->
                             <div class="modal fade" id="Modal<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -487,23 +508,24 @@ if($_GET['msg'] == 2) { ?>
 
                                     <button type="submit" class="btn btn-warning">Valider</button>
                                   </form>
+
+                                  <?php
+                                   }
+                                   ?>
                               </div>
                               </div>
                             </div>
                             </div>
                             </td>
-                            <?php
-
-                              }
-                              ?>
                           </tr>
-  							</tbody>
-  						</table>
-  					</div>
-  				</div>
-       </div>
-       </div>
-  			</div>
+
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</div>
 
         <center><a class="btn btn-warning" data-toggle="modal" data-target="#Modal2<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Créer un message</a></center>
 <br></br>

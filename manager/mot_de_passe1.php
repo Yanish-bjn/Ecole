@@ -43,15 +43,16 @@
          $mail->Port       = 587;                                    // TCP port to connect to
 
          //Recipients
+         $url = "http://localhost/GitHub/Ecole/View/recuperation_mdp.php?code=$code";
          $mail->CharSet = "utf-8";
          $mail->Subject = 'Récuperation mot de passe';
-         $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert Schuman');
+         $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert  Schuman');
          $mail->addAddress($donnee->getemail(), 'Mot de passe');     // Add a recipient //Recipients
-         $mail->Body    = "<a href='http://localhost/GitHub/Ecole/View/recuperation_mdp.php?section=code&code='.$code.''>Réinitialiser mot de passe</a>";
+         $mail->Body    = "Bonjour, voici le lien pour la réinitialisation : $url";
          if(!$mail->Send()) {
            header("location: ../View/inscription.php?msg=2'");
          } else {
-           header("location: ../View/connexion.php?msg=1'");
+           header("location: ../View/connexion.php?msg=3'");
          }
        }
        else{

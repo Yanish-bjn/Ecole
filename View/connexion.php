@@ -36,7 +36,19 @@
 			 document.getElementById("erreur").style.display = "none";
 	}
 
+	function cacherDiv4() {
+			 document.getElementById("erreur").style.display = "none";
+	}
+
 	function cacherDiv() {
+			 document.getElementById("reussie").style.display = "none";
+	}
+
+	function cacherDiv3() {
+			 document.getElementById("reussie").style.display = "none";
+	}
+
+	function cacherDiv5() {
 			 document.getElementById("reussie").style.display = "none";
 	}
 	</SCRIPT>
@@ -53,6 +65,16 @@
 
 <?php
 ini_set('display_errors', 'off');
+if($_GET['msg'] == 4) { ?>
+	<body onload="setTimeout(cacherDiv4,4000);">
+<div id="erreur" class="erreur">
+<?php echo "Erreur, vos deux mots de passes ne sont pas identique";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
 if($_GET['msg'] == 1) { ?>
 	<body onload="setTimeout(cacherDiv,4000);">
 <div id="reussie" class="message">
@@ -60,6 +82,28 @@ if($_GET['msg'] == 1) { ?>
 }?>
 </div>
 </body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 3) { ?>
+	<body onload="setTimeout(cacherDiv3,4000);">
+<div id="reussie" class="message">
+<?php echo "Demande envoyer avec succés";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 5) { ?>
+	<body onload="setTimeout(cacherDiv5,4000);">
+<div id="reussie" class="message">
+<?php echo "Mot de passe modifier avec succés";
+}?>
+</div>
+</body>
+
+
 
 	<div class="limiter">
 

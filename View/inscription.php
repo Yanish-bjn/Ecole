@@ -71,6 +71,16 @@ if($_GET['msg'] == 5) { ?>
 </div>
 </body>
 
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] ==  6) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="compte" class="erreur">
+<?php echo "Erreur, ce numero de téléphone existe, veuillez vous connecter";
+}?>
+</div>
+</body>
+
 <body>
 
     <div class="main">
@@ -85,11 +95,11 @@ if($_GET['msg'] == 5) { ?>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Nom :</label>
-                                <input type="text" name="nom" id="name" required/>
+                                <input type="text" name="nom" id="name" maxlength="13"required/>
                             </div>
                             <div class="form-group">
                                 <label for="father_name">Prénom :</label>
-                                <input type="text" name="prenom" id="father_name" required/>
+                                <input type="text" name="prenom" id="father_name" maxlength="13"required/>
                             </div>
                         </div>
                         <div class="form-group">
