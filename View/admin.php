@@ -361,7 +361,7 @@ session_start();
   					</div>
   				</div>
 
-             <p><center><a class="btn btn-warning" href="modifier_admin.php?id=<?php echo $_SESSION['id']; ?>">Modifier</a></center></p>
+             <p><center><a class="btn btn-warning" href="modifier_admin.php">Modifier</a></center></p>
 
        </div>
        </div>

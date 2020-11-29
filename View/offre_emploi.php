@@ -374,7 +374,7 @@ if($_GET['msg'] == 4) { ?>
                   $req->execute(array('email'=>$_SESSION['email']));
                   $donnees= $req->fetchall();
 
-                  foreach ($donnees as $value) { ?>
+                  foreach ($donnees as $value) {?>
                     <tr class="row100 body">
                           <td class="cell100 column1"><?php echo $value['nom_entreprise']?></td>
                           <td class="cell100 column2"><?php echo $value['adresse']?></td>

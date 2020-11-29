@@ -55,7 +55,7 @@ if($_GET['msg'] == 2) { ?>
     <div class="main">
 
       <?php
-      $id = $_GET['id'];
+      $id = $_SESSION['id'];
       // Sélectionne les nom de la table compte en fonction du role //
       $req = $bdd->query("SELECT * FROM compte where id = '$id' ");
       $donnees= $req->fetchall();
