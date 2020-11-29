@@ -33,9 +33,12 @@ catch (Exception $e){
 </head>
 
 <SCRIPT language="JavaScript">
-
 function cacherDiv2() {
      document.getElementById("erreur").style.display = "none";
+}
+
+function cacherDiv3() {
+     document.getElementById("compte").style.display = "none";
 }
 </SCRIPT>
 
@@ -44,11 +47,50 @@ ini_set('display_errors', 'off');
 if($_GET['msg'] == 2) { ?>
   <body onload="setTimeout(cacherDiv2,4000);">
 <div id="erreur" class="erreur">
-<?php echo "Erreur veuillez réessayer";
+<?php echo "Erreur, veuillez réessayer";
 }?>
 </div>
 </body>
 
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 3) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="compte" class="erreur">
+<?php echo "Erreur, l'email existe veuillez vous connecter";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 4) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="compte" class="erreur">
+<?php echo "Erreur, le nom existe, veuillez vous connecter";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] == 5) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="compte" class="erreur">
+<?php echo "Erreur, le prenom existe, veuillez vous connecter";
+}?>
+</div>
+</body>
+
+<?php
+ini_set('display_errors', 'off');
+if($_GET['msg'] ==  6) { ?>
+  <body onload="setTimeout(cacherDiv3,4000);">
+<div id="compte" class="erreur">
+<?php echo "Erreur, ce numero de téléphone existe, veuillez vous connecter";
+}?>
+</div>
+</body>
 
 <body>
 
