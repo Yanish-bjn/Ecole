@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--================ Début d'une session =================-->
 <?php
 session_start();
  ?>
 
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -27,19 +26,18 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
 <link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
 
-    <!-- Bootstrap CSS -->
+    <!-- Liens contetant le style de la page -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
-    <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
 
   </head>
-
+  <!--================ Gestion d'erreur permetant d'afficher un messsage =================-->
   <SCRIPT language="JavaScript">
   function cacherDiv() {
        document.getElementById("reussie").style.display = "none";
@@ -69,9 +67,9 @@ session_start();
   }?>
 </div>
 </body>
-
+<!--================ Fin de la gestion d'erreur =================-->
   <body>
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Début de la navbar =================-->
     <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
@@ -95,9 +93,7 @@ session_start();
 
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
 
@@ -246,9 +242,9 @@ session_start();
         </nav>
       </div>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fin de la navbar =================-->
 
-    <!--================Home Banner Area =================-->
+    <!--================ Nom de la page =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -263,7 +259,7 @@ session_start();
         </div>
       </div>
     </section>
-    <!--================End Home Banner Area =================-->
+    <!--================ Fin du nom de la page =================-->
 
     <?php
   	try{

@@ -40,6 +40,7 @@ session_start();
   </head>
 
   <SCRIPT language="JavaScript">
+  // Fonction permettant la gestion d'erreur avec l'affichage d'un message //
   function cacherDiv() {
        document.getElementById("reussie").style.display = "none";
   }
@@ -52,6 +53,7 @@ session_start();
        document.getElementById("message").style.display = "none";
   }
 
+// Fonction permettant l'exportattion des données au format pdf //
   function compte()
     {
     w1 = window.open("../exportation/compte_pdf.php");
@@ -75,6 +77,7 @@ session_start();
       {
       w1 = window.open("../exportation/contact_pdf.php");
       }
+      // Fin de l'exportation //
   </SCRIPT>
 
   <?php
@@ -105,11 +108,13 @@ if($_GET['msg'] == 3) { ?>
 <?php echo "Tout les messages ont était supprimer avec succés";
 }?>
 </div>
+<!--================ Fin de la gestion d'erreur =================-->
 </body>
 
 
+
   <body>
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Début de la navbar =================-->
     <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
@@ -133,7 +138,6 @@ if($_GET['msg'] == 3) { ?>
 
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <a class="navbar-brand" href="index.html">
               <img class="logo-2" src="img/logo2.png" alt="" />
             </a>
@@ -149,7 +153,6 @@ if($_GET['msg'] == 3) { ?>
               <span class="icon-bar"></span> <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
 
@@ -300,9 +303,9 @@ if($_GET['msg'] == 3) { ?>
         </nav>
       </div>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fin de la navbar =================-->
 
-    <!--================Home Banner Area =================-->
+    <!--================ Nom de la page =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -317,7 +320,7 @@ if($_GET['msg'] == 3) { ?>
         </div>
       </div>
     </section>
-    <!--================End Home Banner Area =================-->
+    <!--================ Fin du nom de la page =================-->
 
     <?php
   	try{
@@ -349,7 +352,7 @@ if($_GET['msg'] == 3) { ?>
             <div class="table100-body js-pscroll">
               <table>
                 <tbody>
-                  <!-- Selection de toute les réservations -->
+                  <!-- Selection de toute les messages de la table chat  -->
                   <?php
                   $req = $bdd->prepare('SELECT * FROM chat');
                   $req->execute(array('email'=>$_SESSION['email']));
@@ -406,7 +409,7 @@ if($_GET['msg'] == 3) { ?>
   			</div>
   		</div>
   	</div>
-    <!-- Button trigger modal -->
+    <!-- Fin du modal -->
 
 
 
@@ -440,7 +443,7 @@ if($_GET['msg'] == 3) { ?>
       </form>
 </div>
 <p>
-<!--================ Start footer Area  =================-->
+<!--================ Début du footer =================-->
 <footer class="footer-area section_gap">
   <div class="container">
     <div class="row">
@@ -472,9 +475,7 @@ if($_GET['msg'] == 3) { ?>
     </div>
     <div class="row footer-bottom d-flex justify-content-between">
       <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
       </p>
       <div class="col-lg- col-sm-12 footer-social">
         <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
@@ -483,11 +484,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     </div>
   </div>
 </footer>
-<!--================ End footer Area  =================-->
+<!--================ Fin du footer =================-->
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Liens contetant le script de la page -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -498,7 +498,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/jquery.ajaxchimp.min.js"></script>
     <script src="../js/mail-script.js"></script>
-    <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>

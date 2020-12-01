@@ -5,14 +5,12 @@
 		<title>Ajouter une offre</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- MATERIAL DESIGN ICONIC FONT -->
-    <!-- Font Icon -->
+    <!-- Style de la page -->
     <link rel="stylesheet" href="../evenement/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- Main css -->
     <link rel="stylesheet" href="../evenement/css/style.css">
     <link rel="stylesheet" href="../evenement/css/style2.css">
     <link rel="stylesheet" href="../css/erreur.css">
@@ -22,7 +20,7 @@
 
 <div class="main">
 
-    <!-- Sign up form -->
+    <!-- Affichage du formulaire de la page -->
     <section class="signup">
         <div class="container">
             <div class="signup-content">
@@ -76,14 +74,14 @@
             </div>
         </div>
     </section>
-
+		<!--================ Fin du formulaire  =================-->
 </div>
 
-<!-- JS -->
+<!-- Liens JS de la page-->
 <script src="../evenement/vendor/jquery/jquery.min.js"></script>
 <script src="../evenement/js/main.js"></script>
 <script src="../inscription/js/main2.js"></script>
 <script src="../inscription/js/api.js"></script>
 <script src="../inscription/js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

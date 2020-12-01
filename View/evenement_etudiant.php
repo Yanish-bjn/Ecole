@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Début d'une session -->
 <?php
 session_start();
  ?>
 
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -16,7 +16,6 @@ session_start();
     <title>Evenement étudiant</title>
 
     <!-- Liens contenant le style du tableau -->
-
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../tableau/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/animate/animate.css">
@@ -27,13 +26,12 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
 <link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
 
-    <!-- Bootstrap CSS -->
+    <!-- Liens contenant le style de la page -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
-    <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
 
@@ -41,7 +39,7 @@ session_start();
   </head>
 
   <body>
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Début de la navbar =================-->
     <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
@@ -64,7 +62,6 @@ session_start();
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <a class="navbar-brand" href="index.html">
               <img class="logo-2" src="img/logo2.png" alt="" />
             </a>
@@ -80,7 +77,6 @@ session_start();
               <span class="icon-bar"></span> <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="container">
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
@@ -227,9 +223,9 @@ session_start();
         </nav>
       </div>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fin de la navbar =================-->
 
-    <!--================Home Banner Area =================-->
+    <!--================ Nom de la page =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -244,7 +240,7 @@ session_start();
         </div>
       </div>
     </section>
-    <!--================End Home Banner Area =================-->
+    <!--================ Fin du nom de la page =================-->
 
     <?php
   	try{
@@ -279,7 +275,7 @@ session_start();
             <div class="table100-body js-pscroll">
               <table>
                 <tbody>
-                  <!-- Selection de toute les réservations -->
+                  <!-- Selection de tout les événements -->
                   <?php
                   $req = $bdd->prepare('SELECT * FROM evenement');
                   $req->execute(array('email'=>$_SESSION['email']));

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--================ Début de la session  =================-->
 <?php
 session_start();
  ?>
 
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -27,20 +26,20 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
 <link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
 
-    <!-- Bootstrap CSS -->
+    <!-- Liens contenant le style de la page -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
-    <!-- main css -->
+
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
 
 
   </head>
-
+  <!--================ Gestion d'erreur permetnt d'afficher un message  =================-->
   <SCRIPT language="JavaScript">
 
   function cacherDiv1() {
@@ -50,7 +49,7 @@ session_start();
   function cacherDiv2() {
        document.getElementById("erreur").style.display = "none";
   }
-
+ // Fonction permetant d'exporter les données au format pdf //
   function compte()
     {
     w1 = window.open("../exportation/compte_pdf.php");
@@ -76,7 +75,7 @@ session_start();
     }
 
   </SCRIPT>
-
+  <!--================ Gestion d'erreur affiche un message  =================-->
   <?php
   ini_set('display_errors', 'off');
   if($_GET['msg'] == 1) { ?>
@@ -98,7 +97,7 @@ session_start();
 </body>
 
   <body>
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Début de la navbar =================-->
     <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
@@ -122,7 +121,6 @@ session_start();
 
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <a class="navbar-brand" href="index.html">
               <img class="logo-2" src="img/logo2.png" alt="" />
             </a>
@@ -138,7 +136,6 @@ session_start();
               <span class="icon-bar"></span> <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
 
@@ -284,9 +281,9 @@ session_start();
         </nav>
       </div>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fin de la navbar =================-->
 
-    <!--================Home Banner Area =================-->
+    <!--================ Nom de la page =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -301,8 +298,9 @@ session_start();
         </div>
       </div>
     </section>
-    <!--================End Home Banner Area =================-->
+    <!--================Fin du nom de la page =================-->
 
+    <!--================ Test de connexion a la base de données =================-->
     <?php
   	try{
   		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
@@ -311,7 +309,7 @@ session_start();
   		die('Erreur:'.$e->getMessage());
   	}
   	?>
-
+    <!--================ Fin du test  =================-->
 
 <div class="container">
 
@@ -337,12 +335,13 @@ session_start();
   					<div class="table100-body js-pscroll">
   						<table>
   							<tbody>
-  								<!-- Selection de toute les réservations -->
+  								<!-- Selection de tout les compte enfonction de l'email -->
                   <?php
                   $req = $bdd->prepare('SELECT * FROM compte WHERE email=:email');
                   $req->execute(array('email'=>$_SESSION['email']));
                   $donnees= $req->fetchall();
 
+                  // Affichage des information dans le tableau //
                   foreach ($donnees as $value) { ?>
                     <tr class="row100 body">
                           <td class="cell100 column1"><?php echo $value['nom']?></td>
@@ -369,7 +368,7 @@ session_start();
   		</div>
   	</div>
 
-    <!--================ Start footer Area  =================-->
+    <!--================ Début du footer  =================-->
     <footer class="footer-area section_gap">
       <div class="container">
         <div class="row">
@@ -412,11 +411,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
         </div>
       </div>
     </footer>
-    <!--================ End footer Area  =================-->
+    <!--================ Fin du footer  =================-->
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Liens js de la page -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -427,7 +425,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/jquery.ajaxchimp.min.js"></script>
     <script src="../js/mail-script.js"></script>
-    <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>

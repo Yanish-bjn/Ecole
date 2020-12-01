@@ -30,7 +30,7 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
+	<!--================ Gestion d'erreur affiche un message  =================-->
 	<SCRIPT language="JavaScript">
 	function cacherDiv2() {
 			 document.getElementById("erreur").style.display = "none";
@@ -102,11 +102,11 @@ if($_GET['msg'] == 5) { ?>
 }?>
 </div>
 </body>
-
+<!--================ Fin de la gestion d'erreur  =================-->
 
 
 	<div class="limiter">
-
+		<!--================ Début du formulaire  =================-->
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(../connexion/images/bg-01.jpg);">
@@ -154,21 +154,16 @@ if($_GET['msg'] == 5) { ?>
 		</div>
 	</div>
 
-<!--===============================================================================================-->
+	<!--================ Fin du formulaire  =================-->
+
 	<script src="../connexion/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
 	<script src="../connexion/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
 	<script src="../connexion/vendor/bootstrap/js/popper.js"></script>
 	<script src="../connexion/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
 	<script src="../connexion/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
 	<script src="../connexion/vendor/daterangepicker/moment.min.js"></script>
 	<script src="../connexion/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
 	<script src="../connexion/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
 	<script src="../connexion/js/main.js"></script>
 
 </body>

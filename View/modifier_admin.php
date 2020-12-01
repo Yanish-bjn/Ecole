@@ -31,7 +31,7 @@ catch (Exception $e){
       <link rel="stylesheet" href="../css/erreur.css">
 
 </head>
-
+<!--================ Gestion d'erreur permettant d'afficher un message =================-->
 <SCRIPT language="JavaScript">
 function cacherDiv2() {
      document.getElementById("erreur").style.display = "none";
@@ -91,18 +91,17 @@ if($_GET['msg'] ==  6) { ?>
 }?>
 </div>
 </body>
-
+<!--================ Fin de la gestion d'erreur =================-->
 <body>
 
     <div class="main">
 
       <?php
       $id = $_SESSION['id'];
-      // Sélectionne les nom de la table compte en fonction du role //
+      // Sélectionne les nom de la table compte en fonction de l'id //
       $req = $bdd->query("SELECT * FROM compte where id = '$id' ");
       $donnees= $req->fetchall();
 
-      //Liste déroulante avec le nom de chaque client
       foreach ($donnees as $value) {
         $nom  = $value['nom'];
         $prenom  = $value['prenom'];
@@ -113,6 +112,7 @@ if($_GET['msg'] ==  6) { ?>
 
       //affiche les valeurs //
       ?>
+      <!--================ Début du formulaire =================-->
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
@@ -170,11 +170,12 @@ if($_GET['msg'] ==  6) { ?>
         </div>
 
     </div>
+    <!--================ Fin du formulaire =================-->
 
-    <!-- JS -->
+    <!--  Début du script de la page -->
     <script src="../inscription/vendor/jquery/jquery.min.js"></script>
     <script src="../inscription/js/main.js"></script>
     <script src="../inscription/js/main2.js"></script>
     <script src="../inscription/js/api.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

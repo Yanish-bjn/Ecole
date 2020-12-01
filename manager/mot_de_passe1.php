@@ -50,7 +50,7 @@
          $mail->addAddress($donnee->getemail(), 'Mot de passe');     // Add a recipient //Recipients
          $mail->Body    = "Bonjour, voici le lien pour la réinitialisation : $url";
          if(!$mail->Send()) {
-           header("location: ../View/inscription.php?msg=2'");
+           header("location: ../View/connexion.php?msg=2'");
          } else {
            header("location: ../View/connexion.php?msg=3'");
          }

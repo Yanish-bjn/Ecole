@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Début d'une session -->
 <?php
 session_start();
  ?>
 
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -14,13 +14,12 @@ session_start();
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
     <title>Evenement</title>
-    <!-- Bootstrap CSS -->
+    <!-- Liens contenant le style de page -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
-    <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
@@ -28,6 +27,7 @@ session_start();
 
   </head>
 
+  <!-- Début de l'exportation des données au format pdf -->
   <SCRIPT language="JavaScript">
     function compte()
       {
@@ -52,9 +52,10 @@ session_start();
         w1 = window.open("../exportation/contact_pdf.php");
         }
 	</SCRIPT>
+  <!-- Fin de l'exportation des données au format pdf -->
 
   <body>
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Début de la navbar =================-->
     <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
@@ -78,7 +79,6 @@ session_start();
 
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <a class="navbar-brand" href="index.html">
               <img class="logo-2" src="img/logo2.png" alt="" />
             </a>
@@ -94,7 +94,6 @@ session_start();
               <span class="icon-bar"></span> <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
 
@@ -241,9 +240,9 @@ session_start();
         </nav>
       </div>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fin de la navbar =================-->
 
-    <!--================Home Banner Area =================-->
+    <!--================ Nom de la page =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -258,9 +257,9 @@ session_start();
         </div>
       </div>
     </section>
-    <!--================End Home Banner Area =================-->
+    <!--================ Fin du nom de la page =================-->
 
-    <!--================ Start Events Area =================-->
+    <!--================ Début de la présenatation des événements =================-->
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-5">
@@ -381,10 +380,10 @@ session_start();
         </div>
       </div>
     </div>
-    <!--================ End Events Area =================-->
+    <!--================ Fin de la présentation des événements =================-->
 
 
-    <!--================ Start footer Area  =================-->
+    <!--================ Fin du footer =================-->
     <footer class="footer-area section_gap">
       <div class="container">
         <div class="row">
@@ -416,9 +415,7 @@ session_start();
         </div>
         <div class="row footer-bottom d-flex justify-content-between">
           <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
     Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
           <div class="col-lg- col-sm-12 footer-social">
             <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
@@ -427,12 +424,11 @@ session_start();
         </div>
       </div>
     </footer>
-    <!--================ End footer Area  =================-->
+    <!--================ Fin du footer =================-->
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Liens contenant le style de la page -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -443,7 +439,6 @@ session_start();
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/jquery.ajaxchimp.min.js"></script>
     <script src="../js/mail-script.js"></script>
-    <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>

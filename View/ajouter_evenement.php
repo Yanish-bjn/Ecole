@@ -6,21 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form by Colorlib</title>
 
-    <!-- Font Icon -->
+    <!-- Style de la page  -->
     <link rel="stylesheet" href="../evenement/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-
-    <!-- Main css -->
     <link rel="stylesheet" href="../evenement/css/style.css">
     <link rel="stylesheet" href="../evenement/css/style2.css">
     <link rel="stylesheet" href="../css/erreur.css">
 
 
 </head>
-
+<!--================ Gestion d'erreur affiche un message  =================-->
 <SCRIPT language="JavaScript">
 
 function cacherDiv2() {
@@ -43,7 +41,7 @@ if($_GET['msg'] == 2) { ?>
 
     <div class="main">
 
-        <!-- Sign up form -->
+        <!-- Affichage du formulaire  -->
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
@@ -77,11 +75,11 @@ if($_GET['msg'] == 2) { ?>
                 </div>
             </div>
         </section>
-
+        <!--================ Fin du formulaire  =================-->
     </div>
 
-    <!-- JS -->
+    <!-- Liens JS -->
     <script src="../evenement/vendor/jquery/jquery.min.js"></script>
     <script src="../evenement/js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

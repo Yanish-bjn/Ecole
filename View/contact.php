@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Début d'une session -->
 <?php
 session_start();
  ?>
 
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -14,13 +14,12 @@ session_start();
     />
     <link rel="icon" href="../img/favicon.png" type="image/png" />
     <title>Contact</title>
-    <!-- Bootstrap CSS -->
+    <!-- Liens contetant le style de la page -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
-    <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
@@ -31,7 +30,7 @@ session_start();
         }
         </style>
   </head>
-
+  <!--================ Gestion d'erreur affiche un message  =================-->
   <SCRIPT language="JavaScript">
   function cacherDiv() {
        document.getElementById("reussie").style.display = "none";
@@ -63,7 +62,9 @@ if($_GET['msg'] == 1) { ?>
 </body>
 
   <body>
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Fin de la gestion d'erreur =================-->
+
+    <!--================ Début de la navbar =================-->
     <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
@@ -250,9 +251,9 @@ if($_GET['msg'] == 1) { ?>
         </nav>
       </div>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fin de la navbar =================-->
 
-    <!--================Home Banner Area =================-->
+    <!--================ Nom de la page =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -267,9 +268,8 @@ if($_GET['msg'] == 1) { ?>
         </div>
       </div>
     </section>
-    <!--================End Home Banner Area =================-->
+    <!--================ Fin du nomù de la page =================-->
 
-    <!--================Contact Area =================-->
     <div class="container">
     <p><div id="map" style=" z-index: 1">
           <!-- Ici s'affichera la carte -->
@@ -305,6 +305,7 @@ if($_GET['msg'] == 1) { ?>
 
 <!-- Fin de la carte  -->
 
+<!-- Début du formulaire -->
     <section class="contact_area section_gap">
       <div class="container">
         <div class="row">
@@ -415,10 +416,10 @@ if($_GET['msg'] == 1) { ?>
         </div>
       </div>
     </section>
-    <!--================Contact Area =================-->
+    <!--================ Fin du formulaire =================-->
 
 
-    <!--================ Start footer Area  =================-->
+    <!--================ Début du footer  =================-->
     <footer class="footer-area section_gap">
       <div class="container">
         <div class="row">
@@ -450,9 +451,7 @@ if($_GET['msg'] == 1) { ?>
         </div>
         <div class="row footer-bottom d-flex justify-content-between">
           <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
     Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
           <div class="col-lg- col-sm-12 footer-social">
             <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
@@ -461,12 +460,11 @@ if($_GET['msg'] == 1) { ?>
         </div>
       </div>
     </footer>
-    <!--================ End footer Area  =================-->
+    <!--================ Fin du footer  =================-->
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Liens contenant le script de la page -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -477,7 +475,6 @@ if($_GET['msg'] == 1) { ?>
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/jquery.ajaxchimp.min.js"></script>
     <script src="../js/mail-script.js"></script>
-    <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>

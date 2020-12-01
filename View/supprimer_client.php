@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--================ Début d'une session =================-->
 <?php
 session_start();
+//Test de connexion à la base de données //
 try{
   $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
 }
 catch (Exception $e){
   die('Erreur:'.$e->getMessage());
 }
-
+// Fin du test //
  ?>
 
 <head>
@@ -18,18 +19,15 @@ catch (Exception $e){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Modification d'un client</title>
 
-    <!-- Font Icon -->
+    <!-- Liens contenant le style de la page -->
     <link rel="stylesheet" href="../inscription/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-
-    <!-- Main css -->
     <link rel="stylesheet" href="../inscription/css/style.css">
     <link rel="stylesheet" href="../inscription/css/style2.css">
     <link rel="stylesheet" href="../inscription/css/style3.css">
     <link rel="stylesheet" href="../css/erreur.css">
 </head>
-
+<!--================ Gestion d'erreur permetant d'afficher un message =================-->
 <SCRIPT language="JavaScript">
 function cacherDiv2() {
      document.getElementById("erreur").style.display = "none";
@@ -44,9 +42,9 @@ if($_GET['msg'] == 2) { ?>
 <?php echo "Erreur, veuillez réessayer";
 }?>
 </div>
-
+<!--================ Fin de la gestion d'erreur =================-->
 <body>
-
+  <!--================ Début du formulaire =================-->
     <div class="main">
         <div class="container">
             <div class="signup-content">
@@ -61,11 +59,10 @@ if($_GET['msg'] == 2) { ?>
 
 
                         <?php
-                      // Sélectionne les nom de la table compte en fonction du role //
+                      // Sélectionne les nom de la table compte//
                       $req = $bdd->query('SELECT nom FROM compte');
                       $donnees= $req->fetchall();
 
-                      //Liste déroulante avec le nom de chaque client
                       foreach ($donnees as $value) {
                       //affiche les valeurs //
                       echo '<option>'.$value["nom"].'</option>';
@@ -75,7 +72,7 @@ if($_GET['msg'] == 2) { ?>
 
 
                         <div class="form-submit">
-  <!-- Button trigger modal -->
+
   <a class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Supprimer</a>
 
 <!-- Modal -->
@@ -98,11 +95,13 @@ if($_GET['msg'] == 2) { ?>
     </div>
   </div>
 </div>
+<!-- Fin du modal -->
   <button type="button" class="btn btn-warning" onclick="window.location.href='moncompte_admin.php'">Revenir en arrière</button>
 
                           </div>
                           </div>
                         </form>
+                        <!--================ Fin du formulaire =================-->
                     </div>
                 </div>
             </div>
@@ -110,7 +109,7 @@ if($_GET['msg'] == 2) { ?>
 
     </div>
 
-    <!-- JS -->
+    <!-- Liens contetant le script de la page -->
     <script src="../inscription/vendor/jquery/jquery.min.js"></script>
     <script src="../inscription/js/main.js"></script>
     <script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -122,5 +121,5 @@ if($_GET['msg'] == 2) { ?>
     <script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--================ Début d'une session =================-->
 <?php
 session_start();
+// Test de connexion à la base de données //
 try{
   $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
 }
 catch (Exception $e){
   die('Erreur:'.$e->getMessage());
 }
+// Fin du test //
 
  ?>
 
@@ -18,12 +20,9 @@ catch (Exception $e){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Modification du compte</title>
 
-    <!-- Font Icon -->
+    <!-- Liens contetant le style de la page -->
     <link rel="stylesheet" href="../inscription/fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <!-- Main css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
     <link rel="stylesheet" href="../inscription/css/style.css">
     <link rel="stylesheet" href="../inscription/css/style2.css">
     <link rel="stylesheet" href="../inscription/css/style3.css">
@@ -32,7 +31,7 @@ catch (Exception $e){
 
 
 </head>
-
+<!--================ Gestion d'erreur permetant d'afficher un message =================-->
 <SCRIPT language="JavaScript">
 
 function cacherDiv2() {
@@ -49,13 +48,14 @@ if($_GET['msg'] == 2) { ?>
 }?>
 </div>
 </body>
+<!--================ Fin de la gestion d'erreur =================-->
 
 <body>
 
     <div class="main">
       <?php
       $id = $_GET['id'];
-      // Sélectionne les nom de la table compte en fonction du role //
+      // Sélectionne tout de la table compte en fonction de l'id //
       $req = $bdd->query("SELECT * FROM compte where id = '$id' ");
       $donnees= $req->fetchall();
 
@@ -70,6 +70,7 @@ if($_GET['msg'] == 2) { ?>
 
       //affiche les valeurs //
       ?>
+      <!--================ Début du formulaire =================-->
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
@@ -131,10 +132,10 @@ if($_GET['msg'] == 2) { ?>
 
     </div>
 
-    <!-- JS -->
+    <!-- Liens contenant le script de la page -->
     <script src="../inscription/vendor/jquery/jquery.min.js"></script>
     <script src="../inscription/js/main.js"></script>
     <script src="../inscription/js/main2.js"></script>
     <script src="../inscription/js/api.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

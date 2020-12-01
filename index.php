@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Dévut d'une session -->
 <?php
 session_start();
  ?>
+ <!-- Fin d'une session -->
 
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -14,13 +14,13 @@ session_start();
     />
     <link rel="icon" href="img/favicon.png" type="image/png" />
     <title>Lycée Robert Schuman</title>
-    <!-- Bootstrap CSS -->
+    
+    <!-- Liens style de la page  -->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/themify-icons.css" />
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css" />
-    <!-- main css -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style2.css" />
     <link rel="stylesheet" href="css/style3.css" />
@@ -29,11 +29,11 @@ session_start();
 
   </head>
   <SCRIPT language="JavaScript">
-
+// Fonction permettant la gesion d'erreur //
   function cacherDiv() {
        document.getElementById("reussie").style.display = "none";
   }
-
+  // Fonction permettant l'exportationn des données au format PDF //
   function compte()
     {
     w1 = window.open("exportation/compte_pdf.php");
@@ -59,7 +59,7 @@ session_start();
 
 
   </SCRIPT>
-
+  <!--================ Gestion d'erreur affiche un message  =================-->
   <?php
   ini_set('display_errors', 'off');
   if($_GET['msg'] == 1) { ?>
@@ -72,7 +72,7 @@ session_start();
 
 
   <body>
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Navbar =================-->
     <header class="header_area">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
@@ -249,9 +249,9 @@ session_start();
         </nav>
       </div>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fin de la navbar =================-->
 
-    <!--================ Start Home Banner Area =================-->
+    <!--================ Image de fond sur la navbar =================-->
     <section class="home_banner_area">
       <div class="banner_inner">
         <div class="container">
@@ -267,9 +267,9 @@ session_start();
         </div>
       </div>
     </section>
-    <!--================ End Home Banner Area =================-->
+    <!--================ Image de fond sur la navbar =================-->
 
-    <!--================ Start Feature Area =================-->
+    <!--================ Présentation de l'établissement =================-->
     <section class="feature_area section_gap_top">
       <div class="container">
         <div class="row justify-content-center">
@@ -321,9 +321,8 @@ session_start();
         </div>
       </div>
     </section>
-    <!--================ End Feature Area =================-->
 
-    <!--================ Start Registration Area =================-->
+    <!--================ Présentation des effectifs =================-->
     <div class="section_gap registration_area">
       <div class="container">
         <div class="row align-items-center">
@@ -354,9 +353,9 @@ session_start();
         </div>
       </div>
     </div>
-    <!--================ End Registration Area =================-->
+    <!--================ Fin de la présentation des effectifs =================-->
 
-    <!--================ Start Trainers Area =================-->
+    <!--================ Présentation des membres de l'établissement =================-->
     <section class="trainer_area section_gap_top">
       <div class="container">
         <div class="row justify-content-center">
@@ -427,9 +426,9 @@ session_start();
         </div>
       </div>
     </section>
-    <!--================ End Trainers Area =================-->
+    <!--================ Fin de la présentation des membre de l'établissement =================-->
 
-    <!--================ Start Events Area =================-->
+    <!--================ Présenation des événements à venir =================-->
     <div class="events_area">
       <div class="container">
         <div class="row justify-content-center">
@@ -491,9 +490,9 @@ session_start();
         </div>
       </div>
     </div>
-    <!--================ End Events Area =================-->
+    <!--================ Fin de la présenatation des évènements =================-->
 
-    <!--================ Start Testimonial Area =================-->
+    <!--================ Présenattion des témoinages =================-->
     <div class="testimonial_area section_gap">
       <div class="container">
         <div class="row justify-content-center">
@@ -546,9 +545,9 @@ session_start();
         </div>
       </div>
     </div>
-    <!--================ End Testimonial Area =================-->
+    <!--================ Fin de la présenation des témoinages =================-->
 
-    <!--================ Start footer Area  =================-->
+    <!--================ Début du footer =================-->
     <footer class="footer-area section_gap">
       <div class="container">
         <div class="row">
@@ -591,10 +590,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
         </div>
       </div>
     </footer>
-    <!--================ End footer Area  =================-->
+    <!--================ Fin du footer =================-->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Liens javascript -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -603,7 +601,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     <script src="js/owl-carousel-thumb.min.js"></script>
     <script src="js/jquery.ajaxchimp.min.js"></script>
     <script src="js/mail-script.js"></script>
-    <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="js/gmaps.min.js"></script>
     <script src="js/theme.js"></script>

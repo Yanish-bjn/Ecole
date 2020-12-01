@@ -6,27 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form by Colorlib</title>
 
-    <!-- Font Icon -->
+    <!-- Liens conteant le style de la page  -->
     <link rel="stylesheet" href="../evenement/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" type="text/css" href="../tableau/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Main css -->
     <link rel="stylesheet" href="../evenement/css/style.css">
     <link rel="stylesheet" href="../evenement/css/style2.css">
 
 </head>
 <?php
-//Connexion à la bdd
+// Test de connextion à la base de données //
 try{
   $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
 }
 catch (Exception $e){
   die('Erreur:'.$e->getMessage());
 }
-
+ // Fin du test //
 ?>
-
+<!--================ Gestion d'erreur permetant d'afficher un message =================-->
 <SCRIPT language="JavaScript">
 
 function cacherDiv2() {
@@ -43,17 +41,16 @@ if($_GET['msg'] == 2) { ?>
 }?>
 </div>
 </body>
-
+<!--================ Fin de la gestion d'erreur =================-->
 <body>
 
     <div class="main">
       <?php
       $id = $_GET['id'];
-      // Sélectionne les nom de la table compte en fonction du role //
+      // Sélectionne toutes les informations de la table evenement en fonction de l'id//
       $req = $bdd->query("SELECT * FROM evenement where id = '$id' ");
       $donnees= $req->fetchall();
 
-      //Liste déroulante avec le nom de chaque client
       foreach ($donnees as $value) {
         $nom_evenement  = $value['nom_evenement'];
         $nom_personne  = $value['nom_personne'];
@@ -64,8 +61,8 @@ if($_GET['msg'] == 2) { ?>
 
       //affiche les valeurs //
       ?>
-        <!-- Sign up form -->
 
+        <!--================ Début du formulaire =================-->
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
@@ -109,11 +106,11 @@ if($_GET['msg'] == 2) { ?>
                 </div>
             </div>
         </section>
-
+        <!--================ Fin du formulaire =================-->
     </div>
 
-    <!-- JS -->
+    <!-- Liens contetant le script de la page -->
     <script src="../evenement/vendor/jquery/jquery.min.js"></script>
     <script src="../evenement/js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

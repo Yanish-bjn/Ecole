@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--================ Début d'une session  =================-->
 <?php
 session_start();
+// Test de connexion a la base de données //
 try{
   $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
 }
 catch (Exception $e){
   die('Erreur:'.$e->getMessage());
 }
-
-//Sélection des id de la table compte en fonction du nom //
-$req = $bdd->prepare('SELECT id FROM compte WHERE nom=?');
-$id= $req->fetch();
-$_SESSION['id'] = $id[0];
-//Sélection de l'ensemble des informations de la table compte en fonction de l'id //
-$rec = $bdd->prepare('SELECT * FROM compte WHERE id=?');
-$rec->execute(array($id[0]));
-$donnees= $rec->fetch();
+// Fin du test //
  ?>
 
 <head>
@@ -26,19 +19,17 @@ $donnees= $rec->fetch();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ajouter d'un client ou admin</title>
 
-    <!-- Font Icon -->
+    <!-- Style de la page -->
     <link rel="stylesheet" href="../inscription/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-
-    <!-- Main css -->
     <link rel="stylesheet" href="../inscription/css/style.css">
     <link rel="stylesheet" href="../inscription/css/style2.css">
     <link rel="stylesheet" href="../inscription/css/style3.css">
     <link rel="stylesheet" href="../inscription/css/style4.css">
 
 </head>
-
+<!--================ Gestion d'erreur affiche un message  =================-->
 <SCRIPT language="JavaScript">
 
 function cacherDiv2() {
@@ -56,9 +47,9 @@ if($_GET['msg'] == 2) { ?>
 }?>
 </div>
 </body>
-
+<!--================ Fin de la gestion d'erreur  =================-->
 <body>
-
+  <!--================ Affichage du formulaire  =================-->
     <div class="main">
         <div class="container">
             <div class="signup-content">
@@ -123,10 +114,10 @@ if($_GET['msg'] == 2) { ?>
 
     </div>
 
-    <!-- JS -->
+    <!-- Liens JS de la page -->
     <script src="../inscription/vendor/jquery/jquery.min.js"></script>
     <script src="../inscription/js/main.js"></script>
     <script src="../inscription/js/main2.js"></script>
     <script src="../inscription/js/api.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

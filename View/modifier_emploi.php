@@ -19,15 +19,16 @@
 	</head>
 
   <?php
-  //Connexion à la bdd
+  // Test de connexion à la base de données  //
   try{
     $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
   }
   catch (Exception $e){
     die('Erreur:'.$e->getMessage());
   }
-
+	// Fin du test //
   ?>
+	<!--================ Gestion d'erreur permetant d'afficher un messsage =================-->
   <SCRIPT language="JavaScript">
 
   function cacherDiv2() {
@@ -44,15 +45,14 @@
   }?>
 </div>
 </body>
-
+<!--================ Fin de la gestion d'erreur =================-->
 	<body>
     <?php
     $id = $_GET['id'];
-    // Sélectionne les nom de la table compte en fonction du role //
+    // Sélectionne toute les informations de la table emploi en fonction de l'id //
     $req = $bdd->query("SELECT * FROM emploi where id = '$id' ");
     $donnees= $req->fetchall();
 
-    //Liste déroulante avec le nom de chaque client
     foreach ($donnees as $value) {
       $nom_entreprise  = $value['nom_entreprise'];
       $adresse = $value['adresse'];
@@ -68,7 +68,7 @@
 
     <div class="main">
 
-        <!-- Sign up form -->
+        <!-- Début du formulaire -->
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
@@ -126,15 +126,15 @@
                 </div>
             </div>
         </section>
-
+				<!--================ Fin du formulaire =================-->
     </div>
 
 
-    <!-- JS -->
+    <!-- Liens contetant le script de la page -->
     <script src="../evenement/vendor/jquery/jquery.min.js"></script>
     <script src="../evenement/js/main.js"></script>
     <script src="../inscription/js/main2.js"></script>
     <script src="../inscription/js/api.js"></script>
     <script src="../inscription/js/main.js"></script>
-    </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    </body>
     </html>

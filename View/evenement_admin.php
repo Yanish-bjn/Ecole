@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Début de la session  -->
 <?php
 session_start();
  ?>
@@ -27,20 +27,18 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
 <link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
 
-    <!-- Bootstrap CSS -->
+    <!-- Liens conteant le style de page-->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
-
-    <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
 
   </head>
-
+  <!-- Début de la gestion d'erreur permetant d'affciherun message -->
   <SCRIPT language="JavaScript">
   function cacherDiv() {
        document.getElementById("reussie").style.display = "none";
@@ -56,6 +54,7 @@ session_start();
        document.getElementById("erreur").style.display = "none";
   }
 
+ // Fonction permettant d'exporter les données au format pdf //
   function compte()
     {
     w1 = window.open("../exportation/compte_pdf.php");
@@ -79,6 +78,7 @@ session_start();
       {
       w1 = window.open("../exportation/contact_pdf.php");
       }
+      // Fin de l'exportattion //
   </SCRIPT>
 
   <?php
@@ -120,9 +120,9 @@ if($_GET['msg'] == 2) { ?>
 }?>
 </div>
 </body>
-
+<!-- Fin de la gestion d'erreur -->
   <body>
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Début de la navbar =================-->
     <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
@@ -146,7 +146,6 @@ if($_GET['msg'] == 2) { ?>
 
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <a class="navbar-brand" href="index.html">
               <img class="logo-2" src="img/logo2.png" alt="" />
             </a>
@@ -162,7 +161,6 @@ if($_GET['msg'] == 2) { ?>
               <span class="icon-bar"></span> <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
 
@@ -313,9 +311,9 @@ if($_GET['msg'] == 2) { ?>
         </nav>
       </div>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fin de la navbar =================-->
 
-    <!--================Home Banner Area =================-->
+    <!--================ Nom de la page =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -330,8 +328,9 @@ if($_GET['msg'] == 2) { ?>
         </div>
       </div>
     </section>
-    <!--================End Home Banner Area =================-->
+    <!--================ Fin du nim de la page =================-->
 
+    <!-- Test de connexion à la base de données -->
     <?php
   	try{
   		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
@@ -340,7 +339,7 @@ if($_GET['msg'] == 2) { ?>
   		die('Erreur:'.$e->getMessage());
   	}
   	?>
-
+    <!-- Fin du test  -->
 
 <div class="container">
 
@@ -367,7 +366,7 @@ if($_GET['msg'] == 2) { ?>
   					<div class="table100-body js-pscroll">
   						<table>
   							<tbody>
-  								<!-- Selection de toute les réservations -->
+  								<!-- Selection de tout les événements -->
   								<?php
   								$req = $bdd->prepare('SELECT * FROM evenement');
                   $req->execute(array('id'=>$_SESSION['id']));
@@ -383,7 +382,6 @@ if($_GET['msg'] == 2) { ?>
                           <td class="cell100 column6"><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal<?php echo $value['id'] ?>" href="../manager/supprimer_evenement.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
 
 
-                              <!-- $a = $value['value']; -->
                               <!-- Modal -->
                               <div class="modal fade" id="exampleModal<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -409,6 +407,7 @@ if($_GET['msg'] == 2) { ?>
                                 </div>
                               </div>
                             </div>
+                            <!-- Fin du modal -->
                           </td>
                           </tr>
 
@@ -429,7 +428,7 @@ if($_GET['msg'] == 2) { ?>
 
 </div>
 
-<!--================ Start footer Area  =================-->
+<!--================ Début du footer  =================-->
 <footer class="footer-area section_gap">
   <div class="container">
     <div class="row">
@@ -461,9 +460,7 @@ if($_GET['msg'] == 2) { ?>
     </div>
     <div class="row footer-bottom d-flex justify-content-between">
       <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
       </p>
       <div class="col-lg- col-sm-12 footer-social">
         <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
@@ -472,11 +469,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     </div>
   </div>
 </footer>
-<!--================ End footer Area  =================-->
+<!--================ Fin du footer =================-->
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Liens conteant le script de la page -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -487,7 +483,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/jquery.ajaxchimp.min.js"></script>
     <script src="../js/mail-script.js"></script>
-    <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>

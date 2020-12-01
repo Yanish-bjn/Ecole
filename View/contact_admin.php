@@ -41,6 +41,7 @@ session_start();
     <link rel="stylesheet" href="../css/erreur.css" />
 
   </head>
+  <!--================ Gestion d'erreur affiche un message  =================-->
 
   <SCRIPT language="JavaScript">
   function cacherDiv() {
@@ -126,9 +127,10 @@ if($_GET['msg'] == 2) { ?>
 }?>
 </div>
 </body>
+<!--================ Fin de la gestion d'erreur  =================-->
 
   <body>
-    <!--================ Start Header Menu Area =================-->
+    <!--================ Début de la navbar =================-->
     <header class="header_area white-header">
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
@@ -319,9 +321,9 @@ if($_GET['msg'] == 2) { ?>
         </nav>
       </div>
     </header>
-    <!--================ End Header Menu Area =================-->
+    <!--================ Fin de la navbar =================-->
 
-    <!--================Home Banner Area =================-->
+    <!--================ Nom de la page =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -336,8 +338,9 @@ if($_GET['msg'] == 2) { ?>
         </div>
       </div>
     </section>
-    <!--================End Home Banner Area =================-->
+    <!--================ Fin du nom de la page =================-->
 
+    <!--================  Test de connexion à la bdd  =================-->
     <?php
   	try{
   		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
@@ -346,6 +349,7 @@ if($_GET['msg'] == 2) { ?>
   		die('Erreur:'.$e->getMessage());
   	}
   	?>
+    <!--================ Fin du Test  =================-->
 
 
 <div class="container">
@@ -374,7 +378,7 @@ if($_GET['msg'] == 2) { ?>
   					<div class="table100-body js-pscroll">
   						<table>
   							<tbody>
-  								<!-- Selection de toute les réservations -->
+  								<!-- Selection de toutes les demandes de contact non fait -->
   								<?php
   								$req = $bdd->prepare('SELECT * FROM contact  where verification = "non fait"');
                   $req->execute(array('id'=>$_SESSION['id']));
@@ -513,6 +517,7 @@ if($_GET['msg'] == 2) { ?>
        </div>
        </div>
   			</div>
+        <!--================ Fin du modal  =================-->
 
 
         <div class="container">
@@ -541,7 +546,7 @@ if($_GET['msg'] == 2) { ?>
           					<div class="table100-body js-pscroll">
           						<table>
           							<tbody>
-          								<!-- Selection de toute les réservations -->
+          								<!-- Selection de toutes les demandes de contact fait -->
           								<?php
           								$req = $bdd->prepare('SELECT * FROM contact where verification = "Fait"');
                           $req->execute(array('id'=>$_SESSION['id']));
@@ -606,6 +611,7 @@ if($_GET['msg'] == 2) { ?>
                                     </div>
                                   </td>
                                   </tr>
+                                  <!--================ Fin du modal =================-->
 
           							</tbody>
           						</table>
@@ -616,7 +622,7 @@ if($_GET['msg'] == 2) { ?>
           			</div>
 
 
-<!--================ Start footer Area  =================-->
+<!--================ Début du footer =================-->
 <footer class="footer-area section_gap">
   <div class="container">
     <div class="row">
@@ -660,10 +666,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
   </div>
 </footer>
 
-<!--================ End footer Area  =================-->
+<!--================ Fin du footer  =================-->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Liens contenant le js de la page -->
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -674,7 +679,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/jquery.ajaxchimp.min.js"></script>
     <script src="../js/mail-script.js"></script>
-    <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>

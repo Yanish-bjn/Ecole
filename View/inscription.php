@@ -6,10 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inscription</title>
 
-    <!-- Font Icon -->
+    <!-- Liens contenant le style de la page -->
     <link rel="stylesheet" href="../inscription/fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <!-- Main css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../inscription/css/style.css">
     <link rel="stylesheet" href="../inscription/css/style2.css">
@@ -20,7 +18,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
 </head>
-
+<!-- Début de la gestion d'erreur permettant d'afficher un message -->
 <SCRIPT language="JavaScript">
 function cacherDiv2() {
      document.getElementById("erreur").style.display = "none";
@@ -80,9 +78,10 @@ if($_GET['msg'] ==  6) { ?>
 }?>
 </div>
 </body>
-
+<!-- Fin de la gestion d'erreur -->
 <body>
 
+  <!-- Début du formulaire  -->
     <div class="main">
         <div class="container">
             <div class="signup-content">
@@ -138,10 +137,10 @@ if($_GET['msg'] ==  6) { ?>
                 </div>
             </div>
         </div>
-
+        <!-- Fin du formulaire -->
     </div>
 
-    <!-- JS -->
+    <!-- Liens contetant le js  -->
     <script src="../inscription/vendor/jquery/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
@@ -150,5 +149,5 @@ if($_GET['msg'] ==  6) { ?>
     <script src="../inscription/js/main2.js"></script>
     <script src="../inscription/js/main.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>
