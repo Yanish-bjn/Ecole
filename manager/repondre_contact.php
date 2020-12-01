@@ -46,9 +46,9 @@ public function repondre_contact($donnee){
           $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert Schuman');
           $mail->addAddress($donnee->getemail(), 'Réponse');     // Add a recipient //Recipients
            $mail->Body    =   $donnee->getmessage();
-          if(!$mail->Send()) {
+          if(!$mail->Send()) {// Si lenvoie d'email ne s'execute pas on redirige vers une page//
             header("location: ../View/contact_admin.php?msg=2'");
-          } else {
+          } else {// Sinon on redirige vers une page//
              header("location: ../View/contact_admin.php?msg=1'");
           }
         }

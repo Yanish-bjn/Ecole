@@ -3,13 +3,14 @@ class  mot_de_passe_oublie{ // classe contact reprenant les informations du mana
   private $code;
   private $mdp;
 
+  // Le constructeur //
   public function __construct($code, $mdp){
 
       $this->setcode($code);
       $this->setmdp($mdp);
 
 }
-
+// Début des setteur  //
 public function setcode($code){
   if(empty($code)){ // si la valeur saisie est vide afficher une erreur //
     trigger_error('Erreur le mot de passe ne peut pas être vide');
@@ -25,13 +26,16 @@ public function setmdp($mdp){
   }
   $this->mdp = $mdp;
 }
+// Fin des setteur  //
 
+// Début des getteur//
 public function getcode(){
   return $this->code;
 }
 public function getmdp(){
   return $this->mdp;
 }
+// Fin des getteur//
 
 }
 

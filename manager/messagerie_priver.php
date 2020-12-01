@@ -8,9 +8,9 @@ public function messagerie($donnee){
     $req=$bdd->prepare('INSERT into messagerie (nom, prenom, email, message, date) VALUES(:nom, :prenom, :email, :message, :date)');
     $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'message'=>$donnee->getmessage(), 'date'=>$donnee->getdate()));
     $req->fetchall();
-          if($req == true) {
+          if($req == true) {// Si la requete s'execute alors on redirige vers une page//
             header("location: ../View/messagerie_priver.php?msg=1'");
-          } else {
+          } else {// Sinon  on redirige vers une page//
              header("location: ../View/messagerie_priver.php?msg=2'");
           }
         }

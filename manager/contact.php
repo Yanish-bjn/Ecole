@@ -40,11 +40,12 @@ public function contact($donnee){
   $mail->setFrom('yanishverif@gmail.com', 'Nouvelle demande de contact');
   $mail->addAddress($donnee->getemail(), 'Contact');     // Add a recipient //Recipients
    $mail->Body    =   "Votre message a été trasmit une personne viendra vers vous des que possible.";
-  if(!$mail->Send()) {
+  if(!$mail->Send()) {// Si l'envoie de mail ne s'execute pas alors on redirige vers une page //
     header("location: ../View/contact.php?msg=2'");
   } else {
     header("location: ../View/contact.php?msg=1'");
-  }
+  }// Sinon l'envoie de mail s'execute alors on redirige vers une page//
+
 
       }
 }

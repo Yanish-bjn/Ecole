@@ -7,7 +7,7 @@ class modifier_emploi { // Casse inscription provenant du model et du manager //
   private $date;
   private $id;
 
-
+  // Le constructeur //
   public function __construct($nom_entreprise, $adresse, $rue, $email, $date, $id){
 
       $this->setnom_entreprise($nom_entreprise);
@@ -18,7 +18,7 @@ class modifier_emploi { // Casse inscription provenant du model et du manager //
       $this->setid($id);
 
 }
-
+// Début des setteur  //
   public function setnom_entreprise($nom_entreprise){
     if(empty($nom_entreprise)){ // si la valeur saisie est vide afficher une erreur //
       trigger_error('la variable doit etre un caractere');
@@ -65,7 +65,9 @@ class modifier_emploi { // Casse inscription provenant du model et du manager //
     }
     $this->_id = $id;
   }
+  // Fin des setteur  //
 
+  // Début des getteur//
   public function getnom_entreprise(){
     return $this->_nom_entreprise;
   }
@@ -87,5 +89,6 @@ class modifier_emploi { // Casse inscription provenant du model et du manager //
   public function getid(){
     return $this->_id;
   }
+  // Fin des getteur//
 }
 ?>

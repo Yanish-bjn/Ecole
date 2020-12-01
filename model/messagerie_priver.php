@@ -6,6 +6,7 @@ class messagerie { // classe contact reprenant les informations du manager, form
   private $message;
   private $date;
 
+  // Le constructeur //
   public function __construct($nom, $prenom, $email, $message, $date){
 
       $this->setnom($nom);
@@ -15,6 +16,7 @@ class messagerie { // classe contact reprenant les informations du manager, form
       $this->setdate($date);
 }
 
+// Début des setteur  //
 public function setnom($nom){
   if(empty($nom)){ // si la valeur saisie est vide afficher une erreur //
     trigger_error('la variable doit etre un caractere');
@@ -54,7 +56,9 @@ public function setdate($date){
   }
   $this->_date = $date;
 }
+// Fin des setteur  //
 
+// Début des getteur//
 public function getnom(){
   return $this->_nom;
 }
@@ -72,6 +76,7 @@ public function getmessage(){
 public function getdate(){
   return $this->_date;
 }
+// Fin des getteur//
 
 }
 

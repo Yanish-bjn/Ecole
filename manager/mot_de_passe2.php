@@ -25,18 +25,18 @@ public function mot_de_passe_oublie($donnee){
                     $reqee=$bdd->prepare('DELETE from recuperation WHERE email = :email');
                     $reqee->execute(array('email'=>$a['email']));
                     $reqee->fetchall();
-                    if($reqee == true){
+                    if($reqee == true){// Sinon la requete s'execute alors on redirige vers une page//
                     header("location: ../View/connexion.php?msg=5'");
                   }
                   else {
                     header("location: ../View/connexion.php?msg=2'");
-                  }
+                  }// Sinon on redirige vers une page//
 }
-          else {
+          else {// Sinon on redirige vers une page//
             header("location: ../View/connexion.php?msg=2'");
           }
 
-          } else {
+          } else {// Sinon on redirige vers une page//
             header("location: ../View/connexion.php?msg=4'");
           }
 

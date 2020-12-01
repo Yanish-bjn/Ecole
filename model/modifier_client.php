@@ -8,7 +8,7 @@ class modifier { // Casse inscription provenant du model et du manager //
   private $mdp;
   private $id;
 
-
+  // Le constructeur //
   public function __construct($nom, $prenom, $email, $ville, $tel, $mdp, $id){
 
       $this->setNom($nom);
@@ -21,7 +21,7 @@ class modifier { // Casse inscription provenant du model et du manager //
 
 
 }
-
+// Début des setteur  //
   public function setnom($nom){
     if(empty($nom)){ // si la valeur saisie est vide afficher une erreur //
       trigger_error('la variable doit etre un caractere');
@@ -76,7 +76,9 @@ class modifier { // Casse inscription provenant du model et du manager //
     }
     $this->_id = $id;
   }
+  // Fin des setteur  //
 
+  // Début des getteur//
   public function getnom(){
     return $this->_nom;
   }
@@ -98,5 +100,6 @@ class modifier { // Casse inscription provenant du model et du manager //
   public function getid(){
     return $this->_id;
   }
+  // Fin des getteur//
 }
 ?>

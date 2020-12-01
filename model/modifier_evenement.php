@@ -6,7 +6,7 @@ class modifier_evenement { // classe connexion reprenant les information du mana
   private $_description;
   private $_id;
 
-
+  // Le constructeur //
   public function __construct($nom_evenement, $nom_personne, $date, $description, $id){
 
       $this->setnom_evenement($nom_evenement);
@@ -16,7 +16,7 @@ class modifier_evenement { // classe connexion reprenant les information du mana
       $this->setid($id);
 
 }
-
+// Début des setteur  //
 public function setnom_evenement($nom_evenement){
   if(empty($nom_evenement)){ // si la valeur saisie est vide afficher une erreur //
     trigger_error('la variable doit etre un caractere');
@@ -52,7 +52,9 @@ public function setid($id){
   }
   $this->_id = $id;
 }
+// Fin des setteur  //
 
+// Début des getteur//
 public function getnom_evenement(){
   return $this->_nom_evenement;
 }
@@ -68,5 +70,6 @@ public function getdescription(){
 public function getid(){
   return $this->_id;
 }
+// Fin des getteur//
 }
 ?>

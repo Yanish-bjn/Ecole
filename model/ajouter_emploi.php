@@ -6,7 +6,7 @@ class ajouter_emploi { // Casse inscription provenant du model et du manager //
   private $email;
   private $date;
 
-
+  // Le constructeur //
   public function __construct($nom_entreprise, $adresse, $rue, $email, $date){
 
       $this->setnom_entreprise($nom_entreprise);
@@ -16,7 +16,7 @@ class ajouter_emploi { // Casse inscription provenant du model et du manager //
       $this->setdate($date);
 
 }
-
+// Début des setteur  //
   public function setnom_entreprise($nom_entreprise){
     if(empty($nom_entreprise)){ // si la valeur saisie est vide afficher une erreur //
       trigger_error('la variable doit etre un caractere');
@@ -54,9 +54,9 @@ class ajouter_emploi { // Casse inscription provenant du model et du manager //
     }
     $this->_date = $date;
   }
+  // Fin des setteur  //
 
-
-
+  // Début des getteur//
   public function getnom_entreprise(){
     return $this->_nom_entreprise;
   }
@@ -72,6 +72,7 @@ class ajouter_emploi { // Casse inscription provenant du model et du manager //
   public function getdate(){
     return $this->_date;
   }
+  // Fin des getteur//
 
 }
 ?>

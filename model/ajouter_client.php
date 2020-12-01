@@ -8,7 +8,7 @@ class ajouter_client { // Casse inscription provenant du model et du manager //
   private $mdp;
   private $role;
 
-
+// Le constructeur //
   public function __construct($nom, $prenom, $email, $ville, $tel, $mdp, $role){
 
       $this->setNom($nom);
@@ -35,7 +35,7 @@ class ajouter_client { // Casse inscription provenant du model et du manager //
     }
     $this->_prenom = $prenom;
   }
-
+  // Début des setteur  //
   public function setemail($email){
     if(empty($email)){ // si la valeur saisie est vide afficher une erreur //
       trigger_error('la variable doit etre un caractere');
@@ -72,7 +72,9 @@ class ajouter_client { // Casse inscription provenant du model et du manager //
     }
     $this->_role = $role;
   }
+  // Fin des setteur  //
 
+  // Début des getteur//
   public function getnom(){
     return $this->_nom;
   }
@@ -94,5 +96,7 @@ class ajouter_client { // Casse inscription provenant du model et du manager //
   public function getrole(){
     return $this->_role;
   }
+  // Fin des getteur//
+
 }
 ?>

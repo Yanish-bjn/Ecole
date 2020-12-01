@@ -18,12 +18,12 @@ public function ajouter_emploi($donnee){
 if(isset($_FILES['piece']))
 {
   $file_name = $_FILES['piece']['name'];
-  $file_extension = strrchr($file_name, ".");
+  $file_extension = strrchr($file_name, ".");// Récupere le nom du fichier //
 
   $file_tmp_name = $_FILES['piece']['tmp_name'];
-  $file_dest = '../fiche/'.$file_name;
+  $file_dest = '../fiche/'.$file_name; // Récupere la destination du fichier //
 
-  $extensions_autorisees = array('.pdf', '.PDF','.DOC', '.DOCX', '.doc', '.docx' );
+  $extensions_autorisees = array('.pdf', '.PDF','.DOC', '.DOCX', '.doc', '.docx' ); // Autorise les format word et pdf //
   var_dump($file_dest);
 
   $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root',''); //Connexion à la base de donnée //
@@ -46,12 +46,12 @@ $mail->Subject = 'Demande d\'ajout d\'offre d\'emploi';
 $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert Schuman');
 $mail->addAddress($donnee->getemail(), 'Offre d\'emploi');     // Add a recipient //Recipients
  $mail->Body    =   "Bonjour votre demande d'ajout d'empoi a bien était effectuer merci de votre confiance.";
-if(!$mail->Send()) {
+if(!$mail->Send()) { // Si l'envoie de mail ne s'execute pas alors on redirige vers une page //
   header("location: ../View/offre_emploi.php?msg=2'");
 } else {
   header("location: ../View/offre_emploi.php?msg=1'");
 }
-// Si la requete s'execute alors on redirige vers une page//
+// Sinon l'envoie de mail s'execute alors on redirige vers une page//
 
 
   if(in_array($file_extension, $extensions_autorisees)){

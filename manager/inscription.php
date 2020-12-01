@@ -89,11 +89,11 @@ public function inscription($donnee){
           $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert Schuman');
           $mail->addAddress($donnee->getemail(), 'Bienvenue');     // Add a recipient //Recipients
            $mail->Body    =   "Bienvenue votre demande d'inscription a été approuvé, merci de nous avoir rejoin.)";
-          if(!$mail->Send()) {
+          if(!$mail->Send()) {// Si l'envoie de mail ne s'execute pas alors on redirige vers une page//
             header("location: ../View/inscription.php?msg=2'");
           } else {
              header("location: ../View/connexion.php?msg=1'");
-          }
+          }// Sinon l'envoie de mail s'execute alors on redirige vers une page//
         }
       }
     }

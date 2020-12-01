@@ -5,6 +5,7 @@ class evenement { // classe connexion reprenant les information du manager, form
   private $_date;
   private $_description;
 
+  // Le constructeur //
   public function __construct($nom_evenement, $nom_personne, $date, $description){
 
       $this->setnom_evenement($nom_evenement);
@@ -12,7 +13,7 @@ class evenement { // classe connexion reprenant les information du manager, form
       $this->setdate($date);
       $this->setdescription($description);
 }
-
+// Début des setteur  //
 public function setnom_evenement($nom_evenement){
   if(empty($nom_evenement)){ // si la valeur saisie est vide afficher une erreur //
     trigger_error('la variable doit etre un caractere');
@@ -41,7 +42,9 @@ public function setdescription($description){
   }
   $this->_description = $description;
 }
+// Fin des setteur  //
 
+// Début des getteur//
 public function getnom_evenement(){
   return $this->_nom_evenement;
 }
@@ -54,6 +57,7 @@ public function getdate(){
 public function getdescription(){
   return $this->_description;
 }
+// Fin des getteur//
 
 }
 ?>
