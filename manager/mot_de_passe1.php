@@ -43,6 +43,7 @@
          $mail->Port       = 587;                                    // TCP port to connect to
 
          //Recipients
+
          $url = "http://localhost/Github/Ecole/View/recuperation_mdp.php?code=$code";
          $mail->CharSet = "utf-8";
          $mail->Subject = 'Récuperation mot de passe';
