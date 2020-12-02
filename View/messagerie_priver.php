@@ -584,12 +584,13 @@ if($_GET['msg'] == 2) { ?>
                               <div class="col-md-12">
                               <select class="form-control" name="email">
                                 <?php
-                                $reponse = $bdd->query('SELECT * FROM compte');
+                                $req = $bdd->prepare('SELECT * FROM compte where not email = :email');
+                                $req->execute(array('email'=>$_SESSION['email']));
+                                $donnees= $req->fetchall();
 
-                                while ($donnees = $reponse->fetch())
-                                {
-                                  ?>
-                                  <option> <?php echo $donnees['email']; ?></option>
+                                // Affichage des information dans le tableau //
+                                foreach ($donnees as $value) { ?>
+                                  <option> <?php echo $value['email']; ?></option>
                                   <?php } ?>
                                 </select>
                               </div>
