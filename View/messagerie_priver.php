@@ -629,49 +629,103 @@ if($_GET['msg'] == 2) { ?>
 
 
 
-<!--================ Début du footer =================-->
-<footer class="footer-area section_gap">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-2 col-md-6 single-footer-widget">
-        <h4>Informations</h4>
-        <ul>
-          <li><a href="../index.php">Accueil</a></li>
-
-        </ul>
-      </div>
-      <div class="col-lg-2 col-md-6 single-footer-widget">
-        <h4>Prendre contact</h4>
-        <ul>
-          <li><a href="contact.php">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-2 col-md-6 single-footer-widget">
-        <h4>Etudiant</h4>
-        <ul>
-          <li><a href="connexion.php">Connexion</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-2 col-md-6 single-footer-widget">
-        <h4>Vous inscrire</h4>
-        <ul>
-          <li><a href="inscription.php">Inscription</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row footer-bottom d-flex justify-content-between">
-      <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
-      </p>
-      <div class="col-lg- col-sm-12 footer-social">
-        <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
-        <a href="https://www.linkedin.com/authwall?trk=ripf&trkInfo=AQEox7flDVgK6wAAAXTU30Sg9G1wuydfYLa76GB2oassbBSdjOi9-W4ZjXPYF8_C316tFE1wSZJQcJXqWoZZ_TSYGc-KGAmfL2kQ0G2cJ_EJNiW2QL5Z-8o7AyjmF9l5fSLAA-I=&originalReferer=https://www.google.com/&sessionRedirect=https%3A%2F%2Ffr.linkedin.com%2Fschool%2Flyc%25C3%25A9erobertschuman%2F"><i class="ti-linkedin"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!--================ Fin du footer  =================-->
+          <!--================ Début du footer =================-->
+          <footer class="footer-area section_gap">
+            <div class="container">
+              <div class="row">
+              <?php if ($_SESSION['role'] == "admin") { ?>
+                <div class="col-lg-2 col-md-6 single-footer-widget">
+                  <h4>Information</h4>
+                  <ul>
+                    <li><a href="../index.php">Accueil</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 single-footer-widget">
+                  <h4>Demandes</h4>
+                  <ul>
+                    <li><a href="contact_admin.php">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 single-footer-widget">
+                  <h4>Forum</h4>
+                  <ul>
+                    <li><a href="messagerie_admin.php">Chat</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 single-footer-widget">
+                  <h4>Message</h4>
+                  <ul>
+                    <li><a href="messagerie_priver.php">Messagerie</a></li>
+                  </ul>
+                </div>
+              <?php }
+            elseif($_SESSION['role'] == "client") { ?>
+                <div class="col-lg-2 col-md-6 single-footer-widget">
+                  <h4>informations</h4>
+                  <ul>
+                    <li><a href="../index.php">Accueil</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 single-footer-widget">
+                  <h4>Prendre contact</h4>
+                  <ul>
+                    <li><a href="contact.php">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 single-footer-widget">
+                  <h4>Forum</h4>
+                  <ul>
+                    <li><a href="messagerie.php">Chat</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 single-footer-widget">
+                  <h4>Message</h4>
+                  <ul>
+                    <li><a href="messagerie_priver.php">messagerie</a></li>
+                  </ul>
+                </div>
+              <?php }
+            else{ ?>
+              <div class="col-lg-2 col-md-6 single-footer-widget">
+                <h4>informations</h4>
+                <ul>
+                  <li><a href="../index.php">Accueil</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-6 single-footer-widget">
+                <h4>Prendre contact</h4>
+                <ul>
+                  <li><a href="contact.php">Contact</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-6 single-footer-widget">
+                <h4>Etudiant</h4>
+                <ul>
+                  <li><a href="connexion.php">Connexion</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-6 single-footer-widget">
+                <h4>Vous inscrire</h4>
+                <ul>
+                  <li><a href="inscription.php">Inscription</a></li>
+                </ul>
+              </div>
+            <?php	}  ?>
+              </div>
+              <div class="row footer-bottom d-flex justify-content-between">
+                <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce site internet a était mis en place part Yanish et Thomas.
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                <div class="col-lg- col-sm-12 footer-social">
+                  <a href="https://fr-fr.facebook.com/pages/lyc%C3%A9e-robert-shuman-dugny/138783332978707"><i class="ti-facebook"></i></a>
+                  <a href="https://www.linkedin.com/authwall?trk=ripf&trkInfo=AQEox7flDVgK6wAAAXTU30Sg9G1wuydfYLa76GB2oassbBSdjOi9-W4ZjXPYF8_C316tFE1wSZJQcJXqWoZZ_TSYGc-KGAmfL2kQ0G2cJ_EJNiW2QL5Z-8o7AyjmF9l5fSLAA-I=&originalReferer=https://www.google.com/&sessionRedirect=https%3A%2F%2Ffr.linkedin.com%2Fschool%2Flyc%25C3%25A9erobertschuman%2F"><i class="ti-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!--================ Fin du footer =================-->
 
     <!-- Liens contenant le script de la page -->
     <script src="../js/jquery-3.2.1.min.js"></script>

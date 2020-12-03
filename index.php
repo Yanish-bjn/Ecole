@@ -14,7 +14,7 @@ session_start();
     />
     <link rel="icon" href="img/favicon.png" type="image/png" />
     <title>Lycée Robert Schuman</title>
-    
+
     <!-- Liens style de la page  -->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/flaticon.css" />
@@ -551,11 +551,37 @@ session_start();
     <footer class="footer-area section_gap">
       <div class="container">
         <div class="row">
+        <?php if ($_SESSION['role'] == "admin") { ?>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="index.php">Accueil</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Demandes</h4>
+            <ul>
+              <li><a href="View/contact_admin.php">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Forum</h4>
+            <ul>
+              <li><a href="View/messagerie_admin.php">Chat</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Message</h4>
+            <ul>
+              <li><a href="View/messagerie_priver.php">Messagerie</a></li>
+            </ul>
+          </div>
+        <?php }
+      elseif($_SESSION['role'] == "client") { ?>
           <div class="col-lg-2 col-md-6 single-footer-widget">
             <h4>informations</h4>
             <ul>
-              <li><a href="index.php">Nous concernant</a></li>
-
+              <li><a href="index.php">Accueil</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 single-footer-widget">
@@ -565,17 +591,44 @@ session_start();
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 single-footer-widget">
-            <h4>Etudiant</h4>
+            <h4>Forum</h4>
             <ul>
-              <li><a href="View/connexion.php">Connexion</a></li>
+              <li><a href="View/messagerie.php">Chat</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 single-footer-widget">
-            <h4>Vous inscrire</h4>
+            <h4>Message</h4>
             <ul>
-              <li><a href="View/inscription.php">Inscription</a></li>
+              <li><a href="View/messagerie_priver.php">messagerie</a></li>
             </ul>
           </div>
+        <?php }
+      else{ ?>
+        <div class="col-lg-2 col-md-6 single-footer-widget">
+          <h4>informations</h4>
+          <ul>
+            <li><a href="index.php">Accueil</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 single-footer-widget">
+          <h4>Prendre contact</h4>
+          <ul>
+            <li><a href="View/contact.php">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 single-footer-widget">
+          <h4>Etudiant</h4>
+          <ul>
+            <li><a href="View/connexion.php">Connexion</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 single-footer-widget">
+          <h4>Vous inscrire</h4>
+          <ul>
+            <li><a href="View/inscription.php">Inscription</a></li>
+          </ul>
+        </div>
+      <?php	}  ?>
         </div>
         <div class="row footer-bottom d-flex justify-content-between">
           <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
