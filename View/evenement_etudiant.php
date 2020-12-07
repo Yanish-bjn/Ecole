@@ -22,9 +22,9 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/select2/select2.min.css">
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.css">
 <link rel="stylesheet" type="text/css" href="../tableau/css/util.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/main.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
+<!--link rel="stylesheet" type="text/css" href="../tableau/css/main.css"-->
+<!--link rel="stylesheet" type="text/css" href="../tableau/css/style2.css"-->
+<!--link rel="stylesheet" type="text/css" href="../tableau/css/style3.css"-->
 
     <!-- Liens contenant le style de la page -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
@@ -34,6 +34,8 @@ session_start();
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
 
 
   </head>
@@ -256,24 +258,19 @@ session_start();
 
   <!-- Affichage du tableau contenant des informations -->
 
-  <p>  <div class="container-table100">
-      <div class="wrap-table100">
-        <div class="table100 ver1 m-b-110">
-          <div class="table100-head">
-  						<table>
+  <p>
+  						<table id="myTable" class="Display">
   							<thead>
-                  <tr class="row100 head">
-                    <th class="cell100 column1">Nom de l'évènement</th>
-                    <th class="cell100 column2">Nom de la personne</th>
-                    <th class="cell100 column3">Date de l'évènement</th>
-                    <th class="cell100 column4">Description</th>
+                  <tr class="">
+                    <th class="">Nom de l'évènement</th>
+                    <th class="">Nom de la personne</th>
+                    <th class="">Date de l'évènement</th>
+                    <th class="">Description</th>
                   </tr>
                 </thead>
-              </table>
             </div></p>
 
-            <div class="table100-body js-pscroll">
-              <table>
+            <div class="">
                 <tbody>
                   <!-- Selection de tout les événements -->
                   <?php
@@ -282,11 +279,11 @@ session_start();
                   $donnees= $req->fetchall();
 
                   foreach ($donnees as $value) {
-                    echo '<tr class="row100 body">
-                          <td class="cell100 column1">'.$value["nom_evenement"].'</td>
-                          <td class="cell100 column2">'.$value["nom_personne"].'</td>
-                          <td class="cell100 column3">'.$value["date"].'</td>
-                          <td class="cell100 column4">'.$value["description"].'</td>
+                    echo '<tr class="">
+                          <td class="">'.$value["nom_evenement"].'</td>
+                          <td class="">'.$value["nom_personne"].'</td>
+                          <td class="">'.$value["date"].'</td>
+                          <td class="">'.$value["description"].'</td>
                           </tr>';
                   }
                   ?>
@@ -303,7 +300,7 @@ session_start();
   	</div>
 
 </div>
-
+<br>
 
 <!--================ Début du footer =================-->
 <footer class="footer-area section_gap">
@@ -427,5 +424,59 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
 	<script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../tableau/vendor/select2/select2.min.js"></script>
 	<script src="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+  <SCRIPT language="JavaScript">
+
+  function cacherDiv() {
+       document.getElementById("reussie").style.display = "none";
+  }
+  function cacherDiv1() {
+       document.getElementById("modifier").style.display = "none";
+  }
+  function cacherDiv3() {
+       document.getElementById("supprimer").style.display = "none";
+  }
+
+  function cacherDiv2() {
+       document.getElementById("erreur").style.display = "none";
+  }
+ // Fonctikn permettant l'exportation des données au format PDF //
+  function compte()
+    {
+    w1 = window.open("../exportation/compte_pdf.php");
+    }
+  function message()
+    {
+    w1 = window.open("../exportation/message_pdf.php");
+    }
+
+  function evenement()
+    {
+    w1 = window.open("../exportation/evenement_pdf.php");
+    }
+
+    function offre()
+      {
+      w1 = window.open("../exportation/offre_pdf.php");
+      }
+
+    function contact()
+      {
+      w1 = window.open("../exportation/contact_pdf.php");
+      }
+    function reponse()
+      {
+      w1 = window.open("../exportation/reponse_pdf.php");
+      }
+      var table = $('#myTable').DataTable({
+        "language": {
+         "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+          }
+      });
+      $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</SCRIPT>
   </body>
 </html>
