@@ -661,7 +661,7 @@ if($_GET['msg'] == 2) { ?>
               <?php }
             elseif($_SESSION['role'] == "client") { ?>
                 <div class="col-lg-2 col-md-6 single-footer-widget">
-                  <h4>informations</h4>
+                  <h4>Informations</h4>
                   <ul>
                     <li><a href="../index.php">Accueil</a></li>
                   </ul>
@@ -681,13 +681,13 @@ if($_GET['msg'] == 2) { ?>
                 <div class="col-lg-2 col-md-6 single-footer-widget">
                   <h4>Message</h4>
                   <ul>
-                    <li><a href="messagerie_priver.php">messagerie</a></li>
+                    <li><a href="messagerie_priver.php">Messagerie</a></li>
                   </ul>
                 </div>
               <?php }
             else{ ?>
               <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4>informations</h4>
+                <h4>Informations</h4>
                 <ul>
                   <li><a href="../index.php">Accueil</a></li>
                 </ul>

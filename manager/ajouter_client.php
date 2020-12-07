@@ -47,9 +47,9 @@ public function ajouter_client($donnee){
           $mail->setFrom('yanishverif@gmail.com', 'Lycée Robert Schuman');
           $mail->addAddress($donnee->getemail(), 'Bienvenue');     // Add a recipient //Recipients
            $mail->Body    =   "Bonjour et bienvenu sur le site du lycée robert schuman, Vous avez été inscrit par l'administrateur.";
-          if(!$mail->Send()) {
+          if(!$mail->Send()) { // Si l'envoie de mail ne s'execute pas alors on redirige vers une page //
             header("location: ../View/ajouter_client.php?msg=2'");
-          } else {
+          } else {// Si l'envoie de mail s'execute pas alors on redirige vers une page //
              header("location: ../View/moncompte_admin.php?msg=3'");
           }
 
