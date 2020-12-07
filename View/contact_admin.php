@@ -23,9 +23,9 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/select2/select2.min.css">
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.css">
 <link rel="stylesheet" type="text/css" href="../tableau/css/util.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/main.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
+<!--link rel="stylesheet" type="text/css" href="../tableau/css/main.css"-->
+<!--link rel="stylesheet" type="text/css" href="../tableau/css/style2.css"-->
+<!--link rel="stylesheet" type="text/css" href="../tableau/css/style3.css"-->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
@@ -33,60 +33,16 @@ session_start();
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css
+" />
 
   </head>
   <!--================ Gestion d'erreur affiche un message  =================-->
-
-  <SCRIPT language="JavaScript">
-  function cacherDiv() {
-       document.getElementById("reussie").style.display = "none";
-  }
-  function cacherDiv1() {
-       document.getElementById("modifier").style.display = "none";
-  }
-  function cacherDiv3() {
-       document.getElementById("supprimer").style.display = "none";
-  }
-
-  function cacherDiv2() {
-       document.getElementById("erreur").style.display = "none";
-  }
-
-  function compte()
-    {
-    w1 = window.open("../exportation/compte_pdf.php");
-    }
-  function message()
-    {
-    w1 = window.open("../exportation/message_pdf.php");
-    }
-
-  function evenement()
-    {
-    w1 = window.open("../exportation/evenement_pdf.php");
-    }
-
-    function offre()
-      {
-      w1 = window.open("../exportation/offre_pdf.php");
-      }
-
-    function contact()
-      {
-      w1 = window.open("../exportation/contact_pdf.php");
-      }
-    function reponse()
-      {
-      w1 = window.open("../exportation/reponse_pdf.php");
-      }
-
-  </SCRIPT>
 
   <?php
   ini_set('display_errors', 'off');
@@ -356,27 +312,22 @@ if($_GET['msg'] == 2) { ?>
   <p><center><h2>Message :</h2></center></p>
   <!-- Affichage du tableau contenant des informations -->
 
-  <p>  <div class="container-table100">
-      <div class="wrap-table100">
-        <div class="table100 ver1 m-b-110">
-          <div class="table100-head">
-  						<table>
+  <p>
+  						<table id="myTable" class="display">
   							<thead>
-  								<tr class="row100 head">
-  									<th class="cell100 column1">Nom</th>
-  									<th class="cell100 column2">Email</th>
-  									<th class="cell100 column3">Sujet</th>
-  									<th class="cell100 column4">Message</th>
-                    <th class="cell100 column5">Vérification</th>
-                    <th class="cell100 column5">Date</th>
-                    <th class="cell100 column7">Répondre</th>
+  								<tr class="">
+  									<th class="">Nom</th>
+  									<th class="">Email</th>
+  									<th class="">Sujet</th>
+  									<th class="">Message</th>
+                    <th class="">Vérification</th>
+                    <th class="">Date</th>
+                    <th class="">Répondre</th>
   								</tr>
   							</thead>
-  						</table>
   					</div></p>
 
-  					<div class="table100-body js-pscroll">
-  						<table>
+  					<div class="">
   							<tbody>
   								<!-- Selection de toutes les demandes de contact non fait -->
   								<?php
@@ -385,14 +336,14 @@ if($_GET['msg'] == 2) { ?>
   								$donnees= $req->fetchall();
 
                   foreach ($donnees as $value) { ?>
-                    <tr class="row100 body">
-                          <td class="cell100 column1"><?php echo $value['nom']?></td>
-                          <td class="cell100 column2"><?php echo $value['email']?></td>
-                          <td class="cell100 column3"><?php echo $value['sujet']?></td>
-                          <td class="cell100 column4"><?php echo $value['message']?></td>
-                          <td class="cell100 column5"><?php echo $value['verification']?></td>
-                          <td class="cell100 column5"><?php echo $value['date']?></td>
-                          <td class="cell100 column7"><a class="btn btn-warning" data-toggle="modal" data-target="#Modal<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
+                    <tr class="">
+                          <td class=""><?php echo $value['nom']?></td>
+                          <td class=""><?php echo $value['email']?></td>
+                          <td class=""><?php echo $value['sujet']?></td>
+                          <td class=""><?php echo $value['message']?></td>
+                          <td class=""><?php echo $value['verification']?></td>
+                          <td class=""><?php echo $value['date']?></td>
+                          <td class=""><a class="btn btn-warning" data-toggle="modal" data-target="#Modal<?php echo $value['id'] ?>" href="modifier_evenement.php?id=<?php echo $value['id']; ?>">Répondre</a>
 
 
                             <!-- Modal -->
@@ -524,27 +475,22 @@ if($_GET['msg'] == 2) { ?>
           <center><h2>Message répondu :</h2></center>
           <!-- Affichage du tableau contenant des informations -->
 
-          <p>  <div class="container-table100">
-              <div class="wrap-table100">
-                <div class="table100 ver1 m-b-110">
-                  <div class="table100-head">
-          						<table>
+          <p>
+          						<table id="myTable2" class="display">
           							<thead>
-          								<tr class="row100 head">
-          									<th class="cell100 column1">Nom</th>
-          									<th class="cell100 column2">Email</th>
-          									<th class="cell100 column3">Sujet</th>
-          									<th class="cell100 column4">Message</th>
-                            <th class="cell100 column5">Vérification</th>
-                            <th class="cell100 column5">Date</th>
-                            <th class="cell100 column7">Suppression</th>
+          								<tr class="">
+          									<th class="">Nom</th>
+          									<th class="">Email</th>
+          									<th class="">Sujet</th>
+          									<th class="">Message</th>
+                            <th class="">Vérification</th>
+                            <th class="">Date</th>
+                            <th class="">Suppression</th>
           								</tr>
           							</thead>
-          						</table>
           					</div></p>
 
           					<div class="table100-body js-pscroll">
-          						<table>
           							<tbody>
           								<!-- Selection de toutes les demandes de contact fait -->
           								<?php
@@ -553,14 +499,14 @@ if($_GET['msg'] == 2) { ?>
           								$donnees= $req->fetchall();
 
                           foreach ($donnees as $value) { ?>
-                            <tr class="row100 body">
-                                  <td class="cell100 column1"><?php echo $value['nom']?></td>
-                                  <td class="cell100 column2"><?php echo $value['email']?></td>
-                                  <td class="cell100 column3"><?php echo $value['sujet']?></td>
-                                  <td class="cell100 column4"><?php echo $value['message']?></td>
-                                  <td class="cell100 column5"><?php echo $value['verification']?></td>
-                                  <td class="cell100 column5"><?php echo $value['date']?></td>
-                                  <td class="cell100 column7"><a class="btn btn-warning" data-toggle="modal" data-target="#supprimer<?php echo $value['id'] ?>" href="../manager/supprimer_contact.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
+                            <tr class="">
+                                  <td class=""><?php echo $value['nom']?></td>
+                                  <td class=""><?php echo $value['email']?></td>
+                                  <td class=""><?php echo $value['sujet']?></td>
+                                  <td class=""><?php echo $value['message']?></td>
+                                  <td class=""><?php echo $value['verification']?></td>
+                                  <td class=""><?php echo $value['date']?></td>
+                                  <td class=""><a class="btn btn-warning" data-toggle="modal" data-target="#supprimer<?php echo $value['id'] ?>" href="../manager/supprimer_contact.php?id=<?php $a = $value['id']; ?>">Supprimer</a>
 
                                       <!-- Modal -->
                                       <div class="modal fade" id="supprimer<?php echo $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -620,6 +566,7 @@ if($_GET['msg'] == 2) { ?>
                </div>
                </div>
           			</div>
+                <br>
 
 
                 <!--================ Début du footer =================-->
@@ -742,5 +689,71 @@ if($_GET['msg'] == 2) { ?>
 	<script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../tableau/vendor/select2/select2.min.js"></script>
 	<script src="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <script src="  //cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+
+  <SCRIPT language="JavaScript">
+  function cacherDiv() {
+       document.getElementById("reussie").style.display = "none";
+  }
+  function cacherDiv1() {
+       document.getElementById("modifier").style.display = "none";
+  }
+  function cacherDiv3() {
+       document.getElementById("supprimer").style.display = "none";
+  }
+
+  function cacherDiv2() {
+       document.getElementById("erreur").style.display = "none";
+  }
+
+  function compte()
+    {
+    w1 = window.open("../exportation/compte_pdf.php");
+    }
+  function message()
+    {
+    w1 = window.open("../exportation/message_pdf.php");
+    }
+
+  function evenement()
+    {
+    w1 = window.open("../exportation/evenement_pdf.php");
+    }
+
+    function offre()
+      {
+      w1 = window.open("../exportation/offre_pdf.php");
+      }
+
+    function contact()
+      {
+      w1 = window.open("../exportation/contact_pdf.php");
+      }
+    function reponse()
+      {
+      w1 = window.open("../exportation/reponse_pdf.php");
+      }
+      var table = $('#myTable').DataTable({
+        "language": {
+           "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+       }
+      });
+
+      var table = $('#myTable2').DataTable({
+        "language": {
+           "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+       }
+      });
+
+      $(document).ready( function () {
+          $('#myTable').DataTable();
+      } );
+
+      $(document).ready( function () {
+          $('#myTable2').DataTable();
+      } );
+  </SCRIPT>
+
   </body>
 </html>
