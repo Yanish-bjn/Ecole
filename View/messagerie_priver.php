@@ -535,7 +535,7 @@ if($_GET['msg'] == 2) { ?>
                             </div>
                               <br></br>
                               <div class="col-md-12">
-                              <select class="form-control" name="email">
+                              <select class="form-control w-100" name="email">
                                 <?php
                                 $req = $bdd->prepare('SELECT * FROM compte where not email = :email');
                                 $req->execute(array('email'=>$_SESSION['email']));
@@ -578,9 +578,6 @@ if($_GET['msg'] == 2) { ?>
           </div>
           </div>
           <!--================ Fin du modal =================-->
-
-
-
 
           <!--================ Début du footer =================-->
           <footer class="footer-area section_gap">
