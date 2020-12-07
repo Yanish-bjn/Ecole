@@ -579,7 +579,7 @@ session_start();
         <?php }
       elseif($_SESSION['role'] == "client") { ?>
           <div class="col-lg-2 col-md-6 single-footer-widget">
-            <h4>informations</h4>
+            <h4>Informations</h4>
             <ul>
               <li><a href="index.php">Accueil</a></li>
             </ul>
@@ -599,13 +599,13 @@ session_start();
           <div class="col-lg-2 col-md-6 single-footer-widget">
             <h4>Message</h4>
             <ul>
-              <li><a href="View/messagerie_priver.php">messagerie</a></li>
+              <li><a href="View/messagerie_priver.php">Messagerie</a></li>
             </ul>
           </div>
         <?php }
       else{ ?>
         <div class="col-lg-2 col-md-6 single-footer-widget">
-          <h4>informations</h4>
+          <h4>Informations</h4>
           <ul>
             <li><a href="index.php">Accueil</a></li>
           </ul>

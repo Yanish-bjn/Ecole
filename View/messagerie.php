@@ -23,9 +23,9 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/select2/select2.min.css">
 <link rel="stylesheet" type="text/css" href="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.css">
 <link rel="stylesheet" type="text/css" href="../tableau/css/util.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/main.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/style2.css">
-<link rel="stylesheet" type="text/css" href="../tableau/css/style3.css">
+<!--link rel="stylesheet" type="text/css" href="../tableau/css/main.css"-->
+<!--link rel="stylesheet" type="text/css" href="../tableau/css/style2.css"-->
+<!--link rel="stylesheet" type="text/css" href="../tableau/css/style3.css"-->
 
     <!-- Liens contenant le style de la page -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
@@ -36,19 +36,11 @@ session_start();
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/style3.css" />
     <link rel="stylesheet" href="../css/erreur.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
 
 
   </head>
-  <!--================ Gestion d'erreur permetant d'affciher un message =================-->
-  <SCRIPT language="JavaScript">
 
-  function cacherDiv1() {
-       document.getElementById("reussie").style.display = "none";
-  }
-  function cacherDiv2() {
-       document.getElementById("erreur").style.display = "none";
-  }
-  </SCRIPT>
 
   <?php
   ini_set('display_errors', 'off');
@@ -289,24 +281,16 @@ if($_GET['msg'] == 2) { ?>
 
   <!-- Affichage du tableau contenant des informations -->
 <div class="container">
-  <p>  <div class="container-table100">
-      <div class="wrap-table100">
-        <div class="table100 ver1 m-b-110">
-          <div class="table100-head">
-  						<table>
-  							<thead>
-                  <tr class="row100 head">
-                    <th class="cell100 column1">Nom</th>
-                    <th class="cell100 column2">Prenom</th>
-                    <th class="cell100 column3">Date</th>
-                    <th class="cell100 column4">Message</th>
-                  </tr>
-                </thead>
-              </table>
-            </div></p>
-
-            <div class="table100-body js-pscroll">
-              <table>
+<p>
+            <table id="myTable" class="display">
+              <thead>
+                <tr class=" ">
+                  <th class=" ">Nom</th>
+                  <th class=" ">Prenom</th>
+                  <th class=" ">Date</th>
+                  <th class=" ">Message</th>
+                </tr>
+              </thead>
                 <tbody>
                   <!-- Selection de tout les messages -->
                   <?php
@@ -315,22 +299,25 @@ if($_GET['msg'] == 2) { ?>
                   $donnees= $req->fetchall();
 
                   foreach ($donnees as $value) {
-                    echo '<tr class="row100 body">
-                          <td class="cell100 column1">'.$value["nom"].'</td>
-                          <td class="cell100 column2">'.$value["prenom"].'</td>
-                          <td class="cell100 column3">'.$value["date"].'</td>
-                          <td class="cell100 column4">'.$value["message"].'</td>
+                    echo '<tr class=" ">
+                          <td class=" ">'.$value["nom"].'</td>
+                          <td class=" ">'.$value["prenom"].'</td>
+                          <td class=" ">'.$value["date"].'</td>
+                          <td class=" ">'.$value["message"].'</td>
                           </tr>';
                   }
                   ?>
 
-
+</p>
   							</tbody>
   						</table>
 
-  					</div>
+
   				</div>
+          <div class="container">
+            <div class="row">
           <p><div class="col-md-12 text-right">
+            <br>
             <button type="button" class="btn btn-warning" onclick="window.location.href='messagerie.php'">Actualiser</button><p>
           </div>
        </div>
@@ -401,7 +388,7 @@ if($_GET['msg'] == 2) { ?>
       <?php }
     elseif($_SESSION['role'] == "client") { ?>
         <div class="col-lg-2 col-md-6 single-footer-widget">
-          <h4>informations</h4>
+          <h4>Informations</h4>
           <ul>
             <li><a href="../index.php">Accueil</a></li>
           </ul>
@@ -421,13 +408,13 @@ if($_GET['msg'] == 2) { ?>
         <div class="col-lg-2 col-md-6 single-footer-widget">
           <h4>Message</h4>
           <ul>
-            <li><a href="messagerie_priver.php">messagerie</a></li>
+            <li><a href="messagerie_priver.php">Messagerie</a></li>
           </ul>
         </div>
       <?php }
     else{ ?>
       <div class="col-lg-2 col-md-6 single-footer-widget">
-        <h4>informations</h4>
+        <h4>Informations</h4>
         <ul>
           <li><a href="../index.php">Accueil</a></li>
         </ul>
@@ -469,7 +456,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
 
 
     <!-- Liens contetant le script de la page -->
-    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/stellar.js"></script>
@@ -483,12 +470,35 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
     <script src="../js/gmaps.min.js"></script>
     <script src="../js/contact.js"></script>
     <script src="../js/theme.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.22/i18n/French.json"></script>
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 
     <!-- Liens contenant le script du tableau -->
-	<script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--script src="../tableau/vendor/jquery/jquery-3.2.1.min.js"></script-->
 	<script src="../tableau/vendor/bootstrap/js/popper.js"></script>
 	<script src="../Tableau/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../tableau/vendor/select2/select2.min.js"></script>
 	<script src="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+  <!--================ Gestion d'erreur permetant d'affciher un message =================-->
+  <SCRIPT language="JavaScript">
+
+  function cacherDiv1() {
+       document.getElementById("reussie").style.display = "none";
+  }
+  function cacherDiv2() {
+       document.getElementById("erreur").style.display = "none";
+  }
+  var table = $('#myTable').DataTable({
+    "language": {
+       "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+   }
+  });
+
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+});
+
+  </SCRIPT>
   </body>
 </html>
