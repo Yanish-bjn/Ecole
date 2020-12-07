@@ -482,7 +482,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ce si
 
   <!--================ Gestion d'erreur permetant d'affciher un message =================-->
   <SCRIPT language="JavaScript">
-
+//Gestion d'erreur //
   function cacherDiv1() {
        document.getElementById("reussie").style.display = "none";
   }

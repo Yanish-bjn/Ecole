@@ -508,7 +508,7 @@ if($_GET['msg'] == 4) { ?>
 	<script src="../tableau/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
   <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
   <SCRIPT language="JavaScript">
-
+// Gestion d'erreur //
   function cacherDiv() {
        document.getElementById("reussie").style.display = "none";
   }

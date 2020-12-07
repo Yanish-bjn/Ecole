@@ -693,6 +693,7 @@ if($_GET['msg'] == 2) { ?>
 
 
   <SCRIPT language="JavaScript">
+  // Gestion d'erreur //
   function cacherDiv() {
        document.getElementById("reussie").style.display = "none";
   }
