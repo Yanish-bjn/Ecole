@@ -19,7 +19,7 @@ class Manager{
 public function ajouter_client($donnee){
 
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //
-      $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'root', '');//Connexion à la BDD//
+      $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'yanish', 'root');//Connexion à la BDD//
     $req=$bdd->prepare('INSERT into compte (nom, prenom, email, ville, tel, mdp, role) VALUES(:nom, :prenom, :email, :ville, :tel, :mdp, :role)');//Preparation de la raquete SQL//
     $req->execute(array('nom'=>$donnee->getnom(),
                         'prenom'=>$donnee->getprenom(),

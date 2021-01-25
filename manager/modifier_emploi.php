@@ -17,7 +17,7 @@ if(isset($_FILES['piece']))
   $extensions_autorisees = array('.pdf', '.PDF','.DOC', '.DOCX', '.doc', '.docx' );
   var_dump($file_dest);
   //Enregistre les données dans la BDD et rédireige en fonction du résultat //
-        $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'root', '');
+        $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'yanish', 'root');
       $req=$bdd->prepare('UPDATE emploi SET nom_entreprise = :nom_entreprise, adresse = :adresse, rue = :rue, email = :email, date = :date, piece = :piece WHERE id = :id');
   //var_dump($req);
   //    $req->execute(array('nom'=>$donnee->getnom(), 'prenom'=>$donnee->getprenom(), 'email'=>$donnee->getemail(), 'tel'=>$donnee->gettel(), 'mdp'=>md5($donnee->getmdp()), 'id'=>7));

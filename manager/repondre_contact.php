@@ -14,7 +14,7 @@ require '../traitement/Supprimer_contact.php';
 class Supprimer{
 public function supprimer_contact($donnee){
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //
-      $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+      $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root');
     $req=$bdd->prepare('DELETE FROM contact WHERE id = :id');
     $req->execute(array('id'=>$donnee->getid()));
     $req->fetchall();
@@ -26,7 +26,7 @@ require '../traitement/repondre_contact.php';
 class Manager{
 public function repondre_contact($donnee){
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //
-      $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+      $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root');
     $req=$bdd->prepare('INSERT into contact (nom, email, sujet, message, date, verification) VALUES(:nom, :email, :sujet, :message, :date, :verification)');
     $req->execute(array('nom'=>$donnee->getnom(), 'email'=>$donnee->getemail(), 'sujet'=>$donnee->getsujet(), 'message'=>$donnee->getmessage(), 'date'=>$donnee->getdate(), 'verification'=>'Fait'));
     $req->fetchall();

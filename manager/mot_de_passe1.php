@@ -18,7 +18,7 @@
  public function mot_de_passe($donnee){
 
  //Enregistre les données dans la BDD et rédireige en fonction du résultat //
-       $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+       $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root');
      $req=$bdd->prepare('SELECT * FROM compte WHERE email=:email');
      $req->execute(array('email'=>$donnee->getemail()));
      if($req == true){
@@ -28,7 +28,7 @@
        for ($i=0; $i < 8; $i++) {
          $code .= mt_rand(0,9);
        }
-       $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+       $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root');
        $reqe=$bdd->prepare('INSERT INTO recuperation (email, code) VALUES(:email, :code)');
        $reqe->execute(array('email'=>$donnee->getemail(), 'code'=>$code));
        if($reqe == true){

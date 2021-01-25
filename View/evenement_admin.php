@@ -292,7 +292,7 @@ if($_GET['msg'] == 2) { ?>
     <!-- Test de connexion à la base de données -->
     <?php
   	try{
-  		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+  		$bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root');
   	}
   	catch (Exception $e){
   		die('Erreur:'.$e->getMessage());

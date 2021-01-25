@@ -18,7 +18,7 @@
 <?php
 try{
   //Test de connexion à la base de données //
-  $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+  $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root');
 }
 catch (Exception $e){
   die('Erreur:'.$e->getMessage());

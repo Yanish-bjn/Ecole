@@ -8,7 +8,7 @@ require '../traitement/Supprimer_evenement.php';
 class Manager{
 public function supprimer_evenement($donnee){
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //
-      $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+      $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root');
     $req=$bdd->prepare('DELETE FROM emploi WHERE id = :id');
     $req->execute(array('id'=>$donnee->getid()));
     $req->fetchall();

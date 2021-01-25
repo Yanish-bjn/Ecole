@@ -6,7 +6,7 @@ class Manager{
 public function connexion($donnee){ //function connexion //
 
       //Code permettant de ce connecter a la BDD et d'enregistrer les données //
-      $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'root', '');
+      $bdd=new PDO('mysql:host=localhost;dbname=ecole;charset=utf8', 'yanish', 'root');
     $req=$bdd->prepare('SELECT * from compte where email = :email and mdp = :mdp');
     $req->execute(array('email'=>$donnee->getemail(), 'mdp'=>md5($donnee->getmdp())));
     $a = $req->fetch();

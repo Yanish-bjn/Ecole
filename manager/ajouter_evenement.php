@@ -5,7 +5,7 @@ require '../traitement/ajouter_evenement.php';
 class Manager{
 public function evenement($donnee){
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //
-      $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root',''); //Connexion à la base de donnée //
+      $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root'); //Connexion à la base de donnée //
     $req=$bdd->prepare('INSERT into evenement (nom_personne, nom_evenement, date, description) VALUES(:nom_personne, :nom_evenement, :date, :description)');//Preparation de la requete //
     $req->execute(array('nom_personne'=>$donnee->getnom_personne(), 'nom_evenement'=>$donnee->getnom_evenement(), 'date'=>$donnee->getdate(), 'description'=>$donnee->getdescription())); //Execution du tableau //
     $req->fetchall();

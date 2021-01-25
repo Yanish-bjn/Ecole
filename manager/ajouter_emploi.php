@@ -26,7 +26,7 @@ if(isset($_FILES['piece']))
   $extensions_autorisees = array('.pdf', '.PDF','.DOC', '.DOCX', '.doc', '.docx' ); // Autorise les format word et pdf //
   var_dump($file_dest);
 
-  $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root',''); //Connexion à la base de donnée //
+  $bdd=new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root'); //Connexion à la base de donnée //
 $req=$bdd->prepare('INSERT INTO emploi (nom_entreprise, adresse, rue, email, date, piece) VALUES(:nom_entreprise, :adresse, :rue, :email, :date, :piece)');//Preparation de la requete //
 $req->execute(array('nom_entreprise'=>$donnee->getnom_entreprise(), 'adresse'=>$donnee->getadresse(), 'rue'=>$donnee->getrue(), 'email'=>$donnee->getemail(), 'date'=>$donnee->getdate(), 'piece'=>$file_dest)); //Execution du tableau //
 $req->fetchall();

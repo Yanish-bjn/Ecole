@@ -19,7 +19,7 @@ public function inscription($donnee){
 
   try{
        //Test de connexion à la bdd //
-       $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+       $bdd= new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish', 'root');
      }
      catch (Exception $e){
        die('Erreur:'.$e->getMessage());
