@@ -28,7 +28,7 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="../Manager/mot_de_passe1.php">
+				<form class="login100-form validate-form" method="POST" action="../manager/mot_de_passe1.php">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Email</span>
 						<input class="input100" type="email" name="email" placeholder="Entre l'email" required>

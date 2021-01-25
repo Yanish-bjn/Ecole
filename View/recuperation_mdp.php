@@ -30,7 +30,7 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="../Manager/mot_de_passe2.php">
+				<form class="login100-form validate-form" method="POST" action="../manager/mot_de_passe2.php">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Mot de passe</span>
 						<input class="input100" type="password" name="mdp" placeholder="Entrer votre nouveau mot de passe" required>
