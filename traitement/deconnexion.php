@@ -3,6 +3,6 @@
 session_start();
 session_destroy();
 // Redirection vers la page d'accueil //
-header('Location: ../Index.php');
+header('Location: ../index.php');
 
 ?>
