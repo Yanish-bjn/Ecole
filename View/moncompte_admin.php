@@ -221,7 +221,7 @@ session_start();
                         <a class="nav-link" href="../index.php">Accueil</a>
                       </li>
                       <li class="nav-item submenu dropdown">
-                        <a class="nav-link" href="Contact_admin.php">Contact</a>
+                        <a class="nav-link" href="contact_admin.php">Contact</a>
                         </a>
                         <ul class="dropdown-menu">
                           <li class="nav-item">
