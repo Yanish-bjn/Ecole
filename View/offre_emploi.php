@@ -342,7 +342,7 @@ if($_GET['msg'] == 4) { ?>
                           <td class=""><?php echo $value['date']?></td>
                           <td class=""><a class="btn btn-secondary" href="<?php echo $value['piece']; ?>">Telecharger</a></td>
                           <td class=""><a class="btn btn-warning" href="modifier_emploi.php?id=<?php echo $value['id']; ?>">Modifier</a></td>
-                          <td class=""><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal<?php echo $value['id'] ?>" href="../manager/supprimer_client.php?id=<?php echo $value['id']; ?>">Supprimer</a>
+                          <td class=""><a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal<?php echo $value['id'] ?>" href="../manager/supprimer_emploi.php?id=<?php echo $value['id']; ?>">Supprimer</a>
 
 
                              <!-- Modal -->

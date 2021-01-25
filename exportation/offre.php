@@ -3,7 +3,7 @@
 
 try{
   //Test de connexion a la bdd //
-  $dbco = new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','root','');
+  $dbco = new PDO('mysql:host=localhost;dbname=ecole; charset=utf8','yanish','root');
   $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   //Selection des informations de la table //

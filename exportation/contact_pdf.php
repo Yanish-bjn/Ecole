@@ -1,6 +1,6 @@
 <?php
 require('../vendor2/autoload.php');
-$con=mysqli_connect('localhost','root','','ecole');
+$con=mysqli_connect('localhost','yanish','root','ecole');
 // Connexion BDD //
 $res=mysqli_query($con,"select * from contact");
 //Selection des informations de la table

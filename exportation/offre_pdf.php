@@ -1,6 +1,6 @@
 <?php
 require('../vendor2/autoload.php');
-$con=mysqli_connect('localhost','root','','ecole');
+$con=mysqli_connect('localhost','yanish','root','ecole');
 $res=mysqli_query($con,"select * from emploi");
 //Selection des informations de la table
 if(mysqli_num_rows($res)>0){
