@@ -11,7 +11,7 @@ public function supprimer_client($donnee){
     $req->execute(array('id'=>$donnee->getid()));
     $req->fetchall();
     // Si la requete s'execute alors on redirige vers une page//
-    if ($req ==true){
+    if ($req == true){
       header("location: ../View/messagerie_priver.php?msg=4'");
     }   // Si la requete ne s'execute pas alors on redirige vers une autre page//
     else{
