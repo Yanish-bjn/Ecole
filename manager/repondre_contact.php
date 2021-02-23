@@ -10,7 +10,7 @@ require '../vendor/phpmailer/phpmailer/src/SMTP.php';
 require '../vendor/autoload.php';
 //
 require '../model/supprimer_contact.php';
-require '../traitement/Supprimer_contact.php';
+require '../traitement/supprimer_contact.php';
 class Supprimer{
 public function supprimer_contact($donnee){
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //

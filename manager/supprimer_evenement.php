@@ -4,7 +4,7 @@
 $id = $_GET['id'];
 
 require '../model/supprimer_evenement.php';
-require '../traitement/Supprimer_evenement.php';
+require '../traitement/supprimer_evenement.php';
 class Manager{
 public function supprimer_evenement($donnee){
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //
@@ -18,7 +18,6 @@ public function supprimer_evenement($donnee){
     }   // Si la requete ne s'execute pas alors on redirige vers une autre page//
     else{
       header("location: ../View/supprimer_evenement.php?msg=2'");
-
     }
   }
 }

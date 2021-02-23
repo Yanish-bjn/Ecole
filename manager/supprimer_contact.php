@@ -1,7 +1,7 @@
 <?php
 // envoie les données vers les page suiavntes //
 require '../model/supprimer_contact.php';
-require '../traitement/Supprimer_contact.php';
+require '../traitement/supprimer_contact.php';
 class supprimer{
 public function supprimer_contact($donnee){
 //Enregistre les données dans la BDD et rédireige en fonction du résultat //
